@@ -50,7 +50,7 @@ class Auth extends CI_Controller
 	private function _login()
 	{
 		$email = $this->input->post('email');
-		$password = $this->input->post('password');
+		$password = md5($this->input->post('password'));
 
 		// $user = $this->db->get_where('users', ['email' => $email])->row_array();
 		$user = $this->db->get_where('app_login', ['user_login' => $email])->row_array();
@@ -59,7 +59,7 @@ class Auth extends CI_Controller
 		if ($user) {
 
 			//cek password
-			if (password_verify($password, md5($user['password']))) {
+			if (password_verify($password, $user['password'])) {
 
 				$data = [
 					'id' => $user['id'],
