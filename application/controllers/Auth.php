@@ -59,7 +59,8 @@ class Auth extends CI_Controller
 		if ($user) {
 
 			//cek password
-			if (password_verify($password, $user['password'])) {
+			// if (password_verify($password, $user['pass_login'])) {
+			if ($password==$user['pass_login']) {
 
 				$data = [
 					'id' => $user['id'],
@@ -71,9 +72,9 @@ class Auth extends CI_Controller
 				$this->session->set_userdata($data);
 				redirect('dashboard');
 			} else {
-				$textPwd = $password . ";" . $user['password'];
+				// $textPwd = $password . "==" . $user['pass_login'];
 				$this->session->set_flashdata('message', '<div class="alert alert-danger" 
-                    role="alert"> Wrong password ' . $textPwd . '</div>');
+                    role="alert"> Wrong password </div>');
 				redirect('auth');
 			}
 		} else {
