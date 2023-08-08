@@ -44,7 +44,7 @@
 									</div>
 									<form class="user" method="POST" action="">
 										<div class="form-group">
-											<input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..." autocomplete="off" name="email" value="<?= set_value('email'); ?>">
+											<input type="text" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..." autocomplete="off" name="email" value="<?= set_value('email'); ?>">
 											<?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
 										</div>
 										<div class="form-group">

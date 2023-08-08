@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Auth extends CI_Controller
 {
 
-	protected $title = "Your App";
+	protected $title = "Peta Intelijen";
 
 	public function __construct()
 	{
@@ -35,7 +35,8 @@ class Auth extends CI_Controller
 			redirect('dashboard');
 		}
 
-		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+		// $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required');
 
 		if ($this->form_validation->run() == false) {
@@ -51,18 +52,21 @@ class Auth extends CI_Controller
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
 
-		$user = $this->db->get_where('users', ['email' => $email])->row_array();
+		// $user = $this->db->get_where('users', ['email' => $email])->row_array();
+		$user = $this->db->get_where('app_login', ['user_login' => $email])->row_array();
 
 		// jika usernya ada
 		if ($user) {
 
 			//cek password
-			if (password_verify($password, $user['password'])) {
+			if (password_verify($password, md5($user['password']))) {
 
 				$data = [
 					'id' => $user['id'],
-					'email' => $user['email'],
-					'role_id' => $user['role_id']
+					// 'email' => $user['email'],
+					// 'role_id' => $user['role_id'],
+					'user_login' => $user['user_login'],
+					'type_login' => $user['type_login']
 				];
 				$this->session->set_userdata($data);
 				redirect('dashboard');
