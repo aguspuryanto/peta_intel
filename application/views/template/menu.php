@@ -2,10 +2,11 @@
             $listMenu = [
                 array(
                     'title' => 'DATA PEMILU - PRESIDEN',
-                    'url' => 'pemilu/pilpress',
+                    'url' => 'pilpres',
                     'show_menu' => false,
                     'submenu' => [
-                        array('title' => 'Tambah Data', 'link' => '#')
+                        array('title' => 'Input Data', 'link' => 'create'),
+                        array('title' => 'Lihat Data', 'link' => 'index')
                     ]
                 ),
                 array(
@@ -117,14 +118,14 @@
                     $submenu = '<div id="collapse' . $x . '" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">';
                             foreach($menu['submenu'] as $smenu) {
-                                $submenu .= '<a class="collapse-item" href="#">' . $smenu['title'] . '</a>';
+                                $submenu .= '<a class="collapse-item" href="'. base_url($menu['url']) . '/' . $smenu['link'] . '">' . $smenu['title'] . '</a>';
                             }                       
                             $submenu .= '</div>
                     </div>';
                 endif;
 
                 echo '<li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse' . $x . '"
+                    <a class="nav-link collapsed" href="'. base_url($menu['url']) . '" data-toggle="collapse" data-target="#collapse' . $x . '"
                         aria-expanded="true" aria-controls="#collapse' . $x . '">
                         <i class="fas fa-fw fa-cog"></i>
                         <span>' . $menu['title'] . '</span>
