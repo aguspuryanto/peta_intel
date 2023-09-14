@@ -68,22 +68,26 @@
 
       <!-- Modal body -->
       <div class="modal-body">
-        <form action="">
+        <?=form_open('', array('id' => 'formPilpres', 'role' => 'form'));?>
             <div class="form-group">
                 <label for="email">Kecamatan</label>
-                <input type="text" class="form-control" placeholder="Enter Kecamatan" id="kecamatan">
+                <?php //$options = array('' => 'Pilih Tahap', 'P-18' => 'P-18', 'P-19' => 'P-19', 'P-21' => 'P-21'); ?>
+                <?=form_dropdown('kecamatan', $listKab, '', array('class' => 'form-control', 'id' => 'input-kecamatan'));?>
+                <div id="error"></div>
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="pwd">Nama Capres 1</label>
                         <input type="text" name="nama_capres" class="form-control" placeholder="Nama Capres">
+                        <div id="error"></div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="pwd">Jumlah Suara 1</label>
                         <input type="text" class="form-control" placeholder="Enter Jumlah Suara">
+                        <div id="error"></div>                        
                     </div>
                 </div>
             </div>
@@ -92,22 +96,24 @@
                     <div class="form-group">
                         <label for="pwd">Nama Capres 2</label>
                         <input type="text" name="nama_capres" class="form-control" placeholder="Nama Capres">
+                        <div id="error"></div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="pwd">Jumlah Suara 2</label>
                         <input type="text" class="form-control" placeholder="Enter Jumlah Suara">
+                        <div id="error"></div>
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+            <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+        <?=form_close();?>
       </div>
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary submit">Submit</button>
       </div>
 
     </div>
