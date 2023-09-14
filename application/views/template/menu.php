@@ -4,46 +4,132 @@
                     'title' => 'DATA PEMILU - PRESIDEN',
                     'url' => 'pemilu/pilpress',
                     'show_menu' => false,
-                    'submenu' => array('title' => '', 'link' => '#')
+                    'submenu' => [
+                        array('title' => 'Tambah Data', 'link' => '#')
+                    ]
                 ),
                 array(
                     'title' => 'DATA PEMILU - KEPALA DAERAH',
                     'url' => 'pemilu/pilkada',
                     'show_menu' => false,
-                    'submenu' => array('title' => '', 'link' => '#')
+                    'submenu' => [
+                        array('title' => 'Tambah Data', 'link' => '#')
+                    ]
                 ),
                 array(
                     'title' => 'DATA PEMILU - DPRD',
                     'url' => 'pemilu/pileg',
                     'show_menu' => false,
-                    'submenu' => array('title' => '', 'link' => '#')
+                    'submenu' => array(
+                        array('title' => 'Tambah Data', 'link' => '#')
+                    )
                 ),
-                array('title' => 'PENYULUHAN DAN PENERANGAN HUKUM'),
-                array('title' => 'POLITIK, SOSIAL BUDAYA DAN SDO'),
-                array('title' => 'PENY.KEU. NEGARA DAN P. TINDAK PIDANA'),
-                array('title' => 'KASI A'),
-                array('title' => 'KASI B'),
-                array('title' => 'KASI C'),
-                array('title' => 'KASI D'),
-                array('title' => 'KASI E'),
-                array('title' => 'KASI PENKUM'),
+                array(
+                    'title' => 'PENYULUHAN DAN PENERANGAN HUKUM',
+                    'url' => 'pemilu/pileg',
+                ),
+                array(
+                    'title' => 'POLITIK, SOSIAL BUDAYA DAN SDO',
+                    'url' => 'pemilu/pileg',
+                ),
+                array(
+                    'title' => 'PENY.KEU. NEGARA DAN P. TINDAK PIDANA',
+                    'url' => 'pemilu/pileg',
+                ),
+                array(
+                    'title' => 'KASI A',
+                    'url' => '#',
+                    'show_menu' => false,
+                    'submenu' => array(
+                        array('title' => 'Pemerintahan', 'link' => '#'),
+                        array('title' => 'Stakeholder & Obyek Vital', 'link' => '#'),
+                        array('title' => 'Pengamanan Sumber Daya Organisasi', 'link' => '#'),
+                        array('title' => 'Potensi Ancaman', 'link' => '#'),
+                        array('title' => 'Peta Intelijen', 'link' => '#'),
+                        array('title' => 'Perda', 'link' => '#'),
+                        array('title' => 'Pergub', 'link' => '#'),
+                    )
+                ),
+                array(
+                    'title' => 'KASI B',
+                    'url' => '#',
+                    'show_menu' => false,
+                    'submenu' => array(
+                        array('title' => 'Sosial', 'link' => '#'),
+                        array('title' => 'Budaya', 'link' => '#'),
+                        array('title' => 'Kemasyarakatan', 'link' => '#'),
+                        array('title' => 'Potensi Ancaman', 'link' => '#'),
+                        array('title' => 'Peta Intelijen', 'link' => '#'),
+                    )
+                ),
+                array(
+                    'title' => 'KASI C',
+                    'url' => '#',
+                    'show_menu' => false,
+                    'submenu' => array(
+                        array('title' => 'Perdagangan', 'link' => '#'),
+                        array('title' => 'Industri', 'link' => '#'),
+                        array('title' => 'Perbankan dan Investasi', 'link' => '#'),
+                        array('title' => 'Keuangan Daerah', 'link' => '#'),
+                        array('title' => 'Potensi Ancaman', 'link' => '#'),
+                        array('title' => 'Peta Intelijen', 'link' => '#'),
+                    )
+                ),
+                array(
+                    'title' => 'KASI D',
+                    'url' => '#',
+                    'show_menu' => false,
+                    'submenu' => array(
+                        array('title' => 'Daftar Pendampingan', 'link' => '#'),
+                        array('title' => 'Potensi Ancaman', 'link' => '#'),
+                        array('title' => 'Peta Intelijen', 'link' => '#'),
+                    )
+                ),
+                array(
+                    'title' => 'KASI E',
+                    'url' => '#',
+                    'show_menu' => false,
+                    'submenu' => array(
+                        array('title' => 'Lapinhar-Lapinsus-Lapopsin', 'link' => '#'),
+                        array('title' => 'Potensi Ancaman', 'link' => '#'),
+                        array('title' => 'Peta Intelijen', 'link' => '#'),
+                        array('title' => 'Kirka', 'link' => '#'),
+                    )
+                ),
+                array(
+                    'title' => 'KASI PENKUM',
+                    'url' => '#',
+                    'show_menu' => false,
+                    'submenu' => array(
+                        array('title' => 'Data Grafik', 'link' => '#'),
+                        array('title' => 'Peta Intelijen', 'link' => '#'),
+                    )
+                ),
             ];
             ?>
             <!-- Nav Item - Pages Collapse Menu -->
             <?php 
             $x=0;
             foreach($listMenu as $menu) {
+                // submenu
+                // $submenu = '';
+                if(isset($menu['submenu']) && $menu['submenu']) :
+                    $submenu = '<div id="collapse' . $x . '" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">';
+                            foreach($menu['submenu'] as $smenu) {
+                                $submenu .= '<a class="collapse-item" href="#">' . $smenu['title'] . '</a>';
+                            }                       
+                            $submenu .= '</div>
+                    </div>';
+                endif;
+
                 echo '<li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse' . $x . '"
                         aria-expanded="true" aria-controls="#collapse' . $x . '">
                         <i class="fas fa-fw fa-cog"></i>
                         <span>' . $menu['title'] . '</span>
                     </a>
-                    <div id="collapse' . $x . '" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="#">Jadwal</a>
-                        </div>
-                    </div>
+                    ' . $submenu . '
                 </li>';
                 $x++;
             }

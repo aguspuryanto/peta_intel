@@ -17,6 +17,7 @@
 
 	<!-- Custom styles for this template-->
 	<link href="<?=base_url('assets/');?>css/sb-admin-2.min.css" rel="stylesheet">
+	<link href="<?=base_url('assets/');?>css/custom.css" rel="stylesheet">
 
 </head>
 
@@ -25,7 +26,12 @@
 	<!-- Page Wrapper -->
 	<div id="wrapper">
 
-		<?php $this->load->view('template/sidebar'); ?>
+		<?php 
+		// $islogin = is_logged_in();
+		// echo json_encode($islogin);
+		if ($this->session->userdata('email')) {
+			$this->load->view('template/sidebar');
+		} ?>
 
 		<!-- Content Wrapper -->
 		<div id="content-wrapper" class="d-flex flex-column">

@@ -5,7 +5,8 @@ function is_logged_in($role = false)
 {
     $ci = get_instance();
     if (!$ci->session->userdata('email')) {
-        redirect('auth');
+        // redirect('auth');
+        redirect('home');
     }
 
     if ($role) {
@@ -15,6 +16,8 @@ function is_logged_in($role = false)
 			redirect('auth/blocked');
 		}
     }
+
+    return $role;
 }
 
 function check_access($role_id, $menu_id)
