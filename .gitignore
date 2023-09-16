@@ -33,3 +33,4 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 # untuk kemudahanmu
 # application/config/database.php
 .env.development
+/uploads/*

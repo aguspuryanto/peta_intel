@@ -235,9 +235,11 @@ function get_form_input($model, $field="", $options=array()) {
             $form .= form_textarea($attributes);
 
         } elseif(isset($attributes['type']) && $attributes['type'] === 'password') {
+            if ($field) $attributes['name'] = $field;
             $form .= form_input($attributes);
 
         } elseif(isset($attributes['type']) && $attributes['type'] === 'file') {
+            if ($field) $attributes['name'] = $field;
             $form .= form_input($attributes);
 
         } else {

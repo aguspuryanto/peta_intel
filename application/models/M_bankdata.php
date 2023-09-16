@@ -1,16 +1,16 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class M_pilkada extends CI_Model {
-    public $table_name = "epak_pilkada";
+class M_bankdata extends CI_Model {
+    public $table_name = "epak_bankdata";
 
     public function rules()
     {
         return [
             ['field' => 'nama_file', 'label' => 'Nama File', 'rules' => ''],
             ['field' => 'link_file', 'label' => 'File'],
+            ['field' => 'kategori', 'label' => 'Kategori', 'rules' => ''],
             ['field' => 'sub_kategori', 'label' => 'Sub Kategori', 'rules' => ''],
-            ['field' => 'kategori', 'label' => 'Kategori', 'rules' => '']
         ];
     }    
 

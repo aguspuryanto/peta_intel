@@ -21,21 +21,18 @@
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
-                            <?=get_header_table_custom($model, ['prov_id', 'kec_id']); ?>
+                            <?=get_header_table_custom($model, ['kategori', 'sub_kategori']); ?>
                         </thead>
                         <tbody>
                         <?php
                         if($dataProvider) :
                             $id=1;
                             foreach($dataProvider as $row) {
+                                $dokUrl = ($row->link_file) ? '<a target="_blank" href="'.base_url('kasia/download/') . $row->link_file.'" class="btn btn-link btn-block">Dokumen</a>' : '#';
                                 echo '<tr>
                                     <td>'.$id.'</td>
-                                    <td>'.$row->thn.'</td>
-                                    <td>'.$row->nama_kab.'</td>
-                                    <td>'.$row->nama_gub1.'</td>
-                                    <td>'.$row->jmlsuara_gub1.'</td>
-                                    <td>'.$row->nama_gub2.'</td>
-                                    <td>'.$row->jmlsuara_gub2.'</td>
+                                    <td>'.$row->nama_file.'</td>
+                                    <td>'.$dokUrl.'</td>
                                     <td style="min-width:115px">
                                         <div class="btn-group" role="group">
                                             <button type="button" data-id="'.$row->id.'" class="btn btn-default btnEdit" data-toggle="modal" data-target="#myModalPerkara">Edit</button>
@@ -62,60 +59,35 @@
 
       <!-- Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title">Input Data Pilpres</h4>
+        <h4 class="modal-title"><?=@$title; ?></h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
 
       <!-- Modal body -->
       <div class="modal-body">
-        <?=form_open('', array('id' => 'formPilpres', 'role' => 'form'));?>
-            <div class="form-group">
-                <label>Tahun Pilpres</label>
-                <?php $listThn = array('2024' => '2024', '2019' => '2019'); ?>
-                <?=form_dropdown('thn', $listThn, '', array('class' => 'form-control', 'id' => 'input-thn'));?>
-                <div id="error"></div>
-            </div>
-            <div class="form-group">
-                <label>Kabupaten</label>
-                <?=form_dropdown('kab_id', $listKab, '', array('class' => 'form-control', 'id' => 'input-kab_id'));?>
-                <div id="error"></div>
-            </div>
-            <!-- <div class="form-group">
-                <label>Kecamatan</label>
-                <?=form_dropdown('kec_id', $listKab, '', array('class' => 'form-control', 'id' => 'input-kec_id'));?>
-                <div id="error"></div>
-            </div> -->
-            <div class="row">
-                <div class="col-md-6">
-                    <?=get_form_input($model, 'nama_capres1'); ?>
-                </div>
-                <div class="col-md-6">
-                    <?=get_form_input($model, 'jmlsuara_capres1'); ?>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <?=get_form_input($model, 'nama_capres2'); ?>
-                </div>
-                <div class="col-md-6">
-                    <?=get_form_input($model, 'jmlsuara_capres2'); ?>
-                </div>
-            </div>
-            <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+        <?=form_open_multipart('', array('id' => 'formDokumen', 'role' => 'form'));?>
+            <?=get_form_input($model, 'nama_file'); ?>
+            <?=get_form_input($model, 'link_file', array('type' => 'file')); ?>
+
+            <?=form_hidden('kategori', $kategori); ?>
+            <?=form_hidden('sub_kategori', $sub_kategori); ?>
+
+            <button type="submit" class="btn btn-primary" id="formDokumen">Simpan Data</button>
         <?=form_close();?>
       </div>
 
       <!-- Modal footer -->
-      <div class="modal-footer">
+      <!-- <div class="modal-footer">
         <button type="button" class="btn btn-primary" id="form-submit">Submit</button>
-      </div>
+      </div> -->
 
     </div>
   </div>
 </div>
 
 <?php
-$Urladd = base_url('pilpres/create');
+$Urldokumen = base_url('kasia/upload');
+$Urlremove = base_url('kasia/remove');
 ?>
 
 <script>
@@ -123,37 +95,52 @@ $(document).ready(function () {
     var table = $('#dataTable').DataTable();
     $('#error').html(" ");
 
-    $('#form-submit').on('click', function (e) {
+    $('form#formDokumen').submit(function (e) {
         e.preventDefault();
+
+        var fd = new FormData();
+        var files = $(formDokumen).find('#input-link_file')[0].files[0];
+        fd.append('file',files);
 
         $.ajax({
             type: "POST",
-            url: "<?=$Urladd;?>", 
-            data: $("#formPilpres").serialize(),
-            dataType: "json",  
+            url: "<?=$Urldokumen; ?>", 
+            // data: fd,
+            data:new FormData(this),
+            contentType: false,
+            processData: false,
+            cache: false,
+            async: false,
             beforeSend : function(xhr, opts){
-                // $('#form-submit').text('Loading...').prop("disabled", true);
+                // $(formDokumen).text('Loading...').prop("disabled", true);
             },
             success: function(data){
                 console.log(data, "data");
-                $(this).prop("disabled", false);
-                if(data.success == true){
+                if(data.success) {
+                    $('#myModal').modal('hide'); 
                     setTimeout(function(){
                         window.location.reload();
-                    }, 3000);
+                    }, 1000);
                 } else {
-                    $.each(data, function(key, value) {
-                        $('#input-' + key).addClass('is-invalid');
-                        $('#input-' + key).parents('.form-group').find('#error').html(value);
-                    });
+                    $('<p class="text-danger">' + data.message + '</p>').insertBefore('#formDokumen');
                 }
             }
         });
     });
 
-    $('#form input').on('keyup', function () { 
-        $(this).removeClass('is-invalid').addClass('is-valid');
-        $(this).parents('.form-group').find('#error').html(" ");
+    $(document).on('click', '.btnRemove', function (e) {
+        e.preventDefault();
+        var dataId = $(this).attr("data-id");
+        console.log(dataId, '_dataId');
+
+        if (confirm("Apakah anda yakin ingin menghapus data ini?")==true){
+            // $(this).closest("tr").remove();
+            table.row( $(this).parents('tr') ).remove().draw();
+            $.post("<?=$Urlremove;?>/", {id: dataId}, function(result){
+                console.log(result, "_result");
+            });
+        };
     });
+    
 });
 </script>
