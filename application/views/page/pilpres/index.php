@@ -125,3 +125,47 @@
     </div>
   </div>
 </div>
+
+<?php
+$Urladd = base_url('pilpres/create');
+?>
+
+<script>
+$(document).ready(function () {
+    var table = $('#dataTable').DataTable();
+    $('#error').html(" ");
+
+    $('#form-submit').on('click', function (e) {
+        e.preventDefault();
+
+        $.ajax({
+            type: "POST",
+            url: "<?=$Urladd;?>", 
+            data: $("#form").serialize(),
+            dataType: "json",  
+            beforeSend : function(xhr, opts){
+                $('#form-submit').text('Loading...').prop("disabled", true);
+            },
+            success: function(data){
+                console.log(data, "data");
+                $(this).prop("disabled", false);
+                if(data.success == true){
+                    setTimeout(function(){
+                        window.location.reload();
+                    }, 3000);
+                } else {
+                    $.each(data, function(key, value) {
+                        $('#input-' + key).addClass('is-invalid');
+                        $('#input-' + key).parents('.form-group').find('#error').html(value);
+                    });
+                }
+            }
+        });
+    });
+
+    $('#form input').on('keyup', function () { 
+        $(this).removeClass('is-invalid').addClass('is-valid');
+        $(this).parents('.form-group').find('#error').html(" ");
+    });
+});
+</script>

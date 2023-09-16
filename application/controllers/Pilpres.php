@@ -31,10 +31,37 @@ class Pilpres extends CI_Controller {
 
 	public function create()
 	{
-		$data['title'] = "Pemilu Pilpres";
-		$data['konten'] = "index";
+		// $data['title'] = "Pemilu Pilpres";
+		// $data['konten'] = "index";
 		
-		$this->template->views('page/pilpres/create', $data);
+		$this->load->library('form_validation');
+		
+		$model = $this->M_perkara;
+
+        $json = array();
+		// $this->form_validation->set_rules('pulbaket_no', 'PULBAKET NO', 'required');
+		$this->form_validation->set_rules($model->rules());
+		$this->form_validation->set_message('required', 'Mohon lengkapi {field}!');
+
+		if (!$this->form_validation->run()) {			
+			foreach($model->rules() as $key => $val) {
+				$json = array_merge($json, array(
+					$val['field'] => form_error($val['field'], '<p class="mt-3 text-danger">', '</p>')
+				));
+			}
+		} else {
+			$data = array();			
+
+			$model->save($data);
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+			$json = array('success' => true, 'message' => 'Berhasil disimpan');
+		}
+
+		$this->output
+        ->set_content_type('application/json')
+        ->set_output(json_encode($json));
+		
+		// $this->template->views('page/pilpres/create', $data);
 	}
 
 	public function master() {
