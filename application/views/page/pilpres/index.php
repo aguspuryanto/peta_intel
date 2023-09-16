@@ -62,13 +62,19 @@
 
       <!-- Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title">Modal Heading</h4>
+        <h4 class="modal-title">Input Data Pilpres</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
 
       <!-- Modal body -->
       <div class="modal-body">
         <?=form_open('', array('id' => 'formPilpres', 'role' => 'form'));?>
+            <div class="form-group">
+                <label for="email">Tahun Pilpres</label>
+                <?php $listThn = array('2024' => '2024', '2019' => '2019'); ?>
+                <?=form_dropdown('tahun', $listThn, '', array('class' => 'form-control', 'id' => 'input-tahun'));?>
+                <div id="error"></div>
+            </div>
             <div class="form-group">
                 <label for="email">Kecamatan</label>
                 <?php //$options = array('' => 'Pilih Tahap', 'P-18' => 'P-18', 'P-19' => 'P-19', 'P-21' => 'P-21'); ?>

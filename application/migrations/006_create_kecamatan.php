@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); 
 
-class Migration_create_meeting extends CI_Migration {
+class Migration_create_kecamatan extends CI_Migration {
     private $tableName = 'epak_kecamatan';
     public function up() { 
             $this->dbforge->add_field(array(
@@ -26,7 +26,7 @@ class Migration_create_meeting extends CI_Migration {
         ));
         $this->dbforge->add_key('id', TRUE);
         if (!$this->db->table_exists($this->tableName)) {
-            $this->dbforge->create_table($this->tableName, FALSE, array('ENGINE' => 'InnoDB'));
+            $this->dbforge->create_table($this->tableName, FALSE);
         }
     }
 
