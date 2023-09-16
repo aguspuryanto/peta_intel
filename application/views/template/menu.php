@@ -54,7 +54,7 @@
                     'url' => 'kasia',
                     'show_menu' => false,
                     'submenu' => array(
-                        array('title' => 'Pemerintahan', 'link' => 'pemerintahan'),
+                        array('title' => 'Pemerintahan', 'link' => 'Pemerintahan'),
                         array('title' => 'Stakeholder & Obyek Vital', 'link' => 'stakeholder'),
                         array('title' => 'Pengamanan Sumber Daya Organisasi', 'link' => 'sdo'),
                         array('title' => 'Potensi Ancaman', 'link' => 'ancaman'),
@@ -65,57 +65,57 @@
                 ),
                 array(
                     'title' => 'KASI B',
-                    'url' => '#',
+                    'url' => 'kasib',
                     'show_menu' => false,
                     'submenu' => array(
-                        array('title' => 'Sosial', 'link' => '#'),
-                        array('title' => 'Budaya', 'link' => '#'),
-                        array('title' => 'Kemasyarakatan', 'link' => '#'),
-                        array('title' => 'Potensi Ancaman', 'link' => '#'),
-                        array('title' => 'Peta Intelijen', 'link' => '#'),
+                        array('title' => 'Sosial', 'link' => 'Sosial'),
+                        array('title' => 'Budaya', 'link' => 'Budaya'),
+                        array('title' => 'Kemasyarakatan', 'link' => 'Kemasyarakatan'),
+                        array('title' => 'Potensi Ancaman', 'link' => 'PotensiAncaman'),
+                        array('title' => 'Peta Intelijen', 'link' => 'PetaIntelijen'),
                     )
                 ),
                 array(
                     'title' => 'KASI C',
-                    'url' => '#',
+                    'url' => 'kasic',
                     'show_menu' => false,
                     'submenu' => array(
-                        array('title' => 'Perdagangan', 'link' => '#'),
-                        array('title' => 'Industri', 'link' => '#'),
-                        array('title' => 'Perbankan dan Investasi', 'link' => '#'),
-                        array('title' => 'Keuangan Daerah', 'link' => '#'),
-                        array('title' => 'Potensi Ancaman', 'link' => '#'),
-                        array('title' => 'Peta Intelijen', 'link' => '#'),
+                        array('title' => 'Perdagangan', 'link' => 'Perdagangan'),
+                        array('title' => 'Industri', 'link' => 'Industri'),
+                        array('title' => 'Perbankan dan Investasi', 'link' => 'Perbankan'),
+                        array('title' => 'Keuangan Daerah', 'link' => 'KeuanganDaerah'),
+                        array('title' => 'Potensi Ancaman', 'link' => 'PotensiAncaman'),
+                        array('title' => 'Peta Intelijen', 'link' => 'PetaIntelijen'),
                     )
                 ),
                 array(
                     'title' => 'KASI D',
-                    'url' => '#',
+                    'url' => 'kasid',
                     'show_menu' => false,
                     'submenu' => array(
-                        array('title' => 'Daftar Pendampingan', 'link' => '#'),
-                        array('title' => 'Potensi Ancaman', 'link' => '#'),
-                        array('title' => 'Peta Intelijen', 'link' => '#'),
+                        array('title' => 'Daftar Pendampingan', 'link' => 'DaftarPendampingan'),
+                        array('title' => 'Potensi Ancaman', 'link' => 'PotensiAncaman'),
+                        array('title' => 'Peta Intelijen', 'link' => 'PetaIntelijen'),
                     )
                 ),
                 array(
                     'title' => 'KASI E',
-                    'url' => '#',
+                    'url' => 'kasie',
                     'show_menu' => false,
                     'submenu' => array(
-                        array('title' => 'Lapinhar-Lapinsus-Lapopsin', 'link' => '#'),
-                        array('title' => 'Potensi Ancaman', 'link' => '#'),
-                        array('title' => 'Peta Intelijen', 'link' => '#'),
-                        array('title' => 'Kirka', 'link' => '#'),
+                        array('title' => 'Lapinhar-Lapinsus-Lapopsin', 'link' => 'Lapinhar'),
+                        array('title' => 'Potensi Ancaman', 'link' => 'PotensiAncaman'),
+                        array('title' => 'Peta Intelijen', 'link' => 'PetaIntelijen'),
+                        array('title' => 'Kirka', 'link' => 'Kirka'),
                     )
                 ),
                 array(
                     'title' => 'KASI PENKUM',
-                    'url' => '#',
+                    'url' => 'kasi-penkum',
                     'show_menu' => false,
                     'submenu' => array(
-                        array('title' => 'Data Grafik', 'link' => '#'),
-                        array('title' => 'Peta Intelijen', 'link' => '#'),
+                        array('title' => 'Data Grafik', 'link' => 'DataGrafik'),
+                        array('title' => 'Peta Intelijen', 'link' => 'PetaIntelijen'),
                     )
                 ),
             ];
