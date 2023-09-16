@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); 
 
-class Migration_create_pilpres extends CI_Migration {
-    private $tableName = 'epak_pilpres';
+class Migration_create_pilkada extends CI_Migration {
+    private $tableName = 'epak_pilkada';
     public function up() { 
             $this->dbforge->add_field(array(
             'id' => array(
@@ -29,19 +29,19 @@ class Migration_create_pilpres extends CI_Migration {
                 'constraint' => '50',
                 'null' => TRUE
             ),
-            'nama_capres1' => array(
+            'nama_gub1' => array(
                 'type' => 'VARCHAR',
                 'constraint' => '150'
             ),
-            'jmlsuara_capres1' => array(
+            'jmlsuara_gub1' => array(
                 'type' => 'VARCHAR',
                 'constraint' => '150'
             ),
-            'nama_capres2' => array(
+            'nama_gub2' => array(
                 'type' => 'VARCHAR',
                 'constraint' => '150'
             ),
-            'jmlsuara_capres2' => array(
+            'jmlsuara_gub2' => array(
                 'type' => 'VARCHAR',
                 'constraint' => '150'
             ),

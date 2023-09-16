@@ -5,24 +5,24 @@
                     'url' => 'pilpres',
                     'show_menu' => false,
                     'submenu' => [
-                        array('title' => 'Input Data', 'link' => 'create'),
+                        // array('title' => 'Input Data', 'link' => 'create'),
                         array('title' => 'Lihat Data', 'link' => 'index')
                     ]
                 ),
                 array(
                     'title' => 'DATA PEMILU - KEPALA DAERAH',
-                    'url' => 'pemilu/pilkada',
+                    'url' => 'pilkada',
                     'show_menu' => false,
                     'submenu' => [
-                        array('title' => 'Tambah Data', 'link' => '#')
+                        array('title' => 'Lihat Data', 'link' => 'index')
                     ]
                 ),
                 array(
                     'title' => 'DATA PEMILU - DPRD',
-                    'url' => 'pemilu/pileg',
+                    'url' => 'pileg',
                     'show_menu' => false,
                     'submenu' => array(
-                        array('title' => 'Tambah Data', 'link' => '#')
+                        array('title' => 'Lihat Data', 'link' => 'index')
                     )
                 ),
                 array(

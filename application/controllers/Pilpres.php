@@ -25,6 +25,7 @@ class Pilpres extends CI_Controller {
 		}
 
 		$data['model'] = $this->M_pilpres;
+		$data['dataProvider'] = $this->M_pilpres->select_all();
 		
 		$this->template->views('page/pilpres/index', $data);
 	}
