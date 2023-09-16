@@ -1,14 +1,20 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class M_user extends CI_Model {
-    public $table_name = "epak_users";
+class M_pilpres extends CI_Model {
+    public $table_name = "epak_pilpres";
 
     public function rules()
     {
         return [
-            ['field' => 'capres', 'label' => 'Calon Presiden'],
-            ['field' => 'suara1', 'label' => 'Jumlah Suara'],
+            ['field' => 'thn', 'label' => 'Tahun'],
+            ['field' => 'prov_id', 'label' => 'Provinsi'],
+            ['field' => 'kab_id', 'label' => 'Kabupaten'],
+            ['field' => 'kec_id', 'label' => 'kecamatan'],
+            ['field' => 'nama_capres1', 'label' => 'Nama Capres 1'],
+            ['field' => 'jmlsuara_capres1', 'label' => 'Jumlah SuaraCapres 1'],
+            ['field' => 'nama_capres2', 'label' => 'Nama Capres 2'],
+            ['field' => 'jmlsuara_capres2', 'label' => 'Jumlah SuaraCapres 2'],
         ];
     }    
 
