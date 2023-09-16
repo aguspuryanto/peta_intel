@@ -51,16 +51,16 @@
                 ),
                 array(
                     'title' => 'KASI A',
-                    'url' => '#',
+                    'url' => 'kasia',
                     'show_menu' => false,
                     'submenu' => array(
-                        array('title' => 'Pemerintahan', 'link' => '#'),
-                        array('title' => 'Stakeholder & Obyek Vital', 'link' => '#'),
-                        array('title' => 'Pengamanan Sumber Daya Organisasi', 'link' => '#'),
-                        array('title' => 'Potensi Ancaman', 'link' => '#'),
-                        array('title' => 'Peta Intelijen', 'link' => '#'),
-                        array('title' => 'Perda', 'link' => '#'),
-                        array('title' => 'Pergub', 'link' => '#'),
+                        array('title' => 'Pemerintahan', 'link' => 'pemerintahan'),
+                        array('title' => 'Stakeholder & Obyek Vital', 'link' => 'stakeholder'),
+                        array('title' => 'Pengamanan Sumber Daya Organisasi', 'link' => 'sdo'),
+                        array('title' => 'Potensi Ancaman', 'link' => 'ancaman'),
+                        array('title' => 'Peta Intelijen', 'link' => 'peta'),
+                        array('title' => 'Perda', 'link' => 'perda'),
+                        array('title' => 'Pergub', 'link' => 'pergub'),
                     )
                 ),
                 array(
