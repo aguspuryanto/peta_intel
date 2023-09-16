@@ -32,10 +32,10 @@
                                     <td>'.$id.'</td>
                                     <td>'.$row->thn.'</td>
                                     <td>'.$row->nama_kab.'</td>
-                                    <td>'.$row->nama_capres1.'</td>
-                                    <td>'.$row->jmlsuara_capres1.'</td>
-                                    <td>'.$row->nama_capres2.'</td>
-                                    <td>'.$row->jmlsuara_capres2.'</td>
+                                    <td>'.$row->nama_gub1.'</td>
+                                    <td>'.$row->jmlsuara_gub1.'</td>
+                                    <td>'.$row->nama_gub2.'</td>
+                                    <td>'.$row->jmlsuara_gub2.'</td>
                                     <td style="min-width:115px">
                                         <div class="btn-group" role="group">
                                             <button type="button" data-id="'.$row->id.'" class="btn btn-default btnEdit" data-toggle="modal" data-target="#myModalPerkara">Edit</button>

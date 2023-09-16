@@ -21,21 +21,33 @@
                     'title' => 'DATA PEMILU - DPRD',
                     'url' => 'pileg',
                     'show_menu' => false,
-                    'submenu' => array(
+                    'submenu' => [
                         array('title' => 'Lihat Data', 'link' => 'index')
-                    )
+                    ]
                 ),
                 array(
                     'title' => 'PENYULUHAN DAN PENERANGAN HUKUM',
-                    'url' => 'pemilu/pileg',
+                    'url' => 'penyuluhan',
+                    'show_menu' => false,
+                    'submenu' => [
+                        array('title' => 'Lihat Data', 'link' => 'index')
+                    ]
                 ),
                 array(
                     'title' => 'POLITIK, SOSIAL BUDAYA DAN SDO',
-                    'url' => 'pemilu/pileg',
+                    'url' => 'polsosbud',
+                    'show_menu' => false,
+                    'submenu' => [
+                        array('title' => 'Lihat Data', 'link' => 'index')
+                    ]
                 ),
                 array(
                     'title' => 'PENY.KEU. NEGARA DAN P. TINDAK PIDANA',
-                    'url' => 'pemilu/pileg',
+                    'url' => 'pkn',
+                    'show_menu' => false,
+                    'submenu' => [
+                        array('title' => 'Lihat Data', 'link' => 'index')
+                    ]
                 ),
                 array(
                     'title' => 'KASI A',
