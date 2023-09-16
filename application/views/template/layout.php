@@ -18,6 +18,12 @@
 	<!-- Custom styles for this template-->
 	<link href="<?=base_url('assets/');?>css/sb-admin-2.min.css" rel="stylesheet">
 	<link href="<?=base_url('assets/');?>css/custom.css" rel="stylesheet">
+	<link rel="stylesheet" href="<?=base_url('assets/'); ?>vendor/datatables/dataTables.bootstrap4.css">
+
+    <!-- css --> 
+    <?php echo @$_css; ?>
+
+	<script src="<?=base_url('assets/');?>vendor/jquery/jquery.min.js"></script>
 
 </head>
 

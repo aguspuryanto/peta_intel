@@ -11,20 +11,20 @@ class Pilpres extends CI_Controller {
 		$this->load->model('M_provinsi');
 		$this->load->model('M_kabupaten');
 		$this->load->model('M_kecamatan');
+		$this->load->model('M_pilpres');
     }
 
 	public function index()
 	{
 		$data['title'] = "Pemilu Pilpres";
 		$data['konten'] = "index";
-		$data['listKab'] = array();
-		
+		$data['listKab'] = array();		
 		$listKab = $this->M_kabupaten->select_all();
-		// echo json_encode($listKab);
 		foreach($listKab as $kab) {
-			// array_push($data['listKab'], array($kab->id, $kab->nama));
 			$data['listKab'][$kab->id] = $kab->nama;
 		}
+
+		$data['model'] = $this->M_pilpres;
 		
 		$this->template->views('page/pilpres/index', $data);
 	}
@@ -36,10 +36,9 @@ class Pilpres extends CI_Controller {
 		
 		$this->load->library('form_validation');
 		
-		$model = $this->M_perkara;
+		$model = $this->M_pilpres;
 
         $json = array();
-		// $this->form_validation->set_rules('pulbaket_no', 'PULBAKET NO', 'required');
 		$this->form_validation->set_rules($model->rules());
 		$this->form_validation->set_message('required', 'Mohon lengkapi {field}!');
 

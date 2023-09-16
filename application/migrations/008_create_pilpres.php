@@ -16,11 +16,13 @@ class Migration_create_pilpres extends CI_Migration {
             ),
             'prov_id' => array(
                 'type' => 'INT',
-                'constraint' => '50'
+                'constraint' => '50',
+                'null' => TRUE
             ),
             'kab_id' => array(
                 'type' => 'INT',
-                'constraint' => '50'
+                'constraint' => '50',
+                'null' => TRUE
             ),
             'kec_id' => array(
                 'type' => 'INT',

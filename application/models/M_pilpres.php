@@ -7,13 +7,13 @@ class M_pilpres extends CI_Model {
     public function rules()
     {
         return [
-            ['field' => 'thn', 'label' => 'Tahun'],
+            ['field' => 'thn', 'label' => 'Tahun', 'rules' => 'required'],
             ['field' => 'prov_id', 'label' => 'Provinsi'],
             ['field' => 'kab_id', 'label' => 'Kabupaten'],
-            ['field' => 'kec_id', 'label' => 'kecamatan'],
-            ['field' => 'nama_capres1', 'label' => 'Nama Capres 1'],
+            ['field' => 'kec_id', 'label' => 'kecamatan', 'rules' => 'required'],
+            ['field' => 'nama_capres1', 'label' => 'Nama Capres 1', 'rules' => 'required'],
             ['field' => 'jmlsuara_capres1', 'label' => 'Jumlah SuaraCapres 1'],
-            ['field' => 'nama_capres2', 'label' => 'Nama Capres 2'],
+            ['field' => 'nama_capres2', 'label' => 'Nama Capres 2', 'rules' => 'required'],
             ['field' => 'jmlsuara_capres2', 'label' => 'Jumlah SuaraCapres 2'],
         ];
     }    

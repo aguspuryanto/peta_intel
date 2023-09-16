@@ -70,47 +70,30 @@
       <div class="modal-body">
         <?=form_open('', array('id' => 'formPilpres', 'role' => 'form'));?>
             <div class="form-group">
-                <label for="email">Tahun Pilpres</label>
+                <label>Tahun Pilpres</label>
                 <?php $listThn = array('2024' => '2024', '2019' => '2019'); ?>
-                <?=form_dropdown('tahun', $listThn, '', array('class' => 'form-control', 'id' => 'input-tahun'));?>
+                <?=form_dropdown('thn', $listThn, '', array('class' => 'form-control', 'id' => 'input-thn'));?>
                 <div id="error"></div>
             </div>
             <div class="form-group">
-                <label for="email">Kecamatan</label>
-                <?php //$options = array('' => 'Pilih Tahap', 'P-18' => 'P-18', 'P-19' => 'P-19', 'P-21' => 'P-21'); ?>
-                <?=form_dropdown('kecamatan', $listKab, '', array('class' => 'form-control', 'id' => 'input-kecamatan'));?>
+                <label>Kecamatan</label>
+                <?=form_dropdown('kec_id', $listKab, '', array('class' => 'form-control', 'id' => 'input-kec_id'));?>
                 <div id="error"></div>
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="pwd">Nama Capres 1</label>
-                        <input type="text" name="nama_capres" class="form-control" placeholder="Nama Capres">
-                        <div id="error"></div>
-                    </div>
+                    <?=get_form_input($model, 'nama_capres1'); ?>
                 </div>
                 <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="pwd">Jumlah Suara 1</label>
-                        <input type="text" class="form-control" placeholder="Enter Jumlah Suara">
-                        <div id="error"></div>                        
-                    </div>
+                    <?=get_form_input($model, 'jmlsuara_capres1'); ?>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="pwd">Nama Capres 2</label>
-                        <input type="text" name="nama_capres" class="form-control" placeholder="Nama Capres">
-                        <div id="error"></div>
-                    </div>
+                    <?=get_form_input($model, 'nama_capres2'); ?>
                 </div>
                 <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="pwd">Jumlah Suara 2</label>
-                        <input type="text" class="form-control" placeholder="Enter Jumlah Suara">
-                        <div id="error"></div>
-                    </div>
+                    <?=get_form_input($model, 'jmlsuara_capres2'); ?>
                 </div>
             </div>
             <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
@@ -119,7 +102,7 @@
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary submit">Submit</button>
+        <button type="button" class="btn btn-primary" id="form-submit">Submit</button>
       </div>
 
     </div>
@@ -141,10 +124,10 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "<?=$Urladd;?>", 
-            data: $("#form").serialize(),
+            data: $("#formPilpres").serialize(),
             dataType: "json",  
             beforeSend : function(xhr, opts){
-                $('#form-submit').text('Loading...').prop("disabled", true);
+                // $('#form-submit').text('Loading...').prop("disabled", true);
             },
             success: function(data){
                 console.log(data, "data");
