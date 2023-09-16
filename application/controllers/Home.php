@@ -11,7 +11,7 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$data['title'] = "Home";
+		$data['title'] = "PETA INTELIJEN & BANK DATA INTEL";
 		$data['konten'] = "index";
 		
 		// $this->load->view('template/layout', $data);

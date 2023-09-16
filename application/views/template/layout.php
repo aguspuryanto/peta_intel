@@ -47,6 +47,8 @@
 						<i class="fa fa-bars"></i>
 					</button>
 
+					<?php
+					if ($this->session->userdata('email')) { ?>
 					<!-- Topbar Navbar -->
 					<ul class="navbar-nav ml-auto">
 
@@ -71,6 +73,7 @@
 						</li>
 
 					</ul>
+					<?php } ?>
 
 				</nav>
 				<!-- End of Topbar -->

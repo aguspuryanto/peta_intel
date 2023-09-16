@@ -9,7 +9,10 @@ class Template {
 	}
 
 	function views($template = NULL, $data = NULL) {
-		if ($template != NULL) {
+		if($template == 'page/home') {
+			echo $this->_ci->load->view($template, $data, TRUE);
+			return;
+		} else if ($template != NULL) {
             // echo json_encode($data);
 			$data['_content']		= $this->_ci->load->view($template, $data, TRUE);
 			
