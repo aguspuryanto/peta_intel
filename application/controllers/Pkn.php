@@ -51,8 +51,10 @@ class Pkn extends CI_Controller {
 		} else {
 			$data = array(
 				'kecamatan' => $this->input->post('kecamatan'),
+				'pkn' => $this->input->post('pkn'),
 				'jenis' => $this->input->post('jenis'),
-				'lokasi' => $this->input->post('lokasi')
+				'lokasi' => $this->input->post('lokasi'),
+				'perkara' => $this->input->post('perkara'),
 			);
 
 			if($this->input->post('id')) {
