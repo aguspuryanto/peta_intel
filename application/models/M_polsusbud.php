@@ -7,10 +7,9 @@ class M_polsusbud extends CI_Model {
     public function rules()
     {
         return [
-            ['field' => 'nama_file', 'label' => 'Nama File', 'rules' => ''],
-            ['field' => 'link_file', 'label' => 'File'],
-            ['field' => 'kategori', 'label' => 'Kategori', 'rules' => ''],
-            ['field' => 'sub_kategori', 'label' => 'Sub Kategori', 'rules' => ''],
+            ['field' => 'kecamatan', 'label' => 'Nama Daerah', 'rules' => 'required'],
+            ['field' => 'jenis', 'label' => 'Jenis', 'rules' => 'required'],
+            ['field' => 'perkara', 'label' => 'Perkara', 'rules' => 'required'],
         ];
     }    
 
