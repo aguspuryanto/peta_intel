@@ -61,7 +61,13 @@ class Pilpres extends CI_Controller {
 				'jmlsuara_capres2' => $this->input->post('jmlsuara_capres2'),
 			);			
 
-			$model->save($data);
+			if($this->input->post('id')) {
+				$id = $this->input->post('id');
+				$model->update($id, $data);				
+			} else {
+				$model->save($data);
+			}
+			
             $this->session->set_flashdata('success', 'Berhasil disimpan');
 			$json = array('success' => true, 'message' => 'Berhasil disimpan');
 		}
@@ -71,6 +77,38 @@ class Pilpres extends CI_Controller {
         ->set_output(json_encode($json));
 		
 		// $this->template->views('page/pilpres/create', $data);
+	}
+
+	public function view($id) {
+		$data['data'] = $this->M_pilpres->selectId($id);
+
+		$json = array();
+		if($data['data']) {
+			$json = array('success' => true, 'data' => $data['data']);
+		} else {
+			$json = array('success' => false, 'data' => []);
+		}
+
+		$this->output
+        ->set_content_type('application/json')
+        ->set_output(json_encode($json));
+	}
+
+	public function remove() {		
+		$json = array();
+		$model = $this->M_pilpres;
+
+		if($this->input->post('id')) {
+			$id = $this->input->post('id');
+			$model->delete($id);
+
+			$this->session->set_flashdata('success', 'Berhasil terhapus');
+			$json = array('success' => true, 'message' => 'Berhasil terhapus');
+		}
+
+		$this->output
+		->set_content_type('application/json')
+		->set_output(json_encode($json));
 	}
 
 	public function master() {
