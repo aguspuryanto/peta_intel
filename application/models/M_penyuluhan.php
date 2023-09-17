@@ -42,8 +42,9 @@ class M_penyuluhan extends CI_Model {
         if($options) {
             $this->db->where($options);
         }
-        
-        $data = $this->db->get($this->table_name);
+        $this->db->join('epak_kecamatan b', 'b.id = a.kecamatan');
+        $this->db->select('a.*, b.nama as nama_kec');
+        $data = $this->db->get($this->table_name . ' a');
         return $data->result();
     }
 

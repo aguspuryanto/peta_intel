@@ -30,12 +30,12 @@
                             foreach($dataProvider as $row) {
                                 echo '<tr>
                                     <td>'.$id.'</td>
-                                    <td>'.$row->kecamatan.'</td>
-                                    <td>'.$row->jenis.'</td>
+                                    <td>'.$row->nama_kec.'</td>
+                                    <td>'.strtoupper($row->jenis).'</td>
                                     <td>'.$row->lokasi.'</td>
                                     <td style="min-width:115px">
                                         <div class="btn-group" role="group">
-                                            <button type="button" data-id="'.$row->id.'" class="btn btn-default btnEdit" data-toggle="modal" data-target="#myModalPerkara">Edit</button>
+                                            <button type="button" data-id="'.$row->id.'" class="btn btn-default btnEdit" data-toggle="modal" data-target="#myModal">Edit</button>
                                             <button type="button" data-id="'.$row->id.'" class="btn btn-danger btnRemove">Hapus</button>
                                         </div>
                                     </td>
@@ -86,6 +86,8 @@
 
             <?=get_form_input($model, 'lokasi'); ?>
 
+            <?=form_hidden('id', ''); ?>
+
             <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
         <?=form_close();?>
       </div>
@@ -101,6 +103,8 @@
 
 <?php
 $Urladd = base_url('penyuluhan/create');
+$Urldetail = base_url('penyuluhan/view');
+$Urlremove = base_url('penyuluhan/remove');
 ?>
 
 <script>
@@ -139,6 +143,41 @@ $(document).ready(function () {
     $('#form input').on('keyup', function () { 
         $(this).removeClass('is-invalid').addClass('is-valid');
         $(this).parents('.form-group').find('#error').html(" ");
+    });
+
+    $(document).on('click', '.btnEdit', function (e) {
+        e.preventDefault();
+        var dataId = $(this).attr("data-id");
+        console.log(dataId, '_dataId');
+
+        $('#formModal input[name=id]').val(dataId);
+
+        $.get("<?=$Urldetail;?>/" + dataId, function(data, status){
+            console.log(data, "data");
+            $.each(data.data, function(key, value) {
+                if(key == 'kecamatan') {
+                    $('#input-' + key).val(value).change();
+                } else {
+                    $('#input-' + key).val(value);
+                }
+            });
+
+            $('#form input[name=kegiatan]').val(data.data.kegiatan);
+        });
+    });
+
+    $(document).on('click', '.btnRemove', function (e) {
+        e.preventDefault();
+        var dataId = $(this).attr("data-id");
+        console.log(dataId, '_dataId');
+
+        if (confirm("Apakah anda yakin ingin menghapus data ini?")==true){
+            // $(this).closest("tr").remove();
+            table.row( $(this).parents('tr') ).remove().draw();
+            $.post("<?=$Urlremove;?>/", {id: dataId}, function(result){
+                console.log(result, "_result");
+            });
+        };
     });
 });
 </script>
