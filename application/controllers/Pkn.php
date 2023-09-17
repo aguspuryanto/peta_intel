@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Penyuluhan extends CI_Controller {
+class Pkn extends CI_Controller {
 
 	public function __construct()
     {
@@ -16,7 +16,7 @@ class Penyuluhan extends CI_Controller {
 
 	public function index()
 	{
-		$data['title'] = "Penyuluhan";
+		$data['title'] = "Penyelamatan Keuangan Negara dan Penanggulangan Tindak Pidana";
 		$data['konten'] = "index";
 
 		$data['listKab'] = array();		
@@ -29,7 +29,7 @@ class Penyuluhan extends CI_Controller {
 		$data['dataProvider'] = $this->M_pkn->select_all();
 		
 		// $this->load->view('template/layout', $data);
-		$this->template->views('page/penyuluhan/index', $data);
+		$this->template->views('page/pkn/index', $data);
 	}
 
 	public function create() {

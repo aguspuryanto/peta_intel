@@ -16,7 +16,7 @@ class Penyuluhan extends CI_Controller {
 
 	public function index()
 	{
-		$data['title'] = "Penyuluhan";
+		$data['title'] = "Penyuluhan dan Penerangan Hukum";
 		$data['konten'] = "index";
 
 		$data['listKab'] = array();		
