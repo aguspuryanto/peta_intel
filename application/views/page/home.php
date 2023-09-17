@@ -94,29 +94,177 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card" id="peta">
-                    <div class="card-body">
-                        <!-- <div class="card-title">Peta Intellijen </div>
-                        <img src="<?=base_url('assets/');?>img/loading.gif" alt="loading" class="loading" style="display:none">
-                        <iframe src="" frameborder="0" id="map" width="100%" height="500px" ></iframe> -->
+
+    <div class="container-fluid">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="30000">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="col-12">
+                    <div class="card-box">
+                            <div class="col-12 ">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h4>PENYELAMATAN KEUANGAN NEGARA DAN PENANGGULANGAN TINDAK PIDANA </h4>
+                                <iframe src="http://localhost/mapkejari//penyelamatan-keuangan" width="100%" height="500" scrolling="no"></iframe>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <h4>PENYULUHAN DAN PENERANGAN HUKUM</h4>
+                                        <iframe src="http://localhost/mapkejari//penyuluhan-hukum" width="100%" height="500" scrolling="no"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="carousel-item">
+                    <div class="col-12">
+                    <div class="card-box">
+                            <div class="col-12 ">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h4>POLITIK, SOSIAL BUDAYA DAN SUMBER DAYA ORGANISASI</h4>
+                                        <iframe src="http://localhost/mapkejari//politik" width="100%" height="500" scrolling="no"></iframe>
+                                    </div>
+                                    <div class="col-6">
+                                        <h4>PEMILU: PRESIDEN</h4>
+                                        <iframe src="http://localhost/mapkejari//pemilu-1" width="100%" height="500" scrolling="no"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="col-12">
+                    <div class="card-box">
+                            <div class="col-12 ">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h4>PEMILU: KEPALA DAERAH</h4>
+                                        <iframe src="http://localhost/mapkejari//pemilu-2" width="100%" height="500" scrolling="no"></iframe>
+                                    </div>
+                                    <div class="col-6">
+                                        <h4>PEMILU: DPRD</h4>
+                                        <iframe src="http://localhost/mapkejari//pemilu-3" width="100%" height="500" scrolling="no"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="col-12">
+                    <div class="card-box">
+                            <div class="col-12 ">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h4>PENYELAMATAN KEUANGAN NEGARA DAN PENANGGULANGAN TINDAK PIDANA 2019</h4>
+                                        <iframe src="http://localhost/mapkejari//penyelamatan-keuangan-k" width="100%" height="1000" scrolling="no"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="col-12">
+                        <div class="card-box">
+                            <div class="col-12 ">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h4>PENYULUHAN DAN PENERANGAN HUKUM</h4>
+                                        <iframe src="http://localhost/mapkejari//penyuluhan-hukum-k" width="100%" height="1000" scrolling="no"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="col-12">
+                        <div class="card-box">
+                            <div class="col-12 ">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h4>POLITIK, SOSIAL BUDAYA DAN SUMBER DAYA ORGANISASI</h4>
+                                        <iframe src="http://localhost/mapkejari//politik-k" width="100%" height="1000" scrolling="no"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="col-12">
+                        <div class="card-box">
+                            <div class="col-12 ">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h4>Pemilu Presiden</h4>
+                                        <iframe src="http://localhost/mapkejari//pemilu-1-k" width="100%" height="1000" scrolling="no"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="col-12">
+                    <div class="card-box">
+                            <div class="col-12 ">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h4>Pemilu Kepala Daerah</h4>
+                                        <iframe src="http://localhost/mapkejari//pemilu-2-k" width="100%" height="1000" scrolling="no"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="col-12">
+                        <div class="card-box">
+                            <div class="col-12 ">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h4>Pemilu DPRD</h4>
+                                        <iframe src="http://localhost/mapkejari//pemilu-3-k" width="100%" height="1000" scrolling="no"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-12 mt-4">
-                <div class="card">
-                    <div class="card-body">
-                        <!-- <div class="card-title grafik">Grafik Peta Intellijen </div>
-                        <img src="<?=base_url('assets/');?>img/loading.gif" alt="loading" class="loading" style="display:none">
-                        <iframe src="" frameborder="0" id="grafik" width="100%" height="600px" ></iframe>    -->
-                    </div>
-                </div>
-            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
     </div>
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
