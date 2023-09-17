@@ -35,7 +35,7 @@
                                     <td>'.$dokUrl.'</td>
                                     <td style="min-width:115px">
                                         <div class="btn-group" role="group">
-                                            <button type="button" data-id="'.$row->id.'" class="btn btn-default btnEdit" data-toggle="modal" data-target="#myModalPerkara">Edit</button>
+                                            <button type="button" data-id="'.$row->id.'" class="btn btn-default btnEdit" data-toggle="modal" data-target="#myModal">Edit</button>
                                             <button type="button" data-id="'.$row->id.'" class="btn btn-danger btnRemove">Hapus</button>
                                         </div>
                                     </td>
@@ -87,6 +87,7 @@
 
 <?php
 $Urldokumen = base_url('kasia/upload');
+$Urldetail = base_url('kasia/view');
 $Urlremove = base_url('kasia/remove');
 ?>
 
@@ -125,6 +126,27 @@ $(document).ready(function () {
                     $('<p class="text-danger">' + data.message + '</p>').insertBefore('#formDokumen');
                 }
             }
+        });
+    });
+
+    $(document).on('click', '.btnEdit', function (e) {
+        e.preventDefault();
+        var dataId = $(this).attr("data-id");
+        console.log(dataId, '_dataId');
+
+        $('#formModal input[name=id]').val(dataId);
+
+        $.get("<?=$Urldetail;?>/" + dataId, function(data, status){
+            console.log(data, "data");
+            $.each(data.data, function(key, value) {
+                if(key == 'kecamatan') {
+                    $('#input-' + key).val(value).change();
+                } else {
+                    $('#input-' + key).val(value);
+                }
+            });
+
+            $('#form input[name=kegiatan]').val(data.data.kegiatan);
         });
     });
 

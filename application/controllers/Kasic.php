@@ -106,6 +106,21 @@ class Kasic extends CI_Controller {
 		$this->template->views('page/kasia/upload', $data);		
 	}
 
+	public function view($id) {
+		$data['data'] = $this->M_bankdata->selectId($id);
+
+		$json = array();
+		if($data['data']) {
+			$json = array('success' => true, 'data' => $data['data']);
+		} else {
+			$json = array('success' => false, 'data' => []);
+		}
+
+		$this->output
+        ->set_content_type('application/json')
+        ->set_output(json_encode($json));
+	}
+
 	public function remove() {		
 		$json = array();
 		$model = $this->M_bankdata;
