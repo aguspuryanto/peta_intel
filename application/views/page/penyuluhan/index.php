@@ -21,7 +21,7 @@
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
-                            <?=get_header_table_custom($model, ['prov_id', 'kec_id']); ?>
+                            <?=get_header_table_custom($model); ?>
                         </thead>
                         <tbody>
                         <?php
@@ -30,12 +30,9 @@
                             foreach($dataProvider as $row) {
                                 echo '<tr>
                                     <td>'.$id.'</td>
-                                    <td>'.$row->thn.'</td>
-                                    <td>'.$row->nama_kab.'</td>
-                                    <td>'.$row->nama_gub1.'</td>
-                                    <td>'.$row->jmlsuara_gub1.'</td>
-                                    <td>'.$row->nama_gub2.'</td>
-                                    <td>'.$row->jmlsuara_gub2.'</td>
+                                    <td>'.$row->kecamatan.'</td>
+                                    <td>'.$row->jenis.'</td>
+                                    <td>'.$row->lokasi.'</td>
                                     <td style="min-width:115px">
                                         <div class="btn-group" role="group">
                                             <button type="button" data-id="'.$row->id.'" class="btn btn-default btnEdit" data-toggle="modal" data-target="#myModalPerkara">Edit</button>
@@ -62,45 +59,33 @@
 
       <!-- Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title">Input Data Pilpres</h4>
+        <h4 class="modal-title"><?=@$title; ?></h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
 
       <!-- Modal body -->
       <div class="modal-body">
-        <?=form_open('', array('id' => 'formPilpres', 'role' => 'form'));?>
-            <div class="form-group">
+        <?=form_open('', array('id' => 'formModal', 'role' => 'form'));?>
+            <!-- <div class="form-group">
                 <label>Tahun Pilpres</label>
                 <?php $listThn = array('2024' => '2024', '2019' => '2019'); ?>
                 <?=form_dropdown('thn', $listThn, '', array('class' => 'form-control', 'id' => 'input-thn'));?>
                 <div id="error"></div>
+            </div> -->
+            <div class="form-group">
+                <label>Kecamatan</label>
+                <?=form_dropdown('kecamatan', $listKab, '', array('class' => 'form-control', 'id' => 'input-kecamatan'));?>
+                <div id="error"></div>
             </div>
             <div class="form-group">
-                <label>Kabupaten</label>
-                <?=form_dropdown('kab_id', $listKab, '', array('class' => 'form-control', 'id' => 'input-kab_id'));?>
+                <label>Jenis</label>
+                <?php $listJenis = array('sudah' => 'Sudah', 'akan' => 'Akan', 'belum' => 'Belum', 'telah' => 'Telah Penerangan'); ?>
+                <?=form_dropdown('jenis', $listJenis, '', array('class' => 'form-control', 'id' => 'input-jenis'));?>
                 <div id="error"></div>
             </div>
-            <!-- <div class="form-group">
-                <label>Kecamatan</label>
-                <?=form_dropdown('kec_id', $listKab, '', array('class' => 'form-control', 'id' => 'input-kec_id'));?>
-                <div id="error"></div>
-            </div> -->
-            <div class="row">
-                <div class="col-md-6">
-                    <?=get_form_input($model, 'nama_capres1'); ?>
-                </div>
-                <div class="col-md-6">
-                    <?=get_form_input($model, 'jmlsuara_capres1'); ?>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <?=get_form_input($model, 'nama_capres2'); ?>
-                </div>
-                <div class="col-md-6">
-                    <?=get_form_input($model, 'jmlsuara_capres2'); ?>
-                </div>
-            </div>
+
+            <?=get_form_input($model, 'lokasi'); ?>
+
             <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
         <?=form_close();?>
       </div>
@@ -115,7 +100,7 @@
 </div>
 
 <?php
-$Urladd = base_url('pilpres/create');
+$Urladd = base_url('penyuluhan/create');
 ?>
 
 <script>
@@ -129,7 +114,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "<?=$Urladd;?>", 
-            data: $("#formPilpres").serialize(),
+            data: $("#formModal").serialize(),
             dataType: "json",  
             beforeSend : function(xhr, opts){
                 // $('#form-submit').text('Loading...').prop("disabled", true);
