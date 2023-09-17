@@ -8,6 +8,7 @@ class M_pkn extends CI_Model {
     {
         return [
             ['field' => 'kecamatan', 'label' => 'Nama Daerah', 'rules' => 'required'],
+            ['field' => 'pkn', 'label' => 'Keuangan Terselamatkan', 'rules' => 'required'],
             ['field' => 'jenis', 'label' => 'Jenis', 'rules' => 'required'],
             ['field' => 'lokasi', 'label' => 'Lokasi', 'rules' => 'required'],
             ['field' => 'perkara', 'label' => 'Perkara', 'rules' => 'required'],

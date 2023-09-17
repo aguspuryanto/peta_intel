@@ -14,6 +14,11 @@ class Migration_create_pkn extends CI_Migration {
                 'type' => 'VARCHAR',
                 'constraint' => '150'
             ),
+            'pkn' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '150',
+                'null' => TRUE
+            ),
             'jenis' => array(
                 'type' => 'VARCHAR',
                 'constraint' => '150',

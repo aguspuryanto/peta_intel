@@ -66,23 +66,17 @@
       <!-- Modal body -->
       <div class="modal-body">
         <?=form_open('', array('id' => 'formModal', 'role' => 'form'));?>
-            <!-- <div class="form-group">
-                <label>Tahun Pilpres</label>
-                <?php $listThn = array('2024' => '2024', '2019' => '2019'); ?>
-                <?=form_dropdown('thn', $listThn, '', array('class' => 'form-control', 'id' => 'input-thn'));?>
-                <div id="error"></div>
-            </div> -->
             <div class="form-group">
                 <label>Kecamatan</label>
                 <?=form_dropdown('kecamatan', $listKab, '', array('class' => 'form-control', 'id' => 'input-kecamatan'));?>
                 <div id="error"></div>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label>Jenis</label>
                 <?php $listJenis = array('sudah' => 'Sudah', 'akan' => 'Akan', 'belum' => 'Belum', 'telah' => 'Telah Penerangan'); ?>
                 <?=form_dropdown('jenis', $listJenis, '', array('class' => 'form-control', 'id' => 'input-jenis'));?>
                 <div id="error"></div>
-            </div>
+            </div> -->
 
             <?=get_form_input($model, 'lokasi'); ?>
 
@@ -102,9 +96,9 @@
 </div>
 
 <?php
-$Urladd = base_url('penyuluhan/create');
-$Urldetail = base_url('penyuluhan/view');
-$Urlremove = base_url('penyuluhan/remove');
+$Urladd = base_url('pkn/create');
+$Urldetail = base_url('pkn/view');
+$Urlremove = base_url('pkn/remove');
 ?>
 
 <script>

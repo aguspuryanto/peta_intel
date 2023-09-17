@@ -66,12 +66,6 @@
       <!-- Modal body -->
       <div class="modal-body">
         <?=form_open('', array('id' => 'formModal', 'role' => 'form'));?>
-            <!-- <div class="form-group">
-                <label>Tahun Pilpres</label>
-                <?php $listThn = array('2024' => '2024', '2019' => '2019'); ?>
-                <?=form_dropdown('thn', $listThn, '', array('class' => 'form-control', 'id' => 'input-thn'));?>
-                <div id="error"></div>
-            </div> -->
             <div class="form-group">
                 <label>Kecamatan</label>
                 <?=form_dropdown('kecamatan', $listKab, '', array('class' => 'form-control', 'id' => 'input-kecamatan'));?>
@@ -79,12 +73,36 @@
             </div>
             <div class="form-group">
                 <label>Jenis</label>
-                <?php $listJenis = array('sudah' => 'Sudah', 'akan' => 'Akan', 'belum' => 'Belum', 'telah' => 'Telah Penerangan'); ?>
+                <?php $listJenis = array(
+                    'Tindak Pidana Keamanan Negara' => 'Tindak Pidana Keamanan Negara',
+                    'Perampokan' => 'Perampokan / Pembunuhan',
+                    'Dakwah Negatif' => 'Dakwah Negatif',
+                    'Poster Gelap' => 'Poster Gelap',
+                    'Unjuk Rasa' => 'Unjuk Rasa',
+                    'Rapat Gelap' => 'Rapat Gelap',
+                    'Kasus Sara' => 'Kasus Sara',
+                    'Teror' => 'Teror',
+                    'Pelanggaran Batas Wilayah' => 'Pelanggaran Batas Wilayah',
+                    'Keimigrasian' => 'Keimigrasian',
+                    'Cegah Tangkal' => 'Cegah Tangkal',
+                    'Media Elektronik' => 'Media Elektronik',
+                    'Media Cetak' => 'Media Cetak',
+                    'Aliran Agama' => 'Aliran Agama',
+                    'Kepercayaan' => 'Kepercayaan',
+                    'Perkosaan' => 'Perkosaan',
+                    'Pelanggaran HAM' => 'Pelanggaran HAM',
+                    'Generasi Muda' => 'Generasi Muda',
+                    'Peranan Wanita' => 'Peranan Wanita',
+                    'Narkoba' => 'Narkoba',
+                    'Perjudian' => 'Perjudian',
+                    'Senjata Api' => 'Senjata Api',
+                    'KDRT' => 'KDRT',
+                ); ?>
                 <?=form_dropdown('jenis', $listJenis, '', array('class' => 'form-control', 'id' => 'input-jenis'));?>
                 <div id="error"></div>
             </div>
 
-            <?=get_form_input($model, 'lokasi'); ?>
+            <?=get_form_input($model, 'perkara'); ?>
 
             <?=form_hidden('id', ''); ?>
 
@@ -102,9 +120,9 @@
 </div>
 
 <?php
-$Urladd = base_url('penyuluhan/create');
-$Urldetail = base_url('penyuluhan/view');
-$Urlremove = base_url('penyuluhan/remove');
+$Urladd = base_url('polsosbud/create');
+$Urldetail = base_url('polsosbud/view');
+$Urlremove = base_url('polsosbud/remove');
 ?>
 
 <script>
