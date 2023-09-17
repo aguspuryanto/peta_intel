@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); 
 
-class Migration_create_penyuluhan extends CI_Migration {
-    private $tableName = 'epak_penyuluhan';
+class Migration_create_pkn extends CI_Migration {
+    private $tableName = 'epak_pkn';
     public function up() { 
             $this->dbforge->add_field(array(
             'id' => array(
