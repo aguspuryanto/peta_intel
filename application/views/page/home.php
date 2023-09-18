@@ -232,7 +232,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <h4>Pemilu Kepala Daerah</h4>
-                                        <iframe src="<?=base_url('api/pemilu-2-k') ?>" width="100%" height="1000" scrolling="no"></iframe>
+                                        <iframe src="<?=base_url('api/pemilu_2_k') ?>" width="100%" height="1000" scrolling="no"></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -247,7 +247,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <h4>Pemilu DPRD</h4>
-                                        <iframe src="<?=base_url('api/pemilu-3-k') ?>" width="100%" height="1000" scrolling="no"></iframe>
+                                        <iframe src="<?=base_url('api/pemilu_3_k') ?>" width="100%" height="1000" scrolling="no"></iframe>
                                     </div>
                                 </div>
                             </div>
