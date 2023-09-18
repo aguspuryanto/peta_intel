@@ -202,7 +202,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <h4>POLITIK, SOSIAL BUDAYA DAN SUMBER DAYA ORGANISASI</h4>
-                                        <iframe src="<?=base_url('api/politik-k') ?>" width="100%" height="1000" scrolling="no"></iframe>
+                                        <iframe src="<?=base_url('api/politik_k') ?>" width="100%" height="1000" scrolling="no"></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -217,7 +217,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <h4>Pemilu Presiden</h4>
-                                        <iframe src="<?=base_url('api/pemilu-1-k') ?>" width="100%" height="1000" scrolling="no"></iframe>
+                                        <iframe src="<?=base_url('api/pemilu_1_k') ?>" width="100%" height="1000" scrolling="no"></iframe>
                                     </div>
                                 </div>
                             </div>
