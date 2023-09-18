@@ -94,11 +94,69 @@ class Api extends CI_Controller {
 	public function politik() {
 		$data['title'] = "PENYULUHAN DAN PENERANGAN HUKUM";
 
+		$data['listLatLong'] = array();		
+		$data['listKab'] = array();		
+		$listKab = $this->M_kabupaten->select_all();
+		foreach($listKab as $kab) {			
+			$data['listKab'][] = array(
+				'type' => 'Feature',
+				'properties' => array(
+					'name' => $kab->nama,
+					'amenity' => $kab->nama,
+					'popupContent' => $kab->nama,
+					'show_on_map' => true
+				),
+				'geometry' => array(
+					'type' => 'Point',
+					'coordinates' => array($kab->latitude, $kab->longitude)
+				),
+			);
+
+			$data['listLatLong'] = array(
+				'name' => $kab->nama,
+				'coordinates' => array($kab->latitude, $kab->longitude)
+			);
+		}
+		
+		$data['listGeoJson'][] = array(
+			'type' => 'FeatureCollection',
+			'features' => $data['listKab']
+		);
+
 		$this->load->view('page/api/penyuluhan', $data);
 	}
 
 	public function pemilu_1() {
 		$data['title'] = "PENYULUHAN DAN PENERANGAN HUKUM";
+
+		$data['listLatLong'] = array();		
+		$data['listKab'] = array();		
+		$listKab = $this->M_kabupaten->select_all();
+		foreach($listKab as $kab) {			
+			$data['listKab'][] = array(
+				'type' => 'Feature',
+				'properties' => array(
+					'name' => $kab->nama,
+					'amenity' => $kab->nama,
+					'popupContent' => $kab->nama,
+					'show_on_map' => true
+				),
+				'geometry' => array(
+					'type' => 'Point',
+					'coordinates' => array($kab->latitude, $kab->longitude)
+				),
+			);
+
+			$data['listLatLong'] = array(
+				'name' => $kab->nama,
+				'coordinates' => array($kab->latitude, $kab->longitude)
+			);
+		}
+		
+		$data['listGeoJson'][] = array(
+			'type' => 'FeatureCollection',
+			'features' => $data['listKab']
+		);
 
 		$this->load->view('page/api/penyuluhan', $data);
 	}
@@ -106,11 +164,69 @@ class Api extends CI_Controller {
 	public function pemilu_2() {
 		$data['title'] = "PENYULUHAN DAN PENERANGAN HUKUM";
 
+		$data['listLatLong'] = array();		
+		$data['listKab'] = array();		
+		$listKab = $this->M_kabupaten->select_all();
+		foreach($listKab as $kab) {			
+			$data['listKab'][] = array(
+				'type' => 'Feature',
+				'properties' => array(
+					'name' => $kab->nama,
+					'amenity' => $kab->nama,
+					'popupContent' => $kab->nama,
+					'show_on_map' => true
+				),
+				'geometry' => array(
+					'type' => 'Point',
+					'coordinates' => array($kab->latitude, $kab->longitude)
+				),
+			);
+
+			$data['listLatLong'] = array(
+				'name' => $kab->nama,
+				'coordinates' => array($kab->latitude, $kab->longitude)
+			);
+		}
+		
+		$data['listGeoJson'][] = array(
+			'type' => 'FeatureCollection',
+			'features' => $data['listKab']
+		);
+
 		$this->load->view('page/api/penyuluhan', $data);
 	}
 
 	public function pemilu_3() {
 		$data['title'] = "PENYULUHAN DAN PENERANGAN HUKUM";
+
+		$data['listLatLong'] = array();		
+		$data['listKab'] = array();		
+		$listKab = $this->M_kabupaten->select_all();
+		foreach($listKab as $kab) {			
+			$data['listKab'][] = array(
+				'type' => 'Feature',
+				'properties' => array(
+					'name' => $kab->nama,
+					'amenity' => $kab->nama,
+					'popupContent' => $kab->nama,
+					'show_on_map' => true
+				),
+				'geometry' => array(
+					'type' => 'Point',
+					'coordinates' => array($kab->latitude, $kab->longitude)
+				),
+			);
+
+			$data['listLatLong'] = array(
+				'name' => $kab->nama,
+				'coordinates' => array($kab->latitude, $kab->longitude)
+			);
+		}
+		
+		$data['listGeoJson'][] = array(
+			'type' => 'FeatureCollection',
+			'features' => $data['listKab']
+		);
 
 		$this->load->view('page/api/penyuluhan', $data);
 	}
@@ -118,11 +234,69 @@ class Api extends CI_Controller {
 	public function penyelamatan_keuangan_k() {
 		$data['title'] = "PENYULUHAN DAN PENERANGAN HUKUM";
 
+		$data['listLatLong'] = array();		
+		$data['listKab'] = array();		
+		$listKab = $this->M_kabupaten->select_all();
+		foreach($listKab as $kab) {			
+			$data['listKab'][] = array(
+				'type' => 'Feature',
+				'properties' => array(
+					'name' => $kab->nama,
+					'amenity' => $kab->nama,
+					'popupContent' => $kab->nama,
+					'show_on_map' => true
+				),
+				'geometry' => array(
+					'type' => 'Point',
+					'coordinates' => array($kab->latitude, $kab->longitude)
+				),
+			);
+
+			$data['listLatLong'] = array(
+				'name' => $kab->nama,
+				'coordinates' => array($kab->latitude, $kab->longitude)
+			);
+		}
+		
+		$data['listGeoJson'][] = array(
+			'type' => 'FeatureCollection',
+			'features' => $data['listKab']
+		);
+
 		$this->load->view('page/api/penyuluhan', $data);
 	}
 
 	public function penyuluhan_hukum_k() {
 		$data['title'] = "PENYULUHAN DAN PENERANGAN HUKUM";
+
+		$data['listLatLong'] = array();		
+		$data['listKab'] = array();		
+		$listKab = $this->M_kabupaten->select_all();
+		foreach($listKab as $kab) {			
+			$data['listKab'][] = array(
+				'type' => 'Feature',
+				'properties' => array(
+					'name' => $kab->nama,
+					'amenity' => $kab->nama,
+					'popupContent' => $kab->nama,
+					'show_on_map' => true
+				),
+				'geometry' => array(
+					'type' => 'Point',
+					'coordinates' => array($kab->latitude, $kab->longitude)
+				),
+			);
+
+			$data['listLatLong'] = array(
+				'name' => $kab->nama,
+				'coordinates' => array($kab->latitude, $kab->longitude)
+			);
+		}
+		
+		$data['listGeoJson'][] = array(
+			'type' => 'FeatureCollection',
+			'features' => $data['listKab']
+		);
 
 		$this->load->view('page/api/penyuluhan', $data);
 	}
