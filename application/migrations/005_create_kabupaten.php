@@ -22,6 +22,14 @@ class Migration_create_kabupaten extends CI_Migration {
                 'type' => 'INT',
                 'constraint' => '11'
             ),
+            'latitude' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '150'
+            ),
+            'longitude' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '150'
+            ),
             'created_at datetime default current_timestamp'
         ));
         $this->dbforge->add_key('id', TRUE);

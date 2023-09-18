@@ -110,12 +110,12 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <h4>PENYELAMATAN KEUANGAN NEGARA DAN PENANGGULANGAN TINDAK PIDANA </h4>
-                                <iframe src="http://localhost/mapkejari//penyelamatan-keuangan" width="100%" height="500" scrolling="no"></iframe>
+                                <iframe src="<?=base_url('api/penyelamatan_keuangan') ?>" width="100%" height="500" scrolling="no"></iframe>
                                     </div>
 
                                     <div class="col-6">
                                         <h4>PENYULUHAN DAN PENERANGAN HUKUM</h4>
-                                        <iframe src="http://localhost/mapkejari//penyuluhan-hukum" width="100%" height="500" scrolling="no"></iframe>
+                                        <iframe src="<?=base_url('api/penyuluhan_hukum') ?>" width="100%" height="500" scrolling="no"></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -132,11 +132,11 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <h4>POLITIK, SOSIAL BUDAYA DAN SUMBER DAYA ORGANISASI</h4>
-                                        <iframe src="http://localhost/mapkejari//politik" width="100%" height="500" scrolling="no"></iframe>
+                                        <iframe src="<?=base_url('api/politik') ?>" width="100%" height="500" scrolling="no"></iframe>
                                     </div>
                                     <div class="col-6">
                                         <h4>PEMILU: PRESIDEN</h4>
-                                        <iframe src="http://localhost/mapkejari//pemilu-1" width="100%" height="500" scrolling="no"></iframe>
+                                        <iframe src="<?=base_url('api/pemilu_1') ?>" width="100%" height="500" scrolling="no"></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -152,11 +152,11 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <h4>PEMILU: KEPALA DAERAH</h4>
-                                        <iframe src="http://localhost/mapkejari//pemilu-2" width="100%" height="500" scrolling="no"></iframe>
+                                        <iframe src="<?=base_url('api/pemilu_2') ?>" width="100%" height="500" scrolling="no"></iframe>
                                     </div>
                                     <div class="col-6">
                                         <h4>PEMILU: DPRD</h4>
-                                        <iframe src="http://localhost/mapkejari//pemilu-3" width="100%" height="500" scrolling="no"></iframe>
+                                        <iframe src="<?=base_url('api/pemilu_3') ?>" width="100%" height="500" scrolling="no"></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -172,7 +172,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <h4>PENYELAMATAN KEUANGAN NEGARA DAN PENANGGULANGAN TINDAK PIDANA 2019</h4>
-                                        <iframe src="http://localhost/mapkejari//penyelamatan-keuangan-k" width="100%" height="1000" scrolling="no"></iframe>
+                                        <iframe src="<?=base_url('api/penyelamatan_keuangan_k') ?>" width="100%" height="1000" scrolling="no"></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -187,7 +187,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <h4>PENYULUHAN DAN PENERANGAN HUKUM</h4>
-                                        <iframe src="http://localhost/mapkejari//penyuluhan-hukum-k" width="100%" height="1000" scrolling="no"></iframe>
+                                        <iframe src="<?=base_url('api/penyuluhan_hukum_k') ?>" width="100%" height="1000" scrolling="no"></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -202,7 +202,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <h4>POLITIK, SOSIAL BUDAYA DAN SUMBER DAYA ORGANISASI</h4>
-                                        <iframe src="http://localhost/mapkejari//politik-k" width="100%" height="1000" scrolling="no"></iframe>
+                                        <iframe src="<?=base_url('api/politik-k') ?>" width="100%" height="1000" scrolling="no"></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -217,7 +217,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <h4>Pemilu Presiden</h4>
-                                        <iframe src="http://localhost/mapkejari//pemilu-1-k" width="100%" height="1000" scrolling="no"></iframe>
+                                        <iframe src="<?=base_url('api/pemilu-1-k') ?>" width="100%" height="1000" scrolling="no"></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -232,7 +232,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <h4>Pemilu Kepala Daerah</h4>
-                                        <iframe src="http://localhost/mapkejari//pemilu-2-k" width="100%" height="1000" scrolling="no"></iframe>
+                                        <iframe src="<?=base_url('api/pemilu-2-k') ?>" width="100%" height="1000" scrolling="no"></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -247,7 +247,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <h4>Pemilu DPRD</h4>
-                                        <iframe src="http://localhost/mapkejari//pemilu-3-k" width="100%" height="1000" scrolling="no"></iframe>
+                                        <iframe src="<?=base_url('api/pemilu-3-k') ?>" width="100%" height="1000" scrolling="no"></iframe>
                                     </div>
                                 </div>
                             </div>

@@ -14,7 +14,6 @@ class Home extends CI_Controller {
 		$data['title'] = "PETA INTELIJEN & BANK DATA INTEL";
 		$data['konten'] = "index";
 		
-		// $this->load->view('template/layout', $data);
-		$this->template->views('page/home', $data);
+		$this->load->view('page/home', $data);
 	}
 }
