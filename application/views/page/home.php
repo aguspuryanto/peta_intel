@@ -172,7 +172,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <h4>PENYELAMATAN KEUANGAN NEGARA DAN PENANGGULANGAN TINDAK PIDANA 2019</h4>
-                                        <iframe src="<?=base_url('api/penyelamatan_keuangan_k') ?>" width="100%" height="1000" scrolling="no"></iframe>
+                                        <iframe src="<?=base_url('api/penyelamatan_keuangan_k') ?>" width="100%" height="500" scrolling="no"></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -187,7 +187,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <h4>PENYULUHAN DAN PENERANGAN HUKUM</h4>
-                                        <iframe src="<?=base_url('api/penyuluhan_hukum_k') ?>" width="100%" height="1000" scrolling="no"></iframe>
+                                        <iframe src="<?=base_url('api/penyuluhan_hukum_k') ?>" width="100%" height="500" scrolling="no"></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -202,7 +202,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <h4>POLITIK, SOSIAL BUDAYA DAN SUMBER DAYA ORGANISASI</h4>
-                                        <iframe src="<?=base_url('api/politik_k') ?>" width="100%" height="1000" scrolling="no"></iframe>
+                                        <iframe src="<?=base_url('api/politik_k') ?>" width="100%" height="500" scrolling="no"></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -217,7 +217,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <h4>Pemilu Presiden</h4>
-                                        <iframe src="<?=base_url('api/pemilu_1_k') ?>" width="100%" height="1000" scrolling="no"></iframe>
+                                        <iframe src="<?=base_url('api/pemilu_1_k') ?>" width="100%" height="500" scrolling="no"></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -232,7 +232,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <h4>Pemilu Kepala Daerah</h4>
-                                        <iframe src="<?=base_url('api/pemilu_2_k') ?>" width="100%" height="1000" scrolling="no"></iframe>
+                                        <iframe src="<?=base_url('api/pemilu_2_k') ?>" width="100%" height="500" scrolling="no"></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -247,7 +247,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <h4>Pemilu DPRD</h4>
-                                        <iframe src="<?=base_url('api/pemilu_3_k') ?>" width="100%" height="1000" scrolling="no"></iframe>
+                                        <iframe src="<?=base_url('api/pemilu_3_k') ?>" width="100%" height="500" scrolling="no"></iframe>
                                     </div>
                                 </div>
                             </div>
