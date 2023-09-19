@@ -54,12 +54,11 @@
     </div>
     </body>
 
-    <script type="text/javascript" src="<?=base_url('assets/');?>js/icon.js"></script>
+    <!-- <script type="text/javascript" src="<?=base_url('assets/');?>js/icon.js"></script> -->
     <!-- <script type="text/javascript" src="<?=base_url('assets/');?>js/kecamatan.js"></script> -->
 
     <script type="text/javascript">
-
-        var map = L.map('map').setView(<?=json_encode($listLatLong['coordinates']) ?>, 12);
+        var map = L.map('map').setView(<?=json_encode($listLatLong['coordinates'], JSON_NUMERIC_CHECK) ?>, 12);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           maxZoom: 19,
           attribution: 'Kejari Bandar Lampung'
@@ -77,7 +76,7 @@
           };
         }
 
-        var someFeatures = <?=json_encode($listGeoJson) ?>;
+        var someFeatures = <?=json_encode($listGeoJson, JSON_NUMERIC_CHECK) ?>;
         var geojson;
         geojson = L.geoJson(someFeatures, {
           style: style,

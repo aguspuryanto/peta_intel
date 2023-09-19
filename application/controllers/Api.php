@@ -37,8 +37,10 @@ class Api extends CI_Controller {
 					'show_on_map' => true
 				),
 				'geometry' => array(
-					'type' => 'Point',
-					'coordinates' => array($kab->latitude, $kab->longitude)
+					'type' => 'Polygon',
+					'coordinates' => array(
+						$this->getCoordinateKecamatan($kab->kode)
+					), //array($kab->latitude, $kab->longitude)
 				),
 			);
 
@@ -439,5 +441,14 @@ class Api extends CI_Controller {
 		);
 
 		$this->load->view('page/api/penyuluhan', $data);
+	}
+
+	public function getCoordinateKecamatan($id) {
+		$listkec = array();
+		$listKab = $this->M_kecamatan->select_all(array('kab_id' => $id));
+		foreach($listKab as $kab) {	
+			if($kab->latitude && $kab->longitude) $listkec[] = array($kab->latitude, $kab->longitude);
+		}
+		return $listkec;
 	}
 }
