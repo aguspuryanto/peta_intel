@@ -52,9 +52,7 @@
       </div>
     </div>
     </body>
-
-    <!-- <script type="text/javascript" src="<?=base_url('assets/');?>js/icon.js"></script> -->
-    <!-- <script type="text/javascript" src="<?=base_url('assets/');?>js/kecamatan.js"></script> -->
+    
     <script type="text/javascript">
       var map = L.map('map').setView(<?=json_encode($listLatLong['coordinates'], JSON_NUMERIC_CHECK) ?>, 12);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
