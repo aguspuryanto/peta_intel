@@ -61,7 +61,7 @@
         var map = L.map('map').setView(<?=json_encode($listLatLong['coordinates'], JSON_NUMERIC_CHECK) ?>, 12);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           maxZoom: 19,
-          attribution: 'Kejari Bandar Lampung'
+          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
 
         function style(feature) {
