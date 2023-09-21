@@ -48,7 +48,10 @@
                     'submenu' => [
                         array('title' => 'Lihat Data', 'link' => 'index')
                     ]
-                ),
+                ),                
+            ];
+
+            $bankData = [
                 array(
                     'title' => 'KASI A',
                     'url' => 'kasia',
@@ -119,6 +122,8 @@
                     )
                 ),
             ];
+
+            $listMenu = array_merge($listMenu, $bankData);
             ?>
             <!-- Nav Item - Pages Collapse Menu -->
             <?php 
