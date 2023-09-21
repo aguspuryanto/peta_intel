@@ -7,6 +7,8 @@ class Home extends CI_Controller {
     {
         parent::__construct();
         // is_logged_in();
+
+		$this->load->model('M_bankdata');
     }
 
 	public function index()
@@ -14,10 +16,37 @@ class Home extends CI_Controller {
 		$data['title'] = "PETA INTELIJEN & BANK DATA INTEL";
 		$data['konten'] = "index";
 
+		$data['bankData'] = $this->getBankDataMenu();
+		
+		$this->load->view('page/home', $data);
+	}
+
+	public function kasia($page='', $id='') {
+		// echo "Kasi A";
+		$data['bankData'] = $this->getBankDataMenu();
+
+		if($page && $page == 'Pemerintahan') {			
+			$data['title'] = "Kasi A || Pemerintahan";
+			$data['konten'] = "index";
+
+			$kategori = explode(" || ", $data['title']);
+			$data['kategori'] = $kategori[0];
+			$data['sub_kategori'] = $kategori[1];
+
+			$data['model'] = $this->M_bankdata;
+			$data['dataProvider'] = $this->M_bankdata->select_all();
+			
+			// $this->template->views('page/kasia/upload', $data);		
+			$this->load->view('page/home', $data);
+		}
+	}
+
+	public function getBankDataMenu() {	
+
 		$bankData = [
 			array(
 				'title' => 'KASI A',
-				'url' => 'kasia',
+				'url' => 'home/kasia',
 				'show_menu' => false,
 				'submenu' => array(
 					array('title' => 'Pemerintahan', 'link' => 'Pemerintahan'),
@@ -31,7 +60,7 @@ class Home extends CI_Controller {
 			),
 			array(
 				'title' => 'KASI B',
-				'url' => 'kasib',
+				'url' => 'home/kasib',
 				'show_menu' => false,
 				'submenu' => array(
 					array('title' => 'Sosial', 'link' => 'Sosial'),
@@ -43,7 +72,7 @@ class Home extends CI_Controller {
 			),
 			array(
 				'title' => 'KASI C',
-				'url' => 'kasic',
+				'url' => 'home/kasic',
 				'show_menu' => false,
 				'submenu' => array(
 					array('title' => 'Perdagangan', 'link' => 'Perdagangan'),
@@ -56,7 +85,7 @@ class Home extends CI_Controller {
 			),
 			array(
 				'title' => 'KASI D',
-				'url' => 'kasid',
+				'url' => 'home/kasid',
 				'show_menu' => false,
 				'submenu' => array(
 					array('title' => 'Daftar Pendampingan', 'link' => 'DaftarPendampingan'),
@@ -66,7 +95,7 @@ class Home extends CI_Controller {
 			),
 			array(
 				'title' => 'KASI E',
-				'url' => 'kasie',
+				'url' => 'home/kasie',
 				'show_menu' => false,
 				'submenu' => array(
 					array('title' => 'Lapinhar-Lapinsus-Lapopsin', 'link' => 'Lapinhar'),
@@ -77,7 +106,7 @@ class Home extends CI_Controller {
 			),
 			array(
 				'title' => 'KASI PENKUM',
-				'url' => 'kasipenkum',
+				'url' => 'home/kasipenkum',
 				'show_menu' => false,
 				'submenu' => array(
 					array('title' => 'Data Grafik', 'link' => 'DataGrafik'),
@@ -86,8 +115,6 @@ class Home extends CI_Controller {
 			),
 		];
 
-		$data['bankData'] = $bankData;
-		
-		$this->load->view('page/home', $data);
+		return $bankData;
 	}
 }
