@@ -16,7 +16,7 @@ class pileg extends CI_Controller {
 
 	public function index()
 	{
-		$data['title'] = "Pemilu Pilpres";
+		$data['title'] = "Data Pemilu DPRD";
 		$data['konten'] = "index";
 		$data['listKab'] = array();		
 		$listKab = $this->M_kabupaten->select_all();
