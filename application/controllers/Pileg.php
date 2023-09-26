@@ -25,8 +25,10 @@ class pileg extends CI_Controller {
 			$data['listKab'][$kab->id] = $kab->nama;
 		}
 
-		$data['model'] = $this->M_pilpres;
-		$data['dataProvider'] = $this->M_pilpres->select_all();
+		// $data['model'] = $this->M_pilpres;
+		// $data['dataProvider'] = $this->M_pilpres->select_all();
+		$data['model'] = $this->M_dprd;
+		$data['dataProvider'] = $this->M_dprd->select_all();
 		
 		$this->template->views('page/dprd/index', $data);
 	}
