@@ -9,7 +9,7 @@ class Template {
 	}
 
 	function views($template = NULL, $data = NULL) {
-		if($template == 'page/home' || $data['page_type'] == 'frontend') {
+		if($template == 'page/home' || isset($data['page_type']) == 'frontend') {
 			$data['_content']		= $this->_ci->load->view($template, $data, TRUE);
 			
 			//JS

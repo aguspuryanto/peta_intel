@@ -8,7 +8,7 @@ class M_pkn extends CI_Model {
     {
         return [
             ['field' => 'kecamatan', 'label' => 'Nama Daerah', 'rules' => 'required'],
-            ['field' => 'pkn', 'label' => 'Keuangan Terselamatkan', 'rules' => 'required'],
+            // ['field' => 'pkn', 'label' => 'Keuangan Terselamatkan'],
             ['field' => 'jenis', 'label' => 'Jenis', 'rules' => 'required'],
             ['field' => 'lokasi', 'label' => 'Lokasi', 'rules' => 'required'],
             ['field' => 'perkara', 'label' => 'Perkara', 'rules' => 'required'],
@@ -44,8 +44,11 @@ class M_pkn extends CI_Model {
         if($options) {
             $this->db->where($options);
         }
-        
-        $data = $this->db->get($this->table_name);
+
+        // $this->db->join('epak_kabupaten c', 'c.id = a.kab_id');
+        $this->db->join('epak_kecamatan b', 'b.id = a.kec_id');
+        $this->db->select('a.*, b.nama as nama_kec');
+        $data = $this->db->get($this->table_name . ' a');
         return $data->result();
     }
 

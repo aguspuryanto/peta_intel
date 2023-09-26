@@ -33,16 +33,16 @@
                         array('title' => 'Lihat Data', 'link' => 'index')
                     ]
                 ),
+                // array(
+                //     'title' => 'POLITIK, SOSIAL BUDAYA DAN SDO',
+                //     'url' => 'polsosbud',
+                //     'show_menu' => false,
+                //     'submenu' => [
+                //         array('title' => 'Lihat Data', 'link' => 'index')
+                //     ]
+                // ),
                 array(
-                    'title' => 'POLITIK, SOSIAL BUDAYA DAN SDO',
-                    'url' => 'polsosbud',
-                    'show_menu' => false,
-                    'submenu' => [
-                        array('title' => 'Lihat Data', 'link' => 'index')
-                    ]
-                ),
-                array(
-                    'title' => 'PENY.KEU. NEGARA DAN P. TINDAK PIDANA',
+                    'title' => 'DATA TINDAK PIDANA',
                     'url' => 'pkn',
                     'show_menu' => false,
                     'submenu' => [
@@ -62,8 +62,8 @@
                         array('title' => 'Pengamanan Sumber Daya Organisasi', 'link' => 'sdo'),
                         array('title' => 'Potensi Ancaman', 'link' => 'ancaman'),
                         array('title' => 'Peta Intelijen', 'link' => 'peta'),
-                        array('title' => 'Perda', 'link' => 'perda'),
-                        array('title' => 'Pergub', 'link' => 'pergub'),
+                        // array('title' => 'Perda', 'link' => 'perda'),
+                        // array('title' => 'Pergub', 'link' => 'pergub'),
                     )
                 ),
                 array(

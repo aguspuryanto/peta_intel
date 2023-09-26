@@ -16,7 +16,7 @@ class Pkn extends CI_Controller {
 
 	public function index()
 	{
-		$data['title'] = "Penyelamatan Keuangan Negara dan Penanggulangan Tindak Pidana";
+		$data['title'] = "Data Tindak Pidana";
 		$data['konten'] = "index";
 
 		$data['listKab'] = array();		
@@ -51,7 +51,7 @@ class Pkn extends CI_Controller {
 		} else {
 			$data = array(
 				'kecamatan' => $this->input->post('kecamatan'),
-				'pkn' => $this->input->post('pkn'),
+				// 'pkn' => $this->input->post('pkn'),
 				'jenis' => $this->input->post('jenis'),
 				'lokasi' => $this->input->post('lokasi'),
 				'perkara' => $this->input->post('perkara'),

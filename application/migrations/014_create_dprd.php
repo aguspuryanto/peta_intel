@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); 
 
-class Migration_create_pkn extends CI_Migration {
-    private $tableName = 'epak_pkn';
+class Migration_create_dprd extends CI_Migration {
+    private $tableName = 'epak_dprd';
     public function up() { 
             $this->dbforge->add_field(array(
             'id' => array(
@@ -10,28 +10,33 @@ class Migration_create_pkn extends CI_Migration {
                 'unsigned' => TRUE,
                 'auto_increment' => TRUE
             ),
+            'thn' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '4'
+            ),
+            'prov_id' => array(
+                'type' => 'INT',
+                'constraint' => '50',
+                'null' => TRUE
+            ),
+            'kab_id' => array(
+                'type' => 'INT',
+                'constraint' => '50',
+                'null' => TRUE
+            ),
             'kec_id' => array(
-                'type' => 'VARCHAR',
-                'constraint' => '150'
-            ),
-            'pkn' => array(
-                'type' => 'VARCHAR',
-                'constraint' => '150',
+                'type' => 'INT',
+                'constraint' => '50',
                 'null' => TRUE
             ),
-            'jenis' => array(
-                'type' => 'VARCHAR',
-                'constraint' => '150',
+            'nama_partai' => array(
+                'type' => 'INT',
+                'constraint' => '50',
                 'null' => TRUE
             ),
-            'lokasi' => array(
-                'type' => 'VARCHAR',
-                'constraint' => '150',
-                'null' => TRUE
-            ),
-            'perkara' => array(
-                'type' => 'VARCHAR',
-                'constraint' => '150',
+            'jml_anggota' => array(
+                'type' => 'INT',
+                'constraint' => '50',
                 'null' => TRUE
             ),
             'created_at datetime default current_timestamp'

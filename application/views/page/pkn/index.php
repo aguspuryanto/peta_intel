@@ -33,6 +33,7 @@
                                     <td>'.$row->nama_kec.'</td>
                                     <td>'.strtoupper($row->jenis).'</td>
                                     <td>'.$row->lokasi.'</td>
+                                    <td>'.$row->perkara.'</td>
                                     <td style="min-width:115px">
                                         <div class="btn-group" role="group">
                                             <button type="button" data-id="'.$row->id.'" class="btn btn-default btnEdit" data-toggle="modal" data-target="#myModal">Edit</button>
@@ -72,7 +73,7 @@
                 <div id="error"></div>
             </div>
 
-            <?=get_form_input($model, 'pkn'); ?>
+            <?//=get_form_input($model, 'pkn'); ?>
 
             <div class="form-group">
                 <label>Jenis</label>
