@@ -29,7 +29,7 @@ class Migration_create_dapil extends CI_Migration {
                 'constraint' => '50',
                 'null' => TRUE
             ),
-            'created_at datetime default current_timestamp'
+            'created_at' => array('type' => 'timestamp')
         ));
         $this->dbforge->add_key('id', TRUE);
         if (!$this->db->table_exists($this->tableName)) {
