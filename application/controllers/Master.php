@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Pilpres extends CI_Controller {
+class Master extends CI_Controller {
 
 	public function __construct()
     {
