@@ -12,6 +12,7 @@ class pileg extends CI_Controller {
 		$this->load->model('M_kabupaten');
 		$this->load->model('M_kecamatan');
 		$this->load->model('M_pilpres');
+		$this->load->model('M_dprd');
     }
 
 	public function index()
@@ -27,7 +28,7 @@ class pileg extends CI_Controller {
 		$data['model'] = $this->M_pilpres;
 		$data['dataProvider'] = $this->M_pilpres->select_all();
 		
-		$this->template->views('page/pilpres/index', $data);
+		$this->template->views('page/dprd/index', $data);
 	}
 
 	public function create()
@@ -70,7 +71,7 @@ class pileg extends CI_Controller {
         ->set_content_type('application/json')
         ->set_output(json_encode($json));
 		
-		// $this->template->views('page/pilpres/create', $data);
+		// $this->template->views('page/dprd/create', $data);
 	}
 
 	public function master() {

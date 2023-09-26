@@ -68,37 +68,24 @@
 
       <!-- Modal body -->
       <div class="modal-body">
-        <?=form_open('', array('id' => 'formPilpres', 'role' => 'form'));?>
-            <div class="form-group">
+        <?=form_open('', array('id' => 'formDprd', 'role' => 'form'));?>
+            <!-- <div class="form-group">
                 <label>Tahun Pilpres</label>
                 <?php $listThn = array('2024' => '2024', '2019' => '2019'); ?>
                 <?=form_dropdown('thn', $listThn, '', array('class' => 'form-control', 'id' => 'input-thn'));?>
                 <div id="error"></div>
-            </div>
+            </div> -->
             <div class="form-group">
                 <label>Kabupaten</label>
                 <?=form_dropdown('kab_id', $listKab, '', array('class' => 'form-control', 'id' => 'input-kab_id'));?>
                 <div id="error"></div>
             </div>
-            <!-- <div class="form-group">
-                <label>Kecamatan</label>
-                <?=form_dropdown('kec_id', $listKab, '', array('class' => 'form-control', 'id' => 'input-kec_id'));?>
-                <div id="error"></div>
-            </div> -->
             <div class="row">
                 <div class="col-md-6">
-                    <?=get_form_input($model, 'nama_capres1'); ?>
+                    <?=get_form_input($model, 'nama_partai'); ?>
                 </div>
                 <div class="col-md-6">
-                    <?=get_form_input($model, 'jmlsuara_capres1'); ?>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <?=get_form_input($model, 'nama_capres2'); ?>
-                </div>
-                <div class="col-md-6">
-                    <?=get_form_input($model, 'jmlsuara_capres2'); ?>
+                    <?=get_form_input($model, 'jml_anggota'); ?>
                 </div>
             </div>
 
@@ -133,7 +120,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "<?=$Urladd;?>", 
-            data: $("#formPilpres").serialize(),
+            data: $("#formDprd").serialize(),
             dataType: "json",  
             beforeSend : function(xhr, opts){
                 // $('#form-submit').text('Loading...').prop("disabled", true);

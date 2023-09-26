@@ -1,8 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class M_pileg extends CI_Model {
-    public $table_name = "epak_pileg";
+class M_dprd extends CI_Model {
+    public $table_name = "epak_dprd";
 
     public function rules()
     {
