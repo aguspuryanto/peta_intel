@@ -12,6 +12,8 @@ class Master extends CI_Controller {
 		$this->load->model('M_kabupaten');
 		$this->load->model('M_kecamatan');
 		$this->load->model('M_pilpres');
+		$this->load->model('M_dprd');
+		$this->load->model('M_partai');
     }
 
 	public function index()
@@ -92,5 +94,15 @@ class Master extends CI_Controller {
 
 		$data['districts'] = $districts;
 		$this->template->views('page/master/kecamatan', $data);
+	}
+
+	public function partai() {
+
+		$data['title'] = "Data Partai";
+		
+		$data['model'] = $this->M_partai;
+		$data['dataProvider'] = $this->M_partai->select_all();
+		
+		$this->template->views('page/dprd/partai', $data);
 	}
 }

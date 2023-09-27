@@ -154,14 +154,29 @@
             ?>
 
 			<li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMeeting"
-                    aria-expanded="true" aria-controls="collapseMeeting">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUser"
+                    aria-expanded="true" aria-controls="collapseUser">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>USER MANAGEMENT</span>
                 </a>
-                <div id="collapseMeeting" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="collapseUser" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="<?=base_url('user/setting');?>">Users</a>
+                    </div>
+                </div>
+            </li>
+
+			<li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMaster"
+                    aria-expanded="true" aria-controls="collapseMaster">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>MASTER</span>
+                </a>
+                <div id="collapseMaster" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="<?=base_url('master/');?>">Provinsi</a>
+                        <a class="collapse-item" href="<?=base_url('master/partai');?>">Partai</a>
+                        <a class="collapse-item" href="<?=base_url('master/dapil');?>">Dapil</a>
                     </div>
                 </div>
             </li>
