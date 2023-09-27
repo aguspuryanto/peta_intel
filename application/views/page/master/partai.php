@@ -66,25 +66,8 @@
       <!-- Modal body -->
       <div class="modal-body">
         <?=form_open('', array('id' => 'formDprd', 'role' => 'form'));?>
-            <!-- <div class="form-group">
-                <label>Tahun Pilpres</label>
-                <?php $listThn = array('2024' => '2024', '2019' => '2019'); ?>
-                <?=form_dropdown('thn', $listThn, '', array('class' => 'form-control', 'id' => 'input-thn'));?>
-                <div id="error"></div>
-            </div> -->
-            <div class="form-group">
-                <label>Kabupaten</label>
-                <?=form_dropdown('kab_id', $listKab, '', array('class' => 'form-control', 'id' => 'input-kab_id'));?>
-                <div id="error"></div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <?=get_form_input($model, 'nama_partai'); ?>
-                </div>
-                <div class="col-md-6">
-                    <?=get_form_input($model, 'jml_anggota'); ?>
-                </div>
-            </div>
+
+            <?=get_form_input($model, 'nama_partai'); ?>
 
             <?=form_hidden('id', ''); ?>
             <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
@@ -101,9 +84,9 @@
 </div>
 
 <?php
-$Urladd = base_url('pileg/create');
-$Urldetail = base_url('pileg/view');
-$Urlremove = base_url('pileg/remove');
+$Urladd = base_url('master/partai_create');
+$Urldetail = base_url('master/partai_view');
+$Urlremove = base_url('master/partai_remove');
 ?>
 
 <script>
