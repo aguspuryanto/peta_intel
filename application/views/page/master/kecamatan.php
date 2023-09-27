@@ -28,7 +28,7 @@
                                     <td>' . $prov['id'] . '</td>
                                     <td>' . $prov['name'] . '</td>
                                     <td>' . $prov['regency_id'] . '</td>
-                                    <td><a href="' .site_url('pilpres/kecamatan/' . $prov['id']) . '">Detail</a></td>
+                                    <td>#</td>
                                 </tr>';
                             }
                             ?>

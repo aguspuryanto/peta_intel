@@ -103,6 +103,15 @@ class Master extends CI_Controller {
 		$data['model'] = $this->M_partai;
 		$data['dataProvider'] = $this->M_partai->select_all();
 		
-		$this->template->views('page/dprd/partai', $data);
+		$this->template->views('page/master/partai', $data);
+	}
+	public function dapil() {
+
+		$data['title'] = "Data Partai";
+		
+		$data['model'] = $this->M_partai;
+		$data['dataProvider'] = $this->M_partai->select_all();
+		
+		$this->template->views('page/master/dapil', $data);
 	}
 }
