@@ -7,12 +7,12 @@ class M_dprd extends CI_Model {
     public function rules()
     {
         return [
-            ['field' => 'thn', 'label' => 'Tahun', 'rules' => 'required'],
+            ['field' => 'thn', 'label' => 'Tahun', 'rules' => ''],
             ['field' => 'prov_id', 'label' => 'Provinsi'],
             ['field' => 'kab_id', 'label' => 'Kabupaten', 'rules' => 'required'],
             ['field' => 'kec_id', 'label' => 'Kecamatan', 'rules' => ''],
-            ['field' => 'nama_partai', 'label' => 'Nama Partai'],
-            ['field' => 'jml_anggota', 'label' => 'Anggota'],
+            ['field' => 'nama_partai', 'label' => 'Nama Partai', 'rules' => 'required'],
+            ['field' => 'jml_anggota', 'label' => 'Anggota', 'rules' => 'required'],
         ];
     }    
 

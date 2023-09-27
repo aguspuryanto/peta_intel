@@ -30,8 +30,8 @@ class Migration_create_dprd extends CI_Migration {
                 'null' => TRUE
             ),
             'nama_partai' => array(
-                'type' => 'INT',
-                'constraint' => '50',
+                'type' => 'VARCHAR',
+                'constraint' => '150',
                 'null' => TRUE
             ),
             'jml_anggota' => array(

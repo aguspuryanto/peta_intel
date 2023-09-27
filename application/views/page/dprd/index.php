@@ -21,7 +21,7 @@
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
-                            <?=get_header_table_custom($model, ['prov_id', 'kec_id']); ?>
+                            <?=get_header_table_custom($model, ['thn','prov_id', 'kec_id']); ?>
                         </thead>
                         <tbody>
                         <?php
@@ -30,12 +30,9 @@
                             foreach($dataProvider as $row) {
                                 echo '<tr>
                                     <td>'.$id.'</td>
-                                    <td>'.$row->thn.'</td>
                                     <td>'.$row->nama_kab.'</td>
-                                    <td>'.$row->nama_capres1.'</td>
-                                    <td>'.$row->jmlsuara_capres1.'</td>
-                                    <td>'.$row->nama_capres2.'</td>
-                                    <td>'.$row->jmlsuara_capres2.'</td>
+                                    <td>'.$row->nama_partai.'</td>
+                                    <td>'.$row->jml_anggota.'</td>
                                     <td style="min-width:115px">
                                         <div class="btn-group" role="group">
                                             <button type="button" data-id="'.$row->id.'" class="btn btn-default btnEdit" data-toggle="modal" data-target="#myModal">Edit</button>
@@ -104,9 +101,9 @@
 </div>
 
 <?php
-$Urladd = base_url('pilpres/create');
-$Urldetail = base_url('pilpres/view');
-$Urlremove = base_url('pilpres/remove');
+$Urladd = base_url('pileg/create');
+$Urldetail = base_url('pileg/view');
+$Urlremove = base_url('pileg/remove');
 ?>
 
 <script>

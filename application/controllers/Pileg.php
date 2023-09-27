@@ -40,7 +40,7 @@ class pileg extends CI_Controller {
 		
 		$this->load->library('form_validation');
 		
-		$model = $this->M_pilpres;
+		$model = $this->M_dprd;
 
         $json = array();
 		$this->form_validation->set_rules($model->rules());
@@ -54,14 +54,12 @@ class pileg extends CI_Controller {
 			}
 		} else {
 			$data = array(
-				'thn' => $this->input->post('thn'),
+				'thn' => ($this->input->post('thn')) ?? date('Y'),
 				'prov_id' => $this->input->post('prov_id'),
 				'kab_id' => $this->input->post('kab_id'),
 				'kec_id' => $this->input->post('kec_id'),
-				'nama_capres1' => $this->input->post('nama_capres1'),
-				'jmlsuara_capres1' => $this->input->post('jmlsuara_capres1'),
-				'nama_capres2' => $this->input->post('nama_capres2'),
-				'jmlsuara_capres2' => $this->input->post('jmlsuara_capres2'),
+				'nama_partai' => $this->input->post('nama_partai'),
+				'jml_anggota' => $this->input->post('jml_anggota'),
 			);			
 
 			$model->save($data);
