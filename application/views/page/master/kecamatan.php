@@ -19,7 +19,6 @@
                                 <th>Kode</th>
                                 <th>Nama</th>
                                 <th>regency_id</th>
-                                <th>#</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -28,7 +27,6 @@
                                     <td>' . $prov['id'] . '</td>
                                     <td>' . $prov['name'] . '</td>
                                     <td>' . $prov['regency_id'] . '</td>
-                                    <td>#</td>
                                 </tr>';
                             }
                             ?>

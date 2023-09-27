@@ -102,6 +102,11 @@ class Master extends CI_Controller {
 		
 		$data['model'] = $this->M_partai;
 		$data['dataProvider'] = $this->M_partai->select_all();
+		$data['listKab'] = array();		
+		$listKab = $this->M_kabupaten->select_all();
+		foreach($listKab as $kab) {
+			$data['listKab'][$kab->id] = $kab->nama;
+		}
 		
 		$this->template->views('page/master/partai', $data);
 	}
