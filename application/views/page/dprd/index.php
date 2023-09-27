@@ -120,7 +120,7 @@ $(document).ready(function () {
             data: $("#formDprd").serialize(),
             dataType: "json",  
             beforeSend : function(xhr, opts){
-                // $('#form-submit').text('Loading...').prop("disabled", true);
+                $('#form-submit').text('Loading...').prop("disabled", true);
             },
             success: function(data){
                 console.log(data, "data");
@@ -128,7 +128,7 @@ $(document).ready(function () {
                 if(data.success == true){
                     setTimeout(function(){
                         window.location.reload();
-                    }, 3000);
+                    }, 1000);
                 } else {
                     $.each(data, function(key, value) {
                         $('#input-' + key).addClass('is-invalid');
