@@ -11,7 +11,7 @@ class pileg extends CI_Controller {
 		$this->load->model('M_provinsi');
 		$this->load->model('M_kabupaten');
 		$this->load->model('M_kecamatan');
-		$this->load->model('M_pilpres');
+		// $this->load->model('M_pilpres');
 		$this->load->model('M_dprd');
     }
 
@@ -72,5 +72,22 @@ class pileg extends CI_Controller {
         ->set_output(json_encode($json));
 		
 		// $this->template->views('page/dprd/create', $data);
+	}
+
+	public function remove() {		
+		$json = array();
+		$model = $this->M_dprd;
+
+		if($this->input->post('id')) {
+			$id = $this->input->post('id');
+			$model->delete($id);
+
+			$this->session->set_flashdata('success', 'Berhasil terhapus');
+			$json = array('success' => true, 'message' => 'Berhasil terhapus');
+		}
+
+		$this->output
+		->set_content_type('application/json')
+		->set_output(json_encode($json));
 	}
 }
