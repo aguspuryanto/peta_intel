@@ -13,6 +13,7 @@ class pileg extends CI_Controller {
 		$this->load->model('M_kecamatan');
 		// $this->load->model('M_pilpres');
 		$this->load->model('M_dprd');
+		$this->load->model('M_partai');
     }
 
 	public function index()
@@ -25,6 +26,11 @@ class pileg extends CI_Controller {
 			$data['listKab'][$kab->id] = $kab->nama;
 		}
 
+		$data['listPartai'] = array();
+		$listPartai = $this->M_partai->select_all();
+		foreach($listPartai as $partai) {
+			$data['listPartai'][$partai->id] = $partai->nama_partai;
+		}
 		// $data['model'] = $this->M_pilpres;
 		// $data['dataProvider'] = $this->M_pilpres->select_all();
 		$data['model'] = $this->M_dprd;

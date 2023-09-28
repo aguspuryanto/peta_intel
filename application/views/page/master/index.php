@@ -26,7 +26,7 @@
                                 echo '<tr>
                                     <td>' . $prov['id'] . '</td>
                                     <td>' . $prov['name'] . '</td>
-                                    <td><a href="' .site_url('pilpres/kabupaten/' . $prov['id']) . '">Detail</a></td>
+                                    <td><a href="' .site_url('master/kabupaten/' . $prov['id']) . '">Detail</a></td>
                                 </tr>';
                             }
                             ?>

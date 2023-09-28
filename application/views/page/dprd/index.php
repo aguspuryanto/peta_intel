@@ -66,22 +66,21 @@
       <!-- Modal body -->
       <div class="modal-body">
         <?=form_open('', array('id' => 'formDprd', 'role' => 'form'));?>
-            <!-- <div class="form-group">
-                <label>Tahun Pilpres</label>
-                <?php $listThn = array('2024' => '2024', '2019' => '2019'); ?>
-                <?=form_dropdown('thn', $listThn, '', array('class' => 'form-control', 'id' => 'input-thn'));?>
-                <div id="error"></div>
-            </div> -->
             <div class="form-group">
                 <label>Kabupaten</label>
                 <?=form_dropdown('kab_id', $listKab, '', array('class' => 'form-control', 'id' => 'input-kab_id'));?>
                 <div id="error"></div>
             </div>
             <div class="row">
-                <div class="col-md-6">
-                    <?=get_form_input($model, 'nama_partai'); ?>
+                <div class="col-md-8">
+                    <?//=get_form_input($model, 'nama_partai'); ?>
+                    <div class="form-group">
+                        <label>Nama Partai</label>
+                        <?=form_dropdown('nama_partai', $listPartai, '', array('class' => 'form-control', 'id' => 'input-nama_partai'));?>
+                        <div id="error"></div>
+                    </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <?=get_form_input($model, 'jml_anggota'); ?>
                 </div>
             </div>

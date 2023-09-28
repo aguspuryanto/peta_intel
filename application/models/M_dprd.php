@@ -45,9 +45,10 @@ class M_dprd extends CI_Model {
         if($options) {
             $this->db->where($options);
         }
+        $this->db->join('epak_partai d', 'd.id = a.nama_partai');
         $this->db->join('epak_kabupaten c', 'c.id = a.kab_id');
         // $this->db->join('epak_kecamatan b', 'b.id = a.kec_id');
-        $this->db->select('a.*, c.nama as nama_kab');
+        $this->db->select('a.*, c.nama as nama_kab, d.nama_partai');
         $data = $this->db->get($this->table_name . ' a');
         return $data->result();
     }
