@@ -15,14 +15,12 @@ class Migration_create_dapil extends CI_Migration {
                 'constraint' => '4'
             ),
             'nama_dapil' => array(
-                'type' => 'INT',
-                'constraint' => '50',
-                'null' => TRUE
+                'type' => 'VARCHAR',
+                'constraint' => '150'
             ),
             'nama_wilayah' => array(
-                'type' => 'INT',
-                'constraint' => '50',
-                'null' => TRUE
+                'type' => 'VARCHAR',
+                'constraint' => '150'
             ),
             'jml_kursi' => array(
                 'type' => 'INT',

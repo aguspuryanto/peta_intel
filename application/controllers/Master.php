@@ -177,7 +177,7 @@ class Master extends CI_Controller {
 
 	public function dapil() {
 
-		$data['title'] = "Data Partai";
+		$data['title'] = "Data Dapil";
 		
 		$data['model'] = $this->M_partai;
 		$data['dataProvider'] = $this->M_partai->select_all();
