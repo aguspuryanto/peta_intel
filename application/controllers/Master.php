@@ -14,6 +14,7 @@ class Master extends CI_Controller {
 		$this->load->model('M_pilpres');
 		$this->load->model('M_dprd');
 		$this->load->model('M_partai');
+		$this->load->model('M_dapil');
     }
 
 	public function index()
@@ -179,9 +180,43 @@ class Master extends CI_Controller {
 
 		$data['title'] = "Data Dapil";
 		
-		$data['model'] = $this->M_partai;
-		$data['dataProvider'] = $this->M_partai->select_all();
+		$data['model'] = $this->M_dapil;
+		$data['dataProvider'] = $this->M_dapil->select_all();
 		
 		$this->template->views('page/master/dapil', $data);
+	}
+
+	public function dapil_create()
+	{		
+		$this->load->library('form_validation');
+		
+		$model = $this->M_dapil;
+
+        $json = array();
+		$this->form_validation->set_rules($model->rules());
+		$this->form_validation->set_message('required', 'Mohon lengkapi {field}!');
+
+		if (!$this->form_validation->run()) {			
+			foreach($model->rules() as $key => $val) {
+				$json = array_merge($json, array(
+					$val['field'] => form_error($val['field'], '<p class="mt-3 text-danger">', '</p>')
+				));
+			}
+		} else {
+			$data = array(
+				'thn' => ($this->input->post('thn')) ?? date('Y'),
+				'nama_dapil' => $this->input->post('nama_dapil'),
+				'nama_wilayah' => $this->input->post('nama_wilayah'),
+				'jml_kursi' => $this->input->post('jml_kursi')
+			);			
+
+			$model->save($data);
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+			$json = array('success' => true, 'message' => 'Berhasil disimpan');
+		}
+
+		$this->output
+        ->set_content_type('application/json')
+        ->set_output(json_encode($json));
 	}
 }
