@@ -35,7 +35,7 @@
                                     <td>'.$row->jml_kursi.'</td>
                                     <td style="min-width:115px">
                                         <div class="btn-group" role="group">
-                                            <button type="button" data-id="'.$row->id.'" class="btn btn-default btnEdit" data-toggle="modal" data-target="#myModal">Edit</button>
+                                            <button type="button" data-id="'.$row->id.'" class="btn btn-secondary btnEdit" data-toggle="modal" data-target="#myModal">Edit</button>
                                             <button type="button" data-id="'.$row->id.'" class="btn btn-danger btnRemove">Hapus</button>
                                         </div>
                                     </td>
@@ -138,7 +138,7 @@ $(document).ready(function () {
         var dataId = $(this).attr("data-id");
         console.log(dataId, '_dataId');
 
-        $('#formModal input[name=id]').val(dataId);
+        $('#formDapil input[name=id]').val(dataId);
 
         $.get("<?=$Urldetail;?>/" + dataId, function(data, status){
             console.log(data, "data");
