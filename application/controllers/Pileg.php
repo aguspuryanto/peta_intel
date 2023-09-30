@@ -13,6 +13,7 @@ class pileg extends CI_Controller {
 		$this->load->model('M_kecamatan');
 		// $this->load->model('M_pilpres');
 		$this->load->model('M_dprd');
+		$this->load->model('M_anggota_dprd');
 		$this->load->model('M_partai');
     }
 
@@ -54,8 +55,8 @@ class pileg extends CI_Controller {
 			$data['listPartai'][$partai->id] = $partai->nama_partai;
 		}
 		
-		$data['model'] = $this->M_dprd;
-		$data['dataProvider'] = $this->M_dprd->select_all();
+		$data['model'] = $this->M_anggota_dprd;
+		$data['dataProvider'] = $this->M_anggota_dprd->select_all();
 		
 		$this->template->views('page/dprd/anggota', $data);
 	}

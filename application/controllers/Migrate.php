@@ -5,8 +5,10 @@ class Migrate extends CI_Controller {
         $this->load->library('migration');
         if ($this->migration->current() === FALSE)
         {
+            // echo $this->migration->version();
             show_error($this->migration->error_string());
         }else{
+            // echo $this->migration->current();
             echo "Table Migrated Successfully.";
         }
     }
