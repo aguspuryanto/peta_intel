@@ -23,7 +23,8 @@
                     'url' => 'pileg',
                     'show_menu' => false,
                     'submenu' => [
-                        array('title' => 'Lihat Data', 'link' => 'index')
+                        array('title' => 'Lihat Partai', 'link' => 'index'),
+                        array('title' => 'Lihat Anggota DPRD', 'link' => 'anggota')
                     ]
                 ),
                 array(

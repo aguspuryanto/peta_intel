@@ -20,7 +20,7 @@ class Pkn extends CI_Controller {
 		$data['konten'] = "index";
 
 		$data['listKab'] = array();		
-		$listKab = $this->M_kecamatan->select_all();
+		$listKab = $this->M_kabupaten->select_all();
 		foreach($listKab as $kab) {
 			$data['listKab'][$kab->id] = $kab->nama;
 		}

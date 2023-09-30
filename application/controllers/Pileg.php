@@ -39,6 +39,27 @@ class pileg extends CI_Controller {
 		$this->template->views('page/dprd/index', $data);
 	}
 
+	public function anggota() {
+		$data['title'] = "Data Anggota DPRD";
+		// $data['konten'] = "index";
+		$data['listKab'] = array();		
+		$listKab = $this->M_kabupaten->select_all();
+		foreach($listKab as $kab) {
+			$data['listKab'][$kab->id] = $kab->nama;
+		}
+
+		$data['listPartai'] = array();
+		$listPartai = $this->M_partai->select_all();
+		foreach($listPartai as $partai) {
+			$data['listPartai'][$partai->id] = $partai->nama_partai;
+		}
+		
+		$data['model'] = $this->M_dprd;
+		$data['dataProvider'] = $this->M_dprd->select_all();
+		
+		$this->template->views('page/dprd/anggota', $data);
+	}
+
 	public function create()
 	{
 		// $data['title'] = "Pemilu Pilpres";
