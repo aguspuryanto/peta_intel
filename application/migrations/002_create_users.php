@@ -58,7 +58,7 @@ class Migration_create_users extends CI_Migration {
                 'type' => 'TEXT',
                 'null' => TRUE
             ),
-            'created_at' => array('type' => 'timestamp')
+            'created_at datetime default current_timestamp'
         ));
         $this->dbforge->add_key('id', TRUE);
 
