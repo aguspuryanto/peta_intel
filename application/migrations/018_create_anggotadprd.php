@@ -14,6 +14,11 @@ class Migration_create_anggotadprd extends CI_Migration {
                 'type' => 'VARCHAR',
                 'constraint' => '50'
             ),
+            'nama_anggota' => array(
+                'type' => 'INT',
+                'constraint' => '50',
+                'null' => TRUE
+            ),
             'partai_id' => array(
                 'type' => 'INT',
                 'constraint' => '50',

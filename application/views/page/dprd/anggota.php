@@ -83,27 +83,24 @@
       <!-- Modal body -->
       <div class="modal-body">
         <?=form_open('', array('id' => 'formDprd', 'role' => 'form'));?>
+
+            <?=get_form_input($model, 'periode'); ?>
+
             <div class="form-group">
-                <label>Kabupaten</label>
-                <?=form_dropdown('kab_id', $listKab, '', array('class' => 'form-control', 'id' => 'input-kab_id'));?>
+                <label>Nama Partai</label>
+                <?=form_dropdown('partai_id', $listPartai, '', array('class' => 'form-control', 'id' => 'input-partai_id'));?>
                 <div id="error"></div>
             </div>
-            <div class="row">
-                <div class="col-md-8">
-                    <?//=get_form_input($model, 'nama_partai'); ?>
-                    <div class="form-group">
-                        <label>Nama Partai</label>
-                        <?=form_dropdown('nama_partai', $listPartai, '', array('class' => 'form-control', 'id' => 'input-nama_partai'));?>
-                        <div id="error"></div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <?=get_form_input($model, 'jml_anggota'); ?>
-                </div>
+            
+            <div class="form-group">
+                <label>Nama Dapil</label>
+                <?=form_dropdown('dapil_id', $listDapil, '', array('class' => 'form-control', 'id' => 'input-dapil_id'));?>
+                <div id="error"></div>
             </div>
 
+            <?=get_form_input($model, 'jml_suara'); ?>
+
             <?=form_hidden('id', ''); ?>
-            <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
         <?=form_close();?>
       </div>
 

@@ -15,6 +15,7 @@ class pileg extends CI_Controller {
 		$this->load->model('M_dprd');
 		$this->load->model('M_anggota_dprd');
 		$this->load->model('M_partai');
+		$this->load->model('M_dapil');
     }
 
 	public function index()
@@ -53,6 +54,13 @@ class pileg extends CI_Controller {
 		$listPartai = $this->M_partai->select_all();
 		foreach($listPartai as $partai) {
 			$data['listPartai'][$partai->id] = $partai->nama_partai;
+		}
+
+		// listDapil
+		// $data['listDapil'] = array();
+		$listDapil = $this->M_dapil->select_all();
+		foreach($listDapil as $dapil) {
+			$data['listDapil'][$dapil->id] = $dapil->nama_dapil;
 		}
 		
 		$data['model'] = $this->M_anggota_dprd;
