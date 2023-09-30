@@ -72,4 +72,19 @@ class Pilkada extends CI_Controller {
 		
 		// $this->template->views('page/Pilkada/create', $data);
 	}
+
+	public function pilgub() {
+		$data['title'] = "Pemilu Pilgub";
+		// $data['konten'] = "index";
+		$data['listKab'] = array();		
+		$listKab = $this->M_kabupaten->select_all();
+		foreach($listKab as $kab) {
+			$data['listKab'][$kab->id] = $kab->nama;
+		}
+
+		$data['model'] = $this->M_pilkada;
+		$data['dataProvider'] = $this->M_pilkada->select_all();
+		
+		$this->template->views('page/pilkada/pilgub', $data);
+	}
 }

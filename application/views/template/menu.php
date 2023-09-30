@@ -14,7 +14,8 @@
                     'url' => 'pilkada',
                     'show_menu' => false,
                     'submenu' => [
-                        array('title' => 'Lihat Data', 'link' => 'index')
+                        array('title' => 'Lihat Data Pilkada', 'link' => 'index'),
+                        array('title' => 'Lihat Data Pilgub', 'link' => 'pilgub')
                     ]
                 ),
                 array(
