@@ -11,7 +11,7 @@
             <div class="card-body text-center">                
                 <?=form_open_multipart('', array('id' => 'formProfile', 'role' => 'form'));?>
                     <!-- Profile picture image-->
-                    <img class="img-account-profile rounded-circle mb-2" src="<?=($dataUser->picture_img) ? base_url() . 'uploads/' . $dataUser->picture_img : base_url() . 'assets/img/undraw_profile_1.svg'; ?>" alt="">
+                    <img class="img-account-profile mb-2" src="<?=($dataUser->picture_img) ? base_url() . 'uploads/' . $dataUser->picture_img : base_url() . 'assets/img/undraw_profile_1.svg'; ?>" alt="">
                     
                     <div class="form-group">
                         <input type="file" name="picture_img" id="input-picture_img" class="form-control" accept="image/*"/>
@@ -139,7 +139,7 @@ $( document ).ready(function() {
         e.preventDefault();
 
         var fd = new FormData();
-        var files = $(this).find('#input-picture')[0].files[0];
+        var files = $(this).find('#input-picture_img')[0].files[0];
         fd.append('file',files);
 
         $.ajax({
