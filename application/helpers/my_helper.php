@@ -207,7 +207,7 @@ function get_header_table_admin($row, $userdata="") {
                 <button type="button" data-id="'.$row->id.'" class="btn btn-success btn-block btnDokumen" data-toggle="modal" data-target="#myModalDokumen">Dokumen</button>
             </p>
             <div class="btn-group" role="group">
-                <button type="button" data-id="'.$row->id.'" class="btn btn-default btnEdit" data-toggle="modal" data-target="#myModalPerkara">Edit</button>
+                <button type="button" data-id="'.$row->id.'" class="btn btn-secondary btnEdit" data-toggle="modal" data-target="#myModalPerkara">Edit</button>
                 <button type="button" data-id="'.$row->id.'" class="btn btn-danger btnRemove">Hapus</button>
             </div>
         </td>';

@@ -38,7 +38,7 @@
                                     <td>'.$row->jmlsuara_gub2.'</td>
                                     <td style="min-width:115px">
                                         <div class="btn-group" role="group">
-                                            <button type="button" data-id="'.$row->id.'" class="btn btn-default btnEdit" data-toggle="modal" data-target="#myModalPerkara">Edit</button>
+                                            <button type="button" data-id="'.$row->id.'" class="btn btn-secondary btnEdit" data-toggle="modal" data-target="#myModalPerkara">Edit</button>
                                             <button type="button" data-id="'.$row->id.'" class="btn btn-danger btnRemove">Hapus</button>
                                         </div>
                                     </td>
