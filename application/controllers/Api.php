@@ -185,17 +185,46 @@ class Api extends CI_Controller {
 	public function pemilu_3() {
 		$data['title'] = "PEMILU: DPRD";
 
+		// $data['listLatLong'] = array();		
+		// $listKab = $this->M_dprd->select_all();
+		// // echo $this->db->last_query();
+		// foreach($listKab as $kab) {
+		// 	$data['listLatLong'][] = array(
+		// 		// 'name' => $kab->nama_kab,
+		// 		'content' => addslashes($kab->nama_partai) . ' ' . $kab->jml_anggota,
+		// 		'coordinates' => array($kab->latitude, $kab->longitude)
+		// 	);
+		// }
+
 		$data['listLatLong'] = array();		
+		$data['listKab'] = array();		
 		$listKab = $this->M_dprd->select_all();
-		foreach($listKab as $kab) {
-			$data['listLatLong'][] = array(
-				// 'name' => $kab->nama_kab,
-				'content' => addslashes($kab->nama_partai) . ' ' . $kab->jml_anggota,
+		foreach($listKab as $kab) {			
+			$data['listKab'][] = array(
+				'type' => 'Feature',
+				'properties' => array(
+					'name' => $kab->nama_partai,
+					'amenity' => $kab->nama_partai,
+					'popupContent' => addslashes($kab->nama_partai) . '<span style="float:right;text-align:right;">' . $kab->jml_anggota . '</span>',
+					'show_on_map' => true
+				),
+				'geometry' => array(
+					'type' => 'Point',
+					'coordinates' => array($kab->longitude, $kab->latitude)
+				),
+			);
+
+			$data['listLatLong'] = array(
+				'name' => $kab->nama_partai,
 				'coordinates' => array($kab->latitude, $kab->longitude)
 			);
 		}
+		
+		$data['listGeoJson'][] = array(
+			'type' => 'FeatureCollection',
+			'features' => $data['listKab']
+		);
 
-		// echo json_encode($data['listLatLong']);
 		$this->load->view('page/api/dprd', $data);
 	}
 
