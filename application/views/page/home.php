@@ -72,19 +72,6 @@
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                <!-- <div class="form-group col-md-5">
-                                    <label for="satker">Pilih Satker</label>
-                                    <select name="satker" id="satker" class="form-control">
-                                        <option value="semua">Semua Satker</option>
-                                        <option value="1">Kejati banten</option>
-                                        <option value="3">Kejari Serang</option>
-                                        <option value="4">Kejari Tangerang</option>
-                                        <option value="5">Kejari Cilegon</option>
-                                        <option value="6">Kejari Tigaraksa</option>
-                                        <option value="7">Kejari Pandeglang</option>
-                                        <option value="8">Kejari Lebak</option>
-                                    </select>
-                                </div> -->
                                 <div class="form-group col-md-5">
                                     <label for="pelayanan">Kategori</label>
                                     <select name="pelayanan" id="pelayanan" class="form-control">
@@ -130,52 +117,13 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <div class="col-12">
                     <div class="card-box">
                             <div class="col-12 ">
                                 <div class="row">
-                                    <div class="col-6">
-                                        <h4>PENYELAMATAN KEUANGAN NEGARA DAN PENANGGULANGAN TINDAK PIDANA </h4>
-                                <iframe src="<?=base_url('api/penyelamatan_keuangan') ?>" width="100%" height="500" scrolling="no"></iframe>
-                                    </div>
-
-                                    <div class="col-6">
-                                        <h4>PENYULUHAN DAN PENERANGAN HUKUM</h4>
-                                        <iframe src="<?=base_url('api/penyuluhan_hukum') ?>" width="100%" height="500" scrolling="no"></iframe>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-                
-                <div class="carousel-item">
-                    <div class="col-12">
-                    <div class="card-box">
-                            <div class="col-12 ">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <h4>POLITIK, SOSIAL BUDAYA DAN SUMBER DAYA ORGANISASI</h4>
-                                        <iframe src="<?=base_url('api/politik') ?>" width="100%" height="500" scrolling="no"></iframe>
-                                    </div>
                                     <div class="col-6">
                                         <h4>PEMILU: PRESIDEN</h4>
                                         <iframe src="<?=base_url('api/pemilu_1') ?>" width="100%" height="500" scrolling="no"></iframe>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <div class="col-12">
-                    <div class="card-box">
-                            <div class="col-12 ">
-                                <div class="row">
+                                    </div>                                    
                                     <div class="col-6">
                                         <h4>PEMILU: KEPALA DAERAH</h4>
                                         <iframe src="<?=base_url('api/pemilu_2') ?>" width="100%" height="500" scrolling="no"></iframe>
@@ -187,96 +135,6 @@
                                 </div>
                             </div>
 
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <div class="col-12">
-                    <div class="card-box">
-                            <div class="col-12 ">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <h4>PENYELAMATAN KEUANGAN NEGARA DAN PENANGGULANGAN TINDAK PIDANA 2019</h4>
-                                        <iframe src="<?=base_url('api/penyelamatan_keuangan_k') ?>" width="100%" height="500" scrolling="no"></iframe>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <div class="col-12">
-                        <div class="card-box">
-                            <div class="col-12 ">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <h4>PENYULUHAN DAN PENERANGAN HUKUM</h4>
-                                        <iframe src="<?=base_url('api/penyuluhan_hukum_k') ?>" width="100%" height="500" scrolling="no"></iframe>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <div class="col-12">
-                        <div class="card-box">
-                            <div class="col-12 ">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <h4>POLITIK, SOSIAL BUDAYA DAN SUMBER DAYA ORGANISASI</h4>
-                                        <iframe src="<?=base_url('api/politik_k') ?>" width="100%" height="500" scrolling="no"></iframe>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <div class="col-12">
-                        <div class="card-box">
-                            <div class="col-12 ">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <h4>Pemilu Presiden</h4>
-                                        <iframe src="<?=base_url('api/pemilu_1_k') ?>" width="100%" height="500" scrolling="no"></iframe>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <div class="col-12">
-                    <div class="card-box">
-                            <div class="col-12 ">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <h4>Pemilu Kepala Daerah</h4>
-                                        <iframe src="<?=base_url('api/pemilu_2_k') ?>" width="100%" height="500" scrolling="no"></iframe>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <div class="col-12">
-                        <div class="card-box">
-                            <div class="col-12 ">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <h4>Pemilu DPRD</h4>
-                                        <iframe src="<?=base_url('api/pemilu_3_k') ?>" width="100%" height="500" scrolling="no"></iframe>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

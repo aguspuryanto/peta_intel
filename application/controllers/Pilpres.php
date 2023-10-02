@@ -56,9 +56,9 @@ class Pilpres extends CI_Controller {
 				'kab_id' => $this->input->post('kab_id'),
 				'kec_id' => $this->input->post('kec_id'),
 				'nama_capres1' => $this->input->post('nama_capres1'),
-				'jmlsuara_capres1' => $this->input->post('jmlsuara_capres1'),
+				'jmlsuara_capres1' => preg_replace("/[^0-9]/", "", $this->input->post('jmlsuara_capres1')),
 				'nama_capres2' => $this->input->post('nama_capres2'),
-				'jmlsuara_capres2' => $this->input->post('jmlsuara_capres2'),
+				'jmlsuara_capres2' => preg_replace("/[^0-9]/", "", $this->input->post('jmlsuara_capres2')),
 			);			
 
 			if($this->input->post('id')) {

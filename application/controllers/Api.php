@@ -8,6 +8,7 @@ class Api extends CI_Controller {
         parent::__construct();
         // is_logged_in();
 		
+		$this->load->model('M_pilpres');
 		$this->load->model('M_kabupaten');
 		$this->load->model('M_kecamatan');
     }
@@ -131,36 +132,19 @@ class Api extends CI_Controller {
 	public function pemilu_1() {
 		$data['title'] = "PENYULUHAN DAN PENERANGAN HUKUM";
 
-		$data['listLatLong'] = array();		
-		$data['listKab'] = array();		
-		$listKab = $this->M_kabupaten->select_all();
-		foreach($listKab as $kab) {			
-			$data['listKab'][] = array(
-				'type' => 'Feature',
-				'properties' => array(
-					'name' => $kab->nama,
-					'amenity' => $kab->nama,
-					'popupContent' => $kab->nama,
-					'show_on_map' => true
-				),
-				'geometry' => array(
-					'type' => 'Point',
-					'coordinates' => array($kab->latitude, $kab->longitude)
-				),
-			);
-
-			$data['listLatLong'] = array(
-				'name' => $kab->nama,
+		$data['listLatLong'] = array();
+		
+		$listKab = $this->M_pilpres->select_all();
+		foreach($listKab as $kab) {
+			$data['listLatLong'][] = array(
+				'name' => $kab->nama_kab,
+				'pilpres' => addslashes($kab->nama_capres1) . ' ' . $kab->jmlsuara_capres1 . '<br>' . addslashes($kab->nama_capres2) . ' ' . $kab->jmlsuara_capres2,
 				'coordinates' => array($kab->latitude, $kab->longitude)
 			);
 		}
-		
-		$data['listGeoJson'][] = array(
-			'type' => 'FeatureCollection',
-			'features' => $data['listKab']
-		);
 
-		$this->load->view('page/api/penyuluhan', $data);
+		// echo json_encode($data['listLatLong']);
+		$this->load->view('page/api/pilpres', $data);
 	}
 
 	public function pemilu_2() {

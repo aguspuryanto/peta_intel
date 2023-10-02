@@ -33,9 +33,9 @@
                                     <td>'.$row->thn.'</td>
                                     <td>'.$row->nama_kab.'</td>
                                     <td>'.$row->nama_capres1.'</td>
-                                    <td>'.$row->jmlsuara_capres1.'</td>
+                                    <td>'.number_format($row->jmlsuara_capres1).'</td>
                                     <td>'.$row->nama_capres2.'</td>
-                                    <td>'.$row->jmlsuara_capres2.'</td>
+                                    <td>'.number_format($row->jmlsuara_capres2).'</td>
                                     <td style="min-width:115px">
                                         <div class="btn-group" role="group">
                                             <button type="button" data-id="'.$row->id.'" class="btn btn-secondary btnEdit" data-toggle="modal" data-target="#myModal">Edit</button>
@@ -165,7 +165,7 @@ $(document).ready(function () {
         var dataId = $(this).attr("data-id");
         console.log(dataId, '_dataId');
 
-        $('#formModal input[name=id]').val(dataId);
+        $('#formPilpres input[name=id]').val(dataId);
 
         $.get("<?=$Urldetail;?>/" + dataId, function(data, status){
             console.log(data, "data");
@@ -177,7 +177,7 @@ $(document).ready(function () {
                 }
             });
 
-            $('#form input[name=kegiatan]').val(data.data.kegiatan);
+            // $('#form input[name=kegiatan]').val(data.data.kegiatan);
         });
     });
 
