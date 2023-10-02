@@ -185,17 +185,6 @@ class Api extends CI_Controller {
 	public function pemilu_3() {
 		$data['title'] = "PEMILU: DPRD";
 
-		// $data['listLatLong'] = array();		
-		// $listKab = $this->M_dprd->select_all();
-		// // echo $this->db->last_query();
-		// foreach($listKab as $kab) {
-		// 	$data['listLatLong'][] = array(
-		// 		// 'name' => $kab->nama_kab,
-		// 		'content' => addslashes($kab->nama_partai) . ' ' . $kab->jml_anggota,
-		// 		'coordinates' => array($kab->latitude, $kab->longitude)
-		// 	);
-		// }
-
 		$data['listLatLong'] = array();		
 		$data['listKab'] = array();		
 		$listKab = $this->M_dprd->select_all();
