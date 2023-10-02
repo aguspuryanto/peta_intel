@@ -38,7 +38,7 @@
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
-                            <?=get_header_table_custom($model, ['thn','prov_id', 'kec_id']); ?>
+                            <?=get_header_table_custom($model, ['thn','prov_id', 'kab_id', 'kec_id']); ?>
                         </thead>
                         <tbody>
                         <?php
@@ -47,9 +47,8 @@
                             foreach($dataProvider as $row) {
                                 echo '<tr>
                                     <td>'.$id.'</td>
-                                    <td>'.$row->nama_kab.'</td>
                                     <td>'.$row->nama_partai.'</td>
-                                    <td>'.$row->jml_anggota.'</td>
+                                    <td>'.number_format($row->jml_anggota).'</td>
                                     <td style="min-width:115px">
                                         <div class="btn-group" role="group">
                                             <button type="button" data-id="'.$row->id.'" class="btn btn-secondary btnEdit" data-toggle="modal" data-target="#myModal">Edit</button>
@@ -83,24 +82,18 @@
       <!-- Modal body -->
       <div class="modal-body">
         <?=form_open('', array('id' => 'formDprd', 'role' => 'form'));?>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label>Kabupaten</label>
                 <?=form_dropdown('kab_id', $listKab, '', array('class' => 'form-control', 'id' => 'input-kab_id'));?>
                 <div id="error"></div>
+            </div> -->
+            <div class="form-group">
+                <label>Nama Partai</label>
+                <?=form_dropdown('nama_partai', $listPartai, '', array('class' => 'form-control', 'id' => 'input-nama_partai'));?>
+                <div id="error"></div>
             </div>
-            <div class="row">
-                <div class="col-md-8">
-                    <?//=get_form_input($model, 'nama_partai'); ?>
-                    <div class="form-group">
-                        <label>Nama Partai</label>
-                        <?=form_dropdown('nama_partai', $listPartai, '', array('class' => 'form-control', 'id' => 'input-nama_partai'));?>
-                        <div id="error"></div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <?=get_form_input($model, 'jml_anggota'); ?>
-                </div>
-            </div>
+            
+            <?=get_form_input($model, 'jml_anggota'); ?>
 
             <?=form_hidden('id', ''); ?>
             <!-- <button type="submit" class="btn btn-primary">Submit</button> -->

@@ -63,11 +63,11 @@ class pileg extends CI_Controller {
 		} else {
 			$data = array(
 				'thn' => ($this->input->post('thn')) ?? date('Y'),
-				'prov_id' => $this->input->post('prov_id'),
+				'prov_id' => ($this->input->post('prov_id')) ?? 30,
 				'kab_id' => $this->input->post('kab_id'),
 				'kec_id' => $this->input->post('kec_id'),
 				'nama_partai' => $this->input->post('nama_partai'),
-				'jml_anggota' => $this->input->post('jml_anggota'),
+				'jml_anggota' => preg_replace("/[^0-9]/", "", $this->input->post('jml_anggota')),
 			);			
 	
 			if($this->input->post('id')) {
