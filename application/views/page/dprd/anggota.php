@@ -47,12 +47,15 @@
                             foreach($dataProvider as $row) {
                                 echo '<tr>
                                     <td>'.$id.'</td>
-                                    <td>'.$row->nama_kab.'</td>
+                                    <td>'.$row->periode.'</td>
+                                    <td>'.$row->nama_anggota.'</td>
                                     <td>'.$row->nama_partai.'</td>
-                                    <td>'.$row->jml_anggota.'</td>
+                                    <td>'.$row->nama_dapil.'</td>
+                                    <td>'.$row->jml_suara.'</td>
+                                    <td>'.$row->keterangan.'</td>
                                     <td style="min-width:115px">
                                         <div class="btn-group" role="group">
-                                            <button type="button" data-id="'.$row->id.'" class="btn btn-default btnEdit" data-toggle="modal" data-target="#myModal">Edit</button>
+                                            <button type="button" data-id="'.$row->id.'" class="btn btn-secondary btnEdit" data-toggle="modal" data-target="#myModal">Edit</button>
                                             <button type="button" data-id="'.$row->id.'" class="btn btn-danger btnRemove">Hapus</button>
                                         </div>
                                     </td>
