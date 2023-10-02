@@ -159,7 +159,7 @@ class pileg extends CI_Controller {
 				'partai_id' => $this->input->post('partai_id'),
 				'dapil_id' => $this->input->post('dapil_id'),
 				'jml_suara' => $this->input->post('jml_suara'),
-				'keterangan' => $this->input->post('keterangan'),
+				'keterangan' => ($this->input->post('keterangan')) ?? NULL,
 			);			
 	
 			if($this->input->post('id')) {

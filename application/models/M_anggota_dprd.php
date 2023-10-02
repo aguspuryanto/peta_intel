@@ -12,7 +12,7 @@ class M_anggota_dprd extends CI_Model {
             ['field' => 'partai_id', 'label' => 'Nama Partai', 'rules' => 'required'],
             ['field' => 'dapil_id', 'label' => 'Nama Dapil', 'rules' => 'required'],
             ['field' => 'jml_suara', 'label' => 'Jumlah Suara', 'rules' => 'required'],
-            ['field' => 'keterangan', 'label' => 'Anggota', 'rules' => ''],
+            ['field' => 'keterangan', 'label' => 'Keterangan'],
         ];
     }    
 

@@ -36,7 +36,8 @@ class Migration_create_anggotadprd extends CI_Migration {
             ),
             'keterangan' => array(
                 'type' => 'VARCHAR',
-                'constraint' => '255'
+                'constraint' => '255',
+                'null' => TRUE
             ),
             'created_at datetime default current_timestamp'
         ));
