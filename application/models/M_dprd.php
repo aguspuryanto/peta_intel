@@ -12,7 +12,7 @@ class M_dprd extends CI_Model {
             ['field' => 'kab_id', 'label' => 'Kabupaten', 'rules' => 'required'],
             ['field' => 'kec_id', 'label' => 'Kecamatan', 'rules' => ''],
             ['field' => 'nama_partai', 'label' => 'Nama Partai', 'rules' => 'required'],
-            ['field' => 'jml_anggota', 'label' => 'Anggota', 'rules' => 'required'],
+            ['field' => 'jml_anggota', 'label' => 'Jumlah Suara', 'rules' => 'required'],
         ];
     }    
 
