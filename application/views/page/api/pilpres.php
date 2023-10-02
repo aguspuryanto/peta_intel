@@ -62,7 +62,7 @@
 
         var listLatLong = <?php echo json_encode($listLatLong); ?>;
         for(var i=0; i<listLatLong.length; i++){
-            L.marker(listLatLong[i]['coordinates']).addTo(map).bindPopup(listLatLong[i]['name'] + '<br>' + listLatLong[i]['pilpres']).openPopup();
+            L.marker(listLatLong[i]['coordinates']).addTo(map).bindPopup(listLatLong[i]['name'] + '<br>' + listLatLong[i]['content']).openPopup();
         }
     </script>
   </html>
