@@ -44,15 +44,23 @@ class User extends CI_Controller {
 			} else {
 				$data = array(
 					'instansi' => $this->input->post('instansi'),
-					'kategori' => $this->input->post('kategori'),
-					'no_registrasi' => $this->input->post('no_registrasi'),
-					'tgl_permohonan' => date('Y-m-d', strtotime($this->input->post('tgl_permohonan'))),
-					'subject' => $this->input->post('subject'),
-					'kasus_posisi' => $this->input->post('kasus_posisi'),
-					'status' => $this->input->post('status'),
+					'username' => $this->input->post('username'),
+					'nama' => $this->input->post('nama'),
+					'divisi' => $this->input->post('divisi'),
+					'role_id' => $this->input->post('role_id'),
+					'email' => $this->input->post('email'),
+					'nohape' => $this->input->post('nohape'),
+					'password' => $this->input->post('nohape'),
 				);
-
-				$model->save($data);
+	
+				if($this->input->post('id')) {
+					$id = $this->input->post('id');
+					$model->update($id, $data);
+				}
+				else {
+					$model->save($data);
+				}
+				
 				$this->session->set_flashdata('success', 'Berhasil disimpan');
 				$json = array('success' => true, 'message' => 'Berhasil disimpan', 'data' => $data);
 			}

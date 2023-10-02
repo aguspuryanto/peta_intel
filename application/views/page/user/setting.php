@@ -59,7 +59,7 @@
                                     '1' => 'Administrator',
                                     '2' => 'User',
                                 ); ?>
-                                <?=form_dropdown('kategori', $options, $dataUser->role_id, array('class' => 'form-control', 'id' => 'input-kategori'));?>
+                                <?=form_dropdown('role_id', $options, $dataUser->role_id, array('class' => 'form-control', 'id' => 'input-role_id'));?>
                                 <div id="error"></div>
                             </div>
                             
