@@ -243,7 +243,7 @@ function get_form_input($model, $field="", $options=array()) {
             $form .= form_input($attributes);
 
         } else {
-            $form .= form_input($field, '', $attributes);
+            $form .= form_input($field, ($attributes['value']) ?? '', $attributes);
         }
 
         $form .= '<div id="error"></div>

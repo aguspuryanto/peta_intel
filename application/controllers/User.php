@@ -70,7 +70,7 @@ class User extends CI_Controller {
 			->set_output(json_encode($json));
 		}
 		else {
-		
+			// echo json_encode($data['dataUser']);
 			$this->template->views('page/user/setting', $data);
 		}
 	}
