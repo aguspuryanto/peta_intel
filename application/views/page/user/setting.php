@@ -36,11 +36,11 @@
             <div class="card-body">
                 <?=form_open('', array('id' => 'formUser', 'role' => 'form'));?>
 
-                    <?//=get_form_input($model, 'instansi'); ?>
+                    <?=get_form_input($model, 'instansi', array('value' => $dataUser->instansi)); ?>
 
                     <div class="row">
                         <div class="col-md-6">
-                            <?=get_form_input($model, 'instansi', array('value' => $dataUser->instansi)); ?>
+                            <?=get_form_input($model, 'username', array('value' => $dataUser->username)); ?>
                         </div>
                         <div class="col-md-6">
                             <?=get_form_input($model, 'nama', array('value' => $dataUser->nama)); ?>

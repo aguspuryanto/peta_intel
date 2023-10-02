@@ -7,7 +7,7 @@ class M_user extends CI_Model {
     public function rules()
     {
         return [
-            ['field' => 'instansi', 'label' => 'Instansi'],
+            ['field' => 'instansi', 'label' => 'Nama Instansi'],
             ['field' => 'username', 'label' => 'Username','rules' => 'required'],
             ['field' => 'role_id', 'label' => 'Role'],
             ['field' => 'nama', 'label' => 'Nama Lengkap','rules' => 'required'],
