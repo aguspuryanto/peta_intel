@@ -86,6 +86,8 @@
 
             <?=get_form_input($model, 'periode'); ?>
 
+            <?=get_form_input($model, 'nama_anggota'); ?>
+
             <div class="form-group">
                 <label>Nama Partai</label>
                 <?=form_dropdown('partai_id', $listPartai, '', array('class' => 'form-control', 'id' => 'input-partai_id'));?>
