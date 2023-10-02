@@ -114,9 +114,9 @@
 </div>
 
 <?php
-$Urladd = base_url('pileg/create');
-$Urldetail = base_url('pileg/view');
-$Urlremove = base_url('pileg/remove');
+$Urladd = base_url('pileg/create_anggota');
+$Urldetail = base_url('pileg/view_anggota');
+$Urlremove = base_url('pileg/remove_anggota');
 ?>
 
 <script>
