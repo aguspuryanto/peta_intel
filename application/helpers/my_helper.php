@@ -417,3 +417,17 @@ function getBankDataMenu() {
 
     return $bankData;
 }
+
+function getListPeta() {
+
+    $listMenu = array(
+        'D.IN.2' => 'Peta Intelijen D.IN.2',
+        'D.IN.3' => 'Peta Intelijen D.IN.3',
+        'D.IN.4' => 'Peta Intelijen D.IN.4',
+        'D.IN.5' => 'Peta Intelijen D.IN.5',
+        'D.IN.6' => 'Peta Intelijen D.IN.6',
+        'D.IN.7' => 'Peta Intelijen D.IN.7'
+    );
+    
+    return $listMenu;
+}

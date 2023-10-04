@@ -54,7 +54,7 @@ $route['404_override'] = 'admin/blocked';
 $route['translate_uri_dashes'] = FALSE;
 
 // custom routes
-// $route['admin'] = 'auth';
-$route['login'] = 'admin';
+$route['admin'] = 'admin/index';
+$route['login'] = 'admin/index';
 $route['register'] = 'admin/register';
 $route['logout'] = 'admin/logout';

@@ -1,4 +1,6 @@
-
+<?php 
+$listPeta = getListPeta();
+?>
 <!doctype html>
 <html lang="en">
 
@@ -51,6 +53,9 @@
                 }
                 ?>
             </ul>
+            <span class="navbar-text">
+                <a class="nav-link" href="<?=site_url('login') ?>">LOGIN</a>
+            </span>
         </div>
     </div>
     </nav>
@@ -68,11 +73,9 @@
                                 <div class="form-group col-md-5">
                                     <label for="pelayanan">Kategori</label>
                                     <select name="pelayanan" id="pelayanan" class="form-control">
-                                        <option value="1">Peta Kerawanan Konflik Sosial</option>
-                                        <option value="2">Peta Kerawanan Radikalisme</option>
-                                        <option value="3">Peta Aliran Kepercayaan Masyarakat</option>
-                                        <option value="4">Peta Pengawasan Orang Asing</option>
-                                        <option value="5">Peta LSM/ORMAS</option>
+                                        <?php foreach($listPeta as $key => $pta) {
+                                            echo '<option value="' . $key . '">' . $pta . '</option>';
+                                        } ?>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-2">
@@ -83,13 +86,6 @@
                                         <option value="2021" >2021</option>
                                         <option value="2020" >2020</option>
                                         <option value="2019" >2019</option>
-                                        <option value="2018" >2018</option>
-                                        <option value="2017" >2017</option>
-                                        <option value="2016" >2016</option>
-                                        <option value="2015" >2015</option>
-                                        <option value="2014" >2014</option>
-                                        <option value="2013" >2013</option>
-                                        <option value="2012" >2012</option>
                                     </select>
                                 </div>
                             </div>
