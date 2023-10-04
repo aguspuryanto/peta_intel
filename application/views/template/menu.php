@@ -1,6 +1,6 @@
 			<?php
             $listMenu = getListMenu();
-            $bankData = getBankDataMenu();
+            $bankData = getBankDataMenuDash();
             $listMenu = array_merge($listMenu, $bankData);
             ?>
             <!-- Nav Item - Pages Collapse Menu -->
