@@ -31,7 +31,10 @@ class Kasib extends CI_Controller {
 		$data['sub_kategori'] = $kategori[1];
 
 		$data['model'] = $this->M_bankdata;
-		$data['dataProvider'] = $this->M_bankdata->select_all();
+		$data['dataProvider'] = $this->M_bankdata->select_all([
+			'kategori' => 'Kasi B',
+			'sub_kategori' => 'Sosial'
+		]);
 		
 		$this->template->views('page/kasia/upload', $data);		
 	}
@@ -45,7 +48,10 @@ class Kasib extends CI_Controller {
 		$data['sub_kategori'] = $kategori[1];
 
 		$data['model'] = $this->M_bankdata;
-		$data['dataProvider'] = $this->M_bankdata->select_all();
+		$data['dataProvider'] = $this->M_bankdata->select_all([
+			'kategori' => 'Kasi B',
+			'sub_kategori' => 'Budaya'
+		]);
 		
 		$this->template->views('page/kasia/upload', $data);		
 	}
@@ -59,7 +65,10 @@ class Kasib extends CI_Controller {
 		$data['sub_kategori'] = $kategori[1];
 
 		$data['model'] = $this->M_bankdata;
-		$data['dataProvider'] = $this->M_bankdata->select_all();
+		$data['dataProvider'] = $this->M_bankdata->select_all([
+			'kategori' => 'Kasi B',
+			'sub_kategori' => 'Kemasyarakatan'
+		]);
 		
 		$this->template->views('page/kasia/upload', $data);		
 	}
@@ -73,7 +82,10 @@ class Kasib extends CI_Controller {
 		$data['sub_kategori'] = $kategori[1];
 
 		$data['model'] = $this->M_bankdata;
-		$data['dataProvider'] = $this->M_bankdata->select_all();
+		$data['dataProvider'] = $this->M_bankdata->select_all([
+			'kategori' => 'Kasi B',
+			'sub_kategori' => 'Potensi Ancaman'
+		]);
 		
 		$this->template->views('page/kasia/upload', $data);		
 	}
@@ -87,7 +99,10 @@ class Kasib extends CI_Controller {
 		$data['sub_kategori'] = $kategori[1];
 
 		$data['model'] = $this->M_bankdata;
-		$data['dataProvider'] = $this->M_bankdata->select_all();
+		$data['dataProvider'] = $this->M_bankdata->select_all([
+			'kategori' => 'Kasi B',
+			'sub_kategori' => 'Peta Intelijen'
+		]);
 		
 		$this->template->views('page/kasia/upload', $data);		
 	}

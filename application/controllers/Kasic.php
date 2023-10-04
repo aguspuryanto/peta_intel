@@ -31,7 +31,10 @@ class Kasic extends CI_Controller {
 		$data['sub_kategori'] = $kategori[1];
 
 		$data['model'] = $this->M_bankdata;
-		$data['dataProvider'] = $this->M_bankdata->select_all();
+		$data['dataProvider'] = $this->M_bankdata->select_all([
+			'kategori' => 'Kasi C',
+			'sub_kategori' => 'Perdagangan'
+		]);
 		
 		$this->template->views('page/kasia/upload', $data);		
 	}
@@ -45,7 +48,10 @@ class Kasic extends CI_Controller {
 		$data['sub_kategori'] = $kategori[1];
 
 		$data['model'] = $this->M_bankdata;
-		$data['dataProvider'] = $this->M_bankdata->select_all();
+		$data['dataProvider'] = $this->M_bankdata->select_all([
+			'kategori' => 'Kasi C',
+			'sub_kategori' => 'Industri'
+		]);
 		
 		$this->template->views('page/kasia/upload', $data);		
 	}
@@ -59,7 +65,10 @@ class Kasic extends CI_Controller {
 		$data['sub_kategori'] = $kategori[1];
 
 		$data['model'] = $this->M_bankdata;
-		$data['dataProvider'] = $this->M_bankdata->select_all();
+		$data['dataProvider'] = $this->M_bankdata->select_all([
+			'kategori' => 'Kasi C',
+			'sub_kategori' => 'Perbankan dan Investasi'
+		]);
 		
 		$this->template->views('page/kasia/upload', $data);		
 	}
@@ -73,7 +82,10 @@ class Kasic extends CI_Controller {
 		$data['sub_kategori'] = $kategori[1];
 
 		$data['model'] = $this->M_bankdata;
-		$data['dataProvider'] = $this->M_bankdata->select_all();
+		$data['dataProvider'] = $this->M_bankdata->select_all([
+			'kategori' => 'Kasi C',
+			'sub_kategori' => 'Keuangan Daerah'
+		]);
 		
 		$this->template->views('page/kasia/upload', $data);		
 	}
@@ -87,7 +99,10 @@ class Kasic extends CI_Controller {
 		$data['sub_kategori'] = $kategori[1];
 
 		$data['model'] = $this->M_bankdata;
-		$data['dataProvider'] = $this->M_bankdata->select_all();
+		$data['dataProvider'] = $this->M_bankdata->select_all([
+			'kategori' => 'Kasi C',
+			'sub_kategori' => 'Potensi Ancaman'
+		]);
 		
 		$this->template->views('page/kasia/upload', $data);		
 	}
@@ -101,7 +116,10 @@ class Kasic extends CI_Controller {
 		$data['sub_kategori'] = $kategori[1];
 
 		$data['model'] = $this->M_bankdata;
-		$data['dataProvider'] = $this->M_bankdata->select_all();
+		$data['dataProvider'] = $this->M_bankdata->select_all([
+			'kategori' => 'Kasi C',
+			'sub_kategori' => 'Peta Intelijen'
+		]);
 		
 		$this->template->views('page/kasia/upload', $data);		
 	}
