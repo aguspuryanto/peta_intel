@@ -45,6 +45,7 @@ class M_bankdata extends CI_Model {
         }
         
         $data = $this->db->get($this->table_name);
+        echo $this->db->last_query();
         return $data->result();
     }
 
