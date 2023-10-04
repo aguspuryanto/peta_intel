@@ -31,7 +31,10 @@ class KasiPenkum extends CI_Controller {
 		$data['sub_kategori'] = $kategori[1];
 
 		$data['model'] = $this->M_bankdata;
-		$data['dataProvider'] = $this->M_bankdata->select_all();
+		$data['dataProvider'] = $this->M_bankdata->select_all([
+			'kategori' => 'Kasi Penkum',
+			'sub_kategori' => 'Data Grafik'
+		]);
 		
 		$this->template->views('page/kasia/upload', $data);		
 	}
@@ -45,7 +48,10 @@ class KasiPenkum extends CI_Controller {
 		$data['sub_kategori'] = $kategori[1];
 
 		$data['model'] = $this->M_bankdata;
-		$data['dataProvider'] = $this->M_bankdata->select_all();
+		$data['dataProvider'] = $this->M_bankdata->select_all([
+			'kategori' => 'Kasi Penkum',
+			'sub_kategori' => 'Peta Intelijen'
+		]);
 		
 		$this->template->views('page/kasia/upload', $data);		
 	}
