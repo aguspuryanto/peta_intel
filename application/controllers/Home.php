@@ -117,7 +117,6 @@ class Home extends CI_Controller {
 
 		$data['model'] = $this->M_bankdata;
 		$data['dataProvider'] = $this->M_bankdata->select_all([
-			'kategori' => $kategori[0],
 			'sub_kategori' => $kategori[1]
 		]);
 		$data['page_type'] = 'frontend';
