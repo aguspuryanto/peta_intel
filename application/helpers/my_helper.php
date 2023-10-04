@@ -271,3 +271,142 @@ function http_request($url){
     // mengembalikan hasil curl
     return $output;
 }
+
+function getListMenu() {
+
+    $listMenu = [
+        array(
+            'title' => 'DATA PEMILU - PRESIDEN',
+            'url' => 'pilpres',
+            'show_menu' => false,
+            'submenu' => [
+                // array('title' => 'Input Data', 'link' => 'create'),
+                array('title' => 'Lihat Data', 'link' => 'index')
+            ]
+        ),
+        array(
+            'title' => 'DATA PEMILU - KEPALA DAERAH',
+            'url' => 'pilkada',
+            'show_menu' => false,
+            'submenu' => [
+                array('title' => 'Lihat Data Pilkada', 'link' => 'index'),
+                array('title' => 'Lihat Data Pilgub', 'link' => 'pilgub')
+            ]
+        ),
+        array(
+            'title' => 'DATA PEMILU - DPRD',
+            'url' => 'pileg',
+            'show_menu' => false,
+            'submenu' => [
+                array('title' => 'Lihat Partai', 'link' => 'index'),
+                array('title' => 'Lihat Anggota DPRD', 'link' => 'anggota')
+            ]
+        ),
+        array(
+            'title' => 'PENYULUHAN DAN PENERANGAN HUKUM',
+            'url' => 'penyuluhan',
+            'show_menu' => false,
+            'submenu' => [
+                array('title' => 'Lihat Data', 'link' => 'index')
+            ]
+        ),
+        // array(
+        //     'title' => 'POLITIK, SOSIAL BUDAYA DAN SDO',
+        //     'url' => 'polsosbud',
+        //     'show_menu' => false,
+        //     'submenu' => [
+        //         array('title' => 'Lihat Data', 'link' => 'index')
+        //     ]
+        // ),
+        array(
+            'title' => 'DATA TINDAK PIDANA',
+            'url' => 'pkn',
+            'show_menu' => false,
+            'submenu' => [
+                array('title' => 'Lihat Data', 'link' => 'index')
+            ]
+        ),                
+    ];
+
+    return $listMenu;
+}
+
+function getBankDataMenu() {	
+
+    $bankData = [
+        array(
+            'title' => 'KASI A',
+            'url' => 'home/kasia',
+            'show_menu' => false,
+            'submenu' => array(
+                array('title' => 'Pemerintahan', 'link' => 'Pemerintahan'),
+                array('title' => 'Stakeholder & Obyek Vital', 'link' => 'stakeholder'),
+                array('title' => 'Pengamanan Sumber Daya Organisasi', 'link' => 'sdo'),
+                array('title' => 'Potensi Ancaman', 'link' => 'ancaman'),
+                array('title' => 'Peta Intelijen D.IN.2', 'link' => 'peta'),
+                // array('title' => 'Perda', 'link' => 'perda'),
+                // array('title' => 'Pergub', 'link' => 'pergub'),
+            )
+        ),
+        array(
+            'title' => 'KASI B',
+            'url' => 'home/kasib',
+            'show_menu' => false,
+            'submenu' => array(
+                array('title' => 'Sosial', 'link' => 'Sosial'),
+                array('title' => 'Budaya', 'link' => 'Budaya'),
+                array('title' => 'Kemasyarakatan', 'link' => 'Kemasyarakatan'),
+                array('title' => 'Potensi Ancaman', 'link' => 'PotensiAncaman'),
+                array('title' => 'Peta Intelijen D.IN.3', 'link' => 'PetaIntelijen'),
+            )
+        ),
+        array(
+            'title' => 'KASI C',
+            'url' => 'home/kasic',
+            'show_menu' => false,
+            'submenu' => array(
+                array('title' => 'Perdagangan', 'link' => 'Perdagangan'),
+                array('title' => 'Industri', 'link' => 'Industri'),
+                array('title' => 'Perbankan dan Investasi', 'link' => 'Perbankan'),
+                array('title' => 'Keuangan Daerah', 'link' => 'KeuanganDaerah'),
+                array('title' => 'Potensi Ancaman', 'link' => 'PotensiAncaman'),
+                array('title' => 'Peta Intelijen D.IN.4', 'link' => 'PetaIntelijen'),
+            )
+        ),
+        array(
+            'title' => 'KASI D',
+            'url' => 'home/kasid',
+            'show_menu' => false,
+            'submenu' => array(
+                array('title' => 'Daftar Pendampingan', 'link' => 'DaftarPendampingan'),
+                array('title' => 'Potensi Ancaman', 'link' => 'PotensiAncaman'),
+                array('title' => 'Peta Intelijen D.IN.5', 'link' => 'PetaIntelijen'),
+            )
+        ),
+        array(
+            'title' => 'KASI E',
+            'url' => 'home/kasie',
+            'show_menu' => false,
+            'submenu' => array(
+                array('title' => 'Lapinhar', 'link' => 'Lapinhar'),
+                array('title' => 'Lapinsus', 'link' => 'Lapinsus'),
+                array('title' => 'Lapopsin', 'link' => 'Lapopsin'),
+                array('title' => 'Potensi Ancaman', 'link' => 'PotensiAncaman'),
+                array('title' => 'Peta Intelijen D.IN.6', 'link' => 'PetaIntelijen'),
+                array('title' => 'Kirka', 'link' => 'Kirka'),
+            )
+        ),
+        array(
+            'title' => 'KASI PENKUM',
+            'url' => 'home/kasipenkum',
+            'show_menu' => false,
+            'submenu' => array(
+                array('title' => 'Data Grafik', 'link' => 'DataGrafik'),
+                array('title' => 'Peta Intelijen', 'link' => 'PetaIntelijen'),
+                array('title' => 'Peta Luhkum Penkum', 'link' => 'PetaLuhkum'),
+            )
+        ),
+    ];
+
+    return $bankData;
+}
