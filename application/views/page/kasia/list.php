@@ -36,8 +36,8 @@
 </div>
 
 <script>
-$(document).ready(function () {
-    var table = $('#dataTable').DataTable();
-    $('#error').html(" ");    
-});
+// $(document).ready(function () {
+//     var table = $('#dataTable').DataTable();
+//     $('#error').html(" ");    
+// });
 </script>

@@ -197,7 +197,9 @@ function get_header_table_custom($model, $field=[], $extra="") {
     // 	$extra = '<th>#</th>';
     // 	$header_tag .= $extra;
     // }
-    $header_tag .= ($extra) ? $extra : '<th>#</th>';
+    if($extra!=false) {
+        $header_tag .= ($extra) ? $extra : '<th>#</th>';
+    }
     
     $header_tag .= '</tr>';
 
