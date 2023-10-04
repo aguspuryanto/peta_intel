@@ -7,7 +7,7 @@ class Home extends CI_Controller {
     {
         parent::__construct();
         // is_logged_in();
-
+		$this->load->library('session');
 		$this->load->model('M_bankdata');
     }
 
@@ -17,6 +17,7 @@ class Home extends CI_Controller {
 		$data['desc'] = getAppDesc();
 
 		$data['bankData'] = getBankDataMenu();
+		// echo json_encode($this->session->userdata['userdata']['nama']);
 		
 		$this->load->view('page/home', $data);
 	}
