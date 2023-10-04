@@ -175,7 +175,7 @@ function get_header_table_lelang($model, $field="", $extra="") {
     return get_header_table_custom($model, $field);
 }
 
-function get_header_table_custom($model, $field=[], $extra="") {
+function get_header_table_custom($model, $field=[], $extra=null) {
     // echo json_encode($field);
     if(!$field || empty($field)) {
         $field = array('jenis_module');

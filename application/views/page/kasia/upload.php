@@ -21,7 +21,7 @@
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
-                            <?=get_header_table_custom($model, ['kategori', 'sub_kategori']); ?>
+                            <?=get_header_table_custom($model, ['kategori', 'sub_kategori'], '<th>Aksi</th>'); ?>
                         </thead>
                         <tbody>
                         <?php
