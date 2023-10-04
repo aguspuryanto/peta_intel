@@ -26,7 +26,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-success text-white justify-content-between">
     <div class="container">
         <img src="<?=base_url('assets/');?>img/favicon.png" alt="logo Kejaksaan" class="mr-3">
-        <a class="navbar-brand text-white" href="<?=site_url('') ?>"><?=@$title; ?> <p class="mb-0"><?=@$desc; ?></p></a>
+        <a class="navbar-brand text-white" href="<?=site_url('') ?>"><?=getAppTitle(); ?> <p class="mb-0"><?=getAppDesc(); ?></p></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <!-- <span class="navbar-toggler-icon"></span> -->
             <span class="navbar-toggler-icon">   
