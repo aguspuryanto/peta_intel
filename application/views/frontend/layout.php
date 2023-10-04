@@ -23,16 +23,19 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-success bg-success text-white justify-content-between">
-        <div class="container">
-            <img src="<?=base_url('assets/');?>img/favicon.png" alt="logo Kejaksaan" class="mr-3">
-            <a class="navbar-brand text-white" href="<?=site_url() ?>"><?=@$title; ?></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse mr-auto" id="navbarNavAltMarkup">
-            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success text-white justify-content-between">
+    <div class="container">
+        <img src="<?=base_url('assets/');?>img/favicon.png" alt="logo Kejaksaan" class="mr-3">
+        <a class="navbar-brand text-white" href="<?=site_url('') ?>"><?=@$title; ?> <p class="mb-0"><?=@$desc; ?></p></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            <span class="navbar-toggler-icon">   
+                <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+            </span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
                 <?php foreach($bankData as $bank) {
                     echo '<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white" href="'. base_url($bank['url']) . '" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' . $bank['title'] . '</a>
@@ -48,8 +51,22 @@
                 }
                 ?>
             </ul>
-            </div>
+            <span class="navbar-text">
+                <?php if (!$this->session->userdata('email')) { ?>
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal">LOGIN</a>
+                <?php } else { ?>
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?=$this->session->userdata['userdata']['nama']?></a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item text-dark" href="<?=site_url('logout') ?>">LOGOUT</a>
+                            </div>
+                        </li>
+                    </ul>
+                <?php } ?>
+            </span>
         </div>
+    </div>
     </nav>
 
     <div class="jumbotron">
