@@ -1,5 +1,12 @@
 <?php
 
+function getAppTitle() {
+    return "SI-METAL BATIN";
+}
+
+function getAppDesc() {
+	return "Sistem Peta Digital & Bank Data Intelijen";
+}
 
 function is_logged_in($role = false)
 {

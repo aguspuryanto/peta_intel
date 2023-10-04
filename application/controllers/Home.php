@@ -13,8 +13,8 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$data['title'] = "PETA INTELIJEN & BANK DATA INTEL";
-		$data['konten'] = "index";
+		$data['title'] = getAppTitle(); //"PETA INTELIJEN & BANK DATA INTEL";
+		$data['desc'] = getAppDesc();
 
 		$data['bankData'] = getBankDataMenu();
 		

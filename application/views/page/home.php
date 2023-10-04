@@ -23,16 +23,19 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-success bg-success text-white justify-content-between">
-        <div class="container">
-            <img src="<?=base_url('assets/');?>img/favicon.png" alt="logo Kejaksaan" class="mr-3">
-            <a class="navbar-brand text-white" href="<?=site_url('index') ?>"><?=@$title; ?></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse mr-auto" id="navbarNavAltMarkup">
-            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success text-white justify-content-between">
+    <div class="container">
+        <img src="<?=base_url('assets/');?>img/favicon.png" alt="logo Kejaksaan" class="mr-3">
+        <a class="navbar-brand text-white" href="<?=site_url('') ?>"><?=@$title; ?> <p class="mb-0"><?=@$desc; ?></p></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            <span class="navbar-toggler-icon">   
+                <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+            </span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
                 <?php foreach($bankData as $bank) {
                     echo '<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white" href="'. base_url($bank['url']) . '" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' . $bank['title'] . '</a>
@@ -48,8 +51,8 @@
                 }
                 ?>
             </ul>
-            </div>
         </div>
+    </div>
     </nav>
 
     <div class="jumbotron">
@@ -98,7 +101,7 @@
         </div>
     </div>
 
-    <div class="container-fluid">
+    <div class="container">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="30000">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -108,17 +111,17 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="card-box">
-                            <div class="col-12 ">
+                            <div class="col-12">
                                 <div class="row">
-                                    <div class="col-6">
+                                    <div class="col-lg-6 col-md-6 col-xs-12">
                                         <h4>PEMILU: PRESIDEN</h4>
                                         <iframe src="<?=base_url('api/pemilu_1') ?>" width="100%" height="500" scrolling="no"></iframe>
                                     </div>                                    
-                                    <div class="col-6">
+                                    <div class="col-lg-6 col-md-6 col-xs-12">
                                         <h4>PEMILU: KEPALA DAERAH</h4>
                                         <iframe src="<?=base_url('api/pemilu_2') ?>" width="100%" height="500" scrolling="no"></iframe>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-lg-6 col-md-6 col-xs-12">
                                         <h4>PEMILU: DPRD</h4>
                                         <iframe src="<?=base_url('api/pemilu_3') ?>" width="100%" height="500" scrolling="no"></iframe>
                                     </div>
@@ -129,14 +132,14 @@
                     </div>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
             <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
-            </a>
+            </a> -->
         </div>
     </div>
 
