@@ -104,7 +104,7 @@ class Kasia extends CI_Controller {
 			'sub_kategori' => 'Peta Intelijen'
 		]);
 		
-		$this->template->views('page/kasia/upload', $data);		
+		$this->template->views('page/kasia/peta', $data);		
 	}
 
 	public function perda() {
