@@ -59,18 +59,14 @@ class Kasid extends CI_Controller {
 	public function PetaIntelijen() {
 		$data['title'] = "Kasi D || Peta Intelijen";
 		$data['konten'] = "index";
-
-		$kategori = explode(" || ", $data['title']);
-		$data['kategori'] = $kategori[0];
-		$data['sub_kategori'] = $kategori[1];
-
-		$data['model'] = $this->M_bankdata;
-		$data['dataProvider'] = $this->M_bankdata->select_all([
-			'kategori' => 'Kasi D',
-			'sub_kategori' => 'Peta Intelijen'
+		
+		$data['peta_tipe'] = 'D.IN.5';
+		$data['model'] = $this->M_peta;
+		$data['dataProvider'] = $this->M_peta->select_all([
+			'peta_tipe' => $data['peta_tipe'],
 		]);
 		
-		$this->template->views('page/kasia/upload', $data);		
+		$this->template->views('page/kasia/peta', $data);		
 	}
 
 	public function view($id) {

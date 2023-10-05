@@ -12,6 +12,7 @@ class Kasia extends CI_Controller {
 		// $this->load->model('M_kabupaten');
 		// $this->load->model('M_kecamatan');
 		$this->load->model('M_bankdata');
+		$this->load->model('M_peta');
     }
 
 	public function index()
@@ -93,18 +94,59 @@ class Kasia extends CI_Controller {
 	public function peta() {
 		$data['title'] = "Kasi A || Peta Intelijen";
 		$data['konten'] = "index";
-
-		$kategori = explode(" || ", $data['title']);
-		$data['kategori'] = $kategori[0];
-		$data['sub_kategori'] = $kategori[1];
-
-		$data['model'] = $this->M_bankdata;
-		$data['dataProvider'] = $this->M_bankdata->select_all([
-			'kategori' => 'Kasi A',
-			'sub_kategori' => 'Peta Intelijen'
+		
+		$data['peta_tipe'] = 'D.IN.2';
+		$data['model'] = $this->M_peta;
+		$data['dataProvider'] = $this->M_peta->select_all([
+			'peta_tipe' => $data['peta_tipe'],
 		]);
 		
 		$this->template->views('page/kasia/peta', $data);		
+	}
+
+	public function create_peta() {
+		
+		$this->load->library('form_validation');
+		
+		$model = $this->M_peta;
+
+        $json = array();
+		$this->form_validation->set_rules($model->rules());
+		$this->form_validation->set_message('required', 'Mohon lengkapi {field}!');
+
+		if (!$this->form_validation->run()) {			
+			foreach($model->rules() as $key => $val) {
+				$json = array_merge($json, array(
+					$val['field'] => form_error($val['field'], '<p class="mt-3 text-danger">', '</p>')
+				));
+			}
+		} else {
+			$data = array(
+				'no_perkara' => $this->input->post('no_perkara'),
+				'nama_pelaku' => $this->input->post('nama_pelaku'),
+				'penyebab' => $this->input->post('penyebab'),
+				'waktu' => $this->input->post('waktu'),
+				'lokasi' => $this->input->post('lokasi'),
+				'alamat' => $this->input->post('alamat'),
+				'kasus_posisi' => $this->input->post('kasus_posisi'),
+				'peta_tipe' => $this->input->post('peta_tipe'),
+				'keterangan' => $this->input->post('keterangan')
+			);
+
+			if($this->input->post('id')) {
+				$id = $this->input->post('id');
+				$model->update($id, $data);				
+			} else {
+				$model->save($data);
+			}
+			
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+			$json = array('success' => true, 'message' => 'Berhasil disimpan');
+		}
+
+		$this->output
+        ->set_content_type('application/json')
+        ->set_output(json_encode($json));
 	}
 
 	public function perda() {

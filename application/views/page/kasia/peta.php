@@ -21,18 +21,23 @@
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
-                            <?=get_header_table_custom($model, ['kategori', 'sub_kategori'], '<th>Aksi</th>'); ?>
+                            <?=get_header_table_custom($model, ['peta_tipe', 'keterangan'], '<th>Aksi</th>'); ?>
                         </thead>
                         <tbody>
                         <?php
                         if($dataProvider) :
                             $id=1;
                             foreach($dataProvider as $row) {
-                                $dokUrl = ($row->link_file) ? '<a target="_blank" href="'.base_url('kasia/download/') . $row->link_file.'" class="btn btn-link btn-block">Dokumen</a>' : '#';
+                                // $dokUrl = ($row->link_file) ? '<a target="_blank" href="'.base_url('kasia/download/') . $row->link_file.'" class="btn btn-link btn-block">Dokumen</a>' : '#';
                                 echo '<tr>
                                     <td>'.$id.'</td>
-                                    <td>'.$row->nama_file.'</td>
-                                    <td>'.$dokUrl.'</td>
+                                    <td>'.$row->no_perkara.'</td>
+                                    <td>'.$row->nama_pelaku.'</td>
+                                    <td>'.$row->penyebab.'</td>
+                                    <td>'.$row->waktu.'</td>
+                                    <td>'.$row->lokasi.'</td>
+                                    <td>'.$row->alamat.'</td>
+                                    <td>'.$row->kasus_posisi.'</td>
                                     <td style="min-width:115px">
                                         <div class="btn-group" role="group">
                                             <button type="button" data-id="'.$row->id.'" class="btn btn-secondary btnEdit" data-toggle="modal" data-target="#myModal">Edit</button>
@@ -65,12 +70,22 @@
 
       <!-- Modal body -->
       <div class="modal-body">
-        <?=form_open_multipart('', array('id' => 'formDokumen', 'role' => 'form'));?>
-            <?=get_form_input($model, 'nama_file'); ?>
-            <?=get_form_input($model, 'link_file', array('type' => 'file')); ?>
+        <?=form_open('', array('id' => 'formDokumen', 'role' => 'form'));?>
+            <?=get_form_input($model, 'no_perkara'); ?>
 
-            <?=form_hidden('kategori', $kategori); ?>
-            <?=form_hidden('sub_kategori', $sub_kategori); ?>
+            <?=get_form_input($model, 'nama_pelaku'); ?>
+
+            <?=get_form_input($model, 'penyebab'); ?>
+
+            <?=get_form_input($model, 'waktu'); ?>
+
+            <?=get_form_input($model, 'lokasi'); ?>
+
+            <?=get_form_input($model, 'alamat'); ?>
+
+            <?=get_form_input($model, 'kasus_posisi'); ?>
+
+            <?=form_hidden('peta_tipe', $peta_tipe); ?>
 
             <button type="submit" class="btn btn-primary" id="formDokumen">Simpan Data</button>
         <?=form_close();?>
@@ -86,7 +101,7 @@
 </div>
 
 <?php
-$Urldokumen = base_url('kasia/upload');
+$Urlpeta = base_url('kasia/create_peta');
 $Urldetail = base_url('kasia/view');
 $Urlremove = base_url('kasia/remove');
 ?>
@@ -99,21 +114,13 @@ $(document).ready(function () {
     $('form#formDokumen').submit(function (e) {
         e.preventDefault();
 
-        var fd = new FormData();
-        var files = $(formDokumen).find('#input-link_file')[0].files[0];
-        fd.append('file',files);
-
         $.ajax({
             type: "POST",
-            url: "<?=$Urldokumen; ?>", 
-            // data: fd,
-            data:new FormData(this),
-            contentType: false,
-            processData: false,
-            cache: false,
-            async: false,
+            url: "<?=$Urlpeta; ?>", 
+            data: $(this).serialize(),
+            dataType: "json",  
             beforeSend : function(xhr, opts){
-                // $(formDokumen).text('Loading...').prop("disabled", true);
+                $('button#formDokumen').text('Loading...').prop("disabled", true);
             },
             success: function(data){
                 console.log(data, "data");

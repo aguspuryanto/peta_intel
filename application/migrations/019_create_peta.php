@@ -44,6 +44,11 @@ class Migration_create_peta extends CI_Migration {
                 'constraint' => '255',
                 'null' => TRUE
             ),
+            'peta_tipe' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '50',
+                'null' => TRUE
+            ),
             'keterangan' => array(
                 'type' => 'VARCHAR',
                 'constraint' => '255',

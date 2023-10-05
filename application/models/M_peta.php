@@ -14,7 +14,8 @@ class M_peta extends CI_Model {
             ['field' => 'lokasi', 'label' => 'Lokasi', 'rules' => 'required'],
             ['field' => 'alamat', 'label' => 'Alamat', 'rules' => 'required'],
             ['field' => 'kasus_posisi', 'label' => 'Kasus Posisi', 'rules' => 'required'],
-            ['field' => 'keterangan', 'label' => 'Keterangan', 'rules' => 'required']
+            ['field' => 'peta_tipe', 'label' => 'Tipe Peta'],
+            ['field' => 'keterangan', 'label' => 'Keterangan']
         ];
     }    
 
