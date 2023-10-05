@@ -79,7 +79,11 @@
 
             <?=get_form_input($model, 'waktu'); ?>
 
-            <?=get_form_input($model, 'lokasi'); ?>
+            <div class="form-group">
+                <label>Lokasi</label>
+                <?=form_dropdown('lokasi', $listKab, '', array('class' => 'form-control', 'id' => 'input-lokasi'));?>
+                <div id="error"></div>
+            </div>
 
             <?=get_form_input($model, 'alamat'); ?>
 
@@ -102,8 +106,8 @@
 
 <?php
 $Urlpeta = base_url('kasia/create_peta');
-$Urldetail = base_url('kasia/view');
-$Urlremove = base_url('kasia/remove');
+$Urldetail = base_url('kasia/view_peta');
+$Urlremove = base_url('kasia/remove_peta');
 ?>
 
 <script>

@@ -9,7 +9,7 @@ class Kasia extends CI_Controller {
         // is_logged_in();
 
 		// $this->load->model('M_provinsi');
-		// $this->load->model('M_kabupaten');
+		$this->load->model('M_kabupaten');
 		// $this->load->model('M_kecamatan');
 		$this->load->model('M_bankdata');
 		$this->load->model('M_peta');
@@ -94,6 +94,12 @@ class Kasia extends CI_Controller {
 	public function peta() {
 		$data['title'] = "Kasi A || Peta Intelijen";
 		$data['konten'] = "index";
+
+		$data['listKab'] = array();		
+		$listKab = $this->M_kabupaten->select_all();
+		foreach($listKab as $kab) {
+			$data['listKab'][$kab->id] = $kab->nama;
+		}
 		
 		$data['peta_tipe'] = 'D.IN.2';
 		$data['model'] = $this->M_peta;
@@ -147,6 +153,38 @@ class Kasia extends CI_Controller {
 		$this->output
         ->set_content_type('application/json')
         ->set_output(json_encode($json));
+	}
+
+	public function view_peta($id) {
+		$data['data'] = $this->M_peta->selectId($id);
+
+		$json = array();
+		if($data['data']) {
+			$json = array('success' => true, 'data' => $data['data']);
+		} else {
+			$json = array('success' => false, 'data' => []);
+		}
+
+		$this->output
+        ->set_content_type('application/json')
+        ->set_output(json_encode($json));
+	}
+
+	public function remove_peta() {		
+		$json = array();
+		$model = $this->M_peta;
+
+		if($this->input->post('id')) {
+			$id = $this->input->post('id');
+			$model->delete($id);
+
+			$this->session->set_flashdata('success', 'Berhasil terhapus');
+			$json = array('success' => true, 'message' => 'Berhasil terhapus');
+		}
+
+		$this->output
+		->set_content_type('application/json')
+		->set_output(json_encode($json));
 	}
 
 	public function perda() {

@@ -9,7 +9,7 @@ class Kasic extends CI_Controller {
         is_logged_in();
 
 		// $this->load->model('M_provinsi');
-		// $this->load->model('M_kabupaten');
+		$this->load->model('M_kabupaten');
 		// $this->load->model('M_kecamatan');
 		$this->load->model('M_bankdata');
     }
@@ -110,6 +110,12 @@ class Kasic extends CI_Controller {
 	public function PetaIntelijen() {
 		$data['title'] = "Kasi C || Peta Intelijen";
 		$data['konten'] = "index";
+
+		$data['listKab'] = array();		
+		$listKab = $this->M_kabupaten->select_all();
+		foreach($listKab as $kab) {
+			$data['listKab'][$kab->id] = $kab->nama;
+		}
 		
 		$data['peta_tipe'] = 'D.IN.4';
 		$data['model'] = $this->M_peta;
