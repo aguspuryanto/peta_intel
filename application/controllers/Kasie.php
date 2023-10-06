@@ -60,6 +60,7 @@ class Kasie extends CI_Controller {
 		$data['title'] = "Kasi E || Peta Intelijen";
 		$data['konten'] = "index";
 
+		$data['listPerkara'] = array('1' => 'PRODUKSI INTELIJEN', '2' => 'PEMANTAUAN', '3' => 'INTELIJEN SINYAL', '4' => 'INTELIJEN SIBER', '5' => 'KLANDESTINE', '6' => 'DIGITAL FORENSIK', '7' => 'TRANSMISI BERITA SANDI', '8' => 'KONTRA PENGINDERAAN', '9' => 'AUDIT & PENGUJIAN SISTEM KEAMANAN INFORMASI', '10' => 'PENGAMANAN SINYAL', '11' => 'PENGEMBANGAN SDM & SANDI', '12' => 'PENGEMBANGAN SDM INTELIJEN LAINNYA', '13' => 'PENGEMBANGAN TEKNOLOGI', '14' => 'PENGEMBANGAN PROSEDUR & APLIKASI ');
 		$data['listKab'] = array();		
 		$listKab = $this->M_kabupaten->select_all();
 		foreach($listKab as $kab) {
