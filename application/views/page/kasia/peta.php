@@ -71,7 +71,11 @@
       <!-- Modal body -->
       <div class="modal-body">
         <?=form_open('', array('id' => 'formDokumen', 'role' => 'form'));?>
-            <?=get_form_input($model, 'no_perkara'); ?>
+            <div class="form-group">
+                <label>Perkara</label>
+                <?=form_dropdown('no_perkara', $listPerkara, '', array('class' => 'form-control', 'id' => 'input-no_perkara'));?>
+                <div id="error"></div>
+            </div>
 
             <?=get_form_input($model, 'nama_pelaku'); ?>
 

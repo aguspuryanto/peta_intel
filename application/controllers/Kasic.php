@@ -111,6 +111,8 @@ class Kasic extends CI_Controller {
 		$data['title'] = "Kasi C || Peta Intelijen";
 		$data['konten'] = "index";
 
+		$data['listPerkara'] = array('1' => 'LEMBAGA KEUANGAN', '2' => 'KEUANGAN NEGARA', '3' => 'MONETER', '4' => 'PENELUSURAN ASET', '5' => 'INVESTASI/ PENANAMAN
+		MODAL', '6' => 'PERPAJAKAN', '7' => 'KEPABEANAN', '8' => 'CUKAI', '9' => 'PERDAGANGAN', '10' => 'PERINDUSTRIAN', '11' => 'KETENAGAKERJAAN', '12' => 'PERKEBUNAN', '13' => 'KEHUTANAN', '14' => 'LINGKUNGAN HIDUP', '15' => 'PERIKANAN', '16' => 'AGRARIA/TATA RUANG');
 		$data['listKab'] = array();		
 		$listKab = $this->M_kabupaten->select_all();
 		foreach($listKab as $kab) {

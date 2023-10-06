@@ -95,6 +95,8 @@ class Kasia extends CI_Controller {
 		$data['title'] = "Kasi A || Peta Intelijen";
 		$data['konten'] = "index";
 
+		$data['listPerkara'] = array('1' => 'PENGAMANAN PANCASILA', '2' => 'PERSATUAN DAN KESATUAN BANGSA', '3' => 'GERAKAN SEPARATIS', '4' => 'PENYELENGGARAAN PEMERINTAHAN', '5' => 'PARTAI POLITIK, PEMILU, PILKADA', '6' => 'GERAKAN TERORISME & RADIKALISME', '7' => 'KEJAHATAN SIBER', '8' => 'CEKAL', '9' => 'PENGAWASAN ORANG ASING', '10' => 'PENGAMANAN SUMBER DAYA
+		ORGANISASI KEJAKSAAN', '11' => 'PENGAMANAN PENANGANAN PERKARA');
 		$data['listKab'] = array();		
 		$listKab = $this->M_kabupaten->select_all();
 		foreach($listKab as $kab) {

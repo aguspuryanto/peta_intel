@@ -7,7 +7,7 @@ class M_peta extends CI_Model {
     public function rules()
     {
         return [
-            ['field' => 'no_perkara', 'label' => 'No Perkara', 'rules' => 'required'],
+            ['field' => 'no_perkara', 'label' => 'Perkara', 'rules' => 'required'],
             ['field' => 'nama_pelaku', 'label' => 'Nama Pelaku', 'rules' => 'required'],
             ['field' => 'penyebab', 'label' => 'Penyebab', 'rules' => 'required'],
             ['field' => 'waktu', 'label' => 'Waktu', 'rules' => 'required'],
