@@ -43,6 +43,7 @@ class KasiPenkum extends CI_Controller {
 		$data['title'] = "Kasi Penkum || Peta Intelijen";
 		$data['konten'] = "index";
 
+		$data['listPerkara'] = array();
 		$data['listKab'] = array();		
 		$listKab = $this->M_kabupaten->select_all();
 		foreach($listKab as $kab) {
