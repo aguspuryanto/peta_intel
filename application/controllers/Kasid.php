@@ -59,7 +59,8 @@ class Kasid extends CI_Controller {
 	public function PetaIntelijen() {
 		$data['title'] = "Kasi D || Peta Intelijen";
 		$data['konten'] = "index";
-
+		
+		$data['listPerkara'] = array('1' => 'INFRASTRUKTUR JALAN', '2' => 'INFRASTRUKTUR PERKERETAAPIAN', '3' => 'INFRASTRUKTUR KEBANDARUDARAAN', '4' => 'INFRASTRUKTUR TELEKOMUNIKASI', '5' => 'INFRASTRUKTUR KEPELABUHANAN', '6' => 'SMELTER', '7' => 'INFRASTRUKTUR PENGOLAHAN AIR', '8' => 'TANGGUL', '9' => 'BENDUNGAN', '10' => 'PERTANIAN', '11' => 'KELAUTAN KETENAGALISTRIKAN', '12' => 'ENERGI ALTERNATIF', '13' => 'MINYAK & GAS BUMI', '14' => 'ILMU PENGETAHUAN DAN TEKNOLOGI', '15' => 'PERUMAHAN', '16' => 'PARIWISATA', '17' => 'KAWASAN INDUSTRI PRIORITAS/ KAWASAN EKONOMI KHUSUS', '18' => 'POS LINTAS BATAS NEGARA & SARANA PENUNJANG', '19' => 'SEKTOR LAINNYA');
 		$data['listKab'] = array();		
 		$listKab = $this->M_kabupaten->select_all();
 		foreach($listKab as $kab) {
