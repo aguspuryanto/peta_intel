@@ -24,6 +24,7 @@ class User extends CI_Controller {
 		$data['title'] = "User";
 		$data['model'] = $this->M_user;
 		$data['dataUser'] = $this->M_user->selectId($this->session->userdata('role_id'));
+		$data['dataProvider'] = $this->M_user->select_all();
 
 		$_POST = $this->input->post();
 		if($_POST) {
@@ -42,16 +43,20 @@ class User extends CI_Controller {
 					));
 				}
 			} else {
-				$data = array(
-					'instansi' => $this->input->post('instansi'),
-					'username' => $this->input->post('username'),
-					'nama' => $this->input->post('nama'),
-					'divisi' => $this->input->post('divisi'),
-					'role_id' => $this->input->post('role_id'),
-					'email' => $this->input->post('email'),
-					'nohape' => $this->input->post('nohape'),
-					'password' => $this->input->post('nohape'),
-				);
+				if(isset($_POST['type']) && $_POST['type'] == 'pwd') {
+					$data = array('password' => md5($this->input->post('password')));
+				} else {
+
+					$data = array(
+						'instansi' => $this->input->post('instansi'),
+						'username' => $this->input->post('username'),
+						'nama' => $this->input->post('nama'),
+						'divisi' => $this->input->post('divisi'),
+						'role_id' => $this->input->post('role_id'),
+						'email' => $this->input->post('email'),
+						'nohape' => $this->input->post('nohape'),
+					);
+				}
 	
 				if($this->input->post('id')) {
 					$id = $this->input->post('id');
