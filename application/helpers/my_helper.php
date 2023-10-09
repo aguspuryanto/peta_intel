@@ -487,7 +487,7 @@ function getBankDataMenuDash() {
         ),
         array(
             'title' => 'KASI PENKUM',
-            'url' => 'kasipenkum',
+            'url' => 'kasiPenkum',
             'show_menu' => false,
             'submenu' => array(
                 array('title' => 'Data Grafik', 'link' => 'DataGrafik'),
