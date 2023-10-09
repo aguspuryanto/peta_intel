@@ -52,8 +52,7 @@
     </div>
 </div>
 
-<?php echo $this->session->userdata('role_id'); ?>
-<div class="row" style="<?=($this->session->userdata('role_id')=='1') ? 'display:block' : 'display:none';?>">
+<div class="row" style="<?=($this->session->userdata('role_id')==1) ? 'display:block' : 'display:none';?>">
     <div class="col-md-12">    
         <div class="card mb-4 mb-xl-0">
             <div class="card-header">
