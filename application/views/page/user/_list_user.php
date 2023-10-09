@@ -1,7 +1,7 @@
 <div class="table-responsive">
     <table id="example1" class="table table-striped table-bordered mb-0" style="width:100%">
         <thead>
-            <?=get_header_table_custom($model, array('instansi', 'role_id', 'password', 'divisi'));?>
+            <?=get_header_table_custom($model, array('instansi', 'role_id', 'password', 'divisi'), '<th>Aksi</th>');?>
         </thead>
         <tbody>
             <?php
