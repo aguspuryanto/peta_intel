@@ -130,7 +130,7 @@
 
             <?=form_hidden('id'); ?>
 
-            <button type="submit" class="btn btn-primary" id="form-submit">Submit Permohonan</button>
+            <button type="submit" class="btn btn-primary" id="formAddUserSubmit">Submit Permohonan</button>
 
         <?=form_close();?>
       </div>
@@ -146,7 +146,7 @@ $Urlpicture = base_url('user/picture');
 
 <script type="text/javascript">
 $( document ).ready(function() {
-
+    // update Account
     $('button#formUserSubmit').on('click', function (e) {
         e.preventDefault();
 
@@ -157,6 +157,34 @@ $( document ).ready(function() {
             dataType: "json",
             beforeSend : function(xhr, opts){
               $('button#formUserSubmit').text('Loading...').prop("disabled", true);
+            },
+            success: function(data){
+                console.log(data, "data");
+                if(data.success == true){
+                    setTimeout(function(){
+                        window.location.reload();
+                    }, 3000);
+                } else {
+                    $.each(data, function(key, value) {
+                        $('#input-' + key).addClass('is-invalid');
+                        $('#input-' + key).parents('.form-group').find('#error').html(value);
+                    });
+                }
+            }
+        });
+    });
+
+    // Add Account
+    $('button#formAddUserSubmit').on('click', function (e) {
+        e.preventDefault();
+
+        $.ajax({
+            type: "POST",
+            url: "<?=$Urladd;?>", 
+            data: $('form#formAddUser').serialize(),
+            dataType: "json",
+            beforeSend : function(xhr, opts){
+              $('button#formAddUserSubmit').text('Loading...').prop("disabled", true);
             },
             success: function(data){
                 console.log(data, "data");
