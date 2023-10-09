@@ -12,6 +12,7 @@ class Kasic extends CI_Controller {
 		$this->load->model('M_kabupaten');
 		// $this->load->model('M_kecamatan');
 		$this->load->model('M_bankdata');
+		$this->load->model('M_peta');
     }
 
 	public function index()
