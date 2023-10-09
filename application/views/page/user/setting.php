@@ -156,7 +156,7 @@ $( document ).ready(function() {
             data: $('form#formUserAccount').serialize(),
             dataType: "json",
             beforeSend : function(xhr, opts){
-              $(this).text('Loading...').prop("disabled", true);
+              $('button#formUserSubmit').text('Loading...').prop("disabled", true);
             },
             success: function(data){
                 console.log(data, "data");
