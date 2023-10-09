@@ -60,7 +60,7 @@ class User extends CI_Controller {
 	
 				if($this->input->post('id')) {
 					$id = $this->input->post('id');
-					if($data['role_id'] !="1") $model->update($id, $data);
+					if($data['role_id'] !=1) $model->update($id, $data);
 				}
 				else {
 					$model->save($data);
