@@ -1,7 +1,7 @@
 <div class="table-responsive">
     <table id="example1" class="table table-striped table-bordered" style="width:100%">
         <thead>
-            <?=get_header_table_custom($model, array('password'));?>
+            <?=get_header_table_custom($model, array('instansi','password'));?>
         </thead>
         <tbody>
             <?php
@@ -10,7 +10,6 @@
                     $imgPct = ($dataUser->picture_img) ? base_url() . 'uploads/' . $dataUser->picture_img : base_url() . 'assets/img/undraw_profile_1.svg';
                     echo '<tr>
                         <td>'.$row->id.'</td>
-                        <td>'.$row->instansi.'</td>
                         <td>'.$row->username.'</td>
                         <td>'.$row->role_id.'</td>
                         <td>'.$row->nama.'</td>
