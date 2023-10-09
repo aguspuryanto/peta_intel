@@ -128,7 +128,7 @@
                 </div>
             </div>
 
-            <?=form_hidden('id', $dataUser->id); ?>
+            <?=form_hidden('id'); ?>
 
             <button type="submit" class="btn btn-primary" id="form-submit">Submit Permohonan</button>
 
