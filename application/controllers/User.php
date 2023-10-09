@@ -30,6 +30,8 @@ class User extends CI_Controller {
 		if($_POST) {
 			// echo json_encode($_POST); die();
 			$this->load->library('form_validation');
+			$this->load->library('email');
+
 			$model = $this->M_user;
 
 			$json = array();
@@ -63,7 +65,18 @@ class User extends CI_Controller {
 					if($data['role_id'] !=1) $model->update($id, $data);
 				}
 				else {
+					$passwdRand	= $this->randomPassword();
+					$data['password'] = md5($passwdRand);
 					$model->save($data);
+
+					if($data['email']) {
+						$this->email->clear();
+						$this->email->to($data['email']);
+						$this->email->from('noreply@simetalbatin.id');
+						$this->email->subject('Akun user Peta Digital || SI-METAL BATIN');
+						$this->email->message('Halo '.$data['nama'].', akun user berhasil dibuat oleh Admin. Silahkan login melalui situs https://simetalbatin.id/admin<br> Username : '.$data['email'] .' <br> Password : ' . $passwdRand . '<br><br>');
+						$this->email->send();
+					}
 				}
 				
 				$this->session->set_flashdata('success', 'Berhasil disimpan');
@@ -165,5 +178,16 @@ class User extends CI_Controller {
 		$this->output
 		->set_content_type('application/json')
 		->set_output(json_encode($json));
+	}
+
+	public function randomPassword() {
+		$alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+		$pass = array(); //remember to declare $pass as an array
+		$alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+		for ($i = 0; $i < 8; $i++) {
+			$n = rand(0, $alphaLength);
+			$pass[] = $alphabet[$n];
+		}
+		return implode($pass); //turn the array into a string
 	}
 }
