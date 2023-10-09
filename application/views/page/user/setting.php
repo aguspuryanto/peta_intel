@@ -62,7 +62,7 @@
                 </div>
                 <div class="clearfix"></div>
             </div>
-            <div class="card-body text-center">                
+            <div class="card-body m-0">                
                 <?php include_once('_list_user.php'); ?>
             </div>
         </div>
