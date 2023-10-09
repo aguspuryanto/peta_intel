@@ -2,7 +2,7 @@
         <div class="card mb-4">
             <!-- <div class="card-header">Account Details</div> -->
             <div class="card-body">
-                <?=form_open('', array('id' => 'formUser', 'role' => 'form'));?>
+                <?=form_open('', array('id' => 'formUserAccount', 'role' => 'form'));?>
 
                     <?=get_form_input($model, 'instansi', array('value' => $dataUser->instansi)); ?>
 
@@ -50,7 +50,7 @@
 
                     <?=form_hidden('id', $dataUser->id); ?>
 
-                    <button type="submit" class="btn btn-primary" id="form-submit">Submit Permohonan</button>
+                    <button type="submit" class="btn btn-primary" id="formUserSubmit">Submit Permohonan</button>
 
                 <?=form_close();?>
             </div>

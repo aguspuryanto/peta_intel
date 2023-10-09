@@ -82,7 +82,7 @@
 
       <!-- Modal body -->
       <div class="modal-body">
-        <?=form_open('', array('id' => 'formUser', 'role' => 'form'));?>
+        <?=form_open('', array('id' => 'formAddUser', 'role' => 'form'));?>
 
             <?=get_form_input($model, 'instansi'); ?>
 
@@ -147,13 +147,13 @@ $Urlpicture = base_url('user/picture');
 <script type="text/javascript">
 $( document ).ready(function() {
 
-    $('button#form-submit').on('click', function (e) {
+    $('button#formUserSubmit').on('click', function (e) {
         e.preventDefault();
 
         $.ajax({
             type: "POST",
             url: "<?=$Urladd;?>", 
-            data: $('form#formUser').serialize(),
+            data: $('form#formUserAccount').serialize(),
             dataType: "json",
             beforeSend : function(xhr, opts){
               // $('#form-submit').text('Loading...').prop("disabled", true);
