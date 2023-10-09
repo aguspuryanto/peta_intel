@@ -142,6 +142,8 @@
 <?php
 $Urladd = base_url('user/setting');
 $Urlpicture = base_url('user/picture');
+$Urldetail = base_url('user/view');
+$Urlremove = base_url('user/remove');
 ?>
 
 <script type="text/javascript">
@@ -248,6 +250,41 @@ $( document ).ready(function() {
                 }
             }
         });
+    });
+
+    $(document).on('click', '.btnEdit', function (e) {
+        e.preventDefault();
+        var dataId = $(this).attr("data-id");
+        console.log(dataId, '_dataId');
+
+        $('#formAddUser input[name=id]').val(dataId);
+
+        $.get("<?=$Urldetail;?>/" + dataId, function(data, status){
+            console.log(data, "data");
+            $.each(data.data, function(key, value) {
+                if(key == 'role_id') {
+                    $('#formAddUser').find('#input-' + key).val(value).change();
+                } else {
+                    $('#formAddUser').find('#input-' + key).val(value);
+                }
+            });
+
+            // $('#form input[name=kegiatan]').val(data.data.kegiatan);
+        });
+    });
+
+    $(document).on('click', '.btnRemove', function (e) {
+        e.preventDefault();
+        var dataId = $(this).attr("data-id");
+        console.log(dataId, '_dataId');
+
+        if (confirm("Apakah anda yakin ingin menghapus data ini?")==true){
+            // $(this).closest("tr").remove();
+            table.row( $(this).parents('tr') ).remove().draw();
+            $.post("<?=$Urlremove;?>/", {id: dataId}, function(result){
+                console.log(result, "_result");
+            });
+        };
     });
 
 });
