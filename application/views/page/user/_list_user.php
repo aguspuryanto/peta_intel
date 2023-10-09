@@ -1,7 +1,7 @@
 <div class="table-responsive">
     <table id="example1" class="table table-striped table-bordered" style="width:100%">
         <thead>
-            <?=get_header_table_custom($model, array('instansi','password'));?>
+            <?=get_header_table_custom($model, array('instansi','password', 'divisi'));?>
         </thead>
         <tbody>
             <?php
@@ -16,7 +16,6 @@
                         <td>'.$row->email.'</td>
                         <td>'.$row->nohape.'</td>
                         <td><img class="img-account-profile mb-2" src="' . $imgPct . '" alt=""></td>
-                        <td>'.$row->divisi.'</td>
                     </tr>';
                 }
             endif;
