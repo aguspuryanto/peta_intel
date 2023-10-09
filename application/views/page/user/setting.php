@@ -58,7 +58,7 @@
             <div class="card-header">
                 <h4 class="float-left">DATA USER</h4>
                 <div class="float-right">
-                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-plus"></i> Tambah Data</button>
+                    <button type="button" class="btn btn-info btnAdd" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-plus"></i> Tambah Data</button>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -250,6 +250,11 @@ $( document ).ready(function() {
                 }
             }
         });
+    });
+
+    $(document).on('click', '.btnAdd', function (e) {
+        e.preventDefault();
+        $('#formAddUser')[0].reset();
     });
 
     $(document).on('click', '.btnEdit', function (e) {
