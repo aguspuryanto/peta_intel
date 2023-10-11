@@ -70,9 +70,14 @@ class Kasid extends CI_Controller {
 		}
 		
 		$data['peta_tipe'] = 'D.IN.5';
-		$data['listPerkara'] = $this->M_perkara->select_all([
+		$listPerkara = $this->M_perkara->select_all([
 			'tipe' => $data['peta_tipe']
-		]); //
+		]);
+		
+		foreach($listPerkara as $key => $val) {
+			$data['listPerkara'][$val->id] = $val->perkara;
+		}
+		
 		$data['model'] = $this->M_peta;
 		$data['dataProvider'] = $this->M_peta->select_all([
 			'peta_tipe' => $data['peta_tipe'],

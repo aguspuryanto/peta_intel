@@ -102,14 +102,18 @@ class Kasia extends CI_Controller {
 		}
 		
 		$data['peta_tipe'] = 'D.IN.2';
-		$data['listPerkara'] = $this->M_perkara->select_all([
+		$listPerkara = $this->M_perkara->select_all([
 			'tipe' => $data['peta_tipe']
 		]); //array('1' => 'PENGAMANAN PANCASILA', '2' => 'PERSATUAN DAN KESATUAN BANGSA', '3' => 'GERAKAN SEPARATIS', '4' => 'PENYELENGGARAAN PEMERINTAHAN', '5' => 'PARTAI POLITIK, PEMILU, PILKADA', '6' => 'GERAKAN TERORISME & RADIKALISME', '7' => 'KEJAHATAN SIBER', '8' => 'CEKAL', '9' => 'PENGAWASAN ORANG ASING', '10' => 'PENGAMANAN SUMBER DAYA ORGANISASI KEJAKSAAN', '11' => 'PENGAMANAN PENANGANAN PERKARA');
+		foreach($listPerkara as $key => $val) {
+			$data['listPerkara'][$val->id] = $val->perkara;
+		}
+
 		$data['model'] = $this->M_peta;
 		$data['dataProvider'] = $this->M_peta->select_all([
 			'peta_tipe' => $data['peta_tipe'],
 		]);
-		
+		echo json_encode($data['listPerkara']);
 		$this->template->views('page/kasia/peta', $data);		
 	}
 
