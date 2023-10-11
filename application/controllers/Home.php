@@ -24,6 +24,57 @@ class Home extends CI_Controller {
 		$this->load->view('page/home', $data);
 	}
 
+	public function peta() {
+		$_get = $this->input->get();
+		// echo json_encode($_get);
+		$data['bankData'] = getBankDataMenu();
+
+		if ($_get['peta'] == 'D.IN.2') $data['title'] = "Kasi A || Peta Intelijen";
+		if ($_get['peta'] == 'D.IN.3') $data['title'] = "Kasi B || Peta Intelijen";
+		if ($_get['peta'] == 'D.IN.4') $data['title'] = "Kasi C || Peta Intelijen";
+		if ($_get['peta'] == 'D.IN.5') $data['title'] = "Kasi D || Peta Intelijen";
+		if ($_get['peta'] == 'D.IN.6') $data['title'] = "Kasi E || Peta Intelijen";
+		if ($_get['peta'] == 'D.IN.7') $data['title'] = "Kasi Penkum || Peta Intelijen";
+
+		$kategori = explode(" || ", $data['title']);
+		$data['kategori'] = $kategori[0];
+		$data['sub_kategori'] = $kategori[1];
+
+		$data['model'] = $this->M_bankdata;
+		$data['dataProvider'] = $this->M_bankdata->select_all([
+			'kategori' => $kategori[0],
+			'sub_kategori' => $kategori[1]
+		]);
+		$data['page_type'] = 'frontend';
+
+		if ($_get['peta']) {
+
+			$data['listLatLong'] = array();		
+			$listPerkara = $this->M_peta->select_all([
+				'peta_tipe' => $_get['peta'],
+			]);
+
+			foreach($listPerkara as $perkara) {
+				$data['listPerkara'][] = array(
+					'type' => 'Feature',
+					'properties' => array(
+						'name' => $perkara->kasus_posisi,
+						'amenity' => $perkara->kasus_posisi,
+						'popupContent' => $perkara->kasus_posisi . ' - ' . $perkara->nama_pelaku,
+						'show_on_map' => true
+					),
+					'geometry' => array(
+						'type' => 'Point',
+						'coordinates' => array($perkara->latitude, $perkara->longitude)
+					),
+				);
+			}
+
+			$this->template->views('page/kasia/listpeta', $data);
+
+		}
+	}
+
 	public function kasia($page='', $id='') {
 		// echo "Kasi A";
 		$data['bankData'] = getBankDataMenu();

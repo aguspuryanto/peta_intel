@@ -84,27 +84,31 @@ $listPeta = getListPeta();
                             Pilih Menu Peta
                         </div>
                         <div class="card-body">
-                            <div class="row">
-                                <div class="form-group col-md-5">
-                                    <label for="pelayanan">Kategori</label>
-                                    <select name="pelayanan" id="pelayanan" class="form-control">
-                                        <?php foreach($listPeta as $key => $pta) {
-                                            echo '<option value="' . $key . '">' . $pta . '</option>';
-                                        } ?>
-                                    </select>
+                            <form action="<?=site_url('home/peta') ?>">
+                                <div class="row">
+                                    <div class="form-group col-md-5">
+                                        <label for="pelayanan">Kategori</label>
+                                        <select name="peta" id="peta" class="form-control">
+                                            <?php foreach($listPeta as $key => $pta) {
+                                                echo '<option value="' . $key . '">' . $pta . '</option>';
+                                            } ?>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label for="tahun">Tahun</label>
+                                        <select class="form-control " name="tahun" id="tahun">
+                                            <option value="2023" selected>2023</option>
+                                            <option value="2022" >2022</option>
+                                            <option value="2021" >2021</option>
+                                            <option value="2020" >2020</option>
+                                            <option value="2019" >2019</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group mt-4 pt-2">
+                                        <button type="submit" class="btn btn-success" id="cari"><i class="fa fa-search"></i> Cari</button>
+                                    </div>
                                 </div>
-                                <div class="form-group col-md-2">
-                                    <label for="tahun">Tahun</label>
-                                    <select class="form-control " name="tahun" id="tahun">
-                                        <option value="2023" selected>2023</option>
-                                        <option value="2022" >2022</option>
-                                        <option value="2021" >2021</option>
-                                        <option value="2020" >2020</option>
-                                        <option value="2019" >2019</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <button class="btn btn-success" id="cari"><i class="fa fa-search"></i> Cari</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -147,14 +151,6 @@ $listPeta = getListPeta();
                     </div>
                 </div>
             </div>
-            <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a> -->
         </div>
     </div>
 
@@ -192,10 +188,6 @@ $listPeta = getListPeta();
                 <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>
             </form>
         </div>
-        <!-- <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-        </div> -->
         </div>
     </div>
     </div>
@@ -209,89 +201,6 @@ $listPeta = getListPeta();
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
-    </script>
-    <script type="text/javascript" src="<?=base_url('assets/');?>js/bantenkota.js"></script>
-    <script type="text/javascript">
-        function petaScroll() {
-            $('html, body').animate({
-                scrollTop: $('#peta').offset().top
-            }, 500);
-        }
-        document.addEventListener('DOMContentLoaded', function () {
-            const url = "https://www.peta.intel.kejati-banten.go.id";
-            const cari = document.getElementById('cari');
-            const tahunSekarang = new Date();
-            $('#map').attr('src',`${url}/peta/konflik/1/${tahunSekarang.getFullYear()}`);
-            $('#grafik').attr('src',`${url}/grafik/konflik/1`);
-            $('.card-title').text(`PETA INTELIJEN KONFLIK SOSIAL BANTEN di SEMUA SATKER TAHUN ${tahunSekarang.getFullYear()}`);
-            $('.grafik').text('GRAFIK PETA INTELIJEN KONFLIK SOSIAL BANTEN di SEMUA SATKER');
-            /* Cari Peta */
-            cari.addEventListener('click', function () {
-                var markers = [];
-                var pelayanan = $('#pelayanan').val();
-                var satker = $('#satker').val();
-                var tahun = $('#tahun').val();
-                var satkerText = document.getElementById('satker');
-                var satkerTextContent = satkerText.options[satkerText.selectedIndex].text;
-                petaScroll();
-                $('.loading').show();
-                $('#map').hide();
-                $('#grafik').hide();
-                setTimeout(() => {
-                    switch(pelayanan) {
-                        case '1' : 
-                            $('#map').attr('src',`${url}/peta/konflik/${satker}/${tahun}`);
-                            $('#grafik').attr('src',`${url}/grafik/konflik/${satker}`);
-                            $('.loading').hide();
-                            $('#map').show();
-                            $('#grafik').show();
-                            $('.card-title').text(`PETA INTELIJEN KONFLIK SOSIAL BANTEN di ${satkerTextContent.toUpperCase()} TAHUN ${tahun}`);
-                            $('.grafik').text(`GRAFIK PETA INTELIJEN KONFLIK SOSIAL BANTEN di ${satkerTextContent.toUpperCase()}`);
-                        break;
-                        case '2' :
-                            $('#map').attr('src',`${url}/peta/radikalisme/${satker}/${tahun}`);
-                            $('#grafik').attr('src',`${url}/grafik/radikalisme/${satker}`);
-                            $('.loading').hide();
-                            $('#map').show();
-                            $('#grafik').show();
-                            $('.card-title').text(`PETA INTELIJEN KERAWANAN RADIKALISME SOSIAL BANTEN di ${satkerTextContent.toUpperCase()} TAHUN ${tahun}`);
-                            $('.grafik').text(`GRAFIK  PETA INTELIJEN KERAWANAN RADIKALISME SOSIAL BANTEN di ${satkerTextContent.toUpperCase()} `);
-                        break;
-                        case '3' : 
-                            $('#map').attr('src',`${url}/peta/pakem/${satker}/${tahun}`);
-                            $('#grafik').attr('src',`${url}/grafik/pakem/${satker}`);
-                            $('.loading').hide();
-                            $('#map').show();
-                            $('#grafik').show();
-                            $('.card-title').text(`PETA INTELIJEN PENGAWASAN KEPERCAYAAN MASYARAKAT SOSIAL BANTEN di ${satkerTextContent.toUpperCase()} TAHUN ${tahun} `);
-                            $('.grafik').text(`GRAFIK PETA INTELIJEN PENGAWASAN KEPERCAYAAN MASYARAKAT SOSIAL BANTEN di ${satkerTextContent.toUpperCase()}`);
-                        break;
-                        case '4' : 
-                            $('#map').attr('src',`${url}/peta/orangasing/${satker}/${tahun}`);
-                            $('#grafik').attr('src',`${url}/grafik/orangasing/${satker}`);
-                            $('.loading').hide();
-                            $('#map').show();
-                            $('#grafik').show();
-                            $('.card-title').text(`PETA INTELIJEN PENGAWASAN ORANG ASING SOSIAL BANTEN di ${satkerTextContent.toUpperCase()} TAHUN ${tahun}`);
-                            $('.grafik').text(`GRAFIK PETA INTELIJEN PENGAWASAN ORANG ASING SOSIAL BANTEN di ${satkerTextContent.toUpperCase()}`);
-                        break;
-                        case '5' :
-                            $('#map').attr('src',`${url}/peta/lsm/${satker}/${tahun}`);
-                            $('#grafik').attr('src',`${url}/grafik/lsm/${satker}`);
-                            $('.loading').hide();
-                            $('#map').show();
-                            $('#grafik').show();
-                            $('.card-title').text(`PETA INTELIJEN LSM/ORMAS SOSIAL BANTEN di ${satkerTextContent.toUpperCase()} TAHUN ${tahun}`);
-                            $('.grafik').text(`GRAFIK PETA INTELIJEN PENGAWASAN ORANG ASING SOSIAL BANTEN di ${satkerTextContent.toUpperCase()} `);
-                        break;
-                        default:
-                        alert('anda memilih pilihan salah')
-                        break;
-                    }
-                }, 3000);
-            });
-        })
-
     </script>
 
 	<!-- js -->
