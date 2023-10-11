@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); 
 
-class Migration_create_perkara extends CI_Migration {
+class Migration_create_perkara_mstr extends CI_Migration {
     private $tableName = 'epak_perkara_mstr';
     public function up() { 
             $this->dbforge->add_field(array(
