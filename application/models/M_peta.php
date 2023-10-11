@@ -50,7 +50,8 @@ class M_peta extends CI_Model {
         }
 
         $this->db->join('epak_kabupaten c', 'c.id = a.lokasi');
-        $this->db->select('a.*, c.latitude, c.longitude');
+        $this->db->join('epak_perkara_mstr b', 'b.id = a.no_perkara');
+        $this->db->select('a.*, b.perkara as no_perkara, c.nama as lokasi, c.latitude, c.longitude');
 
         $data = $this->db->get($this->table_name . ' a');
         // echo $this->db->last_query();
