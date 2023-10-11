@@ -60,12 +60,12 @@
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        var listPerkara = <?php echo json_encode($listPerkara); ?>;
-        var newpopupContent = '';
-        for(var i=0; i<listPerkara.length; i++){
+        var listPerkara = <?=json_encode($listPerkara); ?>;
+        var newpopupContent = 'Jumlah Perkara (' + listPerkara.length + ')';
+        // for(var i=0; i<listPerkara.length; i++){
             // L.marker(listPerkara[i]['geometry']['coordinates']).addTo(map).bindPopup(listPerkara[i]['properties']['popupContent']).openPopup();
-            newpopupContent += listPerkara[i]['properties']['popupContent'] + '<br>';
-        }
+            // newpopupContent += listPerkara[i]['properties']['popupContent'] + '<br>';
+        // }
         L.marker(listPerkara[0]['geometry']['coordinates']).addTo(map).bindPopup(newpopupContent).openPopup();
         
     </script>
