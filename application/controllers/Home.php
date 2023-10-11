@@ -58,7 +58,7 @@ class Home extends CI_Controller {
 				$data['listPerkara'][] = array(
 					'type' => 'Feature',
 					'properties' => array(
-						'name' => $perkara->kasus_posisi,
+						'name' => strtoupper($perkara->kasus_posisi . ' di ' . $perkara->lokasi),
 						'amenity' => $perkara->kasus_posisi,
 						'popupContent' => $perkara->kasus_posisi . ' - ' . $perkara->nama_pelaku,
 						'show_on_map' => true
@@ -119,7 +119,7 @@ class Home extends CI_Controller {
 				$data['listPerkara'][] = array(
 					'type' => 'Feature',
 					'properties' => array(
-						'name' => $perkara->kasus_posisi,
+						'name' => strtoupper($perkara->kasus_posisi . ' di ' . $perkara->lokasi),
 						'amenity' => $perkara->kasus_posisi,
 						'popupContent' => $perkara->kasus_posisi . ' - ' . $perkara->nama_pelaku,
 						'show_on_map' => true
@@ -183,7 +183,7 @@ class Home extends CI_Controller {
 				$data['listPerkara'][] = array(
 					'type' => 'Feature',
 					'properties' => array(
-						'name' => $perkara->kasus_posisi,
+						'name' => strtoupper($perkara->kasus_posisi . ' di ' . $perkara->lokasi),
 						'amenity' => $perkara->kasus_posisi,
 						'popupContent' => $perkara->kasus_posisi . ' - ' . $perkara->nama_pelaku,
 						'show_on_map' => true
@@ -247,7 +247,7 @@ class Home extends CI_Controller {
 				$data['listPerkara'][] = array(
 					'type' => 'Feature',
 					'properties' => array(
-						'name' => $perkara->kasus_posisi,
+						'name' => strtoupper($perkara->kasus_posisi . ' di ' . $perkara->lokasi),
 						'amenity' => $perkara->kasus_posisi,
 						'popupContent' => $perkara->kasus_posisi . ' - ' . $perkara->nama_pelaku,
 						'show_on_map' => true
@@ -311,7 +311,7 @@ class Home extends CI_Controller {
 				$data['listPerkara'][] = array(
 					'type' => 'Feature',
 					'properties' => array(
-						'name' => $perkara->kasus_posisi,
+						'name' => strtoupper($perkara->kasus_posisi . ' di ' . $perkara->lokasi),
 						'amenity' => $perkara->kasus_posisi,
 						'popupContent' => $perkara->kasus_posisi . ' - ' . $perkara->nama_pelaku,
 						'show_on_map' => true
@@ -375,7 +375,7 @@ class Home extends CI_Controller {
 				$data['listPerkara'][] = array(
 					'type' => 'Feature',
 					'properties' => array(
-						'name' => $perkara->kasus_posisi,
+						'name' => strtoupper($perkara->kasus_posisi . ' di ' . $perkara->lokasi),
 						'amenity' => $perkara->kasus_posisi,
 						'popupContent' => $perkara->kasus_posisi . ' - ' . $perkara->nama_pelaku,
 						'show_on_map' => true
@@ -439,7 +439,7 @@ class Home extends CI_Controller {
 				$data['listPerkara'][] = array(
 					'type' => 'Feature',
 					'properties' => array(
-						'name' => $perkara->kasus_posisi,
+						'name' => strtoupper($perkara->kasus_posisi . ' di ' . $perkara->lokasi),
 						'amenity' => $perkara->kasus_posisi,
 						'popupContent' => $perkara->kasus_posisi . ' - ' . $perkara->nama_pelaku,
 						'show_on_map' => true
