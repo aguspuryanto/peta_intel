@@ -14,7 +14,7 @@ class Migration_create_perkara_mstr extends CI_Migration {
                 'type' => 'VARCHAR',
                 'constraint' => '150'
             ),
-            'peta_tipe' => array(
+            'tipe' => array(
                 'type' => 'VARCHAR',
                 'constraint' => '50',
                 'null' => TRUE
