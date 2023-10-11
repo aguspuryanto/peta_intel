@@ -12,6 +12,7 @@ class Api extends CI_Controller {
 		$this->load->model('M_dprd');
 		$this->load->model('M_kabupaten');
 		$this->load->model('M_kecamatan');
+		$this->load->model('M_peta');
     }
 
 	public function index()
@@ -425,6 +426,23 @@ class Api extends CI_Controller {
 		);
 
 		$this->load->view('page/api/penyuluhan', $data);
+	}
+
+	public function perkara() {
+		$data['title'] = "PETA PERKARA";
+
+		$data['listLatLong'] = array();		
+		$listPerkara = $this->M_peta->select_all();
+		foreach($listPerkara as $perkara) {
+			$data['listLatLong'][] = array(
+				'name' => $perkara->kasus_posisi,
+				'content' => $perkara->nama_pelaku,
+				'coordinates' => array($perkara->latitude, $perkara->longitude)
+			);
+		}
+
+		// echo json_encode($data['listLatLong']);
+		$this->load->view('page/api/pilpres', $data);
 	}
 
 	public function getCoordinateKecamatan($id) {

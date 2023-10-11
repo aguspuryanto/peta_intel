@@ -91,7 +91,7 @@ class Home extends CI_Controller {
 	public function kasib($page='', $id='') {
 		// echo "Kasi A";
 		$data['bankData'] = getBankDataMenu();
-
+		
 		if($page && $page == 'Pemerintahan') {			
 			$data['title'] = "Kasi B || Pemerintahan";
 		} elseif ($page == 'stakeholder') {
@@ -100,7 +100,7 @@ class Home extends CI_Controller {
 			$data['title'] = "Kasi B || Pengamanan Sumber Daya Organisasi";
 		} elseif ($page == 'ancaman') {
 			$data['title'] = "Kasi B || Potensi Ancaman";
-		} elseif ($page == 'peta') {
+		} elseif ($page == 'peta' || $page == 'PetaIntelijen') {
 			$data['title'] = "Kasi B || Peta Intelijen";
 		} elseif ($page == 'perda') {
 			$data['title'] = "Kasi B || Perda";
@@ -121,8 +121,35 @@ class Home extends CI_Controller {
 		]);
 		$data['page_type'] = 'frontend';
 		
-		$this->template->views('page/kasia/list', $data);		
-		// $this->load->view('page/kasia/list', $data);
+		if ($page == 'peta' || $page == 'PetaIntelijen') {
+
+			$data['listLatLong'] = array();		
+			$listPerkara = $this->M_peta->select_all([
+				'peta_tipe' => 'D.IN.3',
+			]);
+
+			foreach($listPerkara as $perkara) {
+				$data['listPerkara'][] = array(
+					'type' => 'Feature',
+					'properties' => array(
+						'name' => $perkara->kasus_posisi,
+						'amenity' => $perkara->kasus_posisi,
+						'popupContent' => $perkara->kasus_posisi . ' - ' . $perkara->nama_pelaku,
+						'show_on_map' => true
+					),
+					'geometry' => array(
+						'type' => 'Point',
+						'coordinates' => array($perkara->latitude, $perkara->longitude)
+					),
+				);
+			}
+
+			$this->template->views('page/kasia/listpeta', $data);
+
+		} else {
+			$this->template->views('page/kasia/list', $data);		
+			// $this->load->view('page/kasia/list', $data);
+		}
 	}
 
 	public function kasic($page='', $id='') {
@@ -137,7 +164,7 @@ class Home extends CI_Controller {
 			$data['title'] = "Kasi C || Pengamanan Sumber Daya Organisasi";
 		} elseif ($page == 'ancaman') {
 			$data['title'] = "Kasi C || Potensi Ancaman";
-		} elseif ($page == 'peta') {
+		} elseif ($page == 'peta' || $page == 'PetaIntelijen') {
 			$data['title'] = "Kasi C || Peta Intelijen";
 		} elseif ($page == 'perda') {
 			$data['title'] = "Kasi C || Perda";
@@ -158,8 +185,35 @@ class Home extends CI_Controller {
 		]);
 		$data['page_type'] = 'frontend';
 		
-		$this->template->views('page/kasia/list', $data);		
-		// $this->load->view('page/kasia/list', $data);
+		if ($page == 'peta' || $page == 'PetaIntelijen') {
+
+			$data['listLatLong'] = array();		
+			$listPerkara = $this->M_peta->select_all([
+				'peta_tipe' => 'D.IN.4',
+			]);
+
+			foreach($listPerkara as $perkara) {
+				$data['listPerkara'][] = array(
+					'type' => 'Feature',
+					'properties' => array(
+						'name' => $perkara->kasus_posisi,
+						'amenity' => $perkara->kasus_posisi,
+						'popupContent' => $perkara->kasus_posisi . ' - ' . $perkara->nama_pelaku,
+						'show_on_map' => true
+					),
+					'geometry' => array(
+						'type' => 'Point',
+						'coordinates' => array($perkara->latitude, $perkara->longitude)
+					),
+				);
+			}
+
+			$this->template->views('page/kasia/listpeta', $data);
+
+		} else {
+			$this->template->views('page/kasia/list', $data);		
+			// $this->load->view('page/kasia/list', $data);
+		}
 	}
 
 	public function kasid($page='', $id='') {
@@ -174,7 +228,7 @@ class Home extends CI_Controller {
 			$data['title'] = "Kasi D || Pengamanan Sumber Daya Organisasi";
 		} elseif ($page == 'ancaman') {
 			$data['title'] = "Kasi D || Potensi Ancaman";
-		} elseif ($page == 'peta') {
+		} elseif ($page == 'peta' || $page == 'PetaIntelijen') {
 			$data['title'] = "Kasi D || Peta Intelijen";
 		} elseif ($page == 'perda') {
 			$data['title'] = "Kasi D || Perda";
@@ -195,8 +249,35 @@ class Home extends CI_Controller {
 		]);
 		$data['page_type'] = 'frontend';
 		
-		$this->template->views('page/kasia/list', $data);		
-		// $this->load->view('page/kasia/list', $data);
+		if ($page == 'peta' || $page == 'PetaIntelijen') {
+
+			$data['listLatLong'] = array();		
+			$listPerkara = $this->M_peta->select_all([
+				'peta_tipe' => 'D.IN.5',
+			]);
+
+			foreach($listPerkara as $perkara) {
+				$data['listPerkara'][] = array(
+					'type' => 'Feature',
+					'properties' => array(
+						'name' => $perkara->kasus_posisi,
+						'amenity' => $perkara->kasus_posisi,
+						'popupContent' => $perkara->kasus_posisi . ' - ' . $perkara->nama_pelaku,
+						'show_on_map' => true
+					),
+					'geometry' => array(
+						'type' => 'Point',
+						'coordinates' => array($perkara->latitude, $perkara->longitude)
+					),
+				);
+			}
+
+			$this->template->views('page/kasia/listpeta', $data);
+
+		} else {
+			$this->template->views('page/kasia/list', $data);		
+			// $this->load->view('page/kasia/list', $data);
+		}
 	}
 
 	public function kasie($page='', $id='') {
@@ -211,7 +292,7 @@ class Home extends CI_Controller {
 			$data['title'] = "Kasi E || Pengamanan Sumber Daya Organisasi";
 		} elseif ($page == 'ancaman') {
 			$data['title'] = "Kasi E || Potensi Ancaman";
-		} elseif ($page == 'peta') {
+		} elseif ($page == 'peta' || $page == 'PetaIntelijen') {
 			$data['title'] = "Kasi E || Peta Intelijen";
 		} elseif ($page == 'perda') {
 			$data['title'] = "Kasi E || Perda";
@@ -232,8 +313,35 @@ class Home extends CI_Controller {
 		]);
 		$data['page_type'] = 'frontend';
 		
-		$this->template->views('page/kasia/list', $data);		
-		// $this->load->view('page/kasia/list', $data);
+		if ($page == 'peta' || $page == 'PetaIntelijen') {
+
+			$data['listLatLong'] = array();		
+			$listPerkara = $this->M_peta->select_all([
+				'peta_tipe' => 'D.IN.6',
+			]);
+
+			foreach($listPerkara as $perkara) {
+				$data['listPerkara'][] = array(
+					'type' => 'Feature',
+					'properties' => array(
+						'name' => $perkara->kasus_posisi,
+						'amenity' => $perkara->kasus_posisi,
+						'popupContent' => $perkara->kasus_posisi . ' - ' . $perkara->nama_pelaku,
+						'show_on_map' => true
+					),
+					'geometry' => array(
+						'type' => 'Point',
+						'coordinates' => array($perkara->latitude, $perkara->longitude)
+					),
+				);
+			}
+
+			$this->template->views('page/kasia/listpeta', $data);
+
+		} else {
+			$this->template->views('page/kasia/list', $data);		
+			// $this->load->view('page/kasia/list', $data);
+		}
 	}
 
 	public function kasipenkum($page='', $id='') {
@@ -248,7 +356,7 @@ class Home extends CI_Controller {
 			$data['title'] = "Kasi Penkum || Pengamanan Sumber Daya Organisasi";
 		} elseif ($page == 'ancaman') {
 			$data['title'] = "Kasi Penkum || Potensi Ancaman";
-		} elseif ($page == 'peta') {
+		} elseif ($page == 'peta' || $page == 'PetaIntelijen') {
 			$data['title'] = "Kasi Penkum || Peta Intelijen";
 		} elseif ($page == 'perda') {
 			$data['title'] = "Kasi Penkum || Perda";
@@ -269,7 +377,34 @@ class Home extends CI_Controller {
 		]);
 		$data['page_type'] = 'frontend';
 		
-		$this->template->views('page/kasia/list', $data);		
-		// $this->load->view('page/kasia/list', $data);
+		if ($page == 'peta' || $page == 'PetaIntelijen') {
+
+			$data['listLatLong'] = array();		
+			$listPerkara = $this->M_peta->select_all([
+				'peta_tipe' => 'D.IN.7',
+			]);
+
+			foreach($listPerkara as $perkara) {
+				$data['listPerkara'][] = array(
+					'type' => 'Feature',
+					'properties' => array(
+						'name' => $perkara->kasus_posisi,
+						'amenity' => $perkara->kasus_posisi,
+						'popupContent' => $perkara->kasus_posisi . ' - ' . $perkara->nama_pelaku,
+						'show_on_map' => true
+					),
+					'geometry' => array(
+						'type' => 'Point',
+						'coordinates' => array($perkara->latitude, $perkara->longitude)
+					),
+				);
+			}
+
+			$this->template->views('page/kasia/listpeta', $data);
+
+		} else {
+			$this->template->views('page/kasia/list', $data);		
+			// $this->load->view('page/kasia/list', $data);
+		}
 	}
 }

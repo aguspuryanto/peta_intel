@@ -136,6 +136,10 @@ $listPeta = getListPeta();
                                         <h4>PEMILU: DPRD</h4>
                                         <iframe src="<?=base_url('api/pemilu_3') ?>" width="100%" height="500" scrolling="no"></iframe>
                                     </div>
+                                    <div class="col-lg-6 col-md-6 col-xs-12">
+                                        <h4>PETA PERKARA</h4>
+                                        <iframe src="<?=base_url('api/perkara') ?>" width="100%" height="500" scrolling="no"></iframe>
+                                    </div>
                                 </div>
                             </div>
 
