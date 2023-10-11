@@ -113,7 +113,7 @@ class Kasia extends CI_Controller {
 		$data['dataProvider'] = $this->M_peta->select_all([
 			'peta_tipe' => $data['peta_tipe'],
 		]);
-		echo json_encode($data['listPerkara']);
+		// echo json_encode($data['listPerkara']);
 		$this->template->views('page/kasia/peta', $data);		
 	}
 
