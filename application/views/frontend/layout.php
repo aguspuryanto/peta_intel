@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!-- endinject -->
-    <link rel="stylesheet" href="<?=base_url('assets/');?>/vendors/font-awesome/css/font-awesome.min.css" />
     <link rel="shortcut icon" href="<?=base_url('assets/');?>img/favicon.png" type="image/x-icon">
     <title><?=@$title; ?></title>
     <style>
@@ -21,12 +20,17 @@
             border-radius: 0%;
         }
     </style>
+
+    <!-- css --> 
+    <?php echo @$_css; ?>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-success text-white justify-content-between">
     <div class="container">
-        <img src="<?=base_url('assets/');?>img/SI_METAL_BATIN_LOGO.png" alt="logo Kejaksaan" class="mr-3">
-        <a class="navbar-brand text-white sr-only" href="<?=site_url('') ?>"><?=getAppTitle(); ?> <p class="mb-0"><?=getAppDesc(); ?></p></a>
+        <a class="navbar-brand text-white" href="<?=site_url('') ?>">
+            <img src="<?=base_url('assets/');?>img/SI_METAL_BATIN_LOGO.png" alt="logo Kejaksaan" class="mr-3">
+            <div class="sr-only"><?=getAppTitle(); ?> <p class="mb-0"><?=getAppDesc(); ?></p></div>
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <!-- <span class="navbar-toggler-icon"></span> -->
             <span class="navbar-toggler-icon">   
@@ -131,6 +135,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
     </script>
 
+	<!-- js -->
     <?php echo @$_js; ?>
+
+	<!-- Custom js -->
+	<?php echo @$_loadjs; ?>
 </body>
 </html>
