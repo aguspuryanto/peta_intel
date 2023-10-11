@@ -61,7 +61,7 @@
         }).addTo(map);
 
         var listPerkara = <?=json_encode($listPerkara); ?>;
-        var newpopupContent = listPerkara[0]['properties']['name'] + '<br>Jumlah Perkara (' + listPerkara.length + ')';
+        var newpopupContent = listPerkara[0]['properties']['name'] + '<br>JUMLAH PERKARA (' + listPerkara.length + ')';
         // for(var i=0; i<listPerkara.length; i++){
             // L.marker(listPerkara[i]['geometry']['coordinates']).addTo(map).bindPopup(listPerkara[i]['properties']['popupContent']).openPopup();
             // newpopupContent += listPerkara[i]['properties']['popupContent'] + '<br>';

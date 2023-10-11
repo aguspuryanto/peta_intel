@@ -448,7 +448,7 @@ class Api extends CI_Controller {
 			$data['listPerkara'][] = array(
 				'type' => 'Feature',
 				'properties' => array(
-					'name' => strtoupper($perkara->kasus_posisi . 'di ' + $perkara->lokasi),
+					'name' => strtoupper($perkara->kasus_posisi . ' di ' . $perkara->lokasi),
 					'amenity' => $perkara->lokasi,
 					'popupContent' => $perkara->nama_pelaku,
 					'show_on_map' => true
