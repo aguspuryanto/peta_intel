@@ -13,6 +13,7 @@ class Kasie extends CI_Controller {
 		// $this->load->model('M_kecamatan');
 		$this->load->model('M_bankdata');
 		$this->load->model('M_peta');
+		$this->load->model('M_perkara');
     }
 
 	public function index()
@@ -61,7 +62,7 @@ class Kasie extends CI_Controller {
 		$data['title'] = "Kasi E || Peta Intelijen";
 		$data['konten'] = "index";
 
-		$data['listPerkara'] = array('1' => 'PRODUKSI INTELIJEN', '2' => 'PEMANTAUAN', '3' => 'INTELIJEN SINYAL', '4' => 'INTELIJEN SIBER', '5' => 'KLANDESTINE', '6' => 'DIGITAL FORENSIK', '7' => 'TRANSMISI BERITA SANDI', '8' => 'KONTRA PENGINDERAAN', '9' => 'AUDIT & PENGUJIAN SISTEM KEAMANAN INFORMASI', '10' => 'PENGAMANAN SINYAL', '11' => 'PENGEMBANGAN SDM & SANDI', '12' => 'PENGEMBANGAN SDM INTELIJEN LAINNYA', '13' => 'PENGEMBANGAN TEKNOLOGI', '14' => 'PENGEMBANGAN PROSEDUR & APLIKASI ');
+		// $data['listPerkara'] = array('1' => 'PRODUKSI INTELIJEN', '2' => 'PEMANTAUAN', '3' => 'INTELIJEN SINYAL', '4' => 'INTELIJEN SIBER', '5' => 'KLANDESTINE', '6' => 'DIGITAL FORENSIK', '7' => 'TRANSMISI BERITA SANDI', '8' => 'KONTRA PENGINDERAAN', '9' => 'AUDIT & PENGUJIAN SISTEM KEAMANAN INFORMASI', '10' => 'PENGAMANAN SINYAL', '11' => 'PENGEMBANGAN SDM & SANDI', '12' => 'PENGEMBANGAN SDM INTELIJEN LAINNYA', '13' => 'PENGEMBANGAN TEKNOLOGI', '14' => 'PENGEMBANGAN PROSEDUR & APLIKASI ');
 		$data['listKab'] = array();		
 		$listKab = $this->M_kabupaten->select_all();
 		foreach($listKab as $kab) {
@@ -69,6 +70,9 @@ class Kasie extends CI_Controller {
 		}
 		
 		$data['peta_tipe'] = 'D.IN.6';
+		$data['listPerkara'] = $this->M_perkara->select_all([
+			'tipe' => $data['peta_tipe']
+		]); //
 		$data['model'] = $this->M_peta;
 		$data['dataProvider'] = $this->M_peta->select_all([
 			'peta_tipe' => $data['peta_tipe'],

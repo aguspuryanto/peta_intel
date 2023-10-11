@@ -13,6 +13,7 @@ class Kasid extends CI_Controller {
 		// $this->load->model('M_kecamatan');
 		$this->load->model('M_bankdata');
 		$this->load->model('M_peta');
+		$this->load->model('M_perkara');
     }
 
 	public function index()
@@ -61,7 +62,7 @@ class Kasid extends CI_Controller {
 		$data['title'] = "Kasi D || Peta Intelijen";
 		$data['konten'] = "index";
 		
-		$data['listPerkara'] = array('1' => 'INFRASTRUKTUR JALAN', '2' => 'INFRASTRUKTUR PERKERETAAPIAN', '3' => 'INFRASTRUKTUR KEBANDARUDARAAN', '4' => 'INFRASTRUKTUR TELEKOMUNIKASI', '5' => 'INFRASTRUKTUR KEPELABUHANAN', '6' => 'SMELTER', '7' => 'INFRASTRUKTUR PENGOLAHAN AIR', '8' => 'TANGGUL', '9' => 'BENDUNGAN', '10' => 'PERTANIAN', '11' => 'KELAUTAN KETENAGALISTRIKAN', '12' => 'ENERGI ALTERNATIF', '13' => 'MINYAK & GAS BUMI', '14' => 'ILMU PENGETAHUAN DAN TEKNOLOGI', '15' => 'PERUMAHAN', '16' => 'PARIWISATA', '17' => 'KAWASAN INDUSTRI PRIORITAS/ KAWASAN EKONOMI KHUSUS', '18' => 'POS LINTAS BATAS NEGARA & SARANA PENUNJANG', '19' => 'SEKTOR LAINNYA');
+		// $data['listPerkara'] = array('1' => 'INFRASTRUKTUR JALAN', '2' => 'INFRASTRUKTUR PERKERETAAPIAN', '3' => 'INFRASTRUKTUR KEBANDARUDARAAN', '4' => 'INFRASTRUKTUR TELEKOMUNIKASI', '5' => 'INFRASTRUKTUR KEPELABUHANAN', '6' => 'SMELTER', '7' => 'INFRASTRUKTUR PENGOLAHAN AIR', '8' => 'TANGGUL', '9' => 'BENDUNGAN', '10' => 'PERTANIAN', '11' => 'KELAUTAN KETENAGALISTRIKAN', '12' => 'ENERGI ALTERNATIF', '13' => 'MINYAK & GAS BUMI', '14' => 'ILMU PENGETAHUAN DAN TEKNOLOGI', '15' => 'PERUMAHAN', '16' => 'PARIWISATA', '17' => 'KAWASAN INDUSTRI PRIORITAS/ KAWASAN EKONOMI KHUSUS', '18' => 'POS LINTAS BATAS NEGARA & SARANA PENUNJANG', '19' => 'SEKTOR LAINNYA');
 		$data['listKab'] = array();		
 		$listKab = $this->M_kabupaten->select_all();
 		foreach($listKab as $kab) {
@@ -69,6 +70,9 @@ class Kasid extends CI_Controller {
 		}
 		
 		$data['peta_tipe'] = 'D.IN.5';
+		$data['listPerkara'] = $this->M_perkara->select_all([
+			'tipe' => $data['peta_tipe']
+		]); //
 		$data['model'] = $this->M_peta;
 		$data['dataProvider'] = $this->M_peta->select_all([
 			'peta_tipe' => $data['peta_tipe'],

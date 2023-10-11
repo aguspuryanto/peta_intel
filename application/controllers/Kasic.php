@@ -13,6 +13,7 @@ class Kasic extends CI_Controller {
 		// $this->load->model('M_kecamatan');
 		$this->load->model('M_bankdata');
 		$this->load->model('M_peta');
+		$this->load->model('M_perkara');
     }
 
 	public function index()
@@ -112,8 +113,7 @@ class Kasic extends CI_Controller {
 		$data['title'] = "Kasi C || Peta Intelijen";
 		$data['konten'] = "index";
 
-		$data['listPerkara'] = array('1' => 'LEMBAGA KEUANGAN', '2' => 'KEUANGAN NEGARA', '3' => 'MONETER', '4' => 'PENELUSURAN ASET', '5' => 'INVESTASI/ PENANAMAN
-		MODAL', '6' => 'PERPAJAKAN', '7' => 'KEPABEANAN', '8' => 'CUKAI', '9' => 'PERDAGANGAN', '10' => 'PERINDUSTRIAN', '11' => 'KETENAGAKERJAAN', '12' => 'PERKEBUNAN', '13' => 'KEHUTANAN', '14' => 'LINGKUNGAN HIDUP', '15' => 'PERIKANAN', '16' => 'AGRARIA/TATA RUANG');
+		// $data['listPerkara'] = array('1' => 'LEMBAGA KEUANGAN', '2' => 'KEUANGAN NEGARA', '3' => 'MONETER', '4' => 'PENELUSURAN ASET', '5' => 'INVESTASI/ PENANAMAN MODAL', '6' => 'PERPAJAKAN', '7' => 'KEPABEANAN', '8' => 'CUKAI', '9' => 'PERDAGANGAN', '10' => 'PERINDUSTRIAN', '11' => 'KETENAGAKERJAAN', '12' => 'PERKEBUNAN', '13' => 'KEHUTANAN', '14' => 'LINGKUNGAN HIDUP', '15' => 'PERIKANAN', '16' => 'AGRARIA/TATA RUANG');
 		$data['listKab'] = array();		
 		$listKab = $this->M_kabupaten->select_all();
 		foreach($listKab as $kab) {
@@ -121,6 +121,9 @@ class Kasic extends CI_Controller {
 		}
 		
 		$data['peta_tipe'] = 'D.IN.4';
+		$data['listPerkara'] = $this->M_perkara->select_all([
+			'tipe' => $data['peta_tipe']
+		]); //
 		$data['model'] = $this->M_peta;
 		$data['dataProvider'] = $this->M_peta->select_all([
 			'peta_tipe' => $data['peta_tipe'],

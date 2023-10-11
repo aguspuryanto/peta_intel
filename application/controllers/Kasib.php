@@ -95,12 +95,7 @@ class Kasib extends CI_Controller {
 		$data['title'] = "Kasi B || Peta Intelijen";
 		$data['konten'] = "index";
 
-		$data['listPerkara'] = array('1' => 'PENGAWASAN PEREDARAN BARANG CETAKAN DALAM
-		NEGERI', '2' => 'PENGAWASAN PEREDARAN IMPORT BARANG CETAKAN DALAM NEGERI', '3' => 'PENGAWASAN SISTEM PERBUKUAN', '4' => 'PENGAWASAN MEDIA KOMUNIKASI', '5' => 'PENGAWASAN ALIRAN KEPERCAYAAN DAN KEAGAMAAN DALAM MASYARAKAT', '6' => 'PENCEGAKAN
-		PENYALAHGUNAAN DAN/ATAU PENODAAN AGAMA', '7' => 'KETAHANAN BUDAYA', '8' => 'PEMBERDAYAAN
-		MASYARAKAT DESA', '9' => 'PENGAWASAN ORGANISASI MASYARAKAT DAN LEMBAGA SWADAYA
-		MASYARAKAT', '10' => 'PENCEGAHAN KONFLIK SOSIAL', '11' => 'KETERTIBAN DAN
-		KETENTRAMAN UMUM', '12' => 'PEMBINAAN MASYARAKAT TAAT HUKUM');
+		// $data['listPerkara'] = array('1' => 'PENGAWASAN PEREDARAN BARANG CETAKAN DALAM NEGERI', '2' => 'PENGAWASAN PEREDARAN IMPORT BARANG CETAKAN DALAM NEGERI', '3' => 'PENGAWASAN SISTEM PERBUKUAN', '4' => 'PENGAWASAN MEDIA KOMUNIKASI', '5' => 'PENGAWASAN ALIRAN KEPERCAYAAN DAN KEAGAMAAN DALAM MASYARAKAT', '6' => 'PENCEGAKAN PENYALAHGUNAAN DAN/ATAU PENODAAN AGAMA', '7' => 'KETAHANAN BUDAYA', '8' => 'PEMBERDAYAAN MASYARAKAT DESA', '9' => 'PENGAWASAN ORGANISASI MASYARAKAT DAN LEMBAGA SWADAYA MASYARAKAT', '10' => 'PENCEGAHAN KONFLIK SOSIAL', '11' => 'KETERTIBAN DAN KETENTRAMAN UMUM', '12' => 'PEMBINAAN MASYARAKAT TAAT HUKUM');
 		$data['listKab'] = array();		
 		$listKab = $this->M_kabupaten->select_all();
 		foreach($listKab as $kab) {
@@ -108,6 +103,9 @@ class Kasib extends CI_Controller {
 		}
 		
 		$data['peta_tipe'] = 'D.IN.3';
+		$data['listPerkara'] = $this->M_perkara->select_all([
+			'tipe' => $data['peta_tipe']
+		]); //
 		$data['model'] = $this->M_peta;
 		$data['dataProvider'] = $this->M_peta->select_all([
 			'peta_tipe' => $data['peta_tipe'],
