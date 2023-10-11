@@ -431,18 +431,47 @@ class Api extends CI_Controller {
 	public function perkara() {
 		$data['title'] = "PETA PERKARA";
 
+		// $data['listLatLong'] = array();		
+		// $listPerkara = $this->M_peta->select_all();
+		// foreach($listPerkara as $perkara) {
+		// 	$data['listLatLong'][] = array(
+		// 		'name' => $perkara->kasus_posisi,
+		// 		'content' => $perkara->nama_pelaku,
+		// 		'coordinates' => array($perkara->latitude, $perkara->longitude)
+		// 	);
+		// }
+
 		$data['listLatLong'] = array();		
+		$data['listKab'] = array();		
 		$listPerkara = $this->M_peta->select_all();
-		foreach($listPerkara as $perkara) {
-			$data['listLatLong'][] = array(
+		foreach($listPerkara as $perkara) {			
+			$data['listPerkara'][] = array(
+				'type' => 'Feature',
+				'properties' => array(
+					'name' => $perkara->kasus_posisi,
+					'amenity' => $perkara->kasus_posisi,
+					'popupContent' => $perkara->nama_pelaku,
+					'show_on_map' => true
+				),
+				'geometry' => array(
+					'type' => 'Point',
+					'coordinates' => array($perkara->longitude, $perkara->latitude)
+				),
+			);
+
+			$data['listLatLong'] = array(
 				'name' => $perkara->kasus_posisi,
-				'content' => $perkara->nama_pelaku,
 				'coordinates' => array($perkara->latitude, $perkara->longitude)
 			);
 		}
+		
+		$data['listGeoJson'][] = array(
+			'type' => 'FeatureCollection',
+			'features' => $data['listPerkara']
+		);
 
 		// echo json_encode($data['listLatLong']);
-		$this->load->view('page/api/pilpres', $data);
+		$this->load->view('page/api/perkara', $data);
 	}
 
 	public function getCoordinateKecamatan($id) {
