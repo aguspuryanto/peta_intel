@@ -48,8 +48,12 @@ class M_peta extends CI_Model {
         if($options) {
             $this->db->where($options);
         }
-        
-        $data = $this->db->get($this->table_name);
+
+        $this->db->join('epak_kabupaten c', 'c.id = a.id');
+        $this->db->select('a.*, c.latitude, c.longitude');
+
+        $data = $this->db->get($this->table_name . ' a');
+        // echo $this->db->last_query();
         return $data->result();
     }
 

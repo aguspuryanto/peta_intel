@@ -9,6 +9,8 @@ class Home extends CI_Controller {
         // is_logged_in();
 		$this->load->library('session');
 		$this->load->model('M_bankdata');
+		$this->load->model('M_peta');
+		$this->load->model('M_kabupaten');
     }
 
 	public function index()
@@ -55,8 +57,75 @@ class Home extends CI_Controller {
 		]);
 		$data['page_type'] = 'frontend';
 		
-		$this->template->views('page/kasia/list', $data);		
-		// $this->load->view('page/kasia/list', $data);
+		if ($page == 'peta') {
+			// $data['listKab'] = array();		
+			// $listKab = $this->M_kabupaten->select_all();
+			// foreach($listKab as $kab) {
+			// 	$data['listKab'][$kab->id] = $kab->nama;
+			// }
+		
+			// $data['peta_tipe'] = 'D.IN.2';
+			// $data['model'] = $this->M_peta;
+			// $data['dataProvider'] = $this->M_peta->select_all([
+			// 	'peta_tipe' => $data['peta_tipe'],
+			// ]);
+
+			// $data['listLatLong'] = array();		
+			// $data['listKab'] = array();		
+			// $listKab = $this->M_kabupaten->select_all();
+			// foreach($listKab as $kab) {			
+			// 	$data['listKab'][] = array(
+			// 		'type' => 'Feature',
+			// 		'properties' => array(
+			// 			'name' => $kab->nama,
+			// 			'amenity' => $kab->nama,
+			// 			'popupContent' => $kab->nama,
+			// 			'show_on_map' => true
+			// 		),
+			// 		'geometry' => array(
+			// 			'type' => 'Point',
+			// 			'coordinates' => array($kab->latitude, $kab->longitude)
+			// 		),
+			// 	);
+	
+			// 	$data['listLatLong'] = array(
+			// 		'name' => $kab->nama,
+			// 		'coordinates' => array($kab->latitude, $kab->longitude)
+			// 	);
+			// }
+			
+			// $data['listGeoJson'][] = array(
+			// 	'type' => 'FeatureCollection',
+			// 	'features' => $data['listKab']
+			// );
+
+			$data['listLatLong'] = array();		
+			$listKab = $this->M_peta->select_all([
+				'peta_tipe' => 'D.IN.2',
+			]);
+
+			foreach($listKab as $kab) {
+				$data['listKab'][] = array(
+					'type' => 'Feature',
+					'properties' => array(
+						'name' => $kab->kasus_posisi,
+						'amenity' => $kab->kasus_posisi,
+						'popupContent' => $kab->kasus_posisi,
+						'show_on_map' => true
+					),
+					'geometry' => array(
+						'type' => 'Point',
+						'coordinates' => array($kab->latitude, $kab->longitude)
+					),
+				);
+			}
+
+			$this->template->views('page/kasia/listpeta', $data);
+
+		} else {
+			$this->template->views('page/kasia/list', $data);		
+			// $this->load->view('page/kasia/list', $data);
+		}
 	}
 
 	public function kasib($page='', $id='') {
