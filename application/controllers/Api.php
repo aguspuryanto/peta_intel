@@ -455,7 +455,7 @@ class Api extends CI_Controller {
 				),
 				'geometry' => array(
 					'type' => 'Point',
-					'coordinates' => array($perkara->longitude, $perkara->latitude)
+					'coordinates' => array($perkara->latitude, $perkara->longitude)
 				),
 			);
 
