@@ -38,7 +38,7 @@
 
                     <?=form_hidden('id', $dataUser->id); ?>
 
-                    <button type="submit" class="btn btn-primary" id="formUserSubmit">Submit Permohonan</button>
+                    <button type="submit" class="btn btn-primary" id="formUserSubmit">Buat Akun</button>
 
                 <?=form_close();?>
             </div>
