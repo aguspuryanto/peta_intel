@@ -59,7 +59,7 @@ class Admin extends CI_Controller
 		->or_where('username', $email)
 		->get('epak_users')
 		->row_array();
-		echo $this->db->last_query();
+		// echo $this->db->last_query();
 
 		// jika usernya ada
 		if ($user) {
