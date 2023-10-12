@@ -19,7 +19,9 @@
                     </div>';
                 endif;
 
-                echo '<li class="nav-item">
+                if($role_id) $cssHide = ($role_id) ? 'd-block' : 'd-none';
+
+                echo '<li class="nav-item ' . $cssHide . '">
                     <a class="nav-link collapsed" href="'. base_url($menu['url']) . '" data-toggle="collapse" data-target="#collapse' . $x . '"
                         aria-expanded="true" aria-controls="#collapse' . $x . '">
                         <i class="fas fa-fw fa-cog"></i>
