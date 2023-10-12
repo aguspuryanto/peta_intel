@@ -4,7 +4,7 @@
             $listMenu = array_merge($listMenu, $bankData);
 
             $role_id = $this->session->userdata('userdata')['role_id'];
-            echo "role_id = " . $role_id;
+            // echo "role_id = " . $role_id;
             ?>
             <!-- Nav Item - Pages Collapse Menu -->
             <?php 
@@ -22,6 +22,11 @@
 
                 $cssHide = 'd-none';
                 if($menu['title'] == 'KASI A') $cssHide = !in_array($role_id, [3, 12]) ? 'd-none' : 'd-block';
+                if($menu['title'] == 'KASI B') $cssHide = !in_array($role_id, [4, 13]) ? 'd-none' : 'd-block';
+                if($menu['title'] == 'KASI C') $cssHide = !in_array($role_id, [5, 14]) ? 'd-none' : 'd-block';
+                if($menu['title'] == 'KASI D') $cssHide = !in_array($role_id, [6, 15]) ? 'd-none' : 'd-block';
+                if($menu['title'] == 'KASI E') $cssHide = !in_array($role_id, [7, 16]) ? 'd-none' : 'd-block';
+                if($menu['title'] == 'KASI PENKUM') $cssHide = !in_array($role_id, [8, 17]) ? 'd-none' : 'd-block';
 
                 echo '<li class="nav-item ' . $cssHide . '">
                     <a class="nav-link collapsed" href="'. base_url($menu['url']) . '" data-toggle="collapse" data-target="#collapse' . $x . '"
