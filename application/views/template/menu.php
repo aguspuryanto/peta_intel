@@ -3,7 +3,7 @@
             $bankData = getBankDataMenuDash();
             $listMenu = array_merge($listMenu, $bankData);
 
-            $role_id = $this->session->userdata('userdata')['role_id'];
+            $role_id = $this->session->userdata('role_id');
             // echo "role_id = " . $role_id;
             $listMenuDisable = array('DATA PEMILU - PRESIDEN', 'DATA PEMILU - KEPALA DAERAH', 'DATA PEMILU - DPRD', 'DATA PKN & TINDAK PIDANA');
             ?>
