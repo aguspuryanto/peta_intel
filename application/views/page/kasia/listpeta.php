@@ -65,7 +65,7 @@ html, body {
     // var newpopupContent = listPerkara[0]['properties']['name'] + '<br>JUMLAH PERKARA (' + listPerkara.length + ')';
     for(var i=0; i<listPerkara.length; i++){
         var newpopupContent = listPerkara[i]['properties']['popupContent'] + '<br>';
-        L.marker(listPerkara[i]['geometry']['coordinates']).addTo(map).bindPopup(newpopupContent).openPopup();
+        if(listPerkara[i]['properties']['popupContent']) L.marker(listPerkara[i]['geometry']['coordinates']).addTo(map).bindPopup(newpopupContent).openPopup();
     }
     // L.marker(listPerkara[0]['geometry']['coordinates']).addTo(map).bindPopup(newpopupContent).openPopup();
 </script>

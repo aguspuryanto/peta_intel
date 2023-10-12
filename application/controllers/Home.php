@@ -209,6 +209,7 @@ class Home extends CI_Controller {
 			$data['listLatLong'] = array();
 
 			$listPerkara = $this->getMapGeometry('D.IN.4');
+			// echo json_encode($listPerkara);
 			$data['listPerkara'] = $listPerkara['listPerkara'];
 
 			$this->template->views('page/kasia/listpeta', $data);
@@ -365,27 +366,38 @@ class Home extends CI_Controller {
 
 	public function getMapGeometry($peta_tipe) {
 
-		$data['listLatLong'] = array();		
+		// $data['listLatLong'] = array();		
 		$listPerkara = $this->M_peta->select_all([
 			'peta_tipe' => $peta_tipe,
 		]);
 
-		foreach($listPerkara as $perkara) {
+		if($listPerkara) {
+			foreach($listPerkara as $perkara) {
+				$data['listPerkara'][] = array(
+					'type' => 'Feature',
+					'properties' => array(
+						'name' => strtoupper($perkara->no_perkara), //strtoupper($perkara->kasus_posisi . ' di ' . $perkara->lokasi),
+						'amenity' => strtoupper($perkara->no_perkara), //$perkara->kasus_posisi,
+						'popupContent' => strtoupper($perkara->no_perkara . '<br>' . $perkara->kasus_posisi), //$perkara->kasus_posisi . ' - ' . $perkara->nama_pelaku,
+						'show_on_map' => true
+					),
+					'geometry' => array(
+						'type' => 'Point',
+						'coordinates' => array($perkara->latitude, $perkara->longitude)
+					),
+				);
+			}
+		} else {
 			$data['listPerkara'][] = array(
 				'type' => 'Feature',
-				'properties' => array(
-					'name' => strtoupper($perkara->no_perkara), //strtoupper($perkara->kasus_posisi . ' di ' . $perkara->lokasi),
-					'amenity' => strtoupper($perkara->no_perkara), //$perkara->kasus_posisi,
-					'popupContent' => strtoupper($perkara->no_perkara . '<br>' . $perkara->kasus_posisi), //$perkara->kasus_posisi . ' - ' . $perkara->nama_pelaku,
-					'show_on_map' => true
-				),
+				'properties' => array(),
 				'geometry' => array(
 					'type' => 'Point',
-					'coordinates' => array($perkara->latitude, $perkara->longitude)
+					'coordinates' => array('-2.96492', '119.30631')
 				),
 			);
 		}
 
-		return $data;
+		return ($data) ?? false;
 	}
 }
