@@ -513,3 +513,27 @@ function getListPeta() {
     
     return $listMenu;
 }
+
+function getListRole() {
+    $role = array(
+        '1' => 'Administrator',
+        '2' => 'Super admin',
+        '3' => 'Admin kasi A',
+        '4' => 'Admin kasi B',
+        '5' => 'Admin kasi C',
+        '6' => 'Admin kasi D',
+        '7' => 'Admin kasi E',
+        '8' => 'Admin kasi penkum',
+        '9' => 'Asintel',
+        '10' => 'Kajati',
+        '11' => 'Wakajati',
+        '12' => 'Kasi A',
+        '13' => 'Kasi B',
+        '14' => 'Kasi C',
+        '15' => 'Kasi D',
+        '16' => 'Kasi E',
+        '17' => 'Kasi penkum'
+    );
+
+    return $role;
+}

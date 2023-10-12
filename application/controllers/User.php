@@ -25,17 +25,8 @@ class User extends CI_Controller {
 		$data['model'] = $this->M_user;
 		$data['dataUser'] = $this->M_user->selectId($this->session->userdata('role_id'));
 		$data['dataProvider'] = $this->M_user->select_all();
-
-		$options = array(
-			'1' => 'Administrator',
-			'2' => 'SuperAdmin',
-			'3' => 'Admin',
-			'4' => 'Assinten',
-			'5' => 'Kasi',
-			'6' => 'Ass & Koordinator',
-			'7' => 'User',
-		);
-		$data['role'] = $options;
+		
+		$data['role'] = getListRole();
 
 		$_POST = $this->input->post();
 		if($_POST) {
