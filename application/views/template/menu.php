@@ -21,9 +21,10 @@
                     </div>';
                 endif;
 
-                $disabledmenu = array_key_exists($menu['title'], $listMenuDisable);
+                $disabledmenu = !array_key_exists($menu['title'], $listMenuDisable);
                 $cssHide = 'd-block';
                 if(!in_array($role_id, [3, 12])){
+                    echo "disabledmenu = " . $disabledmenu;
                     if($disabledmenu && $menu['title'] == 'KASI A') $cssHide = 'd-none';
                 }
                 if(!in_array($role_id, [4, 13])) {
