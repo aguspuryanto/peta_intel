@@ -20,14 +20,13 @@
                     </div>';
                 endif;
 
-                // if(in_array($role_id, [1, 2])) $cssHide = 'd-block';
+                $cssHide = 'd-block';
                 if(!in_array($role_id, [3, 12])) $cssHide = 'd-none';
                 if(!in_array($role_id, [4, 13])) $cssHide = 'd-none';
                 if(!in_array($role_id, [5, 14])) $cssHide = 'd-none';
                 if(!in_array($role_id, [6, 15])) $cssHide = 'd-none';
                 if(!in_array($role_id, [7, 16])) $cssHide = 'd-none';
                 if(!in_array($role_id, [8, 17])) $cssHide = 'd-none';
-                if(in_array($role_id, [1, 2])) $cssHide = 'd-block';
 
                 echo '<li class="nav-item ' . $cssHide . '">
                     <a class="nav-link collapsed" href="'. base_url($menu['url']) . '" data-toggle="collapse" data-target="#collapse' . $x . '"
