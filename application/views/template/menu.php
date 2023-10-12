@@ -21,7 +21,7 @@
                 endif;
 
                 $cssHide = '';
-                if($menu['title'] == 'KASI A') $cssHide = in_array($role_id, [3, 12]) ? 'd-block' : 'd-none';
+                if($menu['title'] == 'KASI A') $cssHide = !in_array($role_id, [3, 12]) ? 'd-none' : 'd-block';
 
                 echo '<li class="nav-item ' . $cssHide . '">
                     <a class="nav-link collapsed" href="'. base_url($menu['url']) . '" data-toggle="collapse" data-target="#collapse' . $x . '"
