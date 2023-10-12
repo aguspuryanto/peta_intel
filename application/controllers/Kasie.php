@@ -34,8 +34,8 @@ class Kasie extends CI_Controller {
 
 		$data['model'] = $this->M_bankdata;
 		$data['dataProvider'] = $this->M_bankdata->select_all([
-			'kategori' => 'Kasi E',
-			'sub_kategori' => 'Lapinhar'
+			'kategori' => $kategori[0],
+			'sub_kategori' => $kategori[1]
 		]);
 		
 		$this->template->views('page/kasia/upload', $data);		
