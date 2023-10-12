@@ -92,7 +92,7 @@ class Kasic extends CI_Controller {
 		$this->template->views('page/kasia/upload', $data);		
 	}
 
-	public function PotensiAncaman() {
+	public function ancaman() {
 		$data['title'] = "Kasi C || Potensi Ancaman";
 		$data['konten'] = "index";
 

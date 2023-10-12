@@ -41,7 +41,7 @@ class Kasie extends CI_Controller {
 		$this->template->views('page/kasia/upload', $data);		
 	}
 
-	public function PotensiAncaman() {
+	public function ancaman() {
 		$data['title'] = "Kasi E || Potensi Ancaman";
 		$data['konten'] = "index";
 

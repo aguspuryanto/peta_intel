@@ -357,7 +357,7 @@ function getBankDataMenu() {
                 array('title' => 'Sosial', 'link' => 'Sosial'),
                 array('title' => 'Budaya', 'link' => 'Budaya'),
                 array('title' => 'Kemasyarakatan', 'link' => 'Kemasyarakatan'),
-                array('title' => 'Potensi Ancaman', 'link' => 'PotensiAncaman'),
+                array('title' => 'Potensi Ancaman', 'link' => 'ancaman'),
                 array('title' => 'Peta Intelijen D.IN.3', 'link' => 'PetaIntelijen'),
             )
         ),
@@ -370,7 +370,7 @@ function getBankDataMenu() {
                 array('title' => 'Industri', 'link' => 'Industri'),
                 array('title' => 'Perbankan dan Investasi', 'link' => 'Perbankan'),
                 array('title' => 'Keuangan Daerah', 'link' => 'KeuanganDaerah'),
-                array('title' => 'Potensi Ancaman', 'link' => 'PotensiAncaman'),
+                array('title' => 'Potensi Ancaman', 'link' => 'ancaman'),
                 array('title' => 'Peta Intelijen D.IN.4', 'link' => 'PetaIntelijen'),
             )
         ),
@@ -380,7 +380,7 @@ function getBankDataMenu() {
             'show_menu' => false,
             'submenu' => array(
                 array('title' => 'Daftar Pendampingan', 'link' => 'DaftarPendampingan'),
-                array('title' => 'Potensi Ancaman', 'link' => 'PotensiAncaman'),
+                array('title' => 'Potensi Ancaman', 'link' => 'ancaman'),
                 array('title' => 'Peta Intelijen D.IN.5', 'link' => 'PetaIntelijen'),
             )
         ),
@@ -392,7 +392,7 @@ function getBankDataMenu() {
                 array('title' => 'Lapinhar', 'link' => 'Lapinhar'),
                 array('title' => 'Lapinsus', 'link' => 'Lapinsus'),
                 array('title' => 'Lapopsin', 'link' => 'Lapopsin'),
-                array('title' => 'Potensi Ancaman', 'link' => 'PotensiAncaman'),
+                array('title' => 'Potensi Ancaman', 'link' => 'ancaman'),
                 array('title' => 'Peta Intelijen D.IN.6', 'link' => 'PetaIntelijen'),
                 array('title' => 'Kirka', 'link' => 'Kirka'),
             )
@@ -439,7 +439,7 @@ function getBankDataMenuDash() {
                 array('title' => 'Sosial', 'link' => 'Sosial'),
                 array('title' => 'Budaya', 'link' => 'Budaya'),
                 array('title' => 'Kemasyarakatan', 'link' => 'Kemasyarakatan'),
-                array('title' => 'Potensi Ancaman', 'link' => 'PotensiAncaman'),
+                array('title' => 'Potensi Ancaman', 'link' => 'ancaman'),
                 array('title' => 'Peta Intelijen D.IN.3', 'link' => 'PetaIntelijen'),
             )
         ),
@@ -452,7 +452,7 @@ function getBankDataMenuDash() {
                 array('title' => 'Industri', 'link' => 'Industri'),
                 array('title' => 'Perbankan dan Investasi', 'link' => 'Perbankan'),
                 array('title' => 'Keuangan Daerah', 'link' => 'KeuanganDaerah'),
-                array('title' => 'Potensi Ancaman', 'link' => 'PotensiAncaman'),
+                array('title' => 'Potensi Ancaman', 'link' => 'ancaman'),
                 array('title' => 'Peta Intelijen D.IN.4', 'link' => 'PetaIntelijen'),
             )
         ),
@@ -462,7 +462,7 @@ function getBankDataMenuDash() {
             'show_menu' => false,
             'submenu' => array(
                 array('title' => 'Daftar Pendampingan', 'link' => 'DaftarPendampingan'),
-                array('title' => 'Potensi Ancaman', 'link' => 'PotensiAncaman'),
+                array('title' => 'Potensi Ancaman', 'link' => 'ancaman'),
                 array('title' => 'Peta Intelijen D.IN.5', 'link' => 'PetaIntelijen'),
             )
         ),
@@ -474,7 +474,7 @@ function getBankDataMenuDash() {
                 array('title' => 'Lapinhar', 'link' => 'Lapinhar'),
                 array('title' => 'Lapinsus', 'link' => 'Lapinsus'),
                 array('title' => 'Lapopsin', 'link' => 'Lapopsin'),
-                array('title' => 'Potensi Ancaman', 'link' => 'PotensiAncaman'),
+                array('title' => 'Potensi Ancaman', 'link' => 'ancaman'),
                 array('title' => 'Peta Intelijen D.IN.6', 'link' => 'PetaIntelijen'),
                 array('title' => 'Kirka', 'link' => 'Kirka'),
             )
