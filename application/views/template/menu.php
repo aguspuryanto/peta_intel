@@ -2,13 +2,13 @@
             $listMenu = getListMenu();
             $bankData = getBankDataMenuDash();
             $listMenu = array_merge($listMenu, $bankData);
+
+            $role_id = $this->session->userdata('userdata')['role_id'];
             ?>
             <!-- Nav Item - Pages Collapse Menu -->
             <?php 
             $x=0;
             foreach($listMenu as $menu) {
-                // submenu
-                // $submenu = '';
                 if(isset($menu['submenu']) && $menu['submenu']) :
                     $submenu = '<div id="collapse' . $x . '" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">';
@@ -29,6 +29,8 @@
                 </li>';
                 $x++;
             }
+
+            if(in_array($role_id, [1, 2])) {
             ?>
 
 			<li class="nav-item">
@@ -58,3 +60,5 @@
                     </div>
                 </div>
             </li>
+
+            <?php } ?>

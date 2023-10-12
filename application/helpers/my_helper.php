@@ -422,6 +422,7 @@ function getBankDataMenu() {
 
 function getBankDataMenuDash() {	
 
+    // $role_id = $this->session->userdata('userdata')['nama'];
     $bankData = [
         array(
             'title' => 'KASI A',
