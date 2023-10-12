@@ -49,26 +49,7 @@ class Home extends CI_Controller {
 
 		if ($_get['peta']) {
 
-			$data['listLatLong'] = array();		
-			// $listPerkara = $this->M_peta->select_all([
-			// 	'peta_tipe' => $_get['peta'],
-			// ]);
-
-			// foreach($listPerkara as $perkara) {
-			// 	$data['listPerkara'][] = array(
-			// 		'type' => 'Feature',
-			// 		'properties' => array(
-			// 			'name' => strtoupper($perkara->kasus_posisi . ' di ' . $perkara->lokasi),
-			// 			'amenity' => $perkara->kasus_posisi,
-			// 			'popupContent' => $perkara->kasus_posisi . ' - ' . $perkara->nama_pelaku,
-			// 			'show_on_map' => true
-			// 		),
-			// 		'geometry' => array(
-			// 			'type' => 'Point',
-			// 			'coordinates' => array($perkara->latitude, $perkara->longitude)
-			// 		),
-			// 	);
-			// }
+			$data['listLatLong'] = array();
 
 			$listPerkara = $this->getMapGeometry($_get['peta']);
 			$data['listPerkara'] = $listPerkara['listPerkara'];
