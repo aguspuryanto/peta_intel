@@ -22,7 +22,7 @@
                 endif;
 
                 $disabledmenu = !array_key_exists($menu['title'], $listMenuDisable);
-                $cssHide = 'd-block ' . ($disabledmenu) ? 'd-none' : '';
+                $cssHide = 'd-block';
                 if(!in_array($role_id, [3, 12]) && $menu['title'] == 'KASI A') $cssHide = 'd-none';
                 if(!in_array($role_id, [4, 13]) && $menu['title'] == 'KASI B') $cssHide = 'd-none';
                 if(!in_array($role_id, [5, 14]) && $menu['title'] == 'KASI C') $cssHide = 'd-none';
