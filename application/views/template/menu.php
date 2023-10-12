@@ -6,7 +6,7 @@
             // $role_id = $this->session->userdata('userdata')['role_id'];
             $role_id = $this->session->userdata('role_id');
             // echo "role_id = " . $role_id;
-            $listMenuDisable = array('DATA PEMILU - PRESIDEN', 'DATA PEMILU - KEPALA DAERAH', 'DATA PEMILU - DPRD', 'DATA PKN & TINDAK PIDANA');
+            // $listMenuDisable = array('DATA PEMILU - PRESIDEN', 'DATA PEMILU - KEPALA DAERAH', 'DATA PEMILU - DPRD', 'DATA PKN & TINDAK PIDANA');
             ?>
             <!-- Nav Item - Pages Collapse Menu -->
             <?php 
@@ -22,7 +22,7 @@
                     </div>';
                 endif;
 
-                $disabledmenu = !array_key_exists($menu['title'], $listMenuDisable);
+                // $disabledmenu = !array_key_exists($menu['title'], $listMenuDisable);
                 $cssHide = 'd-block';
                 if(in_array($role_id, [3, 12]) && $menu['title'] != 'KASI A') $cssHide = 'd-none';
                 if(in_array($role_id, [4, 13]) && $menu['title'] != 'KASI B') $cssHide = 'd-none';
