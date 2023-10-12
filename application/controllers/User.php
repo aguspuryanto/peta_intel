@@ -1,6 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+// Import PHPMailer classes into the global namespace
+// These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
 class User extends CI_Controller {
 
 	public function __construct()
@@ -72,13 +78,53 @@ class User extends CI_Controller {
 					$model->save($data);
 
 					if($data['email']) {
-						$this->email->clear();
-						$this->email->to($data['email']);
-						$this->email->from('noreply@simetalbatin.id');
-						$this->email->subject('Akun user Peta Digital || SI-METAL BATIN');
-						$this->email->message('Halo '.$data['nama'].', akun user berhasil dibuat oleh Admin. Silahkan login melalui situs https://simetalbatin.id/admin<br> Username : '.$data['email'] .' <br> Password : ' . $passwdRand . '<br><br>');
+						// $this->email->clear();
+						// $this->email->to($data['email']);
+						// $this->email->from('noreply@simetalbatin.id');
+						// $this->email->subject('Akun user Peta Digital || SI-METAL BATIN');
+						// $this->email->message('Halo '.$data['nama'].', akun user berhasil dibuat oleh Admin. Silahkan login melalui situs https://simetalbatin.id/admin<br> Username : '.$data['email'] .' <br> Password : ' . $passwdRand . '<br><br>');
 						// if ( ! $this->email->send()) {
 							// show_error($this->email->print_debugger());
+						// }
+
+						// PHPMailer object
+						// $response = false;
+						// $mail = new PHPMailer();
+
+						// // SMTP configuration
+						// $mail->isSMTP();
+						// $mail->Host     = 'simetalbatin.id'; //sesuaikan sesuai nama domain hosting/server yang digunakan
+						// $mail->SMTPAuth = true;
+						// $mail->Username = 'xxx@simetalbatin.id'; // user email
+						// $mail->Password = 'xxxxxxxxxx'; // password email
+						// $mail->SMTPSecure = 'ssl';
+						// $mail->Port     = 465;
+	
+						// $mail->Timeout = 60; // timeout pengiriman (dalam detik)
+						// $mail->SMTPKeepAlive = true; 
+				
+						// $mail->setFrom('noreply@simetalbatin.id', ''); // user email
+						// // $mail->addReplyTo('xxx@simetalbatin.id', ''); //user email
+				
+						// // Add a recipient
+						// $mail->addAddress($data['email']); //email tujuan pengiriman email
+				
+						// // Email subject
+						// $mail->Subject = 'Akun user Peta Digital || SI-METAL BATIN'; //subject email
+				
+						// // Set email format to HTML
+						// $mail->isHTML(true);
+				
+						// // Email body content
+						// $mailContent = 'Halo '.$data['nama'].', akun user berhasil dibuat oleh Admin. Silahkan login melalui situs https://simetalbatin.id/admin<br> Username : '.$data['email'] .' <br> Password : ' . $passwdRand . '<br><br>'; // isi email
+						// $mail->Body = $mailContent;
+
+						// // Send email
+						// if(!$mail->send()){
+						// 	// echo 'Message could not be sent.';
+						// 	// echo 'Mailer Error: ' . $mail->ErrorInfo;
+						// }else{
+						// 	// echo 'Message has been sent';
 						// }
 					}
 				}
