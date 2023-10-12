@@ -37,8 +37,6 @@ class Home extends CI_Controller {
 		if ($_get['peta'] == 'D.IN.7') $data['title'] = "Kasi Penkum || Peta Intelijen";
 
 		$kategori = explode(" || ", $data['title']);
-		$data['kategori'] = $kategori[0];
-		$data['sub_kategori'] = $kategori[1];
 
 		$data['model'] = $this->M_bankdata;
 		$data['dataProvider'] = $this->M_bankdata->select_all([
@@ -46,6 +44,7 @@ class Home extends CI_Controller {
 			'sub_kategori' => $kategori[1]
 		]);
 		$data['page_type'] = 'frontend';
+		$data['page_search'] = $_get['peta'];
 
 		if ($_get['peta']) {
 
@@ -82,8 +81,6 @@ class Home extends CI_Controller {
 		}
 
 		$kategori = explode(" || ", $data['title']);
-		$data['kategori'] = $kategori[0];
-		$data['sub_kategori'] = $kategori[1];
 
 		$data['model'] = $this->M_bankdata;
 		$data['dataProvider'] = $this->M_bankdata->select_all([
@@ -130,8 +127,6 @@ class Home extends CI_Controller {
 		}
 
 		$kategori = explode(" || ", $data['title']);
-		$data['kategori'] = $kategori[0];
-		$data['sub_kategori'] = $kategori[1];
 
 		$data['model'] = $this->M_bankdata;
 		$data['dataProvider'] = $this->M_bankdata->select_all([
@@ -178,8 +173,6 @@ class Home extends CI_Controller {
 		}
 
 		$kategori = explode(" || ", $data['title']);
-		$data['kategori'] = $kategori[0];
-		$data['sub_kategori'] = $kategori[1];
 
 		$data['model'] = $this->M_bankdata;
 		$data['dataProvider'] = $this->M_bankdata->select_all([

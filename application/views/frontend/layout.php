@@ -76,7 +76,47 @@
     <div class="jumbotron">
         <div class="container">
             <div class="row justify-content-center">
+                <?php
+                if (!isset($page_search)) { ?>
                 <h1 class="h3 mb-0 text-gray-800"><?=@$title; ?></h1>
+                <?php } else {
+                    $listPeta = getListPeta();
+                    ?>
+                    <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            Pilih Menu Peta
+                        </div>
+                        <div class="card-body">
+                            <form action="<?=site_url('home/peta') ?>">
+                                <div class="row">
+                                    <div class="form-group col-md-5">
+                                        <label for="pelayanan">Kategori</label>
+                                        <select name="peta" id="peta" class="form-control">
+                                            <?php foreach($listPeta as $key => $pta) {
+                                                echo '<option value="' . $key . '">' . $pta . '</option>';
+                                            } ?>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label for="tahun">Tahun</label>
+                                        <select class="form-control " name="tahun" id="tahun">
+                                            <option value="2023" selected>2023</option>
+                                            <option value="2022" >2022</option>
+                                            <option value="2021" >2021</option>
+                                            <option value="2020" >2020</option>
+                                            <option value="2019" >2019</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group mt-4 pt-2">
+                                        <button type="submit" class="btn btn-success" id="cari"><i class="fa fa-search"></i> Cari</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    </div>
+                <?php } ?>
             </div>
         </div>
     </div>

@@ -7,8 +7,6 @@
                 <h6 class="m-0 font-weight-bold text-primary"><?=@$title; ?></h6>
             </div>
             <div class="card-body p-0">
-                <?//=json_encode($dataProvider); ?>
-                <?//=json_encode($listPerkara); ?>
                 <div id='map' style="">
                     <div class="leaflet-top leaflet-right"></div>
                 </div>
