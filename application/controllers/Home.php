@@ -110,26 +110,10 @@ class Home extends CI_Controller {
 		
 		if ($page == 'peta') {
 
-			$data['listLatLong'] = array();		
-			$listPerkara = $this->M_peta->select_all([
-				'peta_tipe' => 'D.IN.2',
-			]);
+			$data['listLatLong'] = array();
 
-			foreach($listPerkara as $perkara) {
-				$data['listPerkara'][] = array(
-					'type' => 'Feature',
-					'properties' => array(
-						'name' => strtoupper($perkara->kasus_posisi . ' di ' . $perkara->lokasi),
-						'amenity' => $perkara->kasus_posisi,
-						'popupContent' => $perkara->kasus_posisi . ' - ' . $perkara->nama_pelaku,
-						'show_on_map' => true
-					),
-					'geometry' => array(
-						'type' => 'Point',
-						'coordinates' => array($perkara->latitude, $perkara->longitude)
-					),
-				);
-			}
+			$listPerkara = $this->getMapGeometry('D.IN.2');
+			$data['listPerkara'] = $listPerkara['listPerkara'];
 
 			$this->template->views('page/kasia/listpeta', $data);
 
@@ -174,26 +158,10 @@ class Home extends CI_Controller {
 		
 		if ($page == 'peta' || $page == 'PetaIntelijen') {
 
-			$data['listLatLong'] = array();		
-			$listPerkara = $this->M_peta->select_all([
-				'peta_tipe' => 'D.IN.3',
-			]);
+			$data['listLatLong'] = array();
 
-			foreach($listPerkara as $perkara) {
-				$data['listPerkara'][] = array(
-					'type' => 'Feature',
-					'properties' => array(
-						'name' => strtoupper($perkara->kasus_posisi . ' di ' . $perkara->lokasi),
-						'amenity' => $perkara->kasus_posisi,
-						'popupContent' => $perkara->kasus_posisi . ' - ' . $perkara->nama_pelaku,
-						'show_on_map' => true
-					),
-					'geometry' => array(
-						'type' => 'Point',
-						'coordinates' => array($perkara->latitude, $perkara->longitude)
-					),
-				);
-			}
+			$listPerkara = $this->getMapGeometry('D.IN.3');
+			$data['listPerkara'] = $listPerkara['listPerkara'];
 
 			$this->template->views('page/kasia/listpeta', $data);
 
@@ -238,26 +206,10 @@ class Home extends CI_Controller {
 		
 		if ($page == 'peta' || $page == 'PetaIntelijen') {
 
-			$data['listLatLong'] = array();		
-			$listPerkara = $this->M_peta->select_all([
-				'peta_tipe' => 'D.IN.4',
-			]);
+			$data['listLatLong'] = array();
 
-			foreach($listPerkara as $perkara) {
-				$data['listPerkara'][] = array(
-					'type' => 'Feature',
-					'properties' => array(
-						'name' => strtoupper($perkara->kasus_posisi . ' di ' . $perkara->lokasi),
-						'amenity' => $perkara->kasus_posisi,
-						'popupContent' => $perkara->kasus_posisi . ' - ' . $perkara->nama_pelaku,
-						'show_on_map' => true
-					),
-					'geometry' => array(
-						'type' => 'Point',
-						'coordinates' => array($perkara->latitude, $perkara->longitude)
-					),
-				);
-			}
+			$listPerkara = $this->getMapGeometry('D.IN.4');
+			$data['listPerkara'] = $listPerkara['listPerkara'];
 
 			$this->template->views('page/kasia/listpeta', $data);
 
@@ -302,26 +254,10 @@ class Home extends CI_Controller {
 		
 		if ($page == 'peta' || $page == 'PetaIntelijen') {
 
-			$data['listLatLong'] = array();		
-			$listPerkara = $this->M_peta->select_all([
-				'peta_tipe' => 'D.IN.5',
-			]);
+			$data['listLatLong'] = array();
 
-			foreach($listPerkara as $perkara) {
-				$data['listPerkara'][] = array(
-					'type' => 'Feature',
-					'properties' => array(
-						'name' => strtoupper($perkara->kasus_posisi . ' di ' . $perkara->lokasi),
-						'amenity' => $perkara->kasus_posisi,
-						'popupContent' => $perkara->kasus_posisi . ' - ' . $perkara->nama_pelaku,
-						'show_on_map' => true
-					),
-					'geometry' => array(
-						'type' => 'Point',
-						'coordinates' => array($perkara->latitude, $perkara->longitude)
-					),
-				);
-			}
+			$listPerkara = $this->getMapGeometry('D.IN.5');
+			$data['listPerkara'] = $listPerkara['listPerkara'];
 
 			$this->template->views('page/kasia/listpeta', $data);
 
@@ -366,26 +302,10 @@ class Home extends CI_Controller {
 		
 		if ($page == 'peta' || $page == 'PetaIntelijen') {
 
-			$data['listLatLong'] = array();		
-			$listPerkara = $this->M_peta->select_all([
-				'peta_tipe' => 'D.IN.6',
-			]);
+			$data['listLatLong'] = array();
 
-			foreach($listPerkara as $perkara) {
-				$data['listPerkara'][] = array(
-					'type' => 'Feature',
-					'properties' => array(
-						'name' => strtoupper($perkara->kasus_posisi . ' di ' . $perkara->lokasi),
-						'amenity' => $perkara->kasus_posisi,
-						'popupContent' => $perkara->kasus_posisi . ' - ' . $perkara->nama_pelaku,
-						'show_on_map' => true
-					),
-					'geometry' => array(
-						'type' => 'Point',
-						'coordinates' => array($perkara->latitude, $perkara->longitude)
-					),
-				);
-			}
+			$listPerkara = $this->getMapGeometry('D.IN.6');
+			$data['listPerkara'] = $listPerkara['listPerkara'];
 
 			$this->template->views('page/kasia/listpeta', $data);
 
@@ -430,26 +350,10 @@ class Home extends CI_Controller {
 		
 		if ($page == 'peta' || $page == 'PetaIntelijen') {
 
-			$data['listLatLong'] = array();		
-			$listPerkara = $this->M_peta->select_all([
-				'peta_tipe' => 'D.IN.7',
-			]);
+			$data['listLatLong'] = array();
 
-			foreach($listPerkara as $perkara) {
-				$data['listPerkara'][] = array(
-					'type' => 'Feature',
-					'properties' => array(
-						'name' => strtoupper($perkara->kasus_posisi . ' di ' . $perkara->lokasi),
-						'amenity' => $perkara->kasus_posisi,
-						'popupContent' => $perkara->kasus_posisi . ' - ' . $perkara->nama_pelaku,
-						'show_on_map' => true
-					),
-					'geometry' => array(
-						'type' => 'Point',
-						'coordinates' => array($perkara->latitude, $perkara->longitude)
-					),
-				);
-			}
+			$listPerkara = $this->getMapGeometry('D.IN.7');
+			$data['listPerkara'] = $listPerkara['listPerkara'];
 
 			$this->template->views('page/kasia/listpeta', $data);
 
@@ -457,5 +361,31 @@ class Home extends CI_Controller {
 			$this->template->views('page/kasia/list', $data);		
 			// $this->load->view('page/kasia/list', $data);
 		}
+	}
+
+	public function getMapGeometry($peta_tipe) {
+
+		$data['listLatLong'] = array();		
+		$listPerkara = $this->M_peta->select_all([
+			'peta_tipe' => $peta_tipe,
+		]);
+
+		foreach($listPerkara as $perkara) {
+			$data['listPerkara'][] = array(
+				'type' => 'Feature',
+				'properties' => array(
+					'name' => strtoupper($perkara->no_perkara), //strtoupper($perkara->kasus_posisi . ' di ' . $perkara->lokasi),
+					'amenity' => strtoupper($perkara->no_perkara), //$perkara->kasus_posisi,
+					'popupContent' => strtoupper($perkara->no_perkara . '<br>' . $perkara->kasus_posisi), //$perkara->kasus_posisi . ' - ' . $perkara->nama_pelaku,
+					'show_on_map' => true
+				),
+				'geometry' => array(
+					'type' => 'Point',
+					'coordinates' => array($perkara->latitude, $perkara->longitude)
+				),
+			);
+		}
+
+		return $data;
 	}
 }

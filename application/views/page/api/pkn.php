@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,6 +42,9 @@
 	position:relative;
 	top:1px;
 }
+
+
+
 </style>
 </head>
     <body>
@@ -49,48 +53,16 @@
       </div>
     </div>
     </body>
-    
+
     <script type="text/javascript">
-      var map = L.map('map').setView(<?=json_encode($listLatLong['coordinates'], JSON_NUMERIC_CHECK) ?>, 12);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          maxZoom: 19,
-          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-      }).addTo(map);
+        var map = L.map('map').setView(<?=json_encode($listLatLong[0]['coordinates'], JSON_NUMERIC_CHECK) ?>, 8);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
 
-      function style(feature) {
-        return {
-          weight: 1,
-          opacity: 1,
-          color: 'white',
-          dashArray: '3',
-          fillOpacity: 0.5,
-          fillColor: "green",
-          border: 3
-        };
-      }
-
-      var someFeatures = <?=json_encode($listGeoJson, JSON_NUMERIC_CHECK) ?>;
-      var geojson;
-      geojson = L.geoJson(someFeatures, {
-        style: style,
-        filter: function(feature, layer) {
-          return feature.properties.show_on_map;
+        var listLatLong = <?php echo json_encode($listLatLong); ?>;
+        for(var i=0; i<listLatLong.length; i++){
+            L.marker(listLatLong[i]['coordinates']).addTo(map).bindPopup(listLatLong[i]['content']).openPopup();
         }
-      }).addTo(map);
-
-      
-      var legend = L.control({position: 'bottomleft'});
-      legend.onAdd = function (map) {
-        var div = L.DomUtil.create('div', 'info legend'),
-          grades = [0, 10, 20, 50, 100, 200, 500, 1000],
-          labels = [],
-          from, to;
-
-          labels.push('<img src="<?=base_url('assets/');?>icon/legend_penyelamatan_keuangan_negara.jpg">');
-          div.innerHTML = labels.join('<br>');
-          return div;
-      };
-
-      legend.addTo(map);
     </script>
   </html>

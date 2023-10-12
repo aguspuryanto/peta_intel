@@ -13,6 +13,7 @@ class Api extends CI_Controller {
 		$this->load->model('M_kabupaten');
 		$this->load->model('M_kecamatan');
 		$this->load->model('M_peta');
+		$this->load->model('M_pkn');
     }
 
 	public function index()
@@ -426,6 +427,22 @@ class Api extends CI_Controller {
 		);
 
 		$this->load->view('page/api/penyuluhan', $data);
+	}
+
+	public function pkn() {
+		$data['title'] = "DATA PKN & TINDAK PIDANA";
+
+		$data['listLatLong'] = array();		
+		$listPerkara = $this->M_pkn->select_all();
+		foreach($listPerkara as $perkara) {
+			$data['listLatLong'][] = array(
+				'name' => $perkara->kasus_posisi,
+				'content' => 'JENIS PERKARA: ' . $perkara->no_perkara,
+				'coordinates' => array($perkara->latitude, $perkara->longitude)
+			);
+		}
+		
+		$this->load->view('page/api/perkara', $data);
 	}
 
 	public function perkara() {
