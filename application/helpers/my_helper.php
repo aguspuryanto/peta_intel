@@ -311,24 +311,16 @@ function getListMenu() {
                 array('title' => 'Lihat Anggota DPRD', 'link' => 'anggota')
             ]
         ),
-        array(
-            'title' => 'PENYULUHAN DAN PENERANGAN HUKUM',
-            'url' => 'penyuluhan',
-            'show_menu' => false,
-            'submenu' => [
-                array('title' => 'Lihat Data', 'link' => 'index')
-            ]
-        ),
         // array(
-        //     'title' => 'POLITIK, SOSIAL BUDAYA DAN SDO',
-        //     'url' => 'polsosbud',
+        //     'title' => 'PENYULUHAN DAN PENERANGAN HUKUM',
+        //     'url' => 'penyuluhan',
         //     'show_menu' => false,
         //     'submenu' => [
         //         array('title' => 'Lihat Data', 'link' => 'index')
         //     ]
         // ),
         array(
-            'title' => 'DATA TINDAK PIDANA',
+            'title' => 'DATA PKN & TINDAK PIDANA',
             'url' => 'pkn',
             'show_menu' => false,
             'submenu' => [
@@ -413,6 +405,7 @@ function getBankDataMenu() {
                 array('title' => 'Data Grafik', 'link' => 'DataGrafik'),
                 array('title' => 'Peta Intelijen', 'link' => 'PetaIntelijen'),
                 array('title' => 'Peta Luhkum Penkum', 'link' => 'PetaLuhkum'),
+                array('title' => 'Penyuluhan dan Penerangan Hukum', 'link' => 'Penyuluhan'),
             )
         ),
     ];
