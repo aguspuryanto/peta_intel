@@ -7,7 +7,7 @@
 
                     <div class="row">
                         <div class="col-md-6">
-                            <?=get_form_input($model, 'username', array('value' => $dataUser['username'])); ?>
+                            <?=get_form_input($model, 'username', array('value' => $dataUser->username)); ?>
                         </div>
                         <div class="col-md-6">
                             <?=get_form_input($model, 'nama', array('value' => $dataUser->nama)); ?>
