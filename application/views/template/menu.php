@@ -20,7 +20,7 @@
                     </div>';
                 endif;
 
-                $cssHide = '';
+                $cssHide = 'd-none';
                 if($menu['title'] == 'KASI A') $cssHide = !in_array($role_id, [3, 12]) ? 'd-none' : 'd-block';
 
                 echo '<li class="nav-item ' . $cssHide . '">
