@@ -4,6 +4,7 @@
             $listMenu = array_merge($listMenu, $bankData);
 
             $role_id = $this->session->userdata('userdata')['role_id'];
+            echo "role_id = " . $role_id;
             ?>
             <!-- Nav Item - Pages Collapse Menu -->
             <?php 
