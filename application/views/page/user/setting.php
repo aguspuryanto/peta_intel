@@ -118,7 +118,7 @@
 
             <?=form_hidden('id'); ?>
 
-            <button type="submit" class="btn btn-primary" id="formAddUserSubmit">Submit Permohonan</button>
+            <button type="submit" class="btn btn-primary" id="formAddUserSubmit">Buat Akun</button>
 
         <?=form_close();?>
       </div>
