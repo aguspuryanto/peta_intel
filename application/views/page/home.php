@@ -46,12 +46,12 @@ $role_id = $this->session->userdata('role_id');
                 <?php foreach($bankData as $bank) {
                     
                     $cssHide = 'd-block';
-                    if(in_array($role_id, [3, 12]) && $menu['title'] != 'KASI A') $cssHide = 'd-none';
-                    if(in_array($role_id, [4, 13]) && $menu['title'] != 'KASI B') $cssHide = 'd-none';
-                    if(in_array($role_id, [5, 14]) && $menu['title'] != 'KASI C') $cssHide = 'd-none';
-                    if(in_array($role_id, [6, 15]) && $menu['title'] != 'KASI D') $cssHide = 'd-none';
-                    if(in_array($role_id, [7, 16]) && $menu['title'] != 'KASI E') $cssHide = 'd-none';
-                    if(in_array($role_id, [8, 17]) && $menu['title'] != 'KASI PENKUM') $cssHide = 'd-none';
+                    if(in_array($role_id, [3, 12]) && $bank['title'] != 'KASI A') $cssHide = 'd-none';
+                    if(in_array($role_id, [4, 13]) && $bank['title'] != 'KASI B') $cssHide = 'd-none';
+                    if(in_array($role_id, [5, 14]) && $bank['title'] != 'KASI C') $cssHide = 'd-none';
+                    if(in_array($role_id, [6, 15]) && $bank['title'] != 'KASI D') $cssHide = 'd-none';
+                    if(in_array($role_id, [7, 16]) && $bank['title'] != 'KASI E') $cssHide = 'd-none';
+                    if(in_array($role_id, [8, 17]) && $bank['title'] != 'KASI PENKUM') $cssHide = 'd-none';
 
                     echo '<li class="nav-item dropdown ' . $cssHide . '">
                         <a class="nav-link dropdown-toggle text-white" href="'. base_url($bank['url']) . '" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' . $bank['title'] . '</a>
