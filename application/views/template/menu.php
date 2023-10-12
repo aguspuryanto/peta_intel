@@ -23,7 +23,7 @@
 
                 $disabledmenu = !array_key_exists($menu['title'], $listMenuDisable);
                 $cssHide = 'd-block';
-                if(!in_array($role_id, [3, 12]) && $menu['title'] == 'KASI A' && $disabledmenu==1) $cssHide = 'd-none';
+                if(!in_array($role_id, [3, 12]) && $menu['title'] == 'KASI A' || $disabledmenu) $cssHide = 'd-none';
                 if(!in_array($role_id, [4, 13]) && $menu['title'] == 'KASI B') $cssHide = 'd-none';
                 if(!in_array($role_id, [5, 14]) && $menu['title'] == 'KASI C') $cssHide = 'd-none';
                 if(!in_array($role_id, [6, 15]) && $menu['title'] == 'KASI D') $cssHide = 'd-none';
