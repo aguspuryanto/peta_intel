@@ -136,6 +136,7 @@ $Urlremove = base_url('user/remove');
 
 <script type="text/javascript">
 $( document ).ready(function() {
+    var table = $('#example1').DataTable();
     // update Account
     $('button#formUserSubmit').on('click', function (e) {
         e.preventDefault();
