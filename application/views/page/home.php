@@ -45,7 +45,7 @@ $role_id = $this->session->userdata('role_id');
             <ul class="navbar-nav ml-auto">
                 <?php foreach($bankData as $bank) {
                     
-                    $cssHide = !$this->session->userdata('email') ? 'd-none' : 'd-block';
+                    $cssHide = !$this->session->userdata('email') ? 'd-block' : 'd-none';
                     if(in_array($role_id, [3, 12]) && $bank['title'] != 'KASI A') $cssHide = 'd-none';
                     if(in_array($role_id, [4, 13]) && $bank['title'] != 'KASI B') $cssHide = 'd-none';
                     if(in_array($role_id, [5, 14]) && $bank['title'] != 'KASI C') $cssHide = 'd-none';
