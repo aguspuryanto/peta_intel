@@ -23,7 +23,7 @@ class User extends CI_Controller {
 	{
 		$data['title'] = "User";
 		$data['model'] = $this->M_user;
-		$data['dataUser'] = $this->M_user->selectId($this->session->userdata('role_id'));
+		$data['dataUser'] = $this->M_user->select_all(['role_id' => $this->session->userdata('role_id')]);
 		$data['dataProvider'] = $this->M_user->select_all();
 		
 		$data['role'] = getListRole();
