@@ -1,5 +1,6 @@
 <?php 
 $listPeta = getListPeta();
+$role_id = $this->session->userdata('role_id');
 ?>
 <!doctype html>
 <html lang="en">
@@ -43,7 +44,16 @@ $listPeta = getListPeta();
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <?php foreach($bankData as $bank) {
-                    echo '<li class="nav-item dropdown">
+                    
+                    $cssHide = 'd-block';
+                    if(in_array($role_id, [3, 12]) && $menu['title'] != 'KASI A') $cssHide = 'd-none';
+                    if(in_array($role_id, [4, 13]) && $menu['title'] != 'KASI B') $cssHide = 'd-none';
+                    if(in_array($role_id, [5, 14]) && $menu['title'] != 'KASI C') $cssHide = 'd-none';
+                    if(in_array($role_id, [6, 15]) && $menu['title'] != 'KASI D') $cssHide = 'd-none';
+                    if(in_array($role_id, [7, 16]) && $menu['title'] != 'KASI E') $cssHide = 'd-none';
+                    if(in_array($role_id, [8, 17]) && $menu['title'] != 'KASI PENKUM') $cssHide = 'd-none';
+
+                    echo '<li class="nav-item dropdown ' . $cssHide . '">
                         <a class="nav-link dropdown-toggle text-white" href="'. base_url($bank['url']) . '" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' . $bank['title'] . '</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">';
 
