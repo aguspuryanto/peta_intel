@@ -56,7 +56,7 @@ class Admin extends CI_Controller
 
 		// $user = $this->db->get_where('epak_users', ['email' => $email])->row_array();
 		$user = $this->db->where('email', $email)
-		->or_where('email', $email)
+		->or_where('username', $email)
 		->get('epak_users')
 		->row_array();
 		echo $this->db->last_query();
