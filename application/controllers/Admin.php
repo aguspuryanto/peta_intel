@@ -53,7 +53,11 @@ class Admin extends CI_Controller
 		$password = $this->input->post('password');
 		$redirect = $this->input->post('redirect');
 
-		$user = $this->db->get_where('epak_users', ['email' => $email])->row_array();
+		// $user = $this->db->get_where('epak_users', ['email' => $email])->row_array();
+		$user = $this->db->where('email', $email)
+		->or_where('email', $email)
+		->get('epak_users')
+		->row_array();
 
 		// jika usernya ada
 		if ($user) {
