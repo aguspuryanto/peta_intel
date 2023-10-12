@@ -2,7 +2,6 @@
         <div class="card mb-4">
             <!-- <div class="card-header">Account Details</div> -->
             <div class="card-body">
-                <?=json_encode($dataUser); ?>
                 <?=form_open('', array('id' => 'formUserAccount', 'role' => 'form'));?>
 
                     <div class="row">
