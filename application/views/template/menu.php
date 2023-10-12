@@ -20,7 +20,7 @@
                     </div>';
                 endif;
 
-                $cssHide = 'd-block';
+                if(in_array($role_id, [1, 2])) $cssHide = 'd-block';
                 if(!in_array($role_id, [3, 12])) $cssHide = 'd-none';
                 if(!in_array($role_id, [4, 13])) $cssHide = 'd-none';
                 if(!in_array($role_id, [5, 14])) $cssHide = 'd-none';
