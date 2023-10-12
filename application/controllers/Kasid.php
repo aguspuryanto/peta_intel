@@ -24,13 +24,26 @@ class Kasid extends CI_Controller {
 		$this->template->views('page/kasia/index', $data);
 	}
 
+	public function DaftarPengawalan() {
+		$data['title'] = "Kasi D || Daftar Pengawalan & Pengamanan";
+		$data['konten'] = "index";
+
+		$kategori = explode(" || ", $data['title']);
+
+		$data['model'] = $this->M_bankdata;
+		$data['dataProvider'] = $this->M_bankdata->select_all([
+			'kategori' => $kategori[0],
+			'sub_kategori' => $kategori[1]
+		]);
+		
+		$this->template->views('page/kasia/upload', $data);		
+	}
+
 	public function DaftarPendampingan() {
 		$data['title'] = "Kasi D || Daftar Pendampingan";
 		$data['konten'] = "index";
 
 		$kategori = explode(" || ", $data['title']);
-		$data['kategori'] = $kategori[0];
-		$data['sub_kategori'] = $kategori[1];
 
 		$data['model'] = $this->M_bankdata;
 		$data['dataProvider'] = $this->M_bankdata->select_all([
@@ -46,8 +59,6 @@ class Kasid extends CI_Controller {
 		$data['konten'] = "index";
 
 		$kategori = explode(" || ", $data['title']);
-		$data['kategori'] = $kategori[0];
-		$data['sub_kategori'] = $kategori[1];
 
 		$data['model'] = $this->M_bankdata;
 		$data['dataProvider'] = $this->M_bankdata->select_all([

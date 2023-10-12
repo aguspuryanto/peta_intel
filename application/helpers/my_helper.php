@@ -337,6 +337,7 @@ function getBankDataMenu() {
     $bankData = [
         array(
             'title' => 'SEKSI A',
+            'title_desc' => 'Bidang Ideologi, Politik, Pertahanan dan Keamanan',
             'url' => 'home/kasia',
             'show_menu' => false,
             'submenu' => array(
@@ -351,6 +352,7 @@ function getBankDataMenu() {
         ),
         array(
             'title' => 'SEKSI B',
+            'title_desc' => 'Bidang Sosial, Budaya dan Kemasyarakatan',
             'url' => 'home/kasib',
             'show_menu' => false,
             'submenu' => array(
@@ -363,6 +365,7 @@ function getBankDataMenu() {
         ),
         array(
             'title' => 'SEKSI C',
+            'title_desc' => 'Bidang Ekonomi dan Keuangan',
             'url' => 'home/kasic',
             'show_menu' => false,
             'submenu' => array(
@@ -376,36 +379,40 @@ function getBankDataMenu() {
         ),
         array(
             'title' => 'SEKSI D',
+            'title_desc' => 'Bidang Pengamanan Pembangunan Strategis',
             'url' => 'home/kasid',
             'show_menu' => false,
             'submenu' => array(
-                array('title' => 'Daftar Pendampingan', 'link' => 'DaftarPendampingan'),
+                array('title' => 'Daftar Pengawalan & Pengamanan', 'link' => 'DaftarPengawalan'),
+                array('title' => 'Daftar Pendampingan DATUN', 'link' => 'DaftarPendampingan'),
                 array('title' => 'Potensi Ancaman', 'link' => 'ancaman'),
                 array('title' => 'Peta Intelijen D.IN.5', 'link' => 'PetaIntelijen'),
             )
         ),
         array(
             'title' => 'SEKSI E',
+            'title_desc' => 'Bidang Teknologi Informasi dan Produksi Intelijen',
             'url' => 'home/kasie',
             'show_menu' => false,
             'submenu' => array(
                 array('title' => 'Lapinhar', 'link' => 'Lapinhar'),
                 array('title' => 'Lapinsus', 'link' => 'Lapinsus'),
                 array('title' => 'Lapopsin', 'link' => 'Lapopsin'),
+                array('title' => 'Kirka', 'link' => 'Kirka Intelijen'),
                 array('title' => 'Potensi Ancaman', 'link' => 'ancaman'),
                 array('title' => 'Peta Intelijen D.IN.6', 'link' => 'PetaIntelijen'),
-                array('title' => 'Kirka', 'link' => 'Kirka'),
             )
         ),
         array(
             'title' => 'SEKSI P',
+            'title_desc' => 'Penerangan Hukum dan Penyuluhan Hukum',
             'url' => 'home/kasipenkum',
             'show_menu' => false,
             'submenu' => array(
                 array('title' => 'Data Grafik', 'link' => 'grafik'),
                 array('title' => 'Potensi Ancaman', 'link' => 'ancaman'),
                 array('title' => 'Peta Intelijen', 'link' => 'PetaIntelijen'),
-                array('title' => 'Peta Luhkum Penkum', 'link' => 'PetaLuhkum'),
+                // array('title' => 'Peta Luhkum Penkum', 'link' => 'PetaLuhkum'),
                 array('title' => 'Penyuluhan dan Penerangan Hukum', 'link' => 'Penyuluhan'),
             )
         ),
