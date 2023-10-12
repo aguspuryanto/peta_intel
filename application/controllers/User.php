@@ -65,7 +65,7 @@ class User extends CI_Controller {
 					if($data['role_id'] !=1) $model->update($id, $data);
 				}
 				else {
-					$passwdRand	= $this->randomPassword();
+					$passwdRand	= 'admin1234'; //$this->randomPassword();
 					$data['password'] = md5($passwdRand);
 					$model->save($data);
 
