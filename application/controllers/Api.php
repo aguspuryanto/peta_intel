@@ -431,44 +431,44 @@ class Api extends CI_Controller {
 	public function perkara() {
 		$data['title'] = "PETA PERKARA";
 
-		// $data['listLatLong'] = array();		
-		// $listPerkara = $this->M_peta->select_all();
-		// foreach($listPerkara as $perkara) {
-		// 	$data['listLatLong'][] = array(
-		// 		'name' => $perkara->kasus_posisi,
-		// 		'content' => $perkara->nama_pelaku,
-		// 		'coordinates' => array($perkara->latitude, $perkara->longitude)
-		// 	);
-		// }
-
 		$data['listLatLong'] = array();		
-		$data['listKab'] = array();		
 		$listPerkara = $this->M_peta->select_all();
-		foreach($listPerkara as $perkara) {			
-			$data['listPerkara'][] = array(
-				'type' => 'Feature',
-				'properties' => array(
-					'name' => strtoupper($perkara->kasus_posisi . ' di ' . $perkara->lokasi),
-					'amenity' => $perkara->lokasi,
-					'popupContent' => $perkara->nama_pelaku,
-					'show_on_map' => true
-				),
-				'geometry' => array(
-					'type' => 'Point',
-					'coordinates' => array($perkara->latitude, $perkara->longitude)
-				),
-			);
-
-			$data['listLatLong'] = array(
+		foreach($listPerkara as $perkara) {
+			$data['listLatLong'][] = array(
 				'name' => $perkara->kasus_posisi,
+				'content' => 'JENIS PERKARA: ' . $perkara->no_perkara,
 				'coordinates' => array($perkara->latitude, $perkara->longitude)
 			);
 		}
+
+		// $data['listLatLong'] = array();		
+		// $data['listKab'] = array();		
+		// $listPerkara = $this->M_peta->select_all();
+		// foreach($listPerkara as $perkara) {			
+		// 	$data['listPerkara'][] = array(
+		// 		'type' => 'Feature',
+		// 		'properties' => array(
+		// 			'name' => strtoupper($perkara->kasus_posisi . ' di ' . $perkara->lokasi),
+		// 			'amenity' => $perkara->lokasi,
+		// 			'popupContent' => $perkara->nama_pelaku,
+		// 			'show_on_map' => true
+		// 		),
+		// 		'geometry' => array(
+		// 			'type' => 'Point',
+		// 			'coordinates' => array($perkara->latitude, $perkara->longitude)
+		// 		),
+		// 	);
+
+		// 	$data['listLatLong'] = array(
+		// 		'name' => $perkara->kasus_posisi,
+		// 		'coordinates' => array($perkara->latitude, $perkara->longitude)
+		// 	);
+		// }
 		
-		$data['listGeoJson'][] = array(
-			'type' => 'FeatureCollection',
-			'features' => $data['listPerkara']
-		);
+		// $data['listGeoJson'][] = array(
+		// 	'type' => 'FeatureCollection',
+		// 	'features' => $data['listPerkara']
+		// );
 
 		// echo json_encode($data['listLatLong']);
 		$this->load->view('page/api/perkara', $data);

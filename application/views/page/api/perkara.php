@@ -55,18 +55,14 @@
     </body>
 
     <script type="text/javascript">
-        var map = L.map('map').setView(<?=json_encode($listPerkara[0]['geometry']['coordinates'], JSON_NUMERIC_CHECK) ?>, 8);
+        var map = L.map('map').setView(<?=json_encode($listLatLong[0]['coordinates'], JSON_NUMERIC_CHECK) ?>, 8);
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        var listPerkara = <?=json_encode($listPerkara); ?>;
-        var newpopupContent = listPerkara[0]['properties']['name'] + '<br>JUMLAH PERKARA (' + listPerkara.length + ')';
-        // for(var i=0; i<listPerkara.length; i++){
-            // L.marker(listPerkara[i]['geometry']['coordinates']).addTo(map).bindPopup(listPerkara[i]['properties']['popupContent']).openPopup();
-            // newpopupContent += listPerkara[i]['properties']['popupContent'] + '<br>';
-        // }
-        L.marker(listPerkara[0]['geometry']['coordinates']).addTo(map).bindPopup(newpopupContent).openPopup();
-        
+        var listLatLong = <?php echo json_encode($listLatLong); ?>;
+        for(var i=0; i<listLatLong.length; i++){
+            L.marker(listLatLong[i]['coordinates']).addTo(map).bindPopup(listLatLong[i]['content']).openPopup();
+        }
     </script>
   </html>

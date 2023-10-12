@@ -24,7 +24,7 @@ class KasiPenkum extends CI_Controller {
 		$this->template->views('page/kasia/index', $data);
 	}
 
-	public function DataGrafik() {
+	public function grafik() {
 		$data['title'] = "Kasi Penkum || Data Grafik";
 		$data['konten'] = "index";
 

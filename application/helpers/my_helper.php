@@ -402,7 +402,7 @@ function getBankDataMenu() {
             'url' => 'home/kasipenkum',
             'show_menu' => false,
             'submenu' => array(
-                array('title' => 'Data Grafik', 'link' => 'DataGrafik'),
+                array('title' => 'Data Grafik', 'link' => 'grafik'),
                 array('title' => 'Potensi Ancaman', 'link' => 'ancaman'),
                 array('title' => 'Peta Intelijen', 'link' => 'PetaIntelijen'),
                 array('title' => 'Peta Luhkum Penkum', 'link' => 'PetaLuhkum'),
@@ -485,7 +485,7 @@ function getBankDataMenuDash() {
             'url' => 'kasiPenkum',
             'show_menu' => false,
             'submenu' => array(
-                array('title' => 'Data Grafik', 'link' => 'DataGrafik'),
+                array('title' => 'Data Grafik', 'link' => 'grafik'),
                 array('title' => 'Potensi Ancaman', 'link' => 'ancaman'),
                 array('title' => 'Peta Intelijen', 'link' => 'PetaIntelijen'),
                 array('title' => 'Peta Luhkum Penkum', 'link' => 'PetaLuhkum'),

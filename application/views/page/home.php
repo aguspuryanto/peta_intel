@@ -75,7 +75,7 @@ $role_id = $this->session->userdata('role_id');
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?=$this->session->userdata['userdata']['nama']?></a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item text-dark" href="<?=site_url('logout') ?>">LOGOUT</a>
+                                <a class="dropdown-item text-dark" href="<?=site_url('logout/?redirect=home') ?>">LOGOUT</a>
                             </div>
                         </li>
                     </ul>
@@ -85,7 +85,7 @@ $role_id = $this->session->userdata('role_id');
     </div>
     </nav>
 
-    <div class="jumbotron">
+    <div class="jumbotron <?php echo (!$this->session->userdata('email')) ? 'd-none' : ''; ?>">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12">
@@ -126,7 +126,7 @@ $role_id = $this->session->userdata('role_id');
         </div>
     </div>
 
-    <div class="container">
+    <div class="container mt-4">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="30000">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -151,7 +151,7 @@ $role_id = $this->session->userdata('role_id');
                                         <iframe src="<?=base_url('api/pemilu_3') ?>" width="100%" height="500" scrolling="no"></iframe>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-xs-12">
-                                        <h4>PETA PERKARA</h4>
+                                        <h4>PETA PKN & TINDAK PIDANA</h4>
                                         <iframe src="<?=base_url('api/perkara') ?>" width="100%" height="500" scrolling="no"></iframe>
                                     </div>
                                 </div>
@@ -181,7 +181,7 @@ $role_id = $this->session->userdata('role_id');
             </div>
             <form class="user" method="POST" action="<?=site_url('admin') ?>">
                 <div class="form-group">
-                    <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..." autocomplete="off" name="email" value="<?= set_value('email'); ?>">
+                    <input type="text" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..." autocomplete="off" name="email" value="<?= set_value('email'); ?>">
                     <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                 </div>
                 <div class="form-group">

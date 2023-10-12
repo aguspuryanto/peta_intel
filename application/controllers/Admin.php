@@ -125,7 +125,12 @@ class Admin extends CI_Controller
 		$this->session->sess_destroy();
 		$this->session->set_flashdata('message', '<div class="alert alert-success" 
         role="alert"> You have been logout!</div>');
-		redirect('admin');
+
+		if($this->input->get('redirect')) {
+			redirect($this->input->get('redirect'));
+		} else {
+			redirect('admin');
+		}
 	}
 
 	public function blocked()
