@@ -24,23 +24,23 @@
                 $disabledmenu = !array_key_exists($menu['title'], $listMenuDisable);
                 $cssHide = 'd-block';
                 if(!in_array($role_id, [3, 12])){
-                    echo "disabledmenu = " . $disabledmenu;
-                    if($disabledmenu && $menu['title'] == 'KASI A') $cssHide = 'd-none';
+                    // echo "disabledmenu = " . $disabledmenu;
+                    if($menu['title'] == 'KASI A') $cssHide = 'd-none';
                 }
                 if(!in_array($role_id, [4, 13])) {
-                    if($disabledmenu && $menu['title'] == 'KASI B') $cssHide = 'd-none';
+                    if($menu['title'] == 'KASI B') $cssHide = 'd-none';
                 }
                 if(!in_array($role_id, [5, 14])) {
-                    if($disabledmenu && $menu['title'] == 'KASI C') $cssHide = 'd-none';
+                    if($menu['title'] == 'KASI C') $cssHide = 'd-none';
                 }
                 if(!in_array($role_id, [6, 15])) {
-                    if($disabledmenu && $menu['title'] == 'KASI D') $cssHide = 'd-none';
+                    if($menu['title'] == 'KASI D') $cssHide = 'd-none';
                 }
                 if(!in_array($role_id, [7, 16])) {
-                    if($disabledmenu && $menu['title'] == 'KASI E') $cssHide = 'd-none';
+                    if($menu['title'] == 'KASI E') $cssHide = 'd-none';
                 }
                 if(!in_array($role_id, [8, 17])) {
-                    if($disabledmenu && $menu['title'] == 'KASI PENKUM') $cssHide = 'd-none';
+                    if($menu['title'] == 'KASI PENKUM') $cssHide = 'd-none';
                 }
 
                 echo '<li class="nav-item ' . $cssHide . '">
