@@ -77,9 +77,9 @@ class User extends CI_Controller {
 						$this->email->from('noreply@simetalbatin.id');
 						$this->email->subject('Akun user Peta Digital || SI-METAL BATIN');
 						$this->email->message('Halo '.$data['nama'].', akun user berhasil dibuat oleh Admin. Silahkan login melalui situs https://simetalbatin.id/admin<br> Username : '.$data['email'] .' <br> Password : ' . $passwdRand . '<br><br>');
-						if ( ! $this->email->send()) {
-							show_error($this->email->print_debugger());
-						}
+						// if ( ! $this->email->send()) {
+							// show_error($this->email->print_debugger());
+						// }
 					}
 				}
 				
