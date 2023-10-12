@@ -336,7 +336,7 @@ function getBankDataMenu() {
 
     $bankData = [
         array(
-            'title' => 'KASI A',
+            'title' => 'SEKSI A',
             'url' => 'home/kasia',
             'show_menu' => false,
             'submenu' => array(
@@ -350,7 +350,7 @@ function getBankDataMenu() {
             )
         ),
         array(
-            'title' => 'KASI B',
+            'title' => 'SEKSI B',
             'url' => 'home/kasib',
             'show_menu' => false,
             'submenu' => array(
@@ -362,7 +362,7 @@ function getBankDataMenu() {
             )
         ),
         array(
-            'title' => 'KASI C',
+            'title' => 'SEKSI C',
             'url' => 'home/kasic',
             'show_menu' => false,
             'submenu' => array(
@@ -375,7 +375,7 @@ function getBankDataMenu() {
             )
         ),
         array(
-            'title' => 'KASI D',
+            'title' => 'SEKSI D',
             'url' => 'home/kasid',
             'show_menu' => false,
             'submenu' => array(
@@ -385,7 +385,7 @@ function getBankDataMenu() {
             )
         ),
         array(
-            'title' => 'KASI E',
+            'title' => 'SEKSI E',
             'url' => 'home/kasie',
             'show_menu' => false,
             'submenu' => array(
@@ -398,7 +398,7 @@ function getBankDataMenu() {
             )
         ),
         array(
-            'title' => 'KASI PENKUM',
+            'title' => 'SEKSI P',
             'url' => 'home/kasipenkum',
             'show_menu' => false,
             'submenu' => array(
@@ -419,7 +419,7 @@ function getBankDataMenuDash() {
     // $role_id = $this->session->userdata('userdata')['nama'];
     $bankData = [
         array(
-            'title' => 'KASI A',
+            'title' => 'SEKSI A',
             'url' => 'kasia',
             'show_menu' => false,
             'submenu' => array(
@@ -433,7 +433,7 @@ function getBankDataMenuDash() {
             )
         ),
         array(
-            'title' => 'KASI B',
+            'title' => 'SEKSI B',
             'url' => 'kasib',
             'show_menu' => false,
             'submenu' => array(
@@ -445,7 +445,7 @@ function getBankDataMenuDash() {
             )
         ),
         array(
-            'title' => 'KASI C',
+            'title' => 'SEKSI C',
             'url' => 'kasic',
             'show_menu' => false,
             'submenu' => array(
@@ -458,7 +458,7 @@ function getBankDataMenuDash() {
             )
         ),
         array(
-            'title' => 'KASI D',
+            'title' => 'SEKSI D',
             'url' => 'kasid',
             'show_menu' => false,
             'submenu' => array(
@@ -468,7 +468,7 @@ function getBankDataMenuDash() {
             )
         ),
         array(
-            'title' => 'KASI E',
+            'title' => 'SEKSI E',
             'url' => 'kasie',
             'show_menu' => false,
             'submenu' => array(
@@ -481,7 +481,7 @@ function getBankDataMenuDash() {
             )
         ),
         array(
-            'title' => 'KASI PENKUM',
+            'title' => 'SEKSI P',
             'url' => 'kasiPenkum',
             'show_menu' => false,
             'submenu' => array(
