@@ -41,6 +41,23 @@ class KasiPenkum extends CI_Controller {
 		$this->template->views('page/kasia/upload', $data);		
 	}
 
+	public function ancaman() {
+		$data['title'] = "Kasi Penkum || Potensi Ancaman";
+		$data['konten'] = "index";
+
+		$kategori = explode(" || ", $data['title']);
+		$data['kategori'] = $kategori[0];
+		$data['sub_kategori'] = $kategori[1];
+
+		$data['model'] = $this->M_bankdata;
+		$data['dataProvider'] = $this->M_bankdata->select_all([
+			'kategori' => $kategori[0],
+			'sub_kategori' => $kategori[1]
+		]);
+		
+		$this->template->views('page/kasia/upload', $data);		
+	}
+
 	public function PetaIntelijen() {
 		$data['title'] = "Kasi Penkum || Peta Intelijen";
 		$data['konten'] = "index";
