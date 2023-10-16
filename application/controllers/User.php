@@ -298,7 +298,8 @@ class User extends CI_Controller {
 
 		$passwdRand	= 'admin1234'; //$this->randomPassword();
 
-		$data['email'] = 'aguspuryanto@gmail.com';
+		$data['nama']	= 'Agus Puryanto';
+		$data['email'] 	= 'aguspuryanto@gmail.com';
 
 		$from_email = "noreply@simetalbatin.id";
 		$to_email = ($data['email']) ?? $this->input->post('email');
