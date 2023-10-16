@@ -78,71 +78,8 @@ class User extends CI_Controller {
 					$model->save($data);
 
 					if($data['email']) {
-						// $this->email->clear();
-						// $this->email->to($data['email']);
-						// $this->email->from('noreply@simetalbatin.id');
-						// $this->email->subject('Akun user Peta Digital || SI-METAL BATIN');
-						// $this->email->message('Halo '.$data['nama'].', akun user berhasil dibuat oleh Admin. Silahkan login melalui situs https://simetalbatin.id/admin<br> Username : '.$data['email'] .' <br> Password : ' . $passwdRand . '<br><br>');
-						// if ( ! $this->email->send()) {
-							// show_error($this->email->print_debugger());
-						// }
-
-						// PHPMailer object
-						// $response = false;
-						// $mail = new PHPMailer();
-
-						// // SMTP configuration
-						// $mail->isSMTP();
-						// $mail->Host     = 'simetalbatin.id'; //sesuaikan sesuai nama domain hosting/server yang digunakan
-						// $mail->SMTPAuth = true;
-						// $mail->Username = 'xxx@simetalbatin.id'; // user email
-						// $mail->Password = 'xxxxxxxxxx'; // password email
-						// $mail->SMTPSecure = 'ssl';
-						// $mail->Port     = 465;
-	
-						// $mail->Timeout = 60; // timeout pengiriman (dalam detik)
-						// $mail->SMTPKeepAlive = true; 
-				
-						// $mail->setFrom('noreply@simetalbatin.id', ''); // user email
-						// // $mail->addReplyTo('xxx@simetalbatin.id', ''); //user email
-				
-						// // Add a recipient
-						// $mail->addAddress($data['email']); //email tujuan pengiriman email
-				
-						// // Email subject
-						// $mail->Subject = 'Akun user Peta Digital || SI-METAL BATIN'; //subject email
-				
-						// // Set email format to HTML
-						// $mail->isHTML(true);
-				
-						// // Email body content
-						// $mailContent = 'Halo '.$data['nama'].', akun user berhasil dibuat oleh Admin. Silahkan login melalui situs https://simetalbatin.id/admin<br> Username : '.$data['email'] .' <br> Password : ' . $passwdRand . '<br><br>'; // isi email
-						// $mail->Body = $mailContent;
-
-						// // Send email
-						// if(!$mail->send()){
-						// 	// echo 'Message could not be sent.';
-						// 	// echo 'Mailer Error: ' . $mail->ErrorInfo;
-						// }else{
-						// 	// echo 'Message has been sent';
-						// }
-
-						$from_email = "noreply@simetalbatin.id";
-						$to_email = ($data['email']) ?? $this->input->post('email');
-						
-						$this->email->from($from_email, 'Identification');
-						$this->email->to($to_email);
-						$this->email->subject('Akun user Peta Digital || SI-METAL BATIN');
-						$this->email->message('Halo '.$data['nama'].', akun user berhasil dibuat oleh Admin. Silahkan login melalui situs https://simetalbatin.id/admin<br> Username : '.$data['email'] .' <br> Password : ' . $passwdRand . '<br><br>');
-
-						//Send mail						
-						if ( ! $this->email->send()) {
-							// show_error($this->email->print_debugger());
-							// echo 'Message could not be sent.';
-							// echo 'Mailer Error: ' . $mail->ErrorInfo;
-						}else{
-							// echo 'Message has been sent';
-						}
+						// send mail
+						$this->test_mail($data);
 					}
 				}
 				
@@ -293,7 +230,7 @@ class User extends CI_Controller {
 		return implode($pass); //turn the array into a string
 	}
 
-	public function test_mail() {
+	public function test_mail($data) {
 		$this->load->library('email');
 
 		$config = array();
@@ -312,11 +249,11 @@ class User extends CI_Controller {
 
 		$passwdRand	= 'admin1234'; //$this->randomPassword();
 
-		$data['nama']	= 'Agus Puryanto';
-		$data['email'] 	= 'aguspuryanto@gmail.com';
+		// $data['nama']	= 'Agus Puryanto';
+		// $data['email'] 	= 'aguspuryanto@gmail.com';
 
 		$from_email = "noreply@simetalbatin.id";
-		$to_email = ($data['email']) ?? $this->input->post('email');
+		$to_email = ($data['email']);
 		
 		$this->email->from($from_email, 'Identification');
 		$this->email->to($to_email);
