@@ -126,6 +126,23 @@ class User extends CI_Controller {
 						// }else{
 						// 	// echo 'Message has been sent';
 						// }
+
+						$from_email = "noreply@simetalbatin.id";
+						$to_email = ($data['email']) ?? $this->input->post('email');
+						
+						$this->email->from($from_email, 'Identification');
+						$this->email->to($to_email);
+						$this->email->subject('Akun user Peta Digital || SI-METAL BATIN');
+						$this->email->message('Halo '.$data['nama'].', akun user berhasil dibuat oleh Admin. Silahkan login melalui situs https://simetalbatin.id/admin<br> Username : '.$data['email'] .' <br> Password : ' . $passwdRand . '<br><br>');
+
+						//Send mail						
+						if ( ! $this->email->send()) {
+							// show_error($this->email->print_debugger());
+							// echo 'Message could not be sent.';
+							// echo 'Mailer Error: ' . $mail->ErrorInfo;
+						}else{
+							// echo 'Message has been sent';
+						}
 					}
 				}
 				
@@ -274,5 +291,31 @@ class User extends CI_Controller {
 			$pass[] = $alphabet[$n];
 		}
 		return implode($pass); //turn the array into a string
+	}
+
+	public function test_mail() {
+		$this->load->library('email');
+
+		$passwdRand	= 'admin1234'; //$this->randomPassword();
+
+		$data['email'] = 'aguspuryanto@gmail.com';
+
+		$from_email = "noreply@simetalbatin.id";
+		$to_email = ($data['email']) ?? $this->input->post('email');
+		
+		$this->email->from($from_email, 'Identification');
+		$this->email->to($to_email);
+		$this->email->subject('Akun user Peta Digital || SI-METAL BATIN');
+		$this->email->message('Halo '.$data['nama'].', akun user berhasil dibuat oleh Admin. Silahkan login melalui situs https://simetalbatin.id/admin<br> Username : '.$data['email'] .' <br> Password : ' . $passwdRand . '<br><br>');
+
+		//Send mail						
+		if ( ! $this->email->send()) {
+			show_error($this->email->print_debugger());
+			// echo 'Message could not be sent.';
+			// echo 'Mailer Error: ' . $mail->ErrorInfo;
+		}else{
+			echo 'Message has been sent';
+		}
+
 	}
 }
