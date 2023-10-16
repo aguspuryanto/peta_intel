@@ -296,6 +296,14 @@ class User extends CI_Controller {
 	public function test_mail() {
 		$this->load->library('email');
 
+		$config = array();
+		$config['protocol'] = 'smtp';
+		$config['smtp_host'] = 'mail.simetalbatin.id';
+		$config['smtp_user'] = '_mainaccount@simetalbatin.id';
+		$config['smtp_pass'] = 'sba2xFbvSyar22';
+		$config['smtp_port'] = 465;
+		$this->email->initialize($config);
+
 		$passwdRand	= 'admin1234'; //$this->randomPassword();
 
 		$data['nama']	= 'Agus Puryanto';
