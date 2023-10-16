@@ -301,7 +301,13 @@ class User extends CI_Controller {
 		$config['smtp_host'] = 'mail.simetalbatin.id';
 		$config['smtp_user'] = '_mainaccount@simetalbatin.id';
 		$config['smtp_pass'] = 'sba2xFbvSyar22';
-		$config['smtp_port'] = 465;
+		$config['smtp_port'] = 25; //465;
+		$config['smtp_timeout'] ='30';
+		$config['smtp_crypto'] ='ssl';
+		$config['mailtype'] = 'html';
+		$config['charset'] = 'utf-8';
+		$config['newline'] = "\r\n";
+
 		$this->email->initialize($config);
 
 		$passwdRand	= 'admin1234'; //$this->randomPassword();
