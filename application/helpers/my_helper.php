@@ -298,7 +298,7 @@ function getListMenu() {
             'url' => 'pilkada',
             'show_menu' => false,
             'submenu' => [
-                array('title' => 'Lihat Data Pilkada', 'link' => 'index'),
+                array('title' => 'Lihat Data Pilbup', 'link' => 'index'),
                 array('title' => 'Lihat Data Pilgub', 'link' => 'pilgub')
             ]
         ),
