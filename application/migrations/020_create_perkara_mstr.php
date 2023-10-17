@@ -100,14 +100,6 @@ class Migration_create_perkara_mstr extends CI_Migration {
                 array('perkara' => 'PENGEMBANGAN PROSEDUR & APLIKASI', 'tipe' => 'D.IN.6')
             );
             
-            // - Penerangan Hukum
-            // - Penyuluhan Hukum
-            // - Hubungan Media Massa
-            // - Kerjasama Lembaga Pemerintah
-            // - Kerjasama Lembaga Non Pemerintah
-            // - Pos Pelayanan Hukum
-            // - Penerimaan Pengaduan Masyarakat
-            // - PPID
             $data_dummies7 = array(
                 array('perkara' => 'PENERANGAN HUKUM', 'tipe' => 'D.IN.7'),
                 array('perkara' => 'PENYULUHAN HUKUM', 'tipe' => 'D.IN.7'),
