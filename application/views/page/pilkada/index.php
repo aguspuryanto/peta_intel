@@ -160,9 +160,13 @@ $(document).ready(function () {
     var cloneCount = 1;
     $('button.addPaslon').click(function(){
         var id = cloneCount++;
-        $("div#paslon").clone().attr('id', 'paslon'+ id).insertAfter('[id^=paslon]:last');
-        $("[id^=paslon]:last").find("label::eq(0)").html('Nama Paslon ' + id);
-        $("[id^=paslon]:last").find("label::eq(1)").html('Jumlah Suara ' + id);
+        if(id <= 3) {
+            $("div#paslon").clone().attr('id', 'paslon'+ id).insertAfter('[id^=paslon]:last');
+            $("[id^=paslon]:last").find("label:eq(0)").html('Nama Paslon ' + id);
+            $("[id^=paslon]:last").find("label:eq(1)").html('Jumlah Suara ' + id);
+        } else {
+            $(this).addClass('d-none');
+        }
     });
 });
 </script>
