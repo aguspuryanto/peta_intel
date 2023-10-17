@@ -151,7 +151,7 @@ $role_id = $this->session->userdata('role_id');
                                         <iframe src="<?=base_url('api/pemilu_3') ?>" width="100%" height="500" scrolling="no"></iframe>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-xs-12">
-                                        <h4>PETA PKN & TINDAK PIDANA</h4>
+                                        <h4>PENGAMANAN PERKARA</h4>
                                         <iframe src="<?=base_url('api/pkn') ?>" width="100%" height="500" scrolling="no"></iframe>
                                     </div>
                                 </div>

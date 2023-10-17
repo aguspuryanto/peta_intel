@@ -320,7 +320,8 @@ function getListMenu() {
         //     ]
         // ),
         array(
-            'title' => 'DATA PKN & TINDAK PIDANA',
+            // 'title' => 'DATA PKN & TINDAK PIDANA',
+            'title' => 'PENGAMANAN PERKARA',
             'url' => 'pkn',
             'show_menu' => false,
             'submenu' => [
