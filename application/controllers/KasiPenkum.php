@@ -62,7 +62,7 @@ class KasiPenkum extends CI_Controller {
 		$data['title'] = "Kasi Penkum || Peta Intelijen";
 		$data['konten'] = "index";
 
-		$data['listPerkara'] = array();
+		// $data['listPerkara'] = array();
 		$data['listKab'] = array();		
 		$listKab = $this->M_kabupaten->select_all();
 		foreach($listKab as $kab) {
@@ -70,6 +70,14 @@ class KasiPenkum extends CI_Controller {
 		}
 		
 		$data['peta_tipe'] = 'D.IN.7';
+		$listPerkara = $this->M_perkara->select_all([
+			'tipe' => $data['peta_tipe']
+		]);
+		
+		foreach($listPerkara as $key => $val) {
+			$data['listPerkara'][$val->id] = $val->perkara;
+		}
+
 		$data['model'] = $this->M_peta;
 		$data['dataProvider'] = $this->M_peta->select_all([
 			'peta_tipe' => $data['peta_tipe'],
