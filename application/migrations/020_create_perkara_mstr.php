@@ -98,7 +98,27 @@ class Migration_create_perkara_mstr extends CI_Migration {
                 array('perkara' => 'PENGEMBANGAN SDM INTELIJEN LAINNYA', 'tipe' => 'D.IN.6'),
                 array('perkara' => 'PENGEMBANGAN TEKNOLOGI', 'tipe' => 'D.IN.6'),
                 array('perkara' => 'PENGEMBANGAN PROSEDUR & APLIKASI', 'tipe' => 'D.IN.6')
-            );           
+            );
+            
+            // - Penerangan Hukum
+            // - Penyuluhan Hukum
+            // - Hubungan Media Massa
+            // - Kerjasama Lembaga Pemerintah
+            // - Kerjasama Lembaga Non Pemerintah
+            // - Pos Pelayanan Hukum
+            // - Penerimaan Pengaduan Masyarakat
+            // - PPID
+            $data_dummies7 = array(
+                array('perkara' => 'PENERANGAN HUKUM', 'tipe' => 'D.IN.7'),
+                array('perkara' => 'PENYULUHAN HUKUM', 'tipe' => 'D.IN.7'),
+                array('perkara' => 'HUBUNGAN MEDIA MASSA', 'tipe' => 'D.IN.7'),
+                array('perkara' => 'KERJASAMA LEMBAGA PEMERINTAH', 'tipe' => 'D.IN.7'),
+                array('perkara' => 'KERJASAMA LEMBAGA NON PEMERINTAH', 'tipe' => 'D.IN.7'),
+                array('perkara' => 'POS PELAYANAN HUKUM', 'tipe' => 'D.IN.7'),
+                array('perkara' => 'PENERIMAAN PENGADUAN MASYARAKAT', 'tipe' => 'D.IN.7'),
+                array('perkara' => 'PPID', 'tipe' => 'D.IN.7'),
+            );
+            $data_dummies = array_merge($data_dummies, $data_dummies7);
 
             $this->db->insert_batch($this->tableName, $data_dummies);
         }
