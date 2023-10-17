@@ -16,7 +16,7 @@ class Pilkada extends CI_Controller {
 
 	public function index()
 	{
-		$data['title'] = "Pemilu Pilkada";
+		$data['title'] = "Pemilu Pilbup";
 		$data['konten'] = "index";
 		$data['listKab'] = array();		
 		$listKab = $this->M_kabupaten->select_all();
