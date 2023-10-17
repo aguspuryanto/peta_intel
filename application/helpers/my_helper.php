@@ -412,7 +412,7 @@ function getBankDataMenu() {
             'submenu' => array(
                 array('title' => 'Data Grafik', 'link' => 'grafik'),
                 array('title' => 'Potensi Ancaman', 'link' => 'ancaman'),
-                array('title' => 'Peta Intelijen', 'link' => 'PetaIntelijen'),
+                array('title' => 'Peta Intelijen Luhkum Penkum', 'link' => 'PetaIntelijen'),
                 // array('title' => 'Peta Luhkum Penkum', 'link' => 'PetaLuhkum'),
                 array('title' => 'Penyuluhan dan Penerangan Hukum', 'link' => 'Penyuluhan'),
             )
@@ -495,8 +495,8 @@ function getBankDataMenuDash() {
             'submenu' => array(
                 array('title' => 'Data Grafik', 'link' => 'grafik'),
                 array('title' => 'Potensi Ancaman', 'link' => 'ancaman'),
-                array('title' => 'Peta Intelijen', 'link' => 'PetaIntelijen'),
-                array('title' => 'Peta Luhkum Penkum', 'link' => 'PetaLuhkum'),
+                array('title' => 'Peta Intelijen Luhkum Penkum', 'link' => 'PetaIntelijen'),
+                // array('title' => 'Peta Luhkum Penkum', 'link' => 'PetaLuhkum'),
                 array('title' => 'Penyuluhan dan Penerangan Hukum', 'link' => 'Penyuluhan'),
             )
         ),
