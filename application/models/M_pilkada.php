@@ -11,9 +11,9 @@ class M_pilkada extends CI_Model {
             ['field' => 'prov_id', 'label' => 'Provinsi'],
             ['field' => 'kab_id', 'label' => 'Kabupaten', 'rules' => 'required'],
             ['field' => 'kec_id', 'label' => 'Kecamatan', 'rules' => ''],
-            ['field' => 'nama_gub1', 'label' => 'Nama Paslon 1', 'rules' => 'required'],
+            ['field' => 'nama_gub1', 'label' => 'Nama Paslon 1'],
             ['field' => 'jmlsuara_gub1', 'label' => 'Jumlah Suara Paslon 1'],
-            ['field' => 'nama_gub2', 'label' => 'Nama Paslon 2', 'rules' => 'required'],
+            ['field' => 'nama_gub2', 'label' => 'Nama Paslon 2'],
             ['field' => 'jmlsuara_gub2', 'label' => 'Jumlah Suara Paslon 2'],
         ];
     }    

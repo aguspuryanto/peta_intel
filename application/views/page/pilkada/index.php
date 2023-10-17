@@ -68,9 +68,9 @@
 
       <!-- Modal body -->
       <div class="modal-body">
-        <?=form_open('', array('id' => 'formPilpres', 'role' => 'form'));?>
+        <?=form_open('', array('id' => 'formPilkada', 'role' => 'form'));?>
             <div class="form-group">
-                <label>Tahun Pilpres</label>
+                <label>Tahun</label>
                 <?php $listThn = array('2024' => '2024', '2019' => '2019', '2017' => '2017'); ?>
                 <?=form_dropdown('thn', $listThn, '', array('class' => 'form-control', 'id' => 'input-thn'));?>
                 <div id="error"></div>
@@ -85,20 +85,24 @@
             <div class="clearfix"></div>
             <div id="paslon" class="row">
                 <div class="col-md-6">
-                    <?=get_form_input($model, 'nama_gub[]'); ?>
+                    <label>Nama Paslon</label>
+                    <?= form_input(array(
+                        'type'  => 'text',
+                        'name'  => 'nama_gub[]',
+                        'id'    => 'input-nama_gub',
+                        'class' => 'form-control'
+                    )); ?>
                 </div>
                 <div class="col-md-6">
-                    <?=get_form_input($model, 'jmlsuara_gub[]'); ?>
+                    <label>Jumlah Suara</label>
+                    <?= form_input(array(
+                        'type'  => 'text',
+                        'name'  => 'jmlsuara_gub[]',
+                        'id'    => 'input-jmlsuara_gub',
+                        'class' => 'form-control'
+                    )); ?>
                 </div>
             </div>
-            <!-- <div class="row">
-                <div class="col-md-6">
-                    <?=get_form_input($model, 'nama_gub2'); ?>
-                </div>
-                <div class="col-md-6">
-                    <?=get_form_input($model, 'jmlsuara_gub2'); ?>
-                </div>
-            </div> -->
         <?=form_close();?>
       </div>
 
@@ -112,7 +116,7 @@
 </div>
 
 <?php
-$Urladd = base_url('pilpres/create');
+$Urladd = base_url('pilkada/create');
 ?>
 
 <script>
@@ -126,7 +130,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "<?=$Urladd;?>", 
-            data: $("#formPilpres").serialize(),
+            data: $("#formPilkada").serialize(),
             dataType: "json",  
             beforeSend : function(xhr, opts){
                 $('#form-submit').text('Loading...').prop("disabled", true);
@@ -157,7 +161,8 @@ $(document).ready(function () {
     $('button.addPaslon').click(function(){
         var id = cloneCount++;
         $("div#paslon").clone().attr('id', 'paslon'+ id).insertAfter('[id^=paslon]:last');
-        $("[id^=paslon]:last").find("label").html('Paslon ' + id);
+        $("[id^=paslon]:last").find("label::eq(0)").html('Nama Paslon ' + id);
+        $("[id^=paslon]:last").find("label::eq(1)").html('Jumlah Suara ' + id);
     });
 });
 </script>

@@ -31,10 +31,7 @@ class Pilkada extends CI_Controller {
 	}
 
 	public function create()
-	{
-		// $data['title'] = "Pemilu Pilkada";
-		// $data['konten'] = "index";
-		
+	{		
 		$this->load->library('form_validation');
 		
 		$model = $this->M_pilkada;
