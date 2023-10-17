@@ -45,6 +45,30 @@ class Migration_create_pilpres extends CI_Migration {
                 'type' => 'VARCHAR',
                 'constraint' => '150'
             ),
+            'nama_capres3' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '150'
+            ),
+            'jmlsuara_capres3' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '150'
+            ),
+            'nama_capres4' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '150'
+            ),
+            'jmlsuara_capres4' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '150'
+            ),
+            'nama_capres5' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '150'
+            ),
+            'jmlsuara_capres5' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '150'
+            ),
             'created_at datetime default current_timestamp'
         ));
         $this->dbforge->add_key('id', TRUE);

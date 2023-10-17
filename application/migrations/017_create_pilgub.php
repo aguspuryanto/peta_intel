@@ -45,6 +45,30 @@ class Migration_create_pilgub extends CI_Migration {
                 'type' => 'VARCHAR',
                 'constraint' => '150'
             ),
+            'nama_gub3' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '150'
+            ),
+            'jmlsuara_gub3' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '150'
+            ),
+            'nama_gub4' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '150'
+            ),
+            'jmlsuara_gub4' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '150'
+            ),
+            'nama_gub5' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '150'
+            ),
+            'jmlsuara_gub5' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '150'
+            ),
             'created_at datetime default current_timestamp'
         ));
         $this->dbforge->add_key('id', TRUE);
