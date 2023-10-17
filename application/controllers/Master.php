@@ -251,4 +251,24 @@ class Master extends CI_Controller {
 		->set_content_type('application/json')
 		->set_output(json_encode($json));
 	}
+
+	public function update_perkara() {
+		$this->load->model('M_perkara');
+            
+		$data_dummies7 = array(
+			array('perkara' => 'PENERANGAN HUKUM', 'tipe' => 'D.IN.7'),
+			array('perkara' => 'PENYULUHAN HUKUM', 'tipe' => 'D.IN.7'),
+			array('perkara' => 'HUBUNGAN MEDIA MASSA', 'tipe' => 'D.IN.7'),
+			array('perkara' => 'KERJASAMA LEMBAGA PEMERINTAH', 'tipe' => 'D.IN.7'),
+			array('perkara' => 'KERJASAMA LEMBAGA NON PEMERINTAH', 'tipe' => 'D.IN.7'),
+			array('perkara' => 'POS PELAYANAN HUKUM', 'tipe' => 'D.IN.7'),
+			array('perkara' => 'PENERIMAAN PENGADUAN MASYARAKAT', 'tipe' => 'D.IN.7'),
+			array('perkara' => 'PPID', 'tipe' => 'D.IN.7'),
+		);
+
+		$model = $this->M_perkara;
+		echo json_encode($model->table_name);
+		// $this->db->insert_batch($this->tableName, $data_dummies7);
+		
+	}
 }
