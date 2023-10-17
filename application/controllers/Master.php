@@ -267,8 +267,10 @@ class Master extends CI_Controller {
 		);
 
 		$model = $this->M_perkara;
-		echo json_encode($model->table_name);
-		// $this->db->insert_batch($this->tableName, $data_dummies7);
+		// echo json_encode($model->table_name);
+		if($model) {
+			$this->db->insert_batch($model->table_name, $data_dummies7);
+		}
 		
 	}
 }
