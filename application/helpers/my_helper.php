@@ -312,7 +312,7 @@ function getListMenu() {
             ]
         ),
         // array(
-        //     'title' => 'PENYULUHAN DAN PENERANGAN HUKUM',
+        //     'title' => 'Penerangan dan  Penyuluhan Hukum',
         //     'url' => 'penyuluhan',
         //     'show_menu' => false,
         //     'submenu' => [
@@ -413,7 +413,7 @@ function getBankDataMenu() {
                 array('title' => 'Data Grafik', 'link' => 'grafik'),
                 array('title' => 'Potensi Ancaman', 'link' => 'ancaman'),
                 // array('title' => 'Peta Luhkum Penkum', 'link' => 'PetaLuhkum'),
-                array('title' => 'Penyuluhan dan Penerangan Hukum', 'link' => 'Penyuluhan'),
+                array('title' => 'Penerangan dan  Penyuluhan Hukum', 'link' => 'Penyuluhan'),
                 array('title' => 'Peta Intelijen Luhkum Penkum', 'link' => 'PetaIntelijen'),
             )
         ),
@@ -496,7 +496,7 @@ function getBankDataMenuDash() {
                 array('title' => 'Data Grafik', 'link' => 'grafik'),
                 array('title' => 'Potensi Ancaman', 'link' => 'ancaman'),
                 // array('title' => 'Peta Luhkum Penkum', 'link' => 'PetaLuhkum'),
-                array('title' => 'Penyuluhan dan Penerangan Hukum', 'link' => 'Penyuluhan'),
+                array('title' => 'Penerangan dan  Penyuluhan Hukum', 'link' => 'Penyuluhan'),
                 array('title' => 'Peta Intelijen Luhkum Penkum', 'link' => 'PetaIntelijen'),
             )
         ),

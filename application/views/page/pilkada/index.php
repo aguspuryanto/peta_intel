@@ -80,22 +80,25 @@
                 <?=form_dropdown('kab_id', $listKab, '', array('class' => 'form-control', 'id' => 'input-kab_id'));?>
                 <div id="error"></div>
             </div>
-            <div class="row">
+
+            <button type="button" class="btn btn-info addPaslon float-right">Tambah Paslon</button>
+            <div class="clearfix"></div>
+            <div id="paslon" class="row">
                 <div class="col-md-6">
-                    <?=get_form_input($model, 'nama_gub1'); ?>
+                    <?=get_form_input($model, 'nama_gub[]'); ?>
                 </div>
                 <div class="col-md-6">
-                    <?=get_form_input($model, 'jmlsuara_gub1'); ?>
+                    <?=get_form_input($model, 'jmlsuara_gub[]'); ?>
                 </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-md-6">
                     <?=get_form_input($model, 'nama_gub2'); ?>
                 </div>
                 <div class="col-md-6">
                     <?=get_form_input($model, 'jmlsuara_gub2'); ?>
                 </div>
-            </div>
+            </div> -->
         <?=form_close();?>
       </div>
 
@@ -148,6 +151,13 @@ $(document).ready(function () {
     $('#form input').on('keyup', function () { 
         $(this).removeClass('is-invalid').addClass('is-valid');
         $(this).parents('.form-group').find('#error').html(" ");
+    });
+
+    var cloneCount = 1;
+    $('button.addPaslon').click(function(){
+        var id = cloneCount++;
+        $("div#paslon").clone().attr('id', 'paslon'+ id).insertAfter('[id^=paslon]:last');
+        $("[id^=paslon]:last").find("label").html('Paslon ' + id);
     });
 });
 </script>
