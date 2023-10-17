@@ -80,20 +80,27 @@
                 <?=form_dropdown('kab_id', $listKab, '', array('class' => 'form-control', 'id' => 'input-kab_id'));?>
                 <div id="error"></div>
             </div>
-            <div class="row">
+
+            <button type="button" class="btn btn-info addPaslon float-right">Tambah Paslon</button>
+            <div class="clearfix"></div>
+            <div id="paslon" class="row">
                 <div class="col-md-6">
-                    <?=get_form_input($model, 'nama_gub1'); ?>
+                    <label>Nama Paslon</label>
+                    <?= form_input(array(
+                        'type'  => 'text',
+                        'name'  => 'nama_gub[]',
+                        'id'    => 'input-nama_gub',
+                        'class' => 'form-control'
+                    )); ?>
                 </div>
                 <div class="col-md-6">
-                    <?=get_form_input($model, 'jmlsuara_gub1'); ?>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <?=get_form_input($model, 'nama_gub2'); ?>
-                </div>
-                <div class="col-md-6">
-                    <?=get_form_input($model, 'jmlsuara_gub2'); ?>
+                    <label>Jumlah Suara</label>
+                    <?= form_input(array(
+                        'type'  => 'text',
+                        'name'  => 'jmlsuara_gub[]',
+                        'id'    => 'input-jmlsuara_gub',
+                        'class' => 'form-control'
+                    )); ?>
                 </div>
             </div>
         <?=form_close();?>
@@ -148,6 +155,18 @@ $(document).ready(function () {
     $('#form input').on('keyup', function () { 
         $(this).removeClass('is-invalid').addClass('is-valid');
         $(this).parents('.form-group').find('#error').html(" ");
+    });
+
+    var cloneCount = 1;
+    $('button.addPaslon').click(function(){
+        var id = cloneCount++;
+        if(id <= 3) {
+            $("div#paslon").clone().attr('id', 'paslon'+ id).insertAfter('[id^=paslon]:last');
+            $("[id^=paslon]:last").find("label:eq(0)").html('Nama Paslon ' + id);
+            $("[id^=paslon]:last").find("label:eq(1)").html('Jumlah Suara ' + id);
+        } else {
+            $(this).addClass('d-none');
+        }
     });
 });
 </script>
