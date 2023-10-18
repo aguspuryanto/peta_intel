@@ -116,7 +116,7 @@
 </div>
 
 <?php
-$Urladd = base_url('pilpres/create');
+$Urladd = base_url('pilkada/create_pilgub');
 ?>
 
 <script>

@@ -14,12 +14,27 @@ class Migration_create_pkn extends CI_Migration {
                 'type' => 'VARCHAR',
                 'constraint' => '150'
             ),
-            'pkn' => array(
+            // 'pkn' => array(
+            //     'type' => 'VARCHAR',
+            //     'constraint' => '150',
+            //     'null' => TRUE
+            // ),
+            'jenis' => array(
                 'type' => 'VARCHAR',
                 'constraint' => '150',
                 'null' => TRUE
             ),
-            'jenis' => array(
+            'nama_pelaku' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '150',
+                'null' => TRUE
+            ),
+            'penyebab' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+                'null' => TRUE
+            ),
+            'waktu' => array(
                 'type' => 'VARCHAR',
                 'constraint' => '150',
                 'null' => TRUE
@@ -29,9 +44,19 @@ class Migration_create_pkn extends CI_Migration {
                 'constraint' => '150',
                 'null' => TRUE
             ),
-            'perkara' => array(
+            'alamat' => array(
                 'type' => 'VARCHAR',
-                'constraint' => '150',
+                'constraint' => '255',
+                'null' => TRUE
+            ),
+            'kasus_posisi' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+                'null' => TRUE
+            ),
+            'keterangan' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '255',
                 'null' => TRUE
             ),
             'created_at datetime default current_timestamp'

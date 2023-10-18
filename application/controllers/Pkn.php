@@ -17,7 +17,7 @@ class Pkn extends CI_Controller {
 
 	public function index()
 	{
-		$data['title'] = "Data Tindak Pidana";
+		$data['title'] = "Data Perkara";
 		$data['konten'] = "index";
 
 		$data['listKab'] = array();		
@@ -56,11 +56,15 @@ class Pkn extends CI_Controller {
 			}
 		} else {
 			$data = array(
-				'kecamatan' => $this->input->post('kecamatan'),
-				// 'pkn' => $this->input->post('pkn'),
+				'kec_id' => $this->input->post('kecamatan'),
 				'jenis' => $this->input->post('jenis'),
+				'nama_pelaku' => $this->input->post('nama_pelaku'),
+				'penyebab' => $this->input->post('penyebab'),
+				'waktu' => $this->input->post('waktu'),
 				'lokasi' => $this->input->post('lokasi'),
-				'perkara' => $this->input->post('perkara'),
+				'alamat' => $this->input->post('alamat'),
+				'kasus_posisi' => $this->input->post('kasus_posisi'),
+				'keterangan' => $this->input->post('keterangan'),
 			);
 
 			if($this->input->post('id')) {

@@ -66,8 +66,7 @@
 
       <!-- Modal body -->
       <div class="modal-body">
-        <?php //include_once('_form.php'); ?>
-        <?php include_once('_form2.php'); ?>
+        <?php include_once('_form.php'); ?>
       </div>
 
       <!-- Modal footer -->

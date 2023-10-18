@@ -542,3 +542,29 @@ function getListRole() {
 
     return $role;
 }
+
+function getListPerkara() {
+    $listJenis = array(
+        'Tindak Pidana Cukai' => 'Tindak Pidana Cukai',
+        'Tindak Pidana Pemilukada' => 'Tindak Pidana Pemilukada',
+        'Pencurian Kayu' => 'Pencurian Kayu',
+        'Persaingan Curang' => 'Persaingan Curang',
+        'Pencucian Uang' => 'Pencucian Uang',
+        'Hak Intelektual' => 'Hak Intelektual',
+        'Bursa Efek Komuditi' => 'Bursa Efek Komuditi',
+        'Sumber daya Manusia' => 'Sumber daya Manusia',
+        'Daerah Rawan Penyelundupan' => 'Daerah Rawan Penyelundupan',
+        'Tindak Pidana Korupsi' => 'Tindak Pidana Korupsi',
+        'Tindak Pidana Ekonomi' => 'Tindak Pidana Ekonomi',
+        'Pertahanan' => 'Pertahanan',
+        'Lingkungan Hidup' => 'Lingkungan Hidup',
+        'Sumber Daya Alam' => 'Sumber Daya Alam',
+        'Tindak Pidana Perbankan' => 'Tindak Pidana Perbankan',
+        'Penimbunan / Manipulasi Produksi' => 'Penimbunan / Manipulasi Produksi',
+        'Penanaman Modal Dalam Negeri' => 'Penanaman Modal Dalam Negeri',
+        'Penanaman Modal Asing' => 'Penanaman Modal Asing',
+        'Datun' => 'Datun',
+    );
+
+    return $listJenis;
+}
