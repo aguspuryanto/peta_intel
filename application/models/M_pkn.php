@@ -12,6 +12,16 @@ class M_pkn extends CI_Model {
             ['field' => 'jenis', 'label' => 'Jenis', 'rules' => 'required'],
             ['field' => 'lokasi', 'label' => 'Lokasi', 'rules' => 'required'],
             ['field' => 'perkara', 'label' => 'Perkara', 'rules' => 'required'],
+
+            // ['field' => 'no_perkara', 'label' => 'Perkara', 'rules' => 'required'],
+            // ['field' => 'nama_pelaku', 'label' => 'Nama Pelaku', 'rules' => 'required'],
+            // ['field' => 'penyebab', 'label' => 'Penyebab', 'rules' => 'required'],
+            // ['field' => 'waktu', 'label' => 'Waktu', 'rules' => 'required'],
+            // ['field' => 'lokasi', 'label' => 'Lokasi', 'rules' => 'required'],
+            // ['field' => 'alamat', 'label' => 'Alamat', 'rules' => 'required'],
+            // ['field' => 'kasus_posisi', 'label' => 'Kasus Posisi', 'rules' => 'required'],
+            // ['field' => 'peta_tipe', 'label' => 'Tipe Peta'],
+            // ['field' => 'keterangan', 'label' => 'Keterangan']
         ];
     }    
 

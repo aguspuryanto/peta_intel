@@ -12,6 +12,7 @@ class Pkn extends CI_Controller {
 		$this->load->model('M_kabupaten');
 		$this->load->model('M_kecamatan');
 		$this->load->model('M_pkn');
+		$this->load->model('M_perkara');
     }
 
 	public function index()
@@ -23,6 +24,11 @@ class Pkn extends CI_Controller {
 		$listKab = $this->M_kabupaten->select_all();
 		foreach($listKab as $kab) {
 			$data['listKab'][$kab->id] = $kab->nama;
+		}
+
+		$listPerkara = $this->M_perkara->select_all();
+		foreach($listPerkara as $key => $val) {
+			$data['listPerkara'][$val->id] = $val->perkara;
 		}
 
 		$data['model'] = $this->M_pkn;
