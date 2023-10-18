@@ -56,7 +56,7 @@ class Pkn extends CI_Controller {
 			}
 		} else {
 			$data = array(
-				'kec_id' => $this->input->post('kecamatan'),
+				'kec_id' => $this->input->post('kec_id'),
 				'jenis' => $this->input->post('jenis'),
 				'nama_pelaku' => $this->input->post('nama_pelaku'),
 				'penyebab' => $this->input->post('penyebab'),

@@ -21,7 +21,7 @@
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
-                            <?=get_header_table_custom($model); ?>
+                            <?=get_header_table_custom($model, ['keterangan'], '<th>Aksi</th>'); ?>
                         </thead>
                         <tbody>
                         <?php
@@ -32,8 +32,12 @@
                                     <td>'.$id.'</td>
                                     <td>'.$row->nama_kec.'</td>
                                     <td>'.strtoupper($row->jenis).'</td>
+                                    <td>'.$row->nama_pelaku.'</td>
+                                    <td>'.$row->penyebab.'</td>
+                                    <td>'.$row->waktu.'</td>
                                     <td>'.$row->lokasi.'</td>
-                                    <td>'.$row->perkara.'</td>
+                                    <td>'.$row->alamat.'</td>
+                                    <td>'.$row->kasus_posisi.'</td>
                                     <td style="min-width:115px">
                                         <div class="btn-group" role="group">
                                             <button type="button" data-id="'.$row->id.'" class="btn btn-secondary btnEdit" data-toggle="modal" data-target="#myModal">Edit</button>
