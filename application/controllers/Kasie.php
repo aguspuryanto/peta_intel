@@ -59,7 +59,7 @@ class Kasie extends CI_Controller {
 	}
 
 	public function PetaIntelijen() {
-		$data['title'] = "Seksi E || Peta Intelijen";
+		$data['title'] = "Seksi E || Peta Bidang Teknologi Informasi dan Produksi Intelijen";
 		$data['konten'] = "index";
 
 		// $data['listPerkara'] = array('1' => 'PRODUKSI INTELIJEN', '2' => 'PEMANTAUAN', '3' => 'INTELIJEN SINYAL', '4' => 'INTELIJEN SIBER', '5' => 'KLANDESTINE', '6' => 'DIGITAL FORENSIK', '7' => 'TRANSMISI BERITA SANDI', '8' => 'KONTRA PENGINDERAAN', '9' => 'AUDIT & PENGUJIAN SISTEM KEAMANAN INFORMASI', '10' => 'PENGAMANAN SINYAL', '11' => 'PENGEMBANGAN SDM & SANDI', '12' => 'PENGEMBANGAN SDM INTELIJEN LAINNYA', '13' => 'PENGEMBANGAN TEKNOLOGI', '14' => 'PENGEMBANGAN PROSEDUR & APLISeksi ');

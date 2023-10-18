@@ -59,7 +59,7 @@ class KasiPenkum extends CI_Controller {
 	}
 
 	public function PetaIntelijen() {
-		$data['title'] = "Seksi Penkum || Peta Intelijen";
+		$data['title'] = "Seksi Penkum || Peta Bidang Penerangan Hukum dan Penyuluhan Hukum";
 		$data['konten'] = "index";
 
 		// $data['listPerkara'] = array();

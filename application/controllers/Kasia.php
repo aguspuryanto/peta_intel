@@ -93,7 +93,7 @@ class Kasia extends CI_Controller {
 	}
 
 	public function peta() {
-		$data['title'] = "Seksi A || Peta Intelijen";
+		$data['title'] = "Seksi A || Peta Bidang Ideologi, Politik, Pertahanan dan Keamanan";
 		$data['konten'] = "index";
 		$data['listKab'] = array();		
 		$listKab = $this->M_kabupaten->select_all();
