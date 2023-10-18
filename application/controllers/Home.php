@@ -29,12 +29,12 @@ class Home extends CI_Controller {
 		// echo json_encode($_get);
 		$data['bankData'] = getBankDataMenu();
 
-		if ($_get['peta'] == 'D.IN.2') $data['title'] = "Kasi A || Peta Intelijen";
-		if ($_get['peta'] == 'D.IN.3') $data['title'] = "Kasi B || Peta Intelijen";
-		if ($_get['peta'] == 'D.IN.4') $data['title'] = "Kasi C || Peta Intelijen";
-		if ($_get['peta'] == 'D.IN.5') $data['title'] = "Kasi D || Peta Intelijen";
-		if ($_get['peta'] == 'D.IN.6') $data['title'] = "Kasi E || Peta Intelijen";
-		if ($_get['peta'] == 'D.IN.7') $data['title'] = "Kasi Penkum || Peta Intelijen";
+		if ($_get['peta'] == 'D.IN.2') $data['title'] = "Seksi A || Peta Intelijen";
+		if ($_get['peta'] == 'D.IN.3') $data['title'] = "Seksi B || Peta Intelijen";
+		if ($_get['peta'] == 'D.IN.4') $data['title'] = "Seksi C || Peta Intelijen";
+		if ($_get['peta'] == 'D.IN.5') $data['title'] = "Seksi D || Peta Intelijen";
+		if ($_get['peta'] == 'D.IN.6') $data['title'] = "Seksi E || Peta Intelijen";
+		if ($_get['peta'] == 'D.IN.7') $data['title'] = "Seksi Penkum || Peta Intelijen";
 
 		$kategori = explode(" || ", $data['title']);
 
@@ -59,25 +59,25 @@ class Home extends CI_Controller {
 	}
 
 	public function kasia($page='', $id='') {
-		// echo "Kasi A";
+		// echo "Seksi A";
 		$data['bankData'] = getBankDataMenu();
 
 		if($page && $page == 'Pemerintahan') {			
-			$data['title'] = "Kasi A || Pemerintahan";
+			$data['title'] = "Seksi A || Pemerintahan";
 		} elseif ($page == 'stakeholder') {
-			$data['title'] = "Kasi A || Stakeholder & Obyek Vital";
+			$data['title'] = "Seksi A || Stakeholder & Obyek Vital";
 		} elseif ($page == 'sdo') {
-			$data['title'] = "Kasi A || Pengamanan Sumber Daya Organisasi";
+			$data['title'] = "Seksi A || Pengamanan Sumber Daya Organisasi";
 		} elseif ($page == 'ancaman') {
-			$data['title'] = "Kasi A || Potensi Ancaman";
+			$data['title'] = "Seksi A || Potensi Ancaman";
 		} elseif ($page == 'peta') {
-			$data['title'] = "Kasi A || Peta Intelijen";
+			$data['title'] = "Seksi A || Peta Bidang Ideologi, Politik, Pertahanan dan Keamanan";
 		} elseif ($page == 'perda') {
-			$data['title'] = "Kasi A || Perda";
+			$data['title'] = "Seksi A || Perda";
 		} elseif ($page == 'pergub') {
-			$data['title'] = "Kasi A || Pergub";
+			$data['title'] = "Seksi A || Pergub";
 		} else {			
-			$data['title'] = "Kasi A || " . ucwords($page);
+			$data['title'] = "Seksi A || " . ucwords($page);
 		}
 
 		$kategori = explode(" || ", $data['title']);
@@ -105,25 +105,25 @@ class Home extends CI_Controller {
 	}
 
 	public function kasib($page='', $id='') {
-		// echo "Kasi A";
+		// echo "Seksi A";
 		$data['bankData'] = getBankDataMenu();
 		
 		if($page && $page == 'Pemerintahan') {			
-			$data['title'] = "Kasi B || Pemerintahan";
+			$data['title'] = "Seksi B || Pemerintahan";
 		} elseif ($page == 'stakeholder') {
-			$data['title'] = "Kasi B || Stakeholder & Obyek Vital";
+			$data['title'] = "Seksi B || Stakeholder & Obyek Vital";
 		} elseif ($page == 'sdo') {
-			$data['title'] = "Kasi B || Pengamanan Sumber Daya Organisasi";
+			$data['title'] = "Seksi B || Pengamanan Sumber Daya Organisasi";
 		} elseif ($page == 'ancaman') {
-			$data['title'] = "Kasi B || Potensi Ancaman";
+			$data['title'] = "Seksi B || Potensi Ancaman";
 		} elseif ($page == 'peta' || $page == 'PetaIntelijen') {
-			$data['title'] = "Kasi B || Peta Intelijen";
+			$data['title'] = "Seksi B || Peta Bidang Sosial, Budaya dan Kemasyarakatan";
 		} elseif ($page == 'perda') {
-			$data['title'] = "Kasi B || Perda";
+			$data['title'] = "Seksi B || Perda";
 		} elseif ($page == 'pergub') {
-			$data['title'] = "Kasi B || Pergub";
+			$data['title'] = "Seksi B || Pergub";
 		} else {			
-			$data['title'] = "Kasi B || " . ucwords($page);
+			$data['title'] = "Seksi B || " . ucwords($page);
 		}
 
 		$kategori = explode(" || ", $data['title']);
@@ -151,25 +151,25 @@ class Home extends CI_Controller {
 	}
 
 	public function kasic($page='', $id='') {
-		// echo "Kasi A";
+		// echo "Seksi A";
 		$data['bankData'] = getBankDataMenu();
 
 		if($page && $page == 'Pemerintahan') {			
-			$data['title'] = "Kasi C || Pemerintahan";
+			$data['title'] = "Seksi C || Pemerintahan";
 		} elseif ($page == 'stakeholder') {
-			$data['title'] = "Kasi C || Stakeholder & Obyek Vital";
+			$data['title'] = "Seksi C || Stakeholder & Obyek Vital";
 		} elseif ($page == 'sdo') {
-			$data['title'] = "Kasi C || Pengamanan Sumber Daya Organisasi";
+			$data['title'] = "Seksi C || Pengamanan Sumber Daya Organisasi";
 		} elseif ($page == 'ancaman') {
-			$data['title'] = "Kasi C || Potensi Ancaman";
+			$data['title'] = "Seksi C || Potensi Ancaman";
 		} elseif ($page == 'peta' || $page == 'PetaIntelijen') {
-			$data['title'] = "Kasi C || Peta Intelijen";
+			$data['title'] = "Seksi C || Peta Bidang Ekonomi dan Keuangan";
 		} elseif ($page == 'perda') {
-			$data['title'] = "Kasi C || Perda";
+			$data['title'] = "Seksi C || Perda";
 		} elseif ($page == 'pergub') {
-			$data['title'] = "Kasi C || Pergub";
+			$data['title'] = "Seksi C || Pergub";
 		} else {			
-			$data['title'] = "Kasi C || " . ucwords($page);
+			$data['title'] = "Seksi C || " . ucwords($page);
 		}
 
 		$kategori = explode(" || ", $data['title']);
@@ -198,25 +198,25 @@ class Home extends CI_Controller {
 	}
 
 	public function kasid($page='', $id='') {
-		// echo "Kasi A";
+		// echo "Seksi A";
 		$data['bankData'] = getBankDataMenu();
 
 		if($page && $page == 'Pemerintahan') {			
-			$data['title'] = "Kasi D || Pemerintahan";
+			$data['title'] = "Seksi D || Pemerintahan";
 		} elseif ($page == 'stakeholder') {
-			$data['title'] = "Kasi D || Stakeholder & Obyek Vital";
+			$data['title'] = "Seksi D || Stakeholder & Obyek Vital";
 		} elseif ($page == 'sdo') {
-			$data['title'] = "Kasi D || Pengamanan Sumber Daya Organisasi";
+			$data['title'] = "Seksi D || Pengamanan Sumber Daya Organisasi";
 		} elseif ($page == 'ancaman') {
-			$data['title'] = "Kasi D || Potensi Ancaman";
+			$data['title'] = "Seksi D || Potensi Ancaman";
 		} elseif ($page == 'peta' || $page == 'PetaIntelijen') {
-			$data['title'] = "Kasi D || Peta Intelijen";
+			$data['title'] = "Seksi D || Peta Bidang Pengamanan Pembangunan Strategis";
 		} elseif ($page == 'perda') {
-			$data['title'] = "Kasi D || Perda";
+			$data['title'] = "Seksi D || Perda";
 		} elseif ($page == 'pergub') {
-			$data['title'] = "Kasi D || Pergub";
+			$data['title'] = "Seksi D || Pergub";
 		} else {			
-			$data['title'] = "Kasi D || " . ucwords($page);
+			$data['title'] = "Seksi D || " . ucwords($page);
 		}
 
 		$kategori = explode(" || ", $data['title']);
@@ -246,25 +246,25 @@ class Home extends CI_Controller {
 	}
 
 	public function kasie($page='', $id='') {
-		// echo "Kasi A";
+		// echo "Seksi A";
 		$data['bankData'] = getBankDataMenu();
 
 		if($page && $page == 'Pemerintahan') {			
-			$data['title'] = "Kasi E || Pemerintahan";
+			$data['title'] = "Seksi E || Pemerintahan";
 		} elseif ($page == 'stakeholder') {
-			$data['title'] = "Kasi E || Stakeholder & Obyek Vital";
+			$data['title'] = "Seksi E || Stakeholder & Obyek Vital";
 		} elseif ($page == 'sdo') {
-			$data['title'] = "Kasi E || Pengamanan Sumber Daya Organisasi";
+			$data['title'] = "Seksi E || Pengamanan Sumber Daya Organisasi";
 		} elseif ($page == 'ancaman') {
-			$data['title'] = "Kasi E || Potensi Ancaman";
+			$data['title'] = "Seksi E || Potensi Ancaman";
 		} elseif ($page == 'peta' || $page == 'PetaIntelijen') {
-			$data['title'] = "Kasi E || Peta Intelijen";
+			$data['title'] = "Seksi E || Peta Bidang Teknologi Informasi dan Produksi Intelijen";
 		} elseif ($page == 'perda') {
-			$data['title'] = "Kasi E || Perda";
+			$data['title'] = "Seksi E || Perda";
 		} elseif ($page == 'pergub') {
-			$data['title'] = "Kasi E || Pergub";
+			$data['title'] = "Seksi E || Pergub";
 		} else {			
-			$data['title'] = "Kasi E || " . ucwords($page);
+			$data['title'] = "Seksi E || " . ucwords($page);
 		}
 
 		$kategori = explode(" || ", $data['title']);
@@ -294,25 +294,25 @@ class Home extends CI_Controller {
 	}
 
 	public function kasipenkum($page='', $id='') {
-		// echo "Kasi A";
+		// echo "Seksi A";
 		$data['bankData'] = getBankDataMenu();
 
 		if($page && $page == 'Pemerintahan') {			
-			$data['title'] = "Kasi Penkum || Pemerintahan";
+			$data['title'] = "Seksi Penkum || Pemerintahan";
 		} elseif ($page == 'stakeholder') {
-			$data['title'] = "Kasi Penkum || Stakeholder & Obyek Vital";
+			$data['title'] = "Seksi Penkum || Stakeholder & Obyek Vital";
 		} elseif ($page == 'sdo') {
-			$data['title'] = "Kasi Penkum || Pengamanan Sumber Daya Organisasi";
+			$data['title'] = "Seksi Penkum || Pengamanan Sumber Daya Organisasi";
 		} elseif ($page == 'ancaman') {
-			$data['title'] = "Kasi Penkum || Potensi Ancaman";
+			$data['title'] = "Seksi Penkum || Potensi Ancaman";
 		} elseif ($page == 'peta' || $page == 'PetaIntelijen') {
-			$data['title'] = "Kasi Penkum || Peta Intelijen";
+			$data['title'] = "Seksi Penkum || Peta Bidang Penerangan Hukum dan Penyuluhan Hukum";
 		} elseif ($page == 'perda') {
-			$data['title'] = "Kasi Penkum || Perda";
+			$data['title'] = "Seksi Penkum || Perda";
 		} elseif ($page == 'pergub') {
-			$data['title'] = "Kasi Penkum || Pergub";
+			$data['title'] = "Seksi Penkum || Pergub";
 		} else {			
-			$data['title'] = "Kasi Penkum || " . ucwords($page);
+			$data['title'] = "Seksi Penkum || " . ucwords($page);
 		}
 
 		$kategori = explode(" || ", $data['title']);
