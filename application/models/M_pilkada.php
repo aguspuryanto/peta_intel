@@ -15,6 +15,10 @@ class M_pilkada extends CI_Model {
             ['field' => 'jmlsuara_gub1', 'label' => 'Jumlah Suara Paslon 1'],
             ['field' => 'nama_gub2', 'label' => 'Nama Paslon 2'],
             ['field' => 'jmlsuara_gub2', 'label' => 'Jumlah Suara Paslon 2'],
+            ['field' => 'nama_gub3', 'label' => 'Nama Paslon 3'],
+            ['field' => 'jmlsuara_gub3', 'label' => 'Jumlah Suara Paslon 3'],
+            ['field' => 'nama_gub4', 'label' => 'Nama Paslon 4'],
+            ['field' => 'jmlsuara_gub4', 'label' => 'Jumlah Suara Paslon 4'],
         ];
     }    
 
