@@ -18,14 +18,14 @@ class Kasib extends CI_Controller {
 
 	public function index()
 	{
-		$data['title'] = "Kasi B";
+		$data['title'] = "Seksi B";
 		$data['konten'] = "index";
 		
 		$this->template->views('page/kasia/index', $data);
 	}
 
 	public function Sosial() {
-		$data['title'] = "Kasi B || Sosial";
+		$data['title'] = "Seksi B || Sosial";
 		$data['konten'] = "index";
 
 		$kategori = explode(" || ", $data['title']);
@@ -34,7 +34,7 @@ class Kasib extends CI_Controller {
 
 		$data['model'] = $this->M_bankdata;
 		$data['dataProvider'] = $this->M_bankdata->select_all([
-			'kategori' => 'Kasi B',
+			'kategori' => 'Seksi B',
 			'sub_kategori' => 'Sosial'
 		]);
 		
@@ -42,7 +42,7 @@ class Kasib extends CI_Controller {
 	}
 
 	public function Budaya() {
-		$data['title'] = "Kasi B || Budaya";
+		$data['title'] = "Seksi B || Budaya";
 		$data['konten'] = "index";
 
 		$kategori = explode(" || ", $data['title']);
@@ -51,7 +51,7 @@ class Kasib extends CI_Controller {
 
 		$data['model'] = $this->M_bankdata;
 		$data['dataProvider'] = $this->M_bankdata->select_all([
-			'kategori' => 'Kasi B',
+			'kategori' => 'Seksi B',
 			'sub_kategori' => 'Budaya'
 		]);
 		
@@ -59,7 +59,7 @@ class Kasib extends CI_Controller {
 	}
 
 	public function Kemasyarakatan() {
-		$data['title'] = "Kasi B || Kemasyarakatan";
+		$data['title'] = "Seksi B || Kemasyarakatan";
 		$data['konten'] = "index";
 
 		$kategori = explode(" || ", $data['title']);
@@ -68,7 +68,7 @@ class Kasib extends CI_Controller {
 
 		$data['model'] = $this->M_bankdata;
 		$data['dataProvider'] = $this->M_bankdata->select_all([
-			'kategori' => 'Kasi B',
+			'kategori' => 'Seksi B',
 			'sub_kategori' => 'Kemasyarakatan'
 		]);
 		
@@ -76,7 +76,7 @@ class Kasib extends CI_Controller {
 	}
 
 	public function ancaman() {
-		$data['title'] = "Kasi B || Potensi Ancaman";
+		$data['title'] = "Seksi B || Potensi Ancaman";
 		$data['konten'] = "index";
 
 		$kategori = explode(" || ", $data['title']);
@@ -93,7 +93,7 @@ class Kasib extends CI_Controller {
 	}
 
 	public function PetaIntelijen() {
-		$data['title'] = "Kasi B || Peta Intelijen";
+		$data['title'] = "Seksi B || Peta Intelijen";
 		$data['konten'] = "index";
 
 		// $data['listPerkara'] = array('1' => 'PENGAWASAN PEREDARAN BARANG CETAKAN DALAM NEGERI', '2' => 'PENGAWASAN PEREDARAN IMPORT BARANG CETAKAN DALAM NEGERI', '3' => 'PENGAWASAN SISTEM PERBUKUAN', '4' => 'PENGAWASAN MEDIA KOMUNIKASI', '5' => 'PENGAWASAN ALIRAN KEPERCAYAAN DAN KEAGAMAAN DALAM MASYARAKAT', '6' => 'PENCEGAKAN PENYALAHGUNAAN DAN/ATAU PENODAAN AGAMA', '7' => 'KETAHANAN BUDAYA', '8' => 'PEMBERDAYAAN MASYARAKAT DESA', '9' => 'PENGAWASAN ORGANISASI MASYARAKAT DAN LEMBAGA SWADAYA MASYARAKAT', '10' => 'PENCEGAHAN KONFLIK SOSIAL', '11' => 'KETERTIBAN DAN KETENTRAMAN UMUM', '12' => 'PEMBINAAN MASYARAKAT TAAT HUKUM');

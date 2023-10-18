@@ -405,7 +405,7 @@ function getBankDataMenu() {
             )
         ),
         array(
-            'title' => 'SEKSI P',
+            'title' => 'SEKSI PENKUM',
             'title_desc' => 'Penerangan Hukum dan Penyuluhan Hukum',
             'url' => 'home/kasipenkum',
             'show_menu' => false,

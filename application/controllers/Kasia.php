@@ -18,14 +18,14 @@ class Kasia extends CI_Controller {
 
 	public function index()
 	{
-		$data['title'] = "Kasi A";
+		$data['title'] = "Seksi A";
 		$data['konten'] = "index";
 		
 		$this->template->views('page/kasia/index', $data);
 	}
 
 	public function pemerintahan() {
-		$data['title'] = "Kasi A || Pemerintahan";
+		$data['title'] = "Seksi A || Pemerintahan";
 		$data['konten'] = "index";
 
 		$kategori = explode(" || ", $data['title']);
@@ -34,7 +34,7 @@ class Kasia extends CI_Controller {
 
 		$data['model'] = $this->M_bankdata;
 		$data['dataProvider'] = $this->M_bankdata->select_all([
-			'kategori' => 'Kasi A',
+			'kategori' => 'Seksi A',
 			'sub_kategori' => 'Pemerintahan'
 		]);
 		
@@ -42,7 +42,7 @@ class Kasia extends CI_Controller {
 	}
 
 	public function stakeholder() {
-		$data['title'] = "Kasi A || Stakeholder & Obyek Vital";
+		$data['title'] = "Seksi A || Stakeholder & Obyek Vital";
 		$data['konten'] = "index";
 
 		$kategori = explode(" || ", $data['title']);
@@ -51,7 +51,7 @@ class Kasia extends CI_Controller {
 
 		$data['model'] = $this->M_bankdata;
 		$data['dataProvider'] = $this->M_bankdata->select_all([
-			'kategori' => 'Kasi A',
+			'kategori' => 'Seksi A',
 			'sub_kategori' => 'Stakeholder & Obyek Vital'
 		]);
 		
@@ -59,7 +59,7 @@ class Kasia extends CI_Controller {
 	}
 
 	public function sdo() {
-		$data['title'] = "Kasi A || Pengamanan Sumber Daya Organisasi";
+		$data['title'] = "Seksi A || Pengamanan Sumber Daya Organisasi";
 		$data['konten'] = "index";
 
 		$kategori = explode(" || ", $data['title']);
@@ -68,7 +68,7 @@ class Kasia extends CI_Controller {
 
 		$data['model'] = $this->M_bankdata;
 		$data['dataProvider'] = $this->M_bankdata->select_all([
-			'kategori' => 'Kasi A',
+			'kategori' => 'Seksi A',
 			'sub_kategori' => 'Pengamanan Sumber Daya Organisasi'
 		]);
 		
@@ -76,7 +76,7 @@ class Kasia extends CI_Controller {
 	}
 
 	public function ancaman() {
-		$data['title'] = "Kasi A || Potensi Ancaman";
+		$data['title'] = "Seksi A || Potensi Ancaman";
 		$data['konten'] = "index";
 
 		$kategori = explode(" || ", $data['title']);
@@ -93,7 +93,7 @@ class Kasia extends CI_Controller {
 	}
 
 	public function peta() {
-		$data['title'] = "Kasi A || Peta Intelijen";
+		$data['title'] = "Seksi A || Peta Intelijen";
 		$data['konten'] = "index";
 		$data['listKab'] = array();		
 		$listKab = $this->M_kabupaten->select_all();
@@ -195,7 +195,7 @@ class Kasia extends CI_Controller {
 	}
 
 	public function perda() {
-		$data['title'] = "Kasi A || Perda";
+		$data['title'] = "Seksi A || Perda";
 		$data['konten'] = "index";
 
 		$kategori = explode(" || ", $data['title']);
@@ -204,7 +204,7 @@ class Kasia extends CI_Controller {
 
 		$data['model'] = $this->M_bankdata;
 		$data['dataProvider'] = $this->M_bankdata->select_all([
-			'kategori' => 'Kasi A',
+			'kategori' => 'Seksi A',
 			'sub_kategori' => 'Perda'
 		]);
 		
@@ -212,7 +212,7 @@ class Kasia extends CI_Controller {
 	}
 
 	public function pergub() {
-		$data['title'] = "Kasi A || Pergub";
+		$data['title'] = "Seksi A || Pergub";
 		$data['konten'] = "index";
 
 		$kategori = explode(" || ", $data['title']);
@@ -221,7 +221,7 @@ class Kasia extends CI_Controller {
 
 		$data['model'] = $this->M_bankdata;
 		$data['dataProvider'] = $this->M_bankdata->select_all([
-			'kategori' => 'Kasi A',
+			'kategori' => 'Seksi A',
 			'sub_kategori' => 'Pergub'
 		]);
 		

@@ -18,14 +18,14 @@ class KasiPenkum extends CI_Controller {
 
 	public function index()
 	{
-		$data['title'] = "Kasi Penkum";
+		$data['title'] = "Seksi Penkum";
 		$data['konten'] = "index";
 		
 		$this->template->views('page/kasia/index', $data);
 	}
 
 	public function grafik() {
-		$data['title'] = "Kasi Penkum || Data Grafik";
+		$data['title'] = "Seksi Penkum || Data Grafik";
 		$data['konten'] = "index";
 
 		$kategori = explode(" || ", $data['title']);
@@ -42,7 +42,7 @@ class KasiPenkum extends CI_Controller {
 	}
 
 	public function ancaman() {
-		$data['title'] = "Kasi Penkum || Potensi Ancaman";
+		$data['title'] = "Seksi Penkum || Potensi Ancaman";
 		$data['konten'] = "index";
 
 		$kategori = explode(" || ", $data['title']);
@@ -59,7 +59,7 @@ class KasiPenkum extends CI_Controller {
 	}
 
 	public function PetaIntelijen() {
-		$data['title'] = "Kasi Penkum || Peta Intelijen";
+		$data['title'] = "Seksi Penkum || Peta Intelijen";
 		$data['konten'] = "index";
 
 		// $data['listPerkara'] = array();

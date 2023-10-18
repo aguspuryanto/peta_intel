@@ -18,14 +18,14 @@ class Kasid extends CI_Controller {
 
 	public function index()
 	{
-		$data['title'] = "Kasi D";
+		$data['title'] = "Seksi D";
 		$data['konten'] = "index";
 		
 		$this->template->views('page/kasia/index', $data);
 	}
 
 	public function DaftarPengawalan() {
-		$data['title'] = "Kasi D || Daftar Pengawalan & Pengamanan";
+		$data['title'] = "Seksi D || Daftar Pengawalan & Pengamanan";
 		$data['konten'] = "index";
 
 		$kategori = explode(" || ", $data['title']);
@@ -40,7 +40,7 @@ class Kasid extends CI_Controller {
 	}
 
 	public function DaftarPendampingan() {
-		$data['title'] = "Kasi D || Daftar Pendampingan";
+		$data['title'] = "Seksi D || Daftar Pendampingan";
 		$data['konten'] = "index";
 
 		$kategori = explode(" || ", $data['title']);
@@ -55,14 +55,14 @@ class Kasid extends CI_Controller {
 	}
 
 	public function ancaman() {
-		$data['title'] = "Kasi D || Potensi Ancaman";
+		$data['title'] = "Seksi D || Potensi Ancaman";
 		$data['konten'] = "index";
 
 		$kategori = explode(" || ", $data['title']);
 
 		$data['model'] = $this->M_bankdata;
 		$data['dataProvider'] = $this->M_bankdata->select_all([
-			'kategori' => 'Kasi D',
+			'kategori' => 'Seksi D',
 			'sub_kategori' => 'Potensi Ancaman'
 		]);
 		
@@ -70,7 +70,7 @@ class Kasid extends CI_Controller {
 	}
 
 	public function PetaIntelijen() {
-		$data['title'] = "Kasi D || Peta Intelijen";
+		$data['title'] = "Seksi D || Peta Intelijen";
 		$data['konten'] = "index";
 		
 		// $data['listPerkara'] = array('1' => 'INFRASTRUKTUR JALAN', '2' => 'INFRASTRUKTUR PERKERETAAPIAN', '3' => 'INFRASTRUKTUR KEBANDARUDARAAN', '4' => 'INFRASTRUKTUR TELEKOMUNIKASI', '5' => 'INFRASTRUKTUR KEPELABUHANAN', '6' => 'SMELTER', '7' => 'INFRASTRUKTUR PENGOLAHAN AIR', '8' => 'TANGGUL', '9' => 'BENDUNGAN', '10' => 'PERTANIAN', '11' => 'KELAUTAN KETENAGALISTRIKAN', '12' => 'ENERGI ALTERNATIF', '13' => 'MINYAK & GAS BUMI', '14' => 'ILMU PENGETAHUAN DAN TEKNOLOGI', '15' => 'PERUMAHAN', '16' => 'PARIWISATA', '17' => 'KAWASAN INDUSTRI PRIORITAS/ KAWASAN EKONOMI KHUSUS', '18' => 'POS LINTAS BATAS NEGARA & SARANA PENUNJANG', '19' => 'SEKTOR LAINNYA');

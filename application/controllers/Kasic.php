@@ -18,14 +18,14 @@ class Kasic extends CI_Controller {
 
 	public function index()
 	{
-		$data['title'] = "Kasi C";
+		$data['title'] = "Seksi C";
 		$data['konten'] = "index";
 		
 		$this->template->views('page/kasia/index', $data);
 	}
 
 	public function Perdagangan() {
-		$data['title'] = "Kasi C || Perdagangan";
+		$data['title'] = "Seksi C || Perdagangan";
 		$data['konten'] = "index";
 
 		$kategori = explode(" || ", $data['title']);
@@ -34,7 +34,7 @@ class Kasic extends CI_Controller {
 
 		$data['model'] = $this->M_bankdata;
 		$data['dataProvider'] = $this->M_bankdata->select_all([
-			'kategori' => 'Kasi C',
+			'kategori' => 'Seksi C',
 			'sub_kategori' => 'Perdagangan'
 		]);
 		
@@ -42,7 +42,7 @@ class Kasic extends CI_Controller {
 	}
 
 	public function Industri() {
-		$data['title'] = "Kasi C || Industri";
+		$data['title'] = "Seksi C || Industri";
 		$data['konten'] = "index";
 
 		$kategori = explode(" || ", $data['title']);
@@ -51,7 +51,7 @@ class Kasic extends CI_Controller {
 
 		$data['model'] = $this->M_bankdata;
 		$data['dataProvider'] = $this->M_bankdata->select_all([
-			'kategori' => 'Kasi C',
+			'kategori' => 'Seksi C',
 			'sub_kategori' => 'Industri'
 		]);
 		
@@ -59,7 +59,7 @@ class Kasic extends CI_Controller {
 	}
 
 	public function Perbankan() {
-		$data['title'] = "Kasi C || Perbankan dan Investasi";
+		$data['title'] = "Seksi C || Perbankan dan Investasi";
 		$data['konten'] = "index";
 
 		$kategori = explode(" || ", $data['title']);
@@ -68,7 +68,7 @@ class Kasic extends CI_Controller {
 
 		$data['model'] = $this->M_bankdata;
 		$data['dataProvider'] = $this->M_bankdata->select_all([
-			'kategori' => 'Kasi C',
+			'kategori' => 'Seksi C',
 			'sub_kategori' => 'Perbankan dan Investasi'
 		]);
 		
@@ -76,7 +76,7 @@ class Kasic extends CI_Controller {
 	}
 
 	public function KeuanganDaerah() {
-		$data['title'] = "Kasi C || Keuangan Daerah";
+		$data['title'] = "Seksi C || Keuangan Daerah";
 		$data['konten'] = "index";
 
 		$kategori = explode(" || ", $data['title']);
@@ -85,7 +85,7 @@ class Kasic extends CI_Controller {
 
 		$data['model'] = $this->M_bankdata;
 		$data['dataProvider'] = $this->M_bankdata->select_all([
-			'kategori' => 'Kasi C',
+			'kategori' => 'Seksi C',
 			'sub_kategori' => 'Keuangan Daerah'
 		]);
 		
@@ -93,7 +93,7 @@ class Kasic extends CI_Controller {
 	}
 
 	public function ancaman() {
-		$data['title'] = "Kasi C || Potensi Ancaman";
+		$data['title'] = "Seksi C || Potensi Ancaman";
 		$data['konten'] = "index";
 
 		$kategori = explode(" || ", $data['title']);
@@ -110,7 +110,7 @@ class Kasic extends CI_Controller {
 	}
 
 	public function PetaIntelijen() {
-		$data['title'] = "Kasi C || Peta Intelijen";
+		$data['title'] = "Seksi C || Peta Intelijen";
 		$data['konten'] = "index";
 
 		// $data['listPerkara'] = array('1' => 'LEMBAGA KEUANGAN', '2' => 'KEUANGAN NEGARA', '3' => 'MONETER', '4' => 'PENELUSURAN ASET', '5' => 'INVESTASI/ PENANAMAN MODAL', '6' => 'PERPAJAKAN', '7' => 'KEPABEANAN', '8' => 'CUKAI', '9' => 'PERDAGANGAN', '10' => 'PERINDUSTRIAN', '11' => 'KETENAGAKERJAAN', '12' => 'PERKEBUNAN', '13' => 'KEHUTANAN', '14' => 'LINGKUNGAN HIDUP', '15' => 'PERIKANAN', '16' => 'AGRARIA/TATA RUANG');

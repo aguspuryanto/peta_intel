@@ -18,14 +18,14 @@ class Kasie extends CI_Controller {
 
 	public function index()
 	{
-		$data['title'] = "Kasi E";
+		$data['title'] = "Seksi E";
 		$data['konten'] = "index";
 		
 		$this->template->views('page/kasia/index', $data);
 	}
 
 	public function Lapinhar() {
-		$data['title'] = "Kasi E || Lapinhar";
+		$data['title'] = "Seksi E || Lapinhar";
 		$data['konten'] = "index";
 
 		$kategori = explode(" || ", $data['title']);
@@ -42,7 +42,7 @@ class Kasie extends CI_Controller {
 	}
 
 	public function ancaman() {
-		$data['title'] = "Kasi E || Potensi Ancaman";
+		$data['title'] = "Seksi E || Potensi Ancaman";
 		$data['konten'] = "index";
 
 		$kategori = explode(" || ", $data['title']);
@@ -51,7 +51,7 @@ class Kasie extends CI_Controller {
 
 		$data['model'] = $this->M_bankdata;
 		$data['dataProvider'] = $this->M_bankdata->select_all([
-			'kategori' => 'Kasi E',
+			'kategori' => 'Seksi E',
 			'sub_kategori' => 'Potensi Ancaman'
 		]);
 		
@@ -59,10 +59,10 @@ class Kasie extends CI_Controller {
 	}
 
 	public function PetaIntelijen() {
-		$data['title'] = "Kasi E || Peta Intelijen";
+		$data['title'] = "Seksi E || Peta Intelijen";
 		$data['konten'] = "index";
 
-		// $data['listPerkara'] = array('1' => 'PRODUKSI INTELIJEN', '2' => 'PEMANTAUAN', '3' => 'INTELIJEN SINYAL', '4' => 'INTELIJEN SIBER', '5' => 'KLANDESTINE', '6' => 'DIGITAL FORENSIK', '7' => 'TRANSMISI BERITA SANDI', '8' => 'KONTRA PENGINDERAAN', '9' => 'AUDIT & PENGUJIAN SISTEM KEAMANAN INFORMASI', '10' => 'PENGAMANAN SINYAL', '11' => 'PENGEMBANGAN SDM & SANDI', '12' => 'PENGEMBANGAN SDM INTELIJEN LAINNYA', '13' => 'PENGEMBANGAN TEKNOLOGI', '14' => 'PENGEMBANGAN PROSEDUR & APLIKASI ');
+		// $data['listPerkara'] = array('1' => 'PRODUKSI INTELIJEN', '2' => 'PEMANTAUAN', '3' => 'INTELIJEN SINYAL', '4' => 'INTELIJEN SIBER', '5' => 'KLANDESTINE', '6' => 'DIGITAL FORENSIK', '7' => 'TRANSMISI BERITA SANDI', '8' => 'KONTRA PENGINDERAAN', '9' => 'AUDIT & PENGUJIAN SISTEM KEAMANAN INFORMASI', '10' => 'PENGAMANAN SINYAL', '11' => 'PENGEMBANGAN SDM & SANDI', '12' => 'PENGEMBANGAN SDM INTELIJEN LAINNYA', '13' => 'PENGEMBANGAN TEKNOLOGI', '14' => 'PENGEMBANGAN PROSEDUR & APLISeksi ');
 		$data['listKab'] = array();		
 		$listKab = $this->M_kabupaten->select_all();
 		foreach($listKab as $kab) {
@@ -87,7 +87,7 @@ class Kasie extends CI_Controller {
 	}
 
 	public function Kirka() {
-		$data['title'] = "Kasi E || Kirka";
+		$data['title'] = "Seksi E || Kirka";
 		$data['konten'] = "index";
 
 		$kategori = explode(" || ", $data['title']);
@@ -96,7 +96,7 @@ class Kasie extends CI_Controller {
 
 		$data['model'] = $this->M_bankdata;
 		$data['dataProvider'] = $this->M_bankdata->select_all([
-			'kategori' => 'Kasi E',
+			'kategori' => 'Seksi E',
 			'sub_kategori' => 'Kirka'
 		]);
 		
