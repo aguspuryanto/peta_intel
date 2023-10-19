@@ -31,7 +31,7 @@ $role_id = $this->session->userdata('role_id');
     <nav class="navbar navbar-expand-lg navbar-dark bg-success text-white justify-content-between">
     <div class="container">
         <a class="navbar-brand text-white" href="<?=site_url('') ?>">
-            <img src="<?=base_url('assets/');?>img/SI_METAL_BATIN_LOGO.png" alt="logo Kejaksaan" class="mr-3">
+            <img src="<?=base_url('assets/');?>img/SIMETALBATIN_HOME.png" alt="logo Kejaksaan" class="mr-3">
             <div class="sr-only"><?=@$title; ?> <p class="mb-0"><?=@$desc; ?></p></div>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
