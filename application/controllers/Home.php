@@ -29,12 +29,12 @@ class Home extends CI_Controller {
 		// echo json_encode($_get);
 		$data['bankData'] = getBankDataMenu();
 
-		if ($_get['peta'] == 'D.IN.2') $data['title'] = "Seksi A || Peta Intelijen";
-		if ($_get['peta'] == 'D.IN.3') $data['title'] = "Seksi B || Peta Intelijen";
-		if ($_get['peta'] == 'D.IN.4') $data['title'] = "Seksi C || Peta Intelijen";
-		if ($_get['peta'] == 'D.IN.5') $data['title'] = "Seksi D || Peta Intelijen";
-		if ($_get['peta'] == 'D.IN.6') $data['title'] = "Seksi E || Peta Intelijen";
-		if ($_get['peta'] == 'D.IN.7') $data['title'] = "Seksi Penkum || Peta Intelijen";
+		if ($_get['peta'] == 'D.IN.2') $data['title'] = "Seksi A || Peta Bidang Ideologi, Politik, Pertahanan dan Keamanan";
+		if ($_get['peta'] == 'D.IN.3') $data['title'] = "Seksi B || Peta Bidang Sosial, Budaya dan Kemasyarakatan";
+		if ($_get['peta'] == 'D.IN.4') $data['title'] = "Seksi C || Peta Bidang Ekonomi dan Keuangan";
+		if ($_get['peta'] == 'D.IN.5') $data['title'] = "Seksi D || Peta Bidang Pengamanan Pembangunan Strategis";
+		if ($_get['peta'] == 'D.IN.6') $data['title'] = "Seksi E || Peta Bidang Teknologi Informasi dan Produksi Intelijen";
+		if ($_get['peta'] == 'D.IN.7') $data['title'] = "Seksi Penkum || Peta Bidang Penerangan Hukum dan Penyuluhan Hukum";
 
 		$kategori = explode(" || ", $data['title']);
 
