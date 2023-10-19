@@ -121,6 +121,8 @@
 
 <?php
 $Urladd = base_url('pilkada/create_pilgub');
+$Urldetail = base_url('pilkada/view_pilgub');
+$Urlremove = base_url('pilkada/remove_pilgub');
 ?>
 
 <script>
