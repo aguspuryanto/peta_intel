@@ -489,7 +489,7 @@ function getBankDataMenuDash() {
             )
         ),
         array(
-            'title' => 'SEKSI P',
+            'title' => 'SEKSI PENKUM',
             'url' => 'kasiPenkum',
             'show_menu' => false,
             'submenu' => array(
