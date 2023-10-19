@@ -34,7 +34,7 @@
 						<!-- Nested Row within Card Body -->
 						<div class="row">
 							<div class="col-lg-6 d-none d-lg-block">
-								<img src="<?= base_url('assets/img/SI_METAL_BATIN_LOGO.png'); ?>" class="img-fluid">
+								<img src="<?= base_url('assets/img/SI_METAL_BATIN_LOGO.png'); ?>" class="img-fluid" style="height: 33%;">
 							</div>
 							<div class="col-lg-6">
 								<div class="p-5">
