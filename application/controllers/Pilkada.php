@@ -63,17 +63,22 @@ class Pilkada extends CI_Controller {
 			$totPaslon = count($this->input->post('nama_gub'));
 			for($i = 0; $i < $totPaslon; $i++){
 				$datapaslon = array(
-					'nama_gub' . ($i+1) => $this->input->post('nama_gub')[0],
-					'jmlsuara_gub' . ($i+1) => $this->input->post('jmlsuara_gub')[0],
+					'nama_gub' . ($i+1) => $this->input->post('nama_gub')[$i],
+					'jmlsuara_gub' . ($i+1) => $this->input->post('jmlsuara_gub')[$i],
 				);
 				$data = array_merge($data, $datapaslon);
 			}
 
 			// echo json_encode($data);
-			$model->save($data);
+			if($this->input->post('id')) {
+				$id = $this->input->post('id');
+				$model->update($id, $data);				
+			} else {
+				$model->save($data);
+			}
 
             $this->session->set_flashdata('success', 'Berhasil disimpan');
-			$json = array('success' => true, 'message' => 'Berhasil disimpan');
+			$json = array('success' => true, 'message' => 'Berhasil disimpan', 'data' => ($data));
 		}
 
 		$this->output
@@ -164,17 +169,22 @@ class Pilkada extends CI_Controller {
 			$totPaslon = count($this->input->post('nama_gub'));
 			for($i = 0; $i < $totPaslon; $i++){
 				$datapaslon = array(
-					'nama_gub' . ($i+1) => $this->input->post('nama_gub')[0],
-					'jmlsuara_gub' . ($i+1) => $this->input->post('jmlsuara_gub')[0],
+					'nama_gub' . ($i+1) => $this->input->post('nama_gub')[$i],
+					'jmlsuara_gub' . ($i+1) => $this->input->post('jmlsuara_gub')[$i],
 				);
 				$data = array_merge($data, $datapaslon);
 			}
 
 			// echo json_encode($data);
-			$model->save($data);
+			if($this->input->post('id')) {
+				$id = $this->input->post('id');
+				$model->update($id, $data);				
+			} else {
+				$model->save($data);
+			}
 
             $this->session->set_flashdata('success', 'Berhasil disimpan');
-			$json = array('success' => true, 'message' => 'Berhasil disimpan');
+			$json = array('success' => true, 'message' => 'Berhasil disimpan', 'data' => ($data));
 		}
 
 		$this->output
