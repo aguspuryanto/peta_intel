@@ -355,7 +355,7 @@ class Home extends CI_Controller {
 					'properties' => array(
 						'name' => strtoupper($perkara->no_perkara), //strtoupper($perkara->kasus_posisi . ' di ' . $perkara->lokasi),
 						'amenity' => strtoupper($perkara->no_perkara), //$perkara->kasus_posisi,
-						'popupContent' => strtoupper($perkara->no_perkara . '<br>' . $perkara->kasus_posisi), //$perkara->kasus_posisi . ' - ' . $perkara->nama_pelaku,
+						'popupContent' => strtoupper($perkara->no_perkara), //$perkara->kasus_posisi . ' - ' . $perkara->nama_pelaku,
 						'show_on_map' => true
 					),
 					'geometry' => array(
