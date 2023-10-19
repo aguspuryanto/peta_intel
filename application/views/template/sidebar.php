@@ -4,9 +4,10 @@
 			<!-- Sidebar - Brand -->
 			<a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?=base_url('dashboard');?>">
 				<div class="sidebar-brand-icon">
-					<i class='fas fa-map-marked-alt'></i>
+					<!-- <i class='fas fa-map-marked-alt'></i> -->
+					<img src="<?=base_url('assets/img/SIMETALBATIN_S.png');?>">
 				</div>
-				<div class="sidebar-brand-text mx-3"><?=$title; ?></div>
+				<div class="sidebar-brand-text mx-3">SIMETALBATIN</div>
 			</a>
 
 			<!-- Divider -->
