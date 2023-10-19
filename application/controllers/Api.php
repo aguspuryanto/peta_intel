@@ -436,8 +436,8 @@ class Api extends CI_Controller {
 		$listPerkara = $this->M_pkn->select_all();
 		foreach($listPerkara as $perkara) {
 			$data['listLatLong'][] = array(
-				'name' => $perkara->kasus_posisi,
-				'content' => 'JENIS PERKARA: ' . $perkara->no_perkara,
+				'name' => $perkara->jenis,
+				'content' => 'JENIS PERKARA: ' . $perkara->jenis,
 				'coordinates' => array($perkara->latitude, $perkara->longitude)
 			);
 		}

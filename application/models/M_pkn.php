@@ -61,8 +61,8 @@ class M_pkn extends CI_Model {
         }
 
         // $this->db->join('epak_kabupaten c', 'c.id = a.kab_id');
-        $this->db->join('epak_kecamatan b', 'b.id = a.kec_id');
-        $this->db->select('a.*, b.nama as nama_kec');
+        $this->db->join('epak_kabupaten b', 'b.id = a.kec_id');
+        $this->db->select('a.*, b.nama as nama_kec, b.latitude, b.longitude');
         $data = $this->db->get($this->table_name . ' a');
         return $data->result();
     }
