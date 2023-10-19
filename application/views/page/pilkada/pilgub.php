@@ -161,6 +161,68 @@ $(document).ready(function () {
         $(this).parents('.form-group').find('#error').html(" ");
     });
 
+    $(document).on('click', '.btnEdit', function (e) {
+        e.preventDefault();
+        var dataId = $(this).attr("data-id");
+        console.log(dataId, '_dataId');
+
+        $('#formPilkada input[name=id]').val(dataId);
+
+        $.get("<?=$Urldetail;?>/" + dataId, function(data, status){
+            console.log(data, "data");
+            // var count = Object.keys(data.data).filter(function(key) {
+            //     // console.log(key, '_key')
+            //     if(key.includes("jmlsuara_")) return true;
+            //     return false;
+            // }).length;
+            // console.log(count);
+
+            var nama_gub = [];
+            var jmlsuara_gub = [];
+            $.each(data.data, function(key, value) {
+                if(key.includes("jmlsuara_")) $('button.addPaslon').trigger("click");
+                if(key.includes("nama_gub")) {
+                    nama_gub.push(value);
+                } else if(key.includes("jmlsuara_gub")) {
+                    jmlsuara_gub.push(value);
+                } else {
+                    $('#input-' + key).val(value);
+                }
+            });
+
+            console.log(nama_gub, '_nama_gub');
+            $('#paslon').find('#input-nama_gub').val(nama_gub[0]);
+            $('#paslon1').find('#input-nama_gub').val(nama_gub[1]);
+            $('#paslon2').find('#input-nama_gub').val(nama_gub[2]);
+            $('#paslon3').find('#input-nama_gub').val(nama_gub[3]);
+            $('#paslon4').find('#input-nama_gub').val(nama_gub[4]);
+            $('#paslon5').find('#input-nama_gub').val(nama_gub[5]);
+
+            $('#paslon').find('#input-jmlsuara_gub').val(jmlsuara_gub[0]);
+            $('#paslon1').find('#input-jmlsuara_gub').val(jmlsuara_gub[1]);
+            $('#paslon2').find('#input-jmlsuara_gub').val(jmlsuara_gub[2]);
+            $('#paslon3').find('#input-jmlsuara_gub').val(jmlsuara_gub[3]);
+            $('#paslon4').find('#input-jmlsuara_gub').val(jmlsuara_gub[4]);
+            $('#paslon5').find('#input-jmlsuara_gub').val(jmlsuara_gub[5]);
+
+            // $('#form input[name=kegiatan]').val(data.data.kegiatan);
+        });
+    });
+
+    $(document).on('click', '.btnRemove', function (e) {
+        e.preventDefault();
+        var dataId = $(this).attr("data-id");
+        console.log(dataId, '_dataId');
+
+        if (confirm("Apakah anda yakin ingin menghapus data ini?")==true){
+            // $(this).closest("tr").remove();
+            table.row( $(this).parents('tr') ).remove().draw();
+            $.post("<?=$Urlremove;?>/", {id: dataId}, function(result){
+                console.log(result, "_result");
+            });
+        };
+    });
+
     var cloneCount = 1;
     $('button.addPaslon').click(function(){
         var id = cloneCount++;
