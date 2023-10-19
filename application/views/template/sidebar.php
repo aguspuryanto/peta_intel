@@ -6,7 +6,7 @@
 				<div class="sidebar-brand-icon">
 					<i class='fas fa-map-marked-alt'></i>
 				</div>
-				<div class="sidebar-brand-text mx-3">Peta Digital</div>
+				<div class="sidebar-brand-text mx-3"><?=$title; ?></div>
 			</a>
 
 			<!-- Divider -->
