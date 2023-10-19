@@ -5,7 +5,7 @@
 			<a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?=base_url('dashboard');?>">
 				<div class="sidebar-brand-icon">
 					<!-- <i class='fas fa-map-marked-alt'></i> -->
-					<img src="<?=base_url('assets/img/SIMETALBATIN_S.png');?>">
+					<img src="<?=base_url('assets/img/SIMETALBATIN_S.png');?>" style="width:auto;height:52px;padding-left:15px;">
 				</div>
 				<div class="sidebar-brand-text mx-3">SIMETALBATIN</div>
 			</a>
