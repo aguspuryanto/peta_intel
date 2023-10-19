@@ -15,6 +15,10 @@ class M_pilgub extends CI_Model {
             ['field' => 'jmlsuara_gub1', 'label' => 'Jumlah Suara Gubernur 1'],
             ['field' => 'nama_gub2', 'label' => 'Nama Gubernur 2'],
             ['field' => 'jmlsuara_gub2', 'label' => 'Jumlah Suara Gubernur 2'],
+            ['field' => 'nama_gub3', 'label' => 'Nama Gubernur 3'],
+            ['field' => 'jmlsuara_gub3', 'label' => 'Jumlah Suara Gubernur 3'],
+            ['field' => 'nama_gub4', 'label' => 'Nama Gubernur 4'],
+            ['field' => 'jmlsuara_gub4', 'label' => 'Jumlah Suara Gubernur 4'],
         ];
     }    
 
