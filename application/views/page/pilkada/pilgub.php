@@ -72,7 +72,7 @@
 
       <!-- Modal body -->
       <div class="modal-body">
-        <?=form_open('', array('id' => 'formPilpres', 'role' => 'form'));?>
+        <?=form_open('', array('id' => 'formPilkada', 'role' => 'form'));?>
             <div class="form-group">
                 <label>Tahun Pilpres</label>
                 <?php $listThn = array('2024' => '2024', '2019' => '2019', '2017' => '2017'); ?>
@@ -107,6 +107,9 @@
                     )); ?>
                 </div>
             </div>
+
+            <?=form_hidden('id', ''); ?>
+
         <?=form_close();?>
       </div>
 
@@ -136,7 +139,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "<?=$Urladd;?>", 
-            data: $("#formPilpres").serialize(),
+            data: $("#formPilkada").serialize(),
             dataType: "json",  
             beforeSend : function(xhr, opts){
                 $('#form-submit').text('Loading...').prop("disabled", true);
