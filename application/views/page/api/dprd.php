@@ -61,12 +61,16 @@
         }).addTo(map);
 
         var listKab = <?php echo json_encode($listKab); ?>;
-        var newpopupContent = '';
+        var newpopupContent = '<table class="table table-bordered">';
         for(var i=0; i<listKab.length; i++){
-            // L.marker(listKab[i]['geometry']['coordinates']).addTo(map).bindPopup(listKab[i]['properties']['popupContent']).openPopup();
-            newpopupContent += listKab[i]['properties']['popupContent'] + '<br>';
+          // L.marker(listKab[i]['geometry']['coordinates']).addTo(map).bindPopup(listKab[i]['properties']['popupContent']).openPopup();
+          newpopupContent += '<tr><td>' + listKab[i]['properties']['popupContent'] + '</td></tr>';
         }
-        L.marker(listKab[0]['geometry']['coordinates']).addTo(map).bindPopup(newpopupContent).openPopup();
+        newpopupContent += '</table>';
+
+        L.marker(listKab[0]['geometry']['coordinates']).addTo(map).bindPopup(newpopupContent, {
+          maxWidth : 560
+        }).openPopup();
         
     </script>
   </html>
