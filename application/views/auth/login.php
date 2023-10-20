@@ -20,7 +20,7 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-gradient-success">
 
 	<div class="container">
 
@@ -34,7 +34,7 @@
 						<!-- Nested Row within Card Body -->
 						<div class="row">
 							<div class="col-lg-6 d-none d-lg-block">
-								<img src="<?= base_url('assets/img/SI_METAL_BATIN_LOGO.png'); ?>" class="img-fluid" style="height: 33%;">
+								<img src="<?= base_url('assets/img/SIMETALBATIN_L.png'); ?>" class="img-fluid">
 							</div>
 							<div class="col-lg-6">
 								<div class="p-5">

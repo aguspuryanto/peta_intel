@@ -63,17 +63,22 @@ class Pilkada extends CI_Controller {
 			$totPaslon = count($this->input->post('nama_gub'));
 			for($i = 0; $i < $totPaslon; $i++){
 				$datapaslon = array(
-					'nama_gub' . ($i+1) => $this->input->post('nama_gub')[0],
-					'jmlsuara_gub' . ($i+1) => $this->input->post('jmlsuara_gub')[0],
+					'nama_gub' . ($i+1) => $this->input->post('nama_gub')[$i],
+					'jmlsuara_gub' . ($i+1) => $this->input->post('jmlsuara_gub')[$i],
 				);
 				$data = array_merge($data, $datapaslon);
 			}
 
 			// echo json_encode($data);
-			$model->save($data);
+			if($this->input->post('id')) {
+				$id = $this->input->post('id');
+				$model->update($id, $data);				
+			} else {
+				$model->save($data);
+			}
 
             $this->session->set_flashdata('success', 'Berhasil disimpan');
-			$json = array('success' => true, 'message' => 'Berhasil disimpan');
+			$json = array('success' => true, 'message' => 'Berhasil disimpan', 'data' => ($data));
 		}
 
 		$this->output
@@ -82,6 +87,40 @@ class Pilkada extends CI_Controller {
 		
 		// $this->template->views('page/Pilkada/create', $data);
 	}
+
+	public function view($id) {
+		$data['data'] = $this->M_pilkada->selectId($id);
+
+		$json = array();
+		if($data['data']) {
+			$json = array('success' => true, 'data' => $data['data']);
+		} else {
+			$json = array('success' => false, 'data' => []);
+		}
+
+		$this->output
+        ->set_content_type('application/json')
+        ->set_output(json_encode($json));
+	}
+
+	public function remove() {		
+		$json = array();
+		$model = $this->M_pilkada;
+
+		if($this->input->post('id')) {
+			$id = $this->input->post('id');
+			$model->delete($id);
+
+			$this->session->set_flashdata('success', 'Berhasil terhapus');
+			$json = array('success' => true, 'message' => 'Berhasil terhapus');
+		}
+
+		$this->output
+		->set_content_type('application/json')
+		->set_output(json_encode($json));
+	}
+
+	// PILGUB
 
 	public function pilgub() {
 		$data['title'] = "Pemilu Pilgub";
@@ -130,17 +169,22 @@ class Pilkada extends CI_Controller {
 			$totPaslon = count($this->input->post('nama_gub'));
 			for($i = 0; $i < $totPaslon; $i++){
 				$datapaslon = array(
-					'nama_gub' . ($i+1) => $this->input->post('nama_gub')[0],
-					'jmlsuara_gub' . ($i+1) => $this->input->post('jmlsuara_gub')[0],
+					'nama_gub' . ($i+1) => $this->input->post('nama_gub')[$i],
+					'jmlsuara_gub' . ($i+1) => $this->input->post('jmlsuara_gub')[$i],
 				);
 				$data = array_merge($data, $datapaslon);
 			}
 
 			// echo json_encode($data);
-			$model->save($data);
+			if($this->input->post('id')) {
+				$id = $this->input->post('id');
+				$model->update($id, $data);				
+			} else {
+				$model->save($data);
+			}
 
             $this->session->set_flashdata('success', 'Berhasil disimpan');
-			$json = array('success' => true, 'message' => 'Berhasil disimpan');
+			$json = array('success' => true, 'message' => 'Berhasil disimpan', 'data' => ($data));
 		}
 
 		$this->output
@@ -148,5 +192,37 @@ class Pilkada extends CI_Controller {
         ->set_output(json_encode($json));
 		
 		// $this->template->views('page/Pilkada/create', $data);
+	}
+
+	public function view_pilgub($id) {
+		$data['data'] = $this->M_pilgub->selectId($id);
+
+		$json = array();
+		if($data['data']) {
+			$json = array('success' => true, 'data' => $data['data']);
+		} else {
+			$json = array('success' => false, 'data' => []);
+		}
+
+		$this->output
+        ->set_content_type('application/json')
+        ->set_output(json_encode($json));
+	}
+
+	public function remove_pilgub() {		
+		$json = array();
+		$model = $this->M_pilgub;
+
+		if($this->input->post('id')) {
+			$id = $this->input->post('id');
+			$model->delete($id);
+
+			$this->session->set_flashdata('success', 'Berhasil terhapus');
+			$json = array('success' => true, 'message' => 'Berhasil terhapus');
+		}
+
+		$this->output
+		->set_content_type('application/json')
+		->set_output(json_encode($json));
 	}
 }
