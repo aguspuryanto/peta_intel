@@ -7,7 +7,7 @@
 					<!-- <i class='fas fa-map-marked-alt'></i> -->
 					<img src="<?=base_url('assets/img/SIMETALBATIN_S.png');?>" style="width:auto;height:52px;">
 				</div>
-				<div class="sidebar-brand-text mx-3">SI-METAL BATIN</div>
+				<div class="sidebar-brand-text mx-0">SI-METAL BATIN</div>
 			</a>
 
 			<!-- Divider -->
