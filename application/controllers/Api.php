@@ -9,6 +9,7 @@ class Api extends CI_Controller {
         // is_logged_in();
 		
 		$this->load->model('M_pilpres');
+		$this->load->model('M_pilgub');
 		$this->load->model('M_dprd');
 		$this->load->model('M_kabupaten');
 		$this->load->model('M_kecamatan');
@@ -150,38 +151,20 @@ class Api extends CI_Controller {
 	}
 
 	public function pemilu_2() {
-		$data['title'] = "PENYULUHAN DAN PENERANGAN HUKUM";
+		$data['title'] = "PEMILU: KEPALA DAERAH";
 
 		$data['listLatLong'] = array();		
-		$data['listKab'] = array();		
-		$listKab = $this->M_kabupaten->select_all();
-		foreach($listKab as $kab) {			
-			$data['listKab'][] = array(
-				'type' => 'Feature',
-				'properties' => array(
-					'name' => $kab->nama,
-					'amenity' => $kab->nama,
-					'popupContent' => $kab->nama,
-					'show_on_map' => true
-				),
-				'geometry' => array(
-					'type' => 'Point',
-					'coordinates' => array($kab->latitude, $kab->longitude)
-				),
-			);
-
-			$data['listLatLong'] = array(
-				'name' => $kab->nama,
+		$listKab = $this->M_pilgub->select_all();
+		foreach($listKab as $kab) {
+			$data['listLatLong'][] = array(
+				'name' => $kab->nama_kab,
+				'content' => addslashes($kab->nama_gub1) . ' ' . $kab->jmlsuara_gub1 . '<br>' . addslashes($kab->nama_gub2) . ' ' . $kab->jmlsuara_gub1,
 				'coordinates' => array($kab->latitude, $kab->longitude)
 			);
 		}
-		
-		$data['listGeoJson'][] = array(
-			'type' => 'FeatureCollection',
-			'features' => $data['listKab']
-		);
 
-		$this->load->view('page/api/penyuluhan', $data);
+		// echo json_encode($data['listLatLong']);
+		$this->load->view('page/api/pilpres', $data);
 	}
 
 	public function pemilu_3() {
