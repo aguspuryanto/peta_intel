@@ -524,21 +524,21 @@ function getListRole() {
     $role = array(
         '1' => 'Administrator',
         '2' => 'Super admin',
-        '3' => 'Admin kasi A',
-        '4' => 'Admin kasi B',
-        '5' => 'Admin kasi C',
-        '6' => 'Admin kasi D',
-        '7' => 'Admin kasi E',
-        '8' => 'Admin kasi penkum',
+        '3' => 'Admin Seksi A',
+        '4' => 'Admin Seksi B',
+        '5' => 'Admin Seksi C',
+        '6' => 'Admin Seksi D',
+        '7' => 'Admin Seksi E',
+        '8' => 'Admin Seksi penkum',
         '9' => 'Asintel',
         '10' => 'Kajati',
         '11' => 'Wakajati',
-        '12' => 'Kasi A',
-        '13' => 'Kasi B',
-        '14' => 'Kasi C',
-        '15' => 'Kasi D',
-        '16' => 'Kasi E',
-        '17' => 'Kasi penkum'
+        '12' => 'Seksi A',
+        '13' => 'Seksi B',
+        '14' => 'Seksi C',
+        '15' => 'Seksi D',
+        '16' => 'Seksi E',
+        '17' => 'Seksi penkum'
     );
 
     return $role;
