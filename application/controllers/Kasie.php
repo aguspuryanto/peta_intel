@@ -41,6 +41,40 @@ class Kasie extends CI_Controller {
 		$this->template->views('page/kasia/upload', $data);		
 	}
 
+	public function Lapinsus() {
+		$data['title'] = "Seksi E || Lapinsus";
+		$data['konten'] = "index";
+
+		$kategori = explode(" || ", $data['title']);
+		$data['kategori'] = $kategori[0];
+		$data['sub_kategori'] = $kategori[1];
+
+		$data['model'] = $this->M_bankdata;
+		$data['dataProvider'] = $this->M_bankdata->select_all([
+			'kategori' => $kategori[0],
+			'sub_kategori' => $kategori[1]
+		]);
+		
+		$this->template->views('page/kasia/upload', $data);		
+	}
+
+	public function Lapopsin() {
+		$data['title'] = "Seksi E || Lapopsin";
+		$data['konten'] = "index";
+
+		$kategori = explode(" || ", $data['title']);
+		$data['kategori'] = $kategori[0];
+		$data['sub_kategori'] = $kategori[1];
+
+		$data['model'] = $this->M_bankdata;
+		$data['dataProvider'] = $this->M_bankdata->select_all([
+			'kategori' => $kategori[0],
+			'sub_kategori' => $kategori[1]
+		]);
+		
+		$this->template->views('page/kasia/upload', $data);		
+	}
+
 	public function ancaman() {
 		$data['title'] = "Seksi E || Potensi Ancaman";
 		$data['konten'] = "index";

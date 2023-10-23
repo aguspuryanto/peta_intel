@@ -470,7 +470,8 @@ function getBankDataMenuDash() {
             'url' => 'kasid',
             'show_menu' => false,
             'submenu' => array(
-                array('title' => 'Daftar Pendampingan', 'link' => 'DaftarPendampingan'),
+                array('title' => 'Daftar Pengawalan & Pengamanan', 'link' => 'DaftarPengawalan'),
+                array('title' => 'Daftar Pendampingan DATUN', 'link' => 'DaftarPendampingan'),
                 array('title' => 'Potensi Ancaman', 'link' => 'ancaman'),
                 array('title' => 'Peta Intelijen D.IN.5', 'link' => 'PetaIntelijen'),
             )
