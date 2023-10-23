@@ -21,7 +21,7 @@
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
-                            <?=get_header_table_custom($model, ['prov_id', 'kec_id'], '<th>Aksi</th>'); ?>
+                            <?=get_header_table_custom($model, ['prov_id', 'kec_id', 'nama_capres4', 'jmlsuara_capres4'], '<th>Aksi</th>'); ?>
                         </thead>
                         <tbody>
                         <?php
@@ -36,6 +36,8 @@
                                     <td>'.number_format($row->jmlsuara_capres1).'</td>
                                     <td>'.$row->nama_capres2.'</td>
                                     <td>'.number_format($row->jmlsuara_capres2).'</td>
+                                    <td>'.$row->nama_capres3.'</td>
+                                    <td>'.number_format((int)$row->jmlsuara_capres3).'</td>
                                     <td style="min-width:115px">
                                         <div class="btn-group" role="group">
                                             <button type="button" data-id="'.$row->id.'" class="btn btn-secondary btnEdit" data-toggle="modal" data-target="#myModal">Edit</button>
@@ -80,27 +82,6 @@
                 <?=form_dropdown('kab_id', $listKab, '', array('class' => 'form-control', 'id' => 'input-kab_id'));?>
                 <div id="error"></div>
             </div>
-            <!-- <div class="form-group">
-                <label>Kecamatan</label>
-                <?=form_dropdown('kec_id', $listKab, '', array('class' => 'form-control', 'id' => 'input-kec_id'));?>
-                <div id="error"></div>
-            </div> -->
-            <!-- <div class="row">
-                <div class="col-md-6">
-                    <?=get_form_input($model, 'nama_capres1'); ?>
-                </div>
-                <div class="col-md-6">
-                    <?=get_form_input($model, 'jmlsuara_capres1'); ?>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <?=get_form_input($model, 'nama_capres2'); ?>
-                </div>
-                <div class="col-md-6">
-                    <?=get_form_input($model, 'jmlsuara_capres2'); ?>
-                </div>
-            </div> -->
 
             <button type="button" class="btn btn-info addPaslon float-right">Tambah Paslon</button>
             <div class="clearfix"></div>
@@ -247,7 +228,7 @@ $(document).ready(function () {
     var cloneCount = 1;
     $('button.addPaslon').click(function(){
         var id = cloneCount++;
-        if(id <= 3) {
+        if(id < 3) {
             $("div#paslon").clone().attr('id', 'paslon'+ id).insertAfter('[id^=paslon]:last');
             $("[id^=paslon]:last").find("label:eq(0)").html('Nama Paslon ' + id);
             $("[id^=paslon]:last").find("label:eq(1)").html('Jumlah Suara ' + id);
