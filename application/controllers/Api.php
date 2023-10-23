@@ -139,9 +139,23 @@ class Api extends CI_Controller {
 		$data['listLatLong'] = array();		
 		$listKab = $this->M_pilpres->select_all();
 		foreach($listKab as $kab) {
+			$content = "";
+			if($kab->nama_capres1) {
+				$content .= "<p>1. " . addslashes($kab->nama_capres1) . ' ' . $kab->jmlsuara_capres1 . '</p>';
+			}
+			if($kab->nama_capres2) {
+				$content .= "<p>2. " . addslashes($kab->nama_capres2) . ' ' . $kab->jmlsuara_capres2 . '</p>';
+			}
+			if($kab->nama_capres2) {
+				$content .= "<p>3. " . addslashes($kab->nama_capres2) . ' ' . $kab->jmlsuara_capres3 . '</p>';
+			}
+			if($kab->nama_capres4) {
+				$content .= "<p>4. " . addslashes($kab->nama_capres4) . ' ' . $kab->jmlsuara_capres3 . '</p>';
+			}
+
 			$data['listLatLong'][] = array(
 				'name' => $kab->nama_kab,
-				'content' => addslashes($kab->nama_capres1) . ' ' . $kab->jmlsuara_capres1 . '<br>' . addslashes($kab->nama_capres2) . ' ' . $kab->jmlsuara_capres2,
+				'content' => $content, //addslashes($kab->nama_capres1) . ' ' . $kab->jmlsuara_capres1 . '<br>' . addslashes($kab->nama_capres2) . ' ' . $kab->jmlsuara_capres2,
 				'coordinates' => array($kab->latitude, $kab->longitude)
 			);
 		}
@@ -157,7 +171,6 @@ class Api extends CI_Controller {
 		$listKab = $this->M_pilgub->select_all();
 		foreach($listKab as $kab) {
 			$content = "";
-
 			if($kab->nama_gub1) {
 				$content .= "<p>1. " . addslashes($kab->nama_gub1) . ' ' . $kab->jmlsuara_gub1 . '</p>';
 			}
