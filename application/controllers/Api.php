@@ -156,9 +156,24 @@ class Api extends CI_Controller {
 		$data['listLatLong'] = array();		
 		$listKab = $this->M_pilgub->select_all();
 		foreach($listKab as $kab) {
+			$content = "";
+
+			if($kab->nama_gub1) {
+				$content .= addslashes($kab->nama_gub1) . ' ' . $kab->jmlsuara_gub1 . '<br>';
+			}
+			if($kab->nama_gub2) {
+				$content .= addslashes($kab->nama_gub2) . ' ' . $kab->jmlsuara_gub2 . '<br>';
+			}
+			if($kab->nama_gub3) {
+				$content .= addslashes($kab->nama_gub3) . ' ' . $kab->jmlsuara_gub3 . '<br>';
+			}
+			if($kab->nama_gub4) {
+				$content .= addslashes($kab->nama_gub4) . ' ' . $kab->jmlsuara_gub4 . '<br>';
+			}
+
 			$data['listLatLong'][] = array(
 				'name' => $kab->nama_kab,
-				'content' => addslashes($kab->nama_gub1) . ' ' . $kab->jmlsuara_gub1 . '<br>' . addslashes($kab->nama_gub2) . ' ' . $kab->jmlsuara_gub1,
+				'content' => $content,
 				'coordinates' => array($kab->latitude, $kab->longitude)
 			);
 		}
