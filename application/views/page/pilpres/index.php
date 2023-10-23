@@ -85,7 +85,7 @@
                 <?=form_dropdown('kec_id', $listKab, '', array('class' => 'form-control', 'id' => 'input-kec_id'));?>
                 <div id="error"></div>
             </div> -->
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-md-6">
                     <?=get_form_input($model, 'nama_capres1'); ?>
                 </div>
@@ -99,6 +99,29 @@
                 </div>
                 <div class="col-md-6">
                     <?=get_form_input($model, 'jmlsuara_capres2'); ?>
+                </div>
+            </div> -->
+
+            <button type="button" class="btn btn-info addPaslon float-right">Tambah Paslon</button>
+            <div class="clearfix"></div>
+            <div id="paslon" class="row">
+                <div class="col-md-6">
+                    <label>Nama Paslon</label>
+                    <?= form_input(array(
+                        'type'  => 'text',
+                        'name'  => 'nama_capres[]',
+                        'id'    => 'input-nama_capres',
+                        'class' => 'form-control'
+                    )); ?>
+                </div>
+                <div class="col-md-6">
+                    <label>Jumlah Suara</label>
+                    <?= form_input(array(
+                        'type'  => 'text',
+                        'name'  => 'jmlsuara_capres[]',
+                        'id'    => 'input-jmlsuara_capres',
+                        'class' => 'form-control'
+                    )); ?>
                 </div>
             </div>
 
@@ -169,15 +192,41 @@ $(document).ready(function () {
 
         $.get("<?=$Urldetail;?>/" + dataId, function(data, status){
             console.log(data, "data");
+            // $.each(data.data, function(key, value) {
+            //     if(key == 'kecamatan') {
+            //         $('#input-' + key).val(value).change();
+            //     } else {
+            //         $('#input-' + key).val(value);
+            //     }
+            // });
+
+            var nama_capres = [];
+            var jmlsuara_capres = [];
             $.each(data.data, function(key, value) {
-                if(key == 'kecamatan') {
-                    $('#input-' + key).val(value).change();
+                if(key.includes("jmlsuara_")) $('button.addPaslon').trigger("click");
+                if(key.includes("nama_capres")) {
+                    nama_capres.push(value);
+                } else if(key.includes("jmlsuara_capres")) {
+                    jmlsuara_capres.push(value);
                 } else {
                     $('#input-' + key).val(value);
                 }
             });
 
-            // $('#form input[name=kegiatan]').val(data.data.kegiatan);
+            console.log(nama_capres, '_nama_capres');
+            $('#paslon').find('#input-nama_capres').val(nama_capres[0]);
+            $('#paslon1').find('#input-nama_capres').val(nama_capres[1]);
+            $('#paslon2').find('#input-nama_capres').val(nama_capres[2]);
+            $('#paslon3').find('#input-nama_capres').val(nama_capres[3]);
+            $('#paslon4').find('#input-nama_capres').val(nama_capres[4]);
+            $('#paslon5').find('#input-nama_capres').val(nama_capres[5]);
+
+            $('#paslon').find('#input-jmlsuara_capres').val(jmlsuara_capres[0]);
+            $('#paslon1').find('#input-jmlsuara_capres').val(jmlsuara_capres[1]);
+            $('#paslon2').find('#input-jmlsuara_capres').val(jmlsuara_capres[2]);
+            $('#paslon3').find('#input-jmlsuara_capres').val(jmlsuara_capres[3]);
+            $('#paslon4').find('#input-jmlsuara_capres').val(jmlsuara_capres[4]);
+            $('#paslon5').find('#input-jmlsuara_capres').val(jmlsuara_capres[5]);
         });
     });
 
@@ -193,6 +242,18 @@ $(document).ready(function () {
                 console.log(result, "_result");
             });
         };
+    });
+
+    var cloneCount = 1;
+    $('button.addPaslon').click(function(){
+        var id = cloneCount++;
+        if(id <= 3) {
+            $("div#paslon").clone().attr('id', 'paslon'+ id).insertAfter('[id^=paslon]:last');
+            $("[id^=paslon]:last").find("label:eq(0)").html('Nama Paslon ' + id);
+            $("[id^=paslon]:last").find("label:eq(1)").html('Jumlah Suara ' + id);
+        } else {
+            $(this).addClass('d-none');
+        }
     });
 });
 </script>

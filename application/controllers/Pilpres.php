@@ -55,11 +55,20 @@ class Pilpres extends CI_Controller {
 				'prov_id' => $this->input->post('prov_id'),
 				'kab_id' => $this->input->post('kab_id'),
 				'kec_id' => $this->input->post('kec_id'),
-				'nama_capres1' => $this->input->post('nama_capres1'),
-				'jmlsuara_capres1' => preg_replace("/[^0-9]/", "", $this->input->post('jmlsuara_capres1')),
-				'nama_capres2' => $this->input->post('nama_capres2'),
-				'jmlsuara_capres2' => preg_replace("/[^0-9]/", "", $this->input->post('jmlsuara_capres2')),
+				// 'nama_capres1' => $this->input->post('nama_capres1'),
+				// 'jmlsuara_capres1' => preg_replace("/[^0-9]/", "", $this->input->post('jmlsuara_capres1')),
+				// 'nama_capres2' => $this->input->post('nama_capres2'),
+				// 'jmlsuara_capres2' => preg_replace("/[^0-9]/", "", $this->input->post('jmlsuara_capres2')),
 			);			
+
+			$totPaslon = count($this->input->post('nama_capres'));
+			for($i = 0; $i < $totPaslon; $i++){
+				$datapaslon = array(
+					'nama_capres' . ($i+1) => $this->input->post('nama_capres')[$i],
+					'jmlsuara_capres' . ($i+1) => $this->input->post('jmlsuara_capres')[$i],
+				);
+				$data = array_merge($data, $datapaslon);
+			}
 
 			if($this->input->post('id')) {
 				$id = $this->input->post('id');

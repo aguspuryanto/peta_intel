@@ -11,10 +11,14 @@ class M_pilpres extends CI_Model {
             ['field' => 'prov_id', 'label' => 'Provinsi'],
             ['field' => 'kab_id', 'label' => 'Kabupaten', 'rules' => 'required'],
             ['field' => 'kec_id', 'label' => 'Kecamatan', 'rules' => ''],
-            ['field' => 'nama_capres1', 'label' => 'Nama Capres 1', 'rules' => 'required'],
+            ['field' => 'nama_capres1', 'label' => 'Nama Capres 1'],
             ['field' => 'jmlsuara_capres1', 'label' => 'Jumlah Suara Capres 1'],
-            ['field' => 'nama_capres2', 'label' => 'Nama Capres 2', 'rules' => 'required'],
+            ['field' => 'nama_capres2', 'label' => 'Nama Capres 2'],
             ['field' => 'jmlsuara_capres2', 'label' => 'Jumlah Suara Capres 2'],
+            ['field' => 'nama_capres3', 'label' => 'Nama Capres 3'],
+            ['field' => 'jmlsuara_capres3', 'label' => 'Jumlah Suara Capres 3'],
+            ['field' => 'nama_capres4', 'label' => 'Nama Capres 4'],
+            ['field' => 'jmlsuara_capres4', 'label' => 'Jumlah Suara Capres 4'],
         ];
     }    
 
