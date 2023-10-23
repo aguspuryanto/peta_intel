@@ -159,16 +159,16 @@ class Api extends CI_Controller {
 			$content = "";
 
 			if($kab->nama_gub1) {
-				$content .= addslashes($kab->nama_gub1) . ' ' . $kab->jmlsuara_gub1 . '<br>';
+				$content .= "<p>1. " . addslashes($kab->nama_gub1) . ' ' . $kab->jmlsuara_gub1 . '</p>';
 			}
 			if($kab->nama_gub2) {
-				$content .= addslashes($kab->nama_gub2) . ' ' . $kab->jmlsuara_gub2 . '<br>';
+				$content .= "<p>2. " . addslashes($kab->nama_gub2) . ' ' . $kab->jmlsuara_gub2 . '</p>';
 			}
 			if($kab->nama_gub3) {
-				$content .= addslashes($kab->nama_gub3) . ' ' . $kab->jmlsuara_gub3 . '<br>';
+				$content .= "<p>3. " . addslashes($kab->nama_gub3) . ' ' . $kab->jmlsuara_gub3 . '</p>';
 			}
 			if($kab->nama_gub4) {
-				$content .= addslashes($kab->nama_gub4) . ' ' . $kab->jmlsuara_gub4 . '<br>';
+				$content .= "<p>4. " . addslashes($kab->nama_gub4) . ' ' . $kab->jmlsuara_gub4 . '</p>';
 			}
 
 			$data['listLatLong'][] = array(
