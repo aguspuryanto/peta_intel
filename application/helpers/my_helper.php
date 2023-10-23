@@ -413,7 +413,7 @@ function getBankDataMenu() {
                 array('title' => 'Data Grafik', 'link' => 'grafik'),
                 array('title' => 'Potensi Ancaman', 'link' => 'ancaman'),
                 // array('title' => 'Peta Luhkum Penkum', 'link' => 'PetaLuhkum'),
-                array('title' => 'Penerangan dan  Penyuluhan Hukum', 'link' => 'Penyuluhan'),
+                array('title' => 'Penerangan dan  Penyuluhan Hukum', 'link' => 'penyuluhan'),
                 array('title' => 'Peta Intelijen Luhkum Penkum', 'link' => 'PetaIntelijen'),
             )
         ),

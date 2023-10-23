@@ -10,10 +10,11 @@ class KasiPenkum extends CI_Controller {
 
 		// $this->load->model('M_provinsi');
 		$this->load->model('M_kabupaten');
-		// $this->load->model('M_kecamatan');
+		$this->load->model('M_kecamatan');
 		$this->load->model('M_bankdata');
 		$this->load->model('M_peta');
 		$this->load->model('M_perkara');
+		$this->load->model('M_penyuluhan');
     }
 
 	public function index()
@@ -56,6 +57,23 @@ class KasiPenkum extends CI_Controller {
 		]);
 		
 		$this->template->views('page/kasia/upload', $data);		
+	}
+
+	public function penyuluhan() {
+		$data['title'] = "Seksi Penkum || Penyuluhan Hukum";
+		// $data['konten'] = "index";
+
+		$data['listKab'] = array();		
+		$listKab = $this->M_kecamatan->select_all();
+		foreach($listKab as $kab) {
+			$data['listKab'][$kab->id] = $kab->nama;
+		}
+
+		$data['model'] = $this->M_penyuluhan;
+		$data['dataProvider'] = $this->M_penyuluhan->select_all();
+		
+		// $this->load->view('template/layout', $data);
+		$this->template->views('page/penyuluhan/index', $data);
 	}
 
 	public function PetaIntelijen() {
