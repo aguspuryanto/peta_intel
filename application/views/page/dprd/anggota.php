@@ -51,7 +51,7 @@
                                     <td>'.$row->nama_anggota.'</td>
                                     <td>'.$row->nama_partai.'</td>
                                     <td>'.$row->nama_dapil.'</td>
-                                    <td>'.$row->jml_suara.'</td>
+                                    <td>'.number_format($row->jml_suara).'</td>
                                     <td>'.$row->keterangan.'</td>
                                     <td style="min-width:115px">
                                         <div class="btn-group" role="group">

@@ -158,7 +158,7 @@ class pileg extends CI_Controller {
 				'nama_anggota' => $this->input->post('nama_anggota'),
 				'partai_id' => $this->input->post('partai_id'),
 				'dapil_id' => $this->input->post('dapil_id'),
-				'jml_suara' => $this->input->post('jml_suara'),
+				'jml_suara' => preg_replace("/[^0-9]/", "", $this->input->post('jml_suara')),
 				'keterangan' => ($this->input->post('keterangan')) ?? NULL,
 			);			
 	
