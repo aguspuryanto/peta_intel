@@ -24,12 +24,12 @@
 
                 // $disabledmenu = !array_key_exists($menu['title'], $listMenuDisable);
                 $cssHide = 'd-block';
-                if(in_array($role_id, [3, 12]) && $menu['title'] != 'KASI A') $cssHide = 'd-none';
-                if(in_array($role_id, [4, 13]) && $menu['title'] != 'KASI B') $cssHide = 'd-none';
-                if(in_array($role_id, [5, 14]) && $menu['title'] != 'KASI C') $cssHide = 'd-none';
-                if(in_array($role_id, [6, 15]) && $menu['title'] != 'KASI D') $cssHide = 'd-none';
-                if(in_array($role_id, [7, 16]) && $menu['title'] != 'KASI E') $cssHide = 'd-none';
-                if(in_array($role_id, [8, 17]) && $menu['title'] != 'KASI PENKUM') $cssHide = 'd-none';
+                if(in_array($role_id, [3, 12]) && $menu['title'] != 'SEKSI A') $cssHide = 'd-none';
+                if(in_array($role_id, [4, 13]) && $menu['title'] != 'SEKSI B') $cssHide = 'd-none';
+                if(in_array($role_id, [5, 14]) && $menu['title'] != 'SEKSI C') $cssHide = 'd-none';
+                if(in_array($role_id, [6, 15]) && $menu['title'] != 'SEKSI D') $cssHide = 'd-none';
+                if(in_array($role_id, [7, 16]) && $menu['title'] != 'SEKSI E') $cssHide = 'd-none';
+                if(in_array($role_id, [8, 17]) && $menu['title'] != 'SEKSI PENKUM') $cssHide = 'd-none';
 
                 echo '<li class="nav-item ' . $cssHide . '">
                     <a class="nav-link collapsed" href="'. base_url($menu['url']) . '" data-toggle="collapse" data-target="#collapse' . $x . '"
