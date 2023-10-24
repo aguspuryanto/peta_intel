@@ -34,8 +34,8 @@ class Kasia extends CI_Controller {
 
 		$data['model'] = $this->M_bankdata;
 		$data['dataProvider'] = $this->M_bankdata->select_all([
-			'kategori' => 'Seksi A',
-			'sub_kategori' => 'Pemerintahan'
+			'kategori' => $kategori[0],
+			'sub_kategori' => $kategori[1]
 		]);
 		
 		$this->template->views('page/kasia/upload', $data);		
@@ -51,8 +51,8 @@ class Kasia extends CI_Controller {
 
 		$data['model'] = $this->M_bankdata;
 		$data['dataProvider'] = $this->M_bankdata->select_all([
-			'kategori' => 'Seksi A',
-			'sub_kategori' => 'Stakeholder & Obyek Vital'
+			'kategori' => $kategori[0],
+			'sub_kategori' => $kategori[1]
 		]);
 		
 		$this->template->views('page/kasia/upload', $data);		
@@ -68,8 +68,8 @@ class Kasia extends CI_Controller {
 
 		$data['model'] = $this->M_bankdata;
 		$data['dataProvider'] = $this->M_bankdata->select_all([
-			'kategori' => 'Seksi A',
-			'sub_kategori' => 'Pengamanan Sumber Daya Organisasi'
+			'kategori' => $kategori[0],
+			'sub_kategori' => $kategori[1]
 		]);
 		
 		$this->template->views('page/kasia/upload', $data);		

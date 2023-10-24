@@ -29,6 +29,8 @@ class Kasid extends CI_Controller {
 		$data['konten'] = "index";
 
 		$kategori = explode(" || ", $data['title']);
+		$data['kategori'] = $kategori[0];
+		$data['sub_kategori'] = $kategori[1];
 
 		$data['model'] = $this->M_bankdata;
 		$data['dataProvider'] = $this->M_bankdata->select_all([
@@ -44,6 +46,8 @@ class Kasid extends CI_Controller {
 		$data['konten'] = "index";
 
 		$kategori = explode(" || ", $data['title']);
+		$data['kategori'] = $kategori[0];
+		$data['sub_kategori'] = $kategori[1];
 
 		$data['model'] = $this->M_bankdata;
 		$data['dataProvider'] = $this->M_bankdata->select_all([
@@ -59,11 +63,13 @@ class Kasid extends CI_Controller {
 		$data['konten'] = "index";
 
 		$kategori = explode(" || ", $data['title']);
+		$data['kategori'] = $kategori[0];
+		$data['sub_kategori'] = $kategori[1];
 
 		$data['model'] = $this->M_bankdata;
 		$data['dataProvider'] = $this->M_bankdata->select_all([
-			'kategori' => 'Seksi D',
-			'sub_kategori' => 'Potensi Ancaman'
+			'kategori' => $kategori[0],
+			'sub_kategori' => $kategori[1]
 		]);
 		
 		$this->template->views('page/kasia/upload', $data);		
